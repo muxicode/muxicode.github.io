@@ -2,17 +2,21 @@ module.exports = {
   title: 'muxicode',
   description: 'muxicode 知识库',
   themeConfig: {
+    // web图片标
+    head:[
+        ['link', { rel: 'icon', href: '/waterbee.svg' }]
+    ],
     // 导航栏
     nav: [
         { text: '首页', link: '/' },
         { 
             text: 'muxicode 博客', 
             items: [
-                { text: 'Github', link: 'https://github.com/muxicode' },
-                { text: 'CSDN', link: 'https://blog.csdn.net/weixin_44155115' }
+                { text: 'Github', link: 'https://github.com/muxicode' }
             ]
         }
     ],
+
     // 侧边栏配置
     sidebar: [
       {
