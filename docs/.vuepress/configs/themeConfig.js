@@ -10,7 +10,6 @@ const navConfig = require('./navConfig'); // 头部导航栏配置,通过配置�
 
 const themeconfig = {
   logo: "/waterbee.svg",// 左上角logo
-  siteName: "慕溪code",
   // repo: 'itclanCode/blogcode', // 链接的仓库
   // repoLabel: 'GitHub', // 链接的名称
   docsDir: 'docs',

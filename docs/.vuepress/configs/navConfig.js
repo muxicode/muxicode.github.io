@@ -6,15 +6,54 @@
 
 const navs = [
   { text: '首页', link: '/' },
-  { text: 'Golang',
+  { text: '深入理解Golang', link: '/golang/',
+    // items: [
+    //   { text: '数据结构', link: '/golang/struct' },
+    //   { text: '协程', link: '/golang/routine' },
+    //   { text: '并发锁', link: '/golang/lock' },
+    //   { text: '管道', link: '/golang/channel' },
+    //   { text: '网络编程', link: '/golang/network' },
+    //   { text: '垃圾回收', link: '/golang/gc' },
+    //   { text: '其他高级特性', link: '/golang/features' },
+    // ],
+  },
+  { text: '数据结构与算法', 
     items: [
-      { text: '数据结构', link: '/golang/struct' },
-      { text: '协程', link: '/golang/routine' },
-      { text: '并发锁', link: '/golang/lock' },
-      { text: '管道', link: '/golang/channel' },
-      { text: '网络编程', link: '/golang/network' },
-      { text: '垃圾回收', link: '/golang/gc' },
-      { text: '其他高级特性', link: '/golang/features' },
+      { text: '基础', 
+        items: [
+          { text: '二进制', link: '/algorithm/base/binary' },
+          { text: '线性结构', link: '/algorithm/base/linearstructure' },
+          { text: '非线性结构', link: '/algorithm/nonlinearstructure' },
+        ]
+      },
+      { text: '进阶', 
+        items: [
+          { text: '图', link: '/algorithm/forward/graph' },
+          { text: '线段树', link: '/algorithm/forward/sagement' },
+          { text: '并查集', link: '/algorithm/forward/uionset' },
+          { text: '有序表', link: '/algorithm/forward/ordertable' },
+          { text: '字典树', link: '/algorithm/forward/tiretree' },
+          { text: 'bfprt', link: '/algorithm/forward/bfprt' },
+          { text: 'kmp', link: '/algorithm/forward/kmp' },
+          { text: 'manacher', link: '/algorithm/forward/manacher' },
+        ]
+      },
+      { text: '动态规划', 
+        items: [
+          { text: '暴力递归', link: '/algorithm/recursion/' },
+          { text: '记忆化搜索', link: '/algorithm/remenber/' },
+          { text: '动态规划', link: '/algorithm/dp/' },
+        ]
+      },
+      { text: '实战篇', 
+        link: '/algorithm/actual/',
+        items: [
+          { text: '阶段一', link: '/algorithm/actual1/' },
+          { text: '阶段二', link: '/algorithm/actual2/' },
+          { text: '阶段三', link: '/algorithm/actual3/' },
+          { text: '阶段四', link: '/algorithm/actual4/' },
+        ]
+      },
     ],
   },
   {
@@ -28,7 +67,6 @@ const navs = [
       { text: '网址收藏', link: '/fontend/websitecol/' },
     ],
   },
-  { text: '算法', link: '/algorithm/' },
   { text: '数据库', link: '/database/' },
   { text: '架构', link: '/architecture/' },
   { text: '方法论', link: '/methodology/' },
