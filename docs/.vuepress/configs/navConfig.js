@@ -56,6 +56,7 @@ const navs = [
       },
     ],
   },
+  { text: '架构', link: '/architecture/' },
   {
     text: '前端',
     items: [
@@ -67,9 +68,8 @@ const navs = [
       { text: '网址收藏', link: '/fontend/websitecol/' },
     ],
   },
-  { text: '数据库', link: '/database/' },
-  { text: '架构', link: '/architecture/' },
-  { text: '方法论', link: '/methodology/' },
+  // { text: '数据库', link: '/database/' },
+  // { text: '方法论', link: '/methodology/' },
   { text: '关于', link: '/about/' },
   { text: 'Github', link: 'https://github.com/muxicode'
       // 下拉框的配置
