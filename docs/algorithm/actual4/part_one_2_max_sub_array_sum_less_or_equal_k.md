@@ -3,7 +3,7 @@ title: 2.累加和小于等于k
 autoGroup-1: part one
 ---
 
-  ### 累加和小于等于k
+# 累加和小于等于k
 
 ## 题目
 

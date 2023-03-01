@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>真题code | 慕溪code</title>
+    <title>3.矩阵累加和小于等于k | 慕溪code</title>
     <meta name="generator" content="VuePress 1.9.8">
     <link rel="icon" href="/waterbee.svg">
     <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
     
-    <link rel="preload" href="/assets/css/0.styles.21ac3474.css" as="style"><link rel="preload" href="/assets/js/app.51246872.js" as="script"><link rel="preload" href="/assets/js/2.de02b670.js" as="script"><link rel="preload" href="/assets/js/9.10e17439.js" as="script"><link rel="prefetch" href="/assets/js/10.a13822a1.js"><link rel="prefetch" href="/assets/js/11.e0e7ed86.js"><link rel="prefetch" href="/assets/js/12.a03fcc29.js"><link rel="prefetch" href="/assets/js/13.12f0d73e.js"><link rel="prefetch" href="/assets/js/14.c2d47a8a.js"><link rel="prefetch" href="/assets/js/15.16664e41.js"><link rel="prefetch" href="/assets/js/16.060b478e.js"><link rel="prefetch" href="/assets/js/17.7c25a60b.js"><link rel="prefetch" href="/assets/js/3.1afe6efb.js"><link rel="prefetch" href="/assets/js/4.d2051588.js"><link rel="prefetch" href="/assets/js/5.6e8b08fb.js"><link rel="prefetch" href="/assets/js/6.5aee6e80.js"><link rel="prefetch" href="/assets/js/7.71bfbe5e.js"><link rel="prefetch" href="/assets/js/8.9dba420d.js">
+    <link rel="preload" href="/assets/css/0.styles.21ac3474.css" as="style"><link rel="preload" href="/assets/js/app.51246872.js" as="script"><link rel="preload" href="/assets/js/2.de02b670.js" as="script"><link rel="preload" href="/assets/js/11.e0e7ed86.js" as="script"><link rel="prefetch" href="/assets/js/10.a13822a1.js"><link rel="prefetch" href="/assets/js/12.a03fcc29.js"><link rel="prefetch" href="/assets/js/13.12f0d73e.js"><link rel="prefetch" href="/assets/js/14.c2d47a8a.js"><link rel="prefetch" href="/assets/js/15.16664e41.js"><link rel="prefetch" href="/assets/js/16.060b478e.js"><link rel="prefetch" href="/assets/js/17.7c25a60b.js"><link rel="prefetch" href="/assets/js/3.1afe6efb.js"><link rel="prefetch" href="/assets/js/4.d2051588.js"><link rel="prefetch" href="/assets/js/5.6e8b08fb.js"><link rel="prefetch" href="/assets/js/6.5aee6e80.js"><link rel="prefetch" href="/assets/js/7.71bfbe5e.js"><link rel="prefetch" href="/assets/js/8.9dba420d.js"><link rel="prefetch" href="/assets/js/9.10e17439.js">
     <link rel="stylesheet" href="/assets/css/0.styles.21ac3474.css">
   </head>
   <body>
@@ -61,7 +61,7 @@
   阶段二
 </a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
   阶段三
-</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link router-link-active">
   阶段四
 </a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
   架构
@@ -127,7 +127,7 @@
   阶段二
 </a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
   阶段三
-</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link router-link-active">
   阶段四
 </a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
   架构
@@ -147,11 +147,40 @@
   关于
 </a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
   Github
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Actual4</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/" aria-current="page" class="active sidebar-link">真题code</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/actual4/#part-one" class="sidebar-link">part one</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/#part-two" class="sidebar-link">part two</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>part one</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html" class="sidebar-link">2.累加和小于等于k</a></li><li><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html" class="sidebar-link">3.矩阵累加和小于等于k</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h3> <p>第四阶段题目实战，通过题目的练习，充分掌握对题目的敏感度，以及对知识的掌握</p> <h2 id="part-one"><a href="#part-one" class="header-anchor">#</a> part one</h2> <ul><li><a href="./part_one_1_">数组累加和</a></li> <li><a href="./part_one_2_max_sub_array_sum_less_or_equal_k">累加和小于K</a></li> <li><a href="./css-resset">重置默认样式</a></li> <li><a href="./css-flexible-box">弹性盒模型</a></li></ul> <h2 id="part-two"><a href="#part-two" class="header-anchor">#</a> part two</h2> <ul><li><a href="./css-base-elem-center">元素水平垂直居中</a></li> <li><a href="./css-pseudo-class-pseudo-el">css 中的伪类与伪元素</a></li> <li><a href="./css-resset">重置默认样式</a></li> <li><a href="./css-flexible-box">弹性盒模型</a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2/26/2023, 11:58:15 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html">
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Actual4</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/" aria-current="page" class="sidebar-link">真题code</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>part one</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html" class="sidebar-link">2.累加和小于等于k</a></li><li><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html" aria-current="page" class="active sidebar-link">3.矩阵累加和小于等于k</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html#题目" class="sidebar-link">题目</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html#算法流程" class="sidebar-link">算法流程</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html#题解" class="sidebar-link">题解</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="矩阵累加和小于等于k"><a href="#矩阵累加和小于等于k" class="header-anchor">#</a> 矩阵累加和小于等于k</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个二维数组matrix，再给定一个k值</p> <p>返回累加和小于等于k，但是离k最近的子矩阵累加和</p> <h2 id="算法流程"><a href="#算法流程" class="header-anchor">#</a> 算法流程</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>	当矩阵只有一行的时候：	[4, 5,7,6,8]   直接调用 code2 的方法得出答案k
+	当矩阵有两行行的时候：	[2,-6,3,4,7]   能否将问题与一行的时候合并？
+						将第一行与第二行相加得到新行：[6,-1,10,10,15]
+						此时套用code2的方法将得到，再两行的矩阵里累加和小于等于k，但是离k最近的子矩阵累加和
+
+	将该思路运用到整个矩阵，分别试:
+			0-0，0-1，...， 0-N
+			     1-1，...， 1-N
+					  ...
+	最后可以得到答案
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">MaxSumSubMatrix</span><span class="token punctuation">(</span>matrix <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">,</span>k <span class="token builtin">int</span> <span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">0</span>
+	<span class="token punctuation">}</span>
+
+	sumCol <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">var</span> ans <span class="token builtin">int</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		sumCol <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">for</span> j<span class="token operator">:=</span>i<span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">;</span>j<span class="token operator">++</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 累加矩阵的上下界限</span>
+			<span class="token keyword">for</span> n<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> n<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> n<span class="token operator">++</span> <span class="token punctuation">{</span>
+				sumCol<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+=</span> matrix<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+			<span class="token punctuation">}</span>
+			ans <span class="token operator">=</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span><span class="token function">GetMaxLessOrEqualK</span><span class="token punctuation">(</span>sumCol<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2/28/2023, 12:01:49 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html" class="prev">
         2.累加和小于等于k
-      </a>
-      →
-    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.51246872.js" defer></script><script src="/assets/js/2.de02b670.js" defer></script><script src="/assets/js/9.10e17439.js" defer></script>
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.51246872.js" defer></script><script src="/assets/js/2.de02b670.js" defer></script><script src="/assets/js/11.e0e7ed86.js" defer></script>
   </body>
 </html>

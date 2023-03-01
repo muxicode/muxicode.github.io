@@ -1,5 +1,5 @@
 ---
-title: 真题code
+title: 真题训练四
 ---
 
 ### 目录
@@ -8,9 +8,9 @@ title: 真题code
 
 ## part one
 
-- [数组累加和](./part_one_1_)
-- [累加和小于K](./part_one_2_max_sub_array_sum_less_or_equal_k)
-- [重置默认样式](./css-resset)
+- [矩阵累加和小于等于k](./part_one_1_longest_increasing_path)
+- [累加和小于等于k](./part_one_2_max_sub_array_sum_less_or_equal_k)
+- [矩阵累加和小于等于k](./part_one_3_max_sum_of_rectangle_no_larger_than_k)
 - [弹性盒模型](./css-flexible-box)
 
 ## part two
