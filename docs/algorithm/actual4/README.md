@@ -8,10 +8,10 @@ title: 真题训练四
 
 ## part one
 
-- [矩阵累加和小于等于k](./part_one_1_longest_increasing_path)
-- [累加和小于等于k](./part_one_2_max_sub_array_sum_less_or_equal_k)
-- [矩阵累加和小于等于k](./part_one_3_max_sum_of_rectangle_no_larger_than_k)
-- [弹性盒模型](./css-flexible-box)
+- [1.矩阵累加和小于等于k](./part_one_1_longest_increasing_path)
+- [2.累加和小于等于k](./part_one_2_max_sub_array_sum_less_or_equal_k)
+- [3.矩阵累加和小于等于k](./part_one_3_max_sum_of_rectangle_no_larger_than_k)
+- [4.组成单词](./part_one_4_wordsearch)
 
 ## part two
 

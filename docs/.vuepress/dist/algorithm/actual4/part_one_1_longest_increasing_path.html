@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.矩阵最长增长路径 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.07c7d560.css" as="style"><link rel="preload" href="/assets/js/app.dc46b637.js" as="script"><link rel="preload" href="/assets/js/2.de02b670.js" as="script"><link rel="preload" href="/assets/js/10.3fd19dda.js" as="script"><link rel="prefetch" href="/assets/js/11.91099d4f.js"><link rel="prefetch" href="/assets/js/12.cb3f6511.js"><link rel="prefetch" href="/assets/js/13.452042ea.js"><link rel="prefetch" href="/assets/js/14.ada07b51.js"><link rel="prefetch" href="/assets/js/15.5fa00939.js"><link rel="prefetch" href="/assets/js/16.cc0db9e9.js"><link rel="prefetch" href="/assets/js/17.4b36cd6d.js"><link rel="prefetch" href="/assets/js/18.d5228483.js"><link rel="prefetch" href="/assets/js/3.252777bc.js"><link rel="prefetch" href="/assets/js/4.aed18aa9.js"><link rel="prefetch" href="/assets/js/5.74c8534f.js"><link rel="prefetch" href="/assets/js/6.5aee6e80.js"><link rel="prefetch" href="/assets/js/7.f36c0135.js"><link rel="prefetch" href="/assets/js/8.4dd7aa93.js"><link rel="prefetch" href="/assets/js/9.1620cd8a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.07c7d560.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link router-link-active">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link router-link-active">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Actual4</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/" aria-current="page" class="sidebar-link">真题训练四</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>part one</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/part_one_1_longest_increasing_path.html" aria-current="page" class="active sidebar-link">1.矩阵最长增长路径</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_one_1_longest_increasing_path.html#题目" class="sidebar-link">题目</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_one_1_longest_increasing_path.html#思路" class="sidebar-link">思路：</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_one_1_longest_increasing_path.html#拓展问题" class="sidebar-link">拓展问题：</a></li></ul></li><li><a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html" class="sidebar-link">2.累加和小于等于k</a></li><li><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html" class="sidebar-link">3.矩阵累加和小于等于k</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_1-矩阵最长增长路径"><a href="#_1-矩阵最长增长路径" class="header-anchor">#</a> 1. 矩阵最长增长路径</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个二维数组 matrix，可以从任何位置出发，每一步可以向上，下，左，右四个方向。返回最大递增链的长度。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code>例子：
+   matrix <span class="token operator">=</span>
+   <span class="token number">5</span> <span class="token number">4</span> <span class="token number">3</span>
+   <span class="token number">3</span> <span class="token number">1</span> <span class="token number">2</span>
+   <span class="token number">2</span> <span class="token number">1</span> <span class="token number">3</span>
+从最中心的位置<span class="token number">1</span>出发，是可以走出<span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span>的链的，而且这是最长的递增链。所以
+返回长度<span class="token number">5</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="思路"><a href="#思路" class="header-anchor">#</a> 思路：</h2> <blockquote><p>方案</p></blockquote> <ol><li>设计一个递归 fn(matrix, i, j) 返回值为再矩阵中 i, j 的位置出发，返回最长的递增链</li> <li>遍历任意一个 i，j 的位置，调用 fn 函数，获取最大值即为答案</li></ol> <blockquote><p>优化</p></blockquote> <ol><li>递归过程中采用 缓存 表缓存每一个位置的答案</li> <li>缓存表中等于 0 则，该位置没有计算过，调用递归进行计算</li> <li>缓存表中不等于 0，则直接返回答案。</li></ol> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> class01
+
+<span class="token keyword">import</span> <span class="token string">&quot;traning/algorithm/utility/mymath&quot;</span>
+
+<span class="token comment">/*
+	给定一个二维数组 matrix，可以从任何位置出发，每一步可以向上，下，
+	左，右四个方向。返回最大递增链的长度。
+
+	例子：
+		matrix =
+		5 4 3
+		3 1 2
+		2 1 3
+	从最中心的位置1出发，是可以走出1 2 3 4 5的链的，而且这是最长的递增链。所以
+	返回长度5
+*/</span>
+<span class="token keyword">func</span> <span class="token function">MaxPath</span><span class="token punctuation">(</span>matrix <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> ans <span class="token builtin">int</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> j<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>
+			ans <span class="token operator">=</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> i <span class="token operator">&gt;</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> j <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> j <span class="token operator">&gt;</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 越界直接返回-1</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">var</span> up<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> down <span class="token builtin">int</span>
+	<span class="token keyword">if</span> i<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		up <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> j<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		left <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> j<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		right <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> i<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>  <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		down <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>up<span class="token punctuation">,</span> left<span class="token punctuation">)</span><span class="token punctuation">,</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>right<span class="token punctuation">,</span> down<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">MaxPath1</span><span class="token punctuation">(</span>matrix <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> ans <span class="token builtin">int</span>
+	cache <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>cache<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		cache<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> j<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>
+			ans <span class="token operator">=</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> <span class="token function">MaxPathProcess1</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> cache<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">MaxPathProcess1</span><span class="token punctuation">(</span>matrix <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">,</span> cache <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> i <span class="token operator">&gt;</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> j <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> j <span class="token operator">&gt;</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 越界直接返回-1</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> cache<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> cache<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">var</span> up<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> down <span class="token builtin">int</span>
+	<span class="token keyword">if</span> i<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		up <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> j<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		left <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> j<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		right <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> i<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>  <span class="token operator">&amp;&amp;</span> matrix<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+		down <span class="token operator">=</span> <span class="token function">MaxPathProcess</span><span class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	cache<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>up<span class="token punctuation">,</span> left<span class="token punctuation">)</span><span class="token punctuation">,</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>right<span class="token punctuation">,</span> down<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+	<span class="token keyword">return</span> cache<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br></div></div><h2 id="拓展问题"><a href="#拓展问题" class="header-anchor">#</a> 拓展问题：</h2> <ul><li>增加缓存后，题目的时间复杂度为多少？</li> <li>是否还需要将题目改写成dp表，采用位置推导？</li> <li>什么时候最好将递归改写成dp表？</li></ul> <blockquote><p>解答</p></blockquote> <ol><li>增加缓存后，题目的时间复杂度为 M*N，首先在两层for循环中，时间复杂度达到 M * N，循环中的缓存递归时间复杂度为常数项，因为每个位置被调用的次数，不随数据量的增大而增大，而是每个位置，只依赖上下左右，被调用的次数是有限的。</li> <li>该题目，由于位置依赖的关系比较混乱，所以改写到缓存即可，该方式也叫自顶向下的动态规划。</li> <li>当位置依赖有遍历现象的时候，可以将采用dp表的方式进行优化，优化的方式主要看位置依赖，找关系，将遍历行为优化为常数。</li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">3/2/2023, 12:18:40 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/actual4/" class="prev router-link-active">
+        真题训练四
+      </a></span> <span class="next"><a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html">
+        2.累加和小于等于k
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.dc46b637.js" defer></script><script src="/assets/js/2.de02b670.js" defer></script><script src="/assets/js/10.3fd19dda.js" defer></script>
+  </body>
+</html>
