@@ -8,7 +8,7 @@ actionLink: /golang/
 footer: MIT Licensed | Copyright © 2022-present Evan Muxi
 ---
 
-<div class="theme-default-content custom content__default" style="/*padding:0 15%*/;">
+<div class="custom content__default" style="/*padding:0 15%*/;">
   <h3 id="系统学习">
     <a href="#系统学习" class="header-anchor">#</a>📚 系统学习</h3>
   <ul>
