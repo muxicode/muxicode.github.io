@@ -6,7 +6,9 @@
 
 const navs = [
   { text: '首页', link: '/' },
-  { text: '深入理解Golang', link: '/golang/',
+  { text: '导航', link: '/navigation/' },
+  {
+    text: '深入理解Golang', link: '/golang/',
     // items: [
     //   { text: '数据结构', link: '/golang/struct' },
     //   { text: '协程', link: '/golang/routine' },
@@ -17,16 +19,19 @@ const navs = [
     //   { text: '其他高级特性', link: '/golang/features' },
     // ],
   },
-  { text: '数据结构与算法', 
+  {
+    text: '数据结构与算法',
     items: [
-      { text: '基础', 
+      {
+        text: '基础',
         items: [
           { text: '二进制', link: '/algorithm/base/binary' },
           { text: '线性结构', link: '/algorithm/base/linearstructure' },
           { text: '非线性结构', link: '/algorithm/nonlinearstructure' },
         ]
       },
-      { text: '进阶', 
+      {
+        text: '进阶',
         items: [
           { text: '图', link: '/algorithm/forward/graph' },
           { text: '线段树', link: '/algorithm/forward/sagement' },
@@ -38,14 +43,16 @@ const navs = [
           { text: 'manacher', link: '/algorithm/forward/manacher' },
         ]
       },
-      { text: '动态规划', 
+      {
+        text: '动态规划',
         items: [
           { text: '暴力递归', link: '/algorithm/recursion/' },
           { text: '记忆化搜索', link: '/algorithm/remenber/' },
           { text: '动态规划', link: '/algorithm/dp/' },
         ]
       },
-      { text: '实战篇', 
+      {
+        text: '实战篇',
         link: '/algorithm/actual/',
         items: [
           { text: '阶段一', link: '/algorithm/actual1/' },
@@ -71,11 +78,12 @@ const navs = [
   // { text: '数据库', link: '/database/' },
   // { text: '方法论', link: '/methodology/' },
   { text: '关于', link: '/about/' },
-  { text: 'Github', link: 'https://github.com/muxicode'
-      // 下拉框的配置
-      // items: [
-      //     { text: 'Github', link: 'https://github.com/muxicode' }
-      // ]
+  {
+    text: 'Github', link: 'https://github.com/muxicode'
+    // 下拉框的配置
+    // items: [
+    //     { text: 'Github', link: 'https://github.com/muxicode' }
+    // ]
   }
 ]
 

@@ -122,10 +122,10 @@ const plugins = [
       collapsable: {
         open: false
       }, // 设置为true,开启折叠
-      sidebarDepth: 2, // 标题的深度
+      sidebarDepth: 1, // 标题的深度
       collapseList: [
         // 折叠的路由列表
-        // "/frontend/css/"
+        "/golang/"
       ],
       uncollapseList: [
         // 不折叠的路由列表

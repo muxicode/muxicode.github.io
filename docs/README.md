@@ -9,43 +9,31 @@ footer: MIT Licensed | Copyright © 2022-present Evan Muxi
 ---
 
 <div class="theme-default-content custom content__default" style="/*padding:0 15%*/;">
-  <h3 id="必看图解">
-    <a href="#必看图解" class="header-anchor">#</a>📖 必看体系</h3>
+  <h3 id="系统学习">
+    <a href="#系统学习" class="header-anchor">#</a>📚 系统学习</h3>
   <ul>
     <li>
-      <a href="/golang/" class="">👉《深入理解golang原理》</a>：经过长期积累及总结，整理而出的基础及核心原理。</li>
+      <a href="/golang/" class="">👉《深入理解golang原理》</a>：从基础数据结构到高并发特性核心原理，源码分析，让你拥有看源码的能力。</li>
     <li>
-      <a href="/suanfa/" class="">👉《数据结构与算法》</a>：讲透经典数据结构，结合 400+ 道题目让你从容面对数据结构与算法</li>
+      <a href="/algorithm/" class="">👉《数据结构与算法》</a>：讲透经典数据结构，结合 400+ 道题目让你从容面对数据结构与算法。</li>
   </ul>
   <hr>
-  <h3 id="学习心得">
-    <a href="#学习心得" class="header-anchor">#</a>💪 学习心得</h3>
+  <h3 id="个人成长">
+    <a href="#个人成长" class="header-anchor">#</a>💡 个人成长</h3>
   <ul>
     <li>
-      <a href="/suanfa/" class="">算法学习心得</a>：入门算法，掌握原理，到灵活运用。</li>
+      <a href="/fandeng/" class="">《樊登读书推荐》</a>：包括心理，历史，个人成长等书籍，开启不一样的眼界，改善个人生活。</li>
     <li>
-      <a href="/jisuanjijichu/" class="">计算机基础学习心得</a>：计算机基础学习总结 + 送免费视频资源，全面且清晰。</li>
+      <a href="/jisuanjijichu/" class="">《网络文章收藏》</a>：收录网上优质文章，系统归类，整理碎片化知识，将其体系化到个人的成长当中。</li>
   </ul>
   <hr>
   <h3 id="关于作者">
-    <a href="#关于作者" class="header-anchor">#</a>💭 关于作者</h3>
-  <p>大家好，我是慕溪 🤗，是本知识体系的作者，本站所有文章都为我
-    <a href="" target="_blank" rel="noopener noreferrer">公众号
-      <span>
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-          <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-          <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-          </polygon>
-        </svg>
-        <span class="sr-only">(opens new window)</span>
-      </span>
-    </a>通过学习总结的文章。</p>
-  <p>曾经我也苦恼于寻找各个领域的好的资料，摸爬滚打有了现在的知识体系，即使找到，还需要花时间学习，有时候还不一定是一个好的资料，导致浪费时间</p>
+    <a href="#关于作者" class="header-anchor">#</a>☎️ 关于作者</h3>
+  <p>大家好，我是加冰🤗，是慕溪code的作者，网站的内容都是平时学习的积累，在空余时间经过总结与整理后呈现给大家。</p>
+  <p>曾经我也苦恼于知识的学习总是学了又遗忘，并不能高效的利用自己学习过的知识，以及对知识整体认识由于时间周期太长了，导致学到了后面前面却忘了。</p>
   <p>我想着，这世界上肯定有一些朋友也跟我有一样的苦恼，为此下决心，利用工作之余，搭建体系化的知识架构，提供优质的学习资源，这才有了今天的网站！</p>
-  <p>网站内容将包括 Golang 部分源码, Spring Cloud, 数据库原理, MySQL, ElasticSearch, MongoDB, 分布式, 中间件, 源码阅读，读书笔记, 开源项目</p>
-  <p>最新的文章都在公众号首发，别忘记关注了哦！如果你想加入百人技术交流群，扫码下方二维码回复「加群」。</p>
-  <p>
-    <img src="" alt="" class="medium-zoom-image">
-  </p>
+  <p>网站内容将包括 Golang, 设计模式, 架构设计, 读书笔记, 开源项目等。</p>
+  <p>如果你想加入百人技术交流群,找到志同道合的小伙伴一同进步,请扫码下方二维码回复「加群」~</p>
+  <center><img src="/README.assets/image-20230301215153246.png" alt="drawing" width="40%"/></center>
 </div>
 

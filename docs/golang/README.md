@@ -35,24 +35,25 @@ title: 深入理解Golang
 
 ### 基础及入门
 
-- [为什么是go](./part_one_1_)
-- [数据结构](./strcut)
+- [为什么是go](./1_1_why_go)
+- [数据结构](./1_2_strcut)
 
 ### 高并发下的工具
 
-- [高并发利器-协程](./css-base-elem-center)
-- [高并发下的保安-锁机制](./css-pseudo-class-pseudo-el)
-- [消息灵通的channel](./css-resset)
-- [TCP网络编程](./css-flexible-box)
-- [内存模型与垃圾回收](./css-flexible-box)
+- [高并发利器-协程](./2_1_high_concurrency_sharps_coroutines)
+- [高并发下的保安-锁机制](./2_2_high_concurrency_security_ock_mechanism)
+- [通信宝藏-channel](./2_3_channel)
+- [TCP网络编程](./2_4_tcp_newwork)
+- [内存模型与垃圾回收](./2_5_memory_model_and_garbage_collection)
 
 ### 其他高级特性
 
-- [如何实现Go调用C代码](./css-base-elem-center)
-- [defer 的底层原理](./css-pseudo-class-pseudo-el)
-- [recover 如何在panic中拯救程序](./css-resset)
-- [Go是怎么实现反射的](./css-flexible-box)
-- [实战:使用反射调用方法](./css-flexible-box)
+- [如何实现Go调用C代码](./3_1_go_c)
+- [defer 的底层原理](./3_2_go_defer)
+- [recover 如何在panic中拯救程序](./3_3_go_recover)
+- [Go是怎么实现反射的](./3_4_go_reflect)
+- [实战:使用反射调用方法](./3_5_go_reflect_use)
+- [其他学习资料](./3_6_go_learning)
 
 ## 质量如何？
 
