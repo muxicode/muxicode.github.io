@@ -1,6 +1,6 @@
 ---
 title: 4.组成单词
-autoGroup-1: part one
+autoGroup-1: 累加和三连
 ---
 
 # 4. 组成单词
@@ -122,14 +122,14 @@ func process(board [][]byte, row, col int, cur *MyTreeNode, path []string, colle
 	}
 	s := board[row][col]
 	index := s - 'a'
-	if cur.next[index] == nil {
+	if cur.next[index] == nil || cur.next[index].pass == 0 {
 		// 如果当前位置的字符串，不属于目标字符串中的任何一个，直接返回0
 		return 0
 	}
 
 	// 存在该路径，走上去
 	cur = cur.next[index]
-	// 记录路径
+	// 记录路径，需要还原路径，但是在go中，可以不用还原，因为每一次都新生成path
 	path = append(path, string(s))
 	// 记录搞定的字符串数量
 	fix := 0
@@ -155,6 +155,9 @@ func process(board [][]byte, row, col int, cur *MyTreeNode, path []string, colle
 		fix += process(board, row, col+1, cur, path, collect)
 	}
 	board[row][col] = s
+	// 路径回溯
+	path = path[:len(path)-1]
+	cur.pass -= fix
 	return fix
 }
 

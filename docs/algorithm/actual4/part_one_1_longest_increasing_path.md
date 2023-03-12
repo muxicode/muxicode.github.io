@@ -1,6 +1,6 @@
 ---
 title: 1.矩阵最长增长路径
-autoGroup-1: part one
+autoGroup-1: 累加和三连
 ---
 
 # 1. 矩阵最长增长路径

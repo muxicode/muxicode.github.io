@@ -1,6 +1,6 @@
 ---
 title: 3.矩阵累加和小于等于k
-autoGroup-1: part one
+autoGroup-1: 累加和三连
 ---
 
 # 矩阵累加和小于等于k
