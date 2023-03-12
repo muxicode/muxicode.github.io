@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实战：使用反射调用方法 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.21ac3474.css" as="style"><link rel="preload" href="/assets/js/app.ec991b72.js" as="script"><link rel="preload" href="/assets/js/2.b205c449.js" as="script"><link rel="preload" href="/assets/js/31.30772e2d.js" as="script"><link rel="prefetch" href="/assets/js/10.9f624be4.js"><link rel="prefetch" href="/assets/js/11.1c1851d9.js"><link rel="prefetch" href="/assets/js/12.0c12dd6a.js"><link rel="prefetch" href="/assets/js/13.2abca6f6.js"><link rel="prefetch" href="/assets/js/14.af783c4e.js"><link rel="prefetch" href="/assets/js/15.ed05f47a.js"><link rel="prefetch" href="/assets/js/16.51478f31.js"><link rel="prefetch" href="/assets/js/17.5cedb126.js"><link rel="prefetch" href="/assets/js/18.6307a0fc.js"><link rel="prefetch" href="/assets/js/19.89471e9b.js"><link rel="prefetch" href="/assets/js/20.dd999fef.js"><link rel="prefetch" href="/assets/js/21.4aceee8b.js"><link rel="prefetch" href="/assets/js/22.8d2fb0ca.js"><link rel="prefetch" href="/assets/js/23.05f8c04f.js"><link rel="prefetch" href="/assets/js/24.5d13bb97.js"><link rel="prefetch" href="/assets/js/25.9708549e.js"><link rel="prefetch" href="/assets/js/26.67862fc8.js"><link rel="prefetch" href="/assets/js/27.c44957f4.js"><link rel="prefetch" href="/assets/js/28.1bd85eca.js"><link rel="prefetch" href="/assets/js/29.2776abeb.js"><link rel="prefetch" href="/assets/js/3.e5107319.js"><link rel="prefetch" href="/assets/js/30.db2c89d7.js"><link rel="prefetch" href="/assets/js/32.bb3d6729.js"><link rel="prefetch" href="/assets/js/33.d422bb8f.js"><link rel="prefetch" href="/assets/js/34.268b149f.js"><link rel="prefetch" href="/assets/js/35.16d63d06.js"><link rel="prefetch" href="/assets/js/36.779b103e.js"><link rel="prefetch" href="/assets/js/37.90058878.js"><link rel="prefetch" href="/assets/js/4.e46f1c0d.js"><link rel="prefetch" href="/assets/js/5.ff4b14bf.js"><link rel="prefetch" href="/assets/js/6.d12596a3.js"><link rel="prefetch" href="/assets/js/7.8eacb10b.js"><link rel="prefetch" href="/assets/js/8.b28537b2.js"><link rel="prefetch" href="/assets/js/9.8423aa38.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.21ac3474.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link router-link-active">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link router-link-active">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Golang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/" aria-current="page" class="sidebar-link">深入理解Golang</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础及入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/1_1_why_go.html" class="sidebar-link">为什么是Go？</a></li><li><a href="/golang/1_2_struct.html" class="sidebar-link">数据结构</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>高并发下的工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="sidebar-link">高并发利器-协程</a></li><li><a href="/golang/2_2_high_concurrency_security_ock_mechanism.html" class="sidebar-link">高并发下的保安-锁机制</a></li><li><a href="/golang/2_3_channel.html" class="sidebar-link">通信宝藏-channel</a></li><li><a href="/golang/2_4_tcp_newwork.html" class="sidebar-link">TCP网络编程</a></li><li><a href="/golang/2_5_memory_model_and_garbage_collection.html" class="sidebar-link">内存模型与垃圾回收</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>其他高级特性</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/3_1_go_c.html" class="sidebar-link">如何实现 GO 调用 C 代码？</a></li><li><a href="/golang/3_2_go_defer.html" class="sidebar-link">defer 的底层原理是怎样的？</a></li><li><a href="/golang/3_3_go_recover.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_4_go_reflect.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_5_go_reflect_use.html" aria-current="page" class="active sidebar-link">实战：使用反射调用方法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/golang/3_6_go_learning.html" class="sidebar-link">其他学习资料</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="实战-使用反射调用方法"><a href="#实战-使用反射调用方法" class="header-anchor">#</a> 实战：使用反射调用方法</h1> <ul><li>通过调用方法，可以将框架和用户方法解耦</li> <li>往往需要用户注册方法，框架调用</li> <li>很多框架的HTTP调用此处使用思路</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">MyCall</span><span class="token punctuation">(</span>f <span class="token keyword">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fV <span class="token operator">:=</span> reflect<span class="token punctuation">.</span><span class="token function">TypeOf</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> fV<span class="token punctuation">.</span><span class="token function">Kind</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> reflect<span class="token punctuation">.</span>Func <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	args <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span>reflect<span class="token punctuation">.</span>Value<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> reflect<span class="token punctuation">.</span><span class="token function">ValueOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> reflect<span class="token punctuation">.</span><span class="token function">ValueOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+	res <span class="token operator">:=</span> reflect<span class="token punctuation">.</span><span class="token function">ValueOf</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Call</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">Interface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Add1</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Add2</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> a <span class="token operator">-</span> b
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">MyCall</span><span class="token punctuation">(</span>Add1<span class="token punctuation">)</span>
+	<span class="token function">MyCall</span><span class="token punctuation">(</span>Add2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h1 id=""><a href="#" class="header-anchor">#</a></h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">3/12/2023, 5:48:30 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/golang/3_4_go_reflect.html" class="prev">
+        recover 如何在panic 中拯救程序？
+      </a></span> <span class="next"><a href="/golang/3_6_go_learning.html">
+        其他学习资料
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ec991b72.js" defer></script><script src="/assets/js/2.b205c449.js" defer></script><script src="/assets/js/31.30772e2d.js" defer></script>
+  </body>
+</html>

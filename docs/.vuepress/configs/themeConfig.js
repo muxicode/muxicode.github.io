@@ -9,6 +9,7 @@ const navConfig = require('./navConfig'); // 头部导航栏配置,通过配置�
 // const sidebar = require("./sidebar");// 配置侧边栏,同上,.js后缀名可省略,统一方便管控,因为使用了插件,可以利用vuepress-plugin-auto-sidebar去管理
 
 const themeconfig = {
+
   logo: "/waterbee.svg",// 左上角logo
   // repo: 'itclanCode/blogcode', // 链接的仓库
   // repoLabel: 'GitHub', // 链接的名称
