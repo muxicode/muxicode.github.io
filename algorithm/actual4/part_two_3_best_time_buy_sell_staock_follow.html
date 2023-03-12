@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3.指定次数购买股票 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.21ac3474.css" as="style"><link rel="preload" href="/assets/js/app.ec991b72.js" as="script"><link rel="preload" href="/assets/js/2.b205c449.js" as="script"><link rel="preload" href="/assets/js/16.51478f31.js" as="script"><link rel="prefetch" href="/assets/js/10.9f624be4.js"><link rel="prefetch" href="/assets/js/11.1c1851d9.js"><link rel="prefetch" href="/assets/js/12.0c12dd6a.js"><link rel="prefetch" href="/assets/js/13.2abca6f6.js"><link rel="prefetch" href="/assets/js/14.af783c4e.js"><link rel="prefetch" href="/assets/js/15.ed05f47a.js"><link rel="prefetch" href="/assets/js/17.5cedb126.js"><link rel="prefetch" href="/assets/js/18.6307a0fc.js"><link rel="prefetch" href="/assets/js/19.89471e9b.js"><link rel="prefetch" href="/assets/js/20.dd999fef.js"><link rel="prefetch" href="/assets/js/21.4aceee8b.js"><link rel="prefetch" href="/assets/js/22.8d2fb0ca.js"><link rel="prefetch" href="/assets/js/23.05f8c04f.js"><link rel="prefetch" href="/assets/js/24.5d13bb97.js"><link rel="prefetch" href="/assets/js/25.9708549e.js"><link rel="prefetch" href="/assets/js/26.67862fc8.js"><link rel="prefetch" href="/assets/js/27.c44957f4.js"><link rel="prefetch" href="/assets/js/28.1bd85eca.js"><link rel="prefetch" href="/assets/js/29.2776abeb.js"><link rel="prefetch" href="/assets/js/3.e5107319.js"><link rel="prefetch" href="/assets/js/30.db2c89d7.js"><link rel="prefetch" href="/assets/js/31.30772e2d.js"><link rel="prefetch" href="/assets/js/32.bb3d6729.js"><link rel="prefetch" href="/assets/js/33.d422bb8f.js"><link rel="prefetch" href="/assets/js/34.268b149f.js"><link rel="prefetch" href="/assets/js/35.16d63d06.js"><link rel="prefetch" href="/assets/js/36.779b103e.js"><link rel="prefetch" href="/assets/js/37.90058878.js"><link rel="prefetch" href="/assets/js/4.e46f1c0d.js"><link rel="prefetch" href="/assets/js/5.ff4b14bf.js"><link rel="prefetch" href="/assets/js/6.d12596a3.js"><link rel="prefetch" href="/assets/js/7.8eacb10b.js"><link rel="prefetch" href="/assets/js/8.b28537b2.js"><link rel="prefetch" href="/assets/js/9.8423aa38.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.21ac3474.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link router-link-active">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据结构与算法" class="mobile-dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link router-link-active">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Actual4</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/" aria-current="page" class="sidebar-link">真题训练四</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>累加和三连</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/part_one_1_longest_increasing_path.html" class="sidebar-link">1.矩阵最长增长路径</a></li><li><a href="/algorithm/actual4/part_one_2_max_sub_array_sum_less_or_equal_k.html" class="sidebar-link">2.累加和小于等于k</a></li><li><a href="/algorithm/actual4/part_one_3_max_sum_of_rectangle_no_larger_than_k.html" class="sidebar-link">3.矩阵累加和小于等于k</a></li><li><a href="/algorithm/actual4/part_one_4_wordsearch.html" class="sidebar-link">4.组成单词</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>股票三连</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4/part_two_1_best_time_buy_sell_stock1.html" class="sidebar-link">1.购买一次股票</a></li><li><a href="/algorithm/actual4/part_two_2_best_time_buy_sell_stock2.html" class="sidebar-link">2.购买任意次股票</a></li><li><a href="/algorithm/actual4/part_two_3_best_time_buy_sell_staock_follow.html" aria-current="page" class="active sidebar-link">3.指定次数购买股票</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_two_3_best_time_buy_sell_staock_follow.html#题目" class="sidebar-link">题目</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_two_3_best_time_buy_sell_staock_follow.html#思路" class="sidebar-link">思路</a></li><li class="sidebar-sub-header"><a href="/algorithm/actual4/part_two_3_best_time_buy_sell_staock_follow.html#题解" class="sidebar-link">题解</a></li></ul></li><li><a href="/algorithm/actual4/part_two_4_distinct_subsequences.html" class="sidebar-link">4.子串不同子序列</a></li><li><a href="/algorithm/actual4/part_two_5_dungeon_game.html" class="sidebar-link">5.通关最少血量</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_3-指定次数购买股票"><a href="#_3-指定次数购买股票" class="header-anchor">#</a> 3. 指定次数购买股票</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个数组arr，从左到右表示昨天从早到晚股票的价格作为一个事后诸葛亮，你知道如果交易次数不超过k次，且每次交易只买卖一股，返回能挣到的最大钱数。</p> <h2 id="思路"><a href="#思路" class="header-anchor">#</a> 思路</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code>	<span class="token comment">/* 
+	思路：
+		1. k的值大于 N/2 的时候，与 N/2 的结果一样。此时等于无限次买卖。
+			因为：N 个值，的上坡不可能大于 N/2
+		2. k &lt; N/2 的时候，采用动态规划，使用二维表
+			dp[i][j] 表示 0-i 的范围内，做j次交易的最大收益
+			2.1 第一行，只有当场买，当场买的方式，做零次无数次交易，最大收益都是0
+		    2.2 第一列，第一列没有买的机会，最大收益也是0
+			2.3 普遍位置dp[i][j] ：
+				2.3.1  当前位置不参与买卖 则 dp[i][j] = dp[i-1][j]
+				2.3.2  当前位置参与买卖 则默认贪心，只是参与最后一次的交易卖出时机
+						max(
+							dp[i-1][j-1] + [i] - [i-1],
+							dp[i-2][j-1] + [i] - [i-2],
+							dp[i-3][j-1] + [i] - [i-3],...
+							)
+						max(dp[k][j-1]  - prices[k]) + prices[i]
+
+						此时查看规律如：
+							dp[3][2]  =  1) 当前位置不参与买卖 dp[2][2]
+										 2) 当前位置参与买卖
+												dp[2][j-1] - prices[2] + prices[3]
+												dp[1][j-1] - prices[1] + prices[3]
+												dp[0][j-1] - prices[0] + prices[3]
+
+							dp[4][2]  =  1) 当前位置不参与买卖 dp[3][2]
+										 2) 当前位置参与买卖
+												dp[3][j-1] - prices[3] + prices[4]
+												dp[2][j-1] - prices[2] + prices[4]
+												dp[1][j-1] - prices[1] + prices[4]
+												dp[0][j-1] - prices[0] + prices[4]
+
+										此时 以下部分，与dp[3][2] 中有重复，此时想办法保留下来，减去后续的遍历
+												dp[2][j-1] - prices[2]
+												dp[1][j-1] - prices[1]
+												dp[0][j-1] - prices[0]
+
+*/</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> class02
+<span class="token keyword">import</span> <span class="token string">&quot;traning/algorithm/utility/mymath&quot;</span>
+
+<span class="token keyword">func</span> <span class="token function">MaxProfit4</span><span class="token punctuation">(</span>k <span class="token builtin">int</span><span class="token punctuation">,</span> prices <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>prices<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">2</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">0</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 次数特别大，相当于题目2</span>
+	<span class="token keyword">if</span> k <span class="token operator">&gt;</span> <span class="token function">len</span><span class="token punctuation">(</span>prices<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token function">MaxProfit3</span><span class="token punctuation">(</span>prices<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	dp <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>prices<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token comment">// 为了达到利用前者计算过的数据，从上倒下，从左到右填写dp表</span>
+	<span class="token keyword">var</span> ans <span class="token builtin">int</span>
+	<span class="token keyword">for</span> j<span class="token operator">:=</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>
+		t <span class="token operator">:=</span> dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+		<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+			t <span class="token operator">=</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+			dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span>  mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> t <span class="token operator">+</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+			ans <span class="token operator">=</span> mymath<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span>
+			<span class="token comment">//nestT := mymath.Max(t, dp[i][0] - prices[i])</span>
+			<span class="token comment">//dp[i][j] =  mymath.Max(dp[i-1][j], nestT + prices[i])</span>
+			<span class="token comment">//t = nestT</span>
+			<span class="token comment">/*
+				dp[1][1] =  1)   dp[0][1] 最后一次交易不包含自己
+							2)   dp[0][0] - prices[0] + prices[1]
+							     dp[1][0] - prices[1] + prices[1]
+			*/</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">3/12/2023, 11:23:50 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/actual4/part_two_2_best_time_buy_sell_stock2.html" class="prev">
+        2.购买任意次股票
+      </a></span> <span class="next"><a href="/algorithm/actual4/part_two_4_distinct_subsequences.html">
+        4.子串不同子序列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ec991b72.js" defer></script><script src="/assets/js/2.b205c449.js" defer></script><script src="/assets/js/16.51478f31.js" defer></script>
+  </body>
+</html>
