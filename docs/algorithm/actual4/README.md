@@ -20,3 +20,4 @@ title: 真题训练四
 - [3.指定次数购买股票](./part_two_3_best_time_buy_sell_staock_follow)
 - [4.子串不同子序列](./part_two_4_distinct_subsequences)
 - [5.通关的最小血量](./part_two_5_dungeon_game)
+- [6.最大路径和](./part_two_6_cherry_pickup)

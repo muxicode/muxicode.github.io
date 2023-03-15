@@ -612,6 +612,16 @@
 ## 图片图标
 
 <div class="cc-row cc-row-gutter-20"><!--[-->
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://www.getemoji.org/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="Font-awesome"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/getemoji.png" style="height:35px;">
+          <div style="height:40px;float:right;">Font-awesome</div>
+        </div>
+        <div class="cc-nav-des" title="文档图标库">文档图标库</div>
+      </div>
+  </a></div>
   <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="http://fontawesome.dashgame.com/"
       target="_blank">
       <div class="my-nav-item">
