@@ -34,6 +34,6 @@ footer: MIT Licensed | Copyright © 2022-present Evan Muxi
   <p>我想着，这世界上肯定有一些朋友也跟我有一样的苦恼，为此下决心，利用工作之余，搭建体系化的知识架构，提供优质的学习资源，这才有了今天的网站！</p>
   <p>网站内容将包括 Golang, 设计模式, 架构设计, 读书笔记, 开源项目等。</p>
   <p>如果你想加入百人技术交流群,找到志同道合的小伙伴一同进步,请扫码下方二维码回复「加群」~</p>
-  <center><img src="/README.assets/image-20230301215153246.png" alt="drawing" width="40%"/></center>
+  <center><img src="/pagesidebar/muxi.jpg" alt="drawing" width="25%"/></center>
 </div>
 

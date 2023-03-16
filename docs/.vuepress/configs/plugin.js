@@ -198,42 +198,42 @@ const plugins = [
   //     },
   //   },
   // ],
-  ["vuepress-plugin-toolbar",
-    {
-      'pageNav': {
-        name: '导航'
-      },
-      "opts": [
-        {
-          "icon": "svg-wechart",
-          "name": "技术圈",
-          popover: {
-            title: '回复 “加入技术群” 加入技术交流群，找到更多小伙伴',
-            type: 'image',
-            imageUrl: '/README.assets/image-20230301215153246.png',
-          }
-        },
-        {
-          "icon": "svg-support",
-          "name": "支持我",
-          popover: {
-            title: '您的鼓励是我前进的动力,能得到您的支持是我最开心的事情',
-            type: 'image',
-            imageUrl: '/README.assets/image-20230301215153246.png',
-          }
-        },
-        {
-          "icon": "svg-course",
-          "name": "视频课程",
-          popover: {
-            title: '回复 “视频课程” 免费提供技术视频资源',
-            type: 'image',
-            imageUrl: '/README.assets/image-20230301215153246.png',
-          }
-        }
-      ]
-    }
-  ]
+  // ["vuepress-plugin-toolbar",
+  //   {
+  //     'pageNav': {
+  //       name: '导航'
+  //     },
+  //     "opts": [
+  //       {
+  //         "icon": "svg-wechart",
+  //         "name": "技术圈",
+  //         popover: {
+  //           title: '回复 “加入技术群” 加入技术交流群，找到更多小伙伴',
+  //           type: 'image',
+  //           imageUrl: '/README.assets/image-20230301215153246.png',
+  //         }
+  //       },
+  //       {
+  //         "icon": "svg-support",
+  //         "name": "支持我",
+  //         popover: {
+  //           title: '您的鼓励是我前进的动力,能得到您的支持是我最开心的事情',
+  //           type: 'image',
+  //           imageUrl: '/README.assets/image-20230301215153246.png',
+  //         }
+  //       },
+  //       {
+  //         "icon": "svg-course",
+  //         "name": "视频课程",
+  //         popover: {
+  //           title: '回复 “视频课程” 免费提供技术视频资源',
+  //           type: 'image',
+  //           imageUrl: '/README.assets/image-20230301215153246.png',
+  //         }
+  //       }
+  //     ]
+  //   }
+  // ]
 ];
 
 module.exports = plugins; // 导出

@@ -24,5 +24,8 @@
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-toolbar": "^1.0.1"
+  },
+  "dependencies": {
+    "screenfull": "^5.1.0"
   }
 }
