@@ -11,7 +11,9 @@ autoGroup-2: 股票三连
 
 ## 示例
 
-<center><img src="/part_two_6_cherry_pickup.assets/image-20230312223214648.png" alt="drawing" width="30%"/></center>
+<center>
+	<img src="/part_two_6_cherry_pickup.assets/image-20230312223214648.png" alt="drawing" width="50%"/>
+</center>
 
 格子如图上分布，此时可以拿到的最多的1，为图中红色的路径表示，走的过程中，可以将所有的1收集到，得到最大路径和。
 
@@ -19,7 +21,9 @@ autoGroup-2: 股票三连
 
 有一个巧妙的设计思路：
 
-<center><img src="/part_two_6_cherry_pickup.assets/image-20230312224035615.png" alt="drawing" width="30%"/></center>
+<center>
+	<img src="/part_two_6_cherry_pickup.assets/image-20230312224035615.png" alt="drawing" width="50%"/>
+</center>
 
 - 假设一开始有两个小人，都同时往右下角走
 - 共同路过的地方数值只获取一次

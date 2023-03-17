@@ -204,6 +204,16 @@
 ## 工具合集
 
 <div class="cc-row cc-row-gutter-20"><!--[-->
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://chrome.pictureknow.com/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="收藏猫插件"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/shouchangmao.png" style="height:35px;">
+          <div style="height:40px;float:right;">收藏猫插件</div>
+        </div>
+        <div class="cc-nav-des" title="收藏猫插件">收藏猫插件</div>
+      </div>
+    </a></div>
   <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://c.runoob.com/"
       target="_blank">
       <div class="my-nav-item">

@@ -3,8 +3,10 @@ home: true
 heroText: 慕溪 x go全栈知识体系
 tagline: 打造你的知识体系，深入原理真正掌握，让知识为你所用！
 heroImage: /waterbee.png
-actionText: 即刻GO →
-actionLink: /golang/
+actionLinks:
+- link: /golang/
+  text: 即刻GO →
+  class: primary
 footer: MIT Licensed | Copyright © 2022-present Evan Muxi
 ---
 
@@ -34,6 +36,10 @@ footer: MIT Licensed | Copyright © 2022-present Evan Muxi
   <p>我想着，这世界上肯定有一些朋友也跟我有一样的苦恼，为此下决心，利用工作之余，搭建体系化的知识架构，提供优质的学习资源，这才有了今天的网站！</p>
   <p>网站内容将包括 Golang, 设计模式, 架构设计, 读书笔记, 开源项目等。</p>
   <p>如果你想加入百人技术交流群,找到志同道合的小伙伴一同进步,请扫码下方二维码回复「加群」~</p>
-  <center><img src="/pagesidebar/muxi.jpg" alt="drawing" width="25%"/></center>
+  <center>
+    <img src="/pagesidebar/muxi.jpg?raw=true" alt="drawing"  width="180px"/>
+    <div style="font-size: 18px;">慕溪微信</div>
+    <br/>
+  </center>
 </div>
 

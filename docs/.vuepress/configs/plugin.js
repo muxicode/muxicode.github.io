@@ -36,6 +36,16 @@
 // const secret = require('./secretKey'); 
 
 const plugins = [
+  [
+    { globalUIComponents: ['LockArticle', 'PayArticle'] }
+  ],
+  ['@vuepress/medium-zoom', {
+    selector: 'img:not(.nozoom)',
+    // See: https://github.com/francoischalifour/medium-zoom#options
+    options: {
+      margin: 16
+    }
+  }],
   '@vuepress/back-to-top', // 返回到到顶部插件
   // '@vuepress/nprogress', // 进度条插件
   // 'reading-progress', // 阅读进度插件

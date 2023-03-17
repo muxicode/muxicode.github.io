@@ -24,5 +24,9 @@
 
 作者也时常会初心大意，也会犯错误，如果有些地方说的有问题，希望可以联系我。当然如果你有很好的资源推荐，也希望你愿意分享，大家共同进步鸭！
 
-<center><img src="/pagesidebar/muxi.jpg" alt="drawing" width="20%"/></center>
+<center>
+  <img src="/pagesidebar/muxi.jpg?raw=true" alt="drawing"  width="180px"/>
+  <div style="font-size: 18px;">慕溪微信</div>
+  <br/>
+</center>
 

@@ -23,7 +23,8 @@
     "vuepress-plugin-auto-sidebar": "^2.3.2",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
-    "vuepress-plugin-toolbar": "^1.0.1"
+    "vuepress-plugin-toolbar": "^1.0.1",
+    "@vuepress/plugin-medium-zoom": "^1.8.2"
   },
   "dependencies": {
     "screenfull": "^5.1.0"
