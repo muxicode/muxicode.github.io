@@ -25,7 +25,7 @@
         <div class="cc-nav-des" title="全球最大的搜索引擎公司">全球最大的搜索引擎公司</div>
       </div>
     </a></div>
-  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="http://www.bing.com/"
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="http://www.bing.com/new"
       target="_blank">
       <div class="my-nav-item">
         <div class="cc-nav-title" title="Bing"><img class="nozoom medium-zoom-image" src="/images/tool-logo/bing.png"

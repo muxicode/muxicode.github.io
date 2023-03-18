@@ -25,9 +25,9 @@ const navs = [
       {
         text: '基础',
         items: [
-          { text: '二进制', link: '/algorithm/base/binary' },
-          { text: '线性结构', link: '/algorithm/base/linearstructure' },
-          { text: '非线性结构', link: '/algorithm/nonlinearstructure' },
+          { text: '二进制', link: '/algorithm/base/binary/' },
+          { text: '线性结构', link: '/algorithm/base/linearstructure/' },
+          { text: '非线性结构', link: '/algorithm/nonlinearstructure/' },
         ]
       },
       {
@@ -63,7 +63,24 @@ const navs = [
       },
     ],
   },
-  { text: '架构', link: '/architecture/' },
+  {
+    text: '架构',
+    items: [
+      {
+        text: '方法论',
+        items: [
+          { text: 'DDD', link: '/architecture/methodology/ddd/' },
+          { text: '面向复杂度的架构设计', link: '/architecture/methodology/complexity_oriented/' },
+        ]
+      },
+      {
+        text: '工具',
+        items: [
+          { text: 'UML', link: '/architecture/tools/' },
+        ]
+      }
+    ]
+  },
   // {
   //   text: '前端',
   //   items: [
