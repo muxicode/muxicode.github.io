@@ -11,7 +11,7 @@
               <div style="font-weight:bold;text-align:center;">{{ pageSidebarItems[0].title }}</div>
               <hr />
               <div class="toc-box">
-                <PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="3" />
+                <PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="6" />
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
             <div class="icon-arrow"></div>
             <div class="scroll-box" style="text-align:center">
               <span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span
-                  style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span>
+                  style="color:red;"></span>进慕溪技术学习交流圈「无任何套路」</span>
               <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;" />
               PS：添加时请备注<b>读者加群</b>，谢谢！
             </div>

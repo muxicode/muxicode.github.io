@@ -5,6 +5,16 @@
 ## 常用搜索
 
 <div class="cc-row cc-row-gutter-20"><!--[-->
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://chat.openai.com/chat"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="OPENAI"><img class="nozoom medium-zoom-image" src="/images/tool-logo/openai.png"
+            style="height:35px;">
+          <div style="height:40px;float:right;">OPENAI</div>
+        </div>
+        <div class="cc-nav-des" title="OpenAI 是一个人工智能研究实验室，由营利组织 OpenAI LP 与母公司非营利组织 OpenAI Inc 所组成，目的是促进和发展友好的人工智能，使人类整体受益。">OpenAI 是一个人工智能研究实验室，由营利组织 OpenAI LP 与母公司非营利组织 OpenAI Inc 所组成，目的是促进和发展友好的人工智能，使人类整体受益。</div>
+      </div>
+    </a></div>
   <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="http://www.baidu.com/"
       target="_blank">
       <div class="my-nav-item">
