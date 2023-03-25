@@ -69,15 +69,15 @@ const navs = [
       {
         text: '方法论',
         items: [
-          { text: '设计模式', link: '/develop/methodology/1_Python 设计模式' },
+          { text: '设计模式', link: '/develop/methodology/1_python_design_pattern' },
           { text: '重构', link: '/develop/methodology/2_reconstruction' },
         ]
       },
       {
         text: '一些示例',
         items: [
-          { text: 'mongodb使用示例', link: '/develop/examples/1_MongoDb 示例代码' },
-          { text: 'python基础知识点', link: '/develop/examples/2_Python相关知识点' },
+          { text: 'mongodb使用示例', link: '/develop/examples/1_mongoDb' },
+          { text: 'python基础知识点', link: '/develop/examples/2_python' },
         ]
       }
     ]
@@ -106,19 +106,19 @@ const navs = [
       {
         text: '樊登读书',
         items: [
-          { text: '樊登读书简介', link: '/growth/fandeng/' },
-          { text: '《高效能人士的七个习惯》', link: '/growth/fandeng/' },
-          { text: '《高效演讲》', link: '/growth/fandeng/' },
-          { text: '《生活的哲学》', link: '/growth/fandeng/' },
-          { text: '《身心合一的奇迹力量》', link: '/growth/fandeng/' },
+          { text: '《樊登读书简介》', link: '/growth/fandeng/' },
+          // { text: '《高效能人士的七个习惯》', link: '/growth/fandeng/' },
+          // { text: '《高效演讲》', link: '/growth/fandeng/' },
+          // { text: '《生活的哲学》', link: '/growth/fandeng/' },
+          // { text: '《身心合一的奇迹力量》', link: '/growth/fandeng/' },
         ]
       },
-      {
-        text: '网络文章收藏',
-        items: [
-          // { text: '《》', link: '/architecture/tools/' },
-        ]
-      }
+      // {
+      //   text: '网络文章收藏',
+      //   items: [
+      //     // { text: '《》', link: '/architecture/tools/' },
+      //   ]
+      // }
     ]
   },
   // {

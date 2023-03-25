@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入理解Golang | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.9c2c2afe.css" as="style"><link rel="preload" href="/assets/js/app.74027bed.js" as="script"><link rel="preload" href="/assets/js/3.ecd64a98.js" as="script"><link rel="preload" href="/assets/js/4.3a10a309.js" as="script"><link rel="preload" href="/assets/js/49.b1da8187.js" as="script"><link rel="prefetch" href="/assets/js/10.adf59cea.js"><link rel="prefetch" href="/assets/js/11.2b214125.js"><link rel="prefetch" href="/assets/js/12.da033a6a.js"><link rel="prefetch" href="/assets/js/13.707a0c62.js"><link rel="prefetch" href="/assets/js/14.a20f2bc1.js"><link rel="prefetch" href="/assets/js/15.1178a8dc.js"><link rel="prefetch" href="/assets/js/16.630c6fc4.js"><link rel="prefetch" href="/assets/js/17.54d2f090.js"><link rel="prefetch" href="/assets/js/18.dd874861.js"><link rel="prefetch" href="/assets/js/19.3582d2f8.js"><link rel="prefetch" href="/assets/js/20.7a0889d3.js"><link rel="prefetch" href="/assets/js/21.4e331dcb.js"><link rel="prefetch" href="/assets/js/22.c330b64b.js"><link rel="prefetch" href="/assets/js/23.6c2a3994.js"><link rel="prefetch" href="/assets/js/24.bd1d8330.js"><link rel="prefetch" href="/assets/js/25.f3814a2c.js"><link rel="prefetch" href="/assets/js/26.34add892.js"><link rel="prefetch" href="/assets/js/27.92ed70cf.js"><link rel="prefetch" href="/assets/js/28.5d29e3f6.js"><link rel="prefetch" href="/assets/js/29.5f968b54.js"><link rel="prefetch" href="/assets/js/30.ee6ef034.js"><link rel="prefetch" href="/assets/js/31.45ace22b.js"><link rel="prefetch" href="/assets/js/32.45d0dbe8.js"><link rel="prefetch" href="/assets/js/33.683fffba.js"><link rel="prefetch" href="/assets/js/34.a699152f.js"><link rel="prefetch" href="/assets/js/35.fdf74c23.js"><link rel="prefetch" href="/assets/js/36.aec46a0d.js"><link rel="prefetch" href="/assets/js/37.5af98357.js"><link rel="prefetch" href="/assets/js/38.1e336235.js"><link rel="prefetch" href="/assets/js/39.10bf42c5.js"><link rel="prefetch" href="/assets/js/40.aade7e53.js"><link rel="prefetch" href="/assets/js/41.32e54571.js"><link rel="prefetch" href="/assets/js/42.5cf7565f.js"><link rel="prefetch" href="/assets/js/43.a0967c68.js"><link rel="prefetch" href="/assets/js/44.4432ee6c.js"><link rel="prefetch" href="/assets/js/45.80152145.js"><link rel="prefetch" href="/assets/js/46.ea3b268f.js"><link rel="prefetch" href="/assets/js/47.c1c4938e.js"><link rel="prefetch" href="/assets/js/48.2af8fda8.js"><link rel="prefetch" href="/assets/js/5.2ac50ac5.js"><link rel="prefetch" href="/assets/js/50.7826b13b.js"><link rel="prefetch" href="/assets/js/51.1dc11f2b.js"><link rel="prefetch" href="/assets/js/52.4a5557cb.js"><link rel="prefetch" href="/assets/js/6.a0c16388.js"><link rel="prefetch" href="/assets/js/7.6ff15e55.js"><link rel="prefetch" href="/assets/js/8.502cb2f5.js"><link rel="prefetch" href="/assets/js/9.91141bbd.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.fe4763d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9c2c2afe.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary/" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure/" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure/" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongoDb.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/methodology/ddd/" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/methodology/complexity_oriented/" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools/uml.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  《樊登读书简介》
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/base/binary/" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base/linearstructure/" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/nonlinearstructure/" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/forward/graph.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/sagement.html" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/uionset.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/ordertable.html" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/tiretree.html" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/bfprt.html" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/kmp.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/algorithm/forward/manacher.html" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/recursion/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/algorithm/remenber/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/algorithm/dp/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/actual1/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual2/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual3/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4/" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongoDb.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/methodology/ddd/" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/methodology/complexity_oriented/" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools/uml.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  《樊登读书简介》
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Golang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/" aria-current="page" class="active sidebar-link">深入理解Golang</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/#适合什么群体" class="sidebar-link">适合什么群体？</a></li><li class="sidebar-sub-header"><a href="/golang/#要怎么阅读" class="sidebar-link">要怎么阅读？</a></li><li class="sidebar-sub-header"><a href="/golang/#质量如何" class="sidebar-link">质量如何？</a></li><li class="sidebar-sub-header"><a href="/golang/#有错误怎么办" class="sidebar-link">有错误怎么办？</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础及入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/1_1_why_go.html" class="sidebar-link">为什么是Go？</a></li><li><a href="/golang/1_2_struct.html" class="sidebar-link">数据结构</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>高并发下的工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="sidebar-link">高并发利器-协程</a></li><li><a href="/golang/2_2_high_concurrency_security_ock_mechanism.html" class="sidebar-link">高并发下的保安-锁机制</a></li><li><a href="/golang/2_3_channel.html" class="sidebar-link">通信宝藏-channel</a></li><li><a href="/golang/2_4_tcp_newwork.html" class="sidebar-link">TCP网络编程</a></li><li><a href="/golang/2_5_memory_model_and_garbage_collection.html" class="sidebar-link">内存模型与垃圾回收</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他高级特性</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/3_1_go_c.html" class="sidebar-link">如何实现 GO 调用 C 代码？</a></li><li><a href="/golang/3_2_go_defer.html" class="sidebar-link">defer 的底层原理是怎样的？</a></li><li><a href="/golang/3_3_go_recover.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_4_go_reflect.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_5_go_reflect_use.html" class="sidebar-link">实战：使用反射调用方法</a></li><li><a href="/golang/3_6_go_learning.html" class="sidebar-link">其他学习资料</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="深入理解golang介绍"><a href="#深入理解golang介绍" class="header-anchor">#</a> 深入理解Golang介绍</h1> <p>大家好，我是慕溪，是《深入理解Golang》的作者，本站的内容都是整理于我日常学习后的总结。</p> <p>还没关注的朋友，可以微信搜索「<strong>慕溪code</strong>」，关注我的公众号，<strong>免费为大家提供相关视频学习资源</strong>，而且会有更多其他系列的文章，比如操作系统、计算机组成、数据库、算法等等。</p> <p>简单介绍下《深入理解Golang》，整个内容包括基础的数据结构，协程，高并发及网络相关的内容，目的也很简单，希望击破大家对于「golang原理」的恐惧。</p> <h2 id="适合什么群体"><a href="#适合什么群体" class="header-anchor">#</a> 适合什么群体？</h2> <p>《深入理解Golang》写的知识主要是<strong>面向程序员</strong>的，因为慕溪本身也是个程序员，所以涉及到的知识主要是关于程序员日常工作或者面试的知识。</p> <p>非常适合有一点Golang基础，但是又不怎么扎实，或者知识点不全的同学，说白<strong>深入理解Golang就是为了拯救半桶水的同学而出来的</strong>。</p> <p>相信你在看这《深入理解Golang》的时候，你心里的感受会是：</p> <ul><li>「卧槽，原来是这样，结构体长度原来是这么算」</li> <li>「卧槽，协程的运行原理原来是这样」</li> <li>「卧槽，g-m-p调度原来在代码层面这么理解」</li> <li>「卧槽，相见恨晚」</li></ul> <p>不敢说 100 % 涵盖了面试的问题，但是至少可以让你对golang的理解更加深入。</p> <h2 id="要怎么阅读"><a href="#要怎么阅读" class="header-anchor">#</a> 要怎么阅读？</h2> <p>很诚恳的告诉你，《深入理解Golang》不是教科书，而是对于golang相关学习的总结，所以肯定是没有教科书那么细致和全面，当然也就不会有很多废话，都是直击重点，不绕弯，而且有的知识点书上看不到。</p> <p>阅读的顺序建议按章节顺序阅读，保证前置知识的完整性，有一定基础的同学也可以选择自己不熟悉的章节进行阅读哦。</p> <p>本站的左侧边拦就是《深入理解Golang》的目录结构 😆：</p> <h3 id="基础及入门"><a href="#基础及入门" class="header-anchor">#</a> 基础及入门</h3> <ul><li><a href="./1_1_why_go">为什么是go</a></li> <li><a href="./1_2_strcut">数据结构</a></li></ul> <h3 id="高并发下的工具"><a href="#高并发下的工具" class="header-anchor">#</a> 高并发下的工具</h3> <ul><li><a href="./2_1_high_concurrency_sharps_coroutines">高并发利器-协程</a></li> <li><a href="./2_2_high_concurrency_security_ock_mechanism">高并发下的保安-锁机制</a></li> <li><a href="./2_3_channel">通信宝藏-channel</a></li> <li><a href="./2_4_tcp_newwork">TCP网络编程</a></li> <li><a href="./2_5_memory_model_and_garbage_collection">内存模型与垃圾回收</a></li></ul> <h3 id="其他高级特性"><a href="#其他高级特性" class="header-anchor">#</a> 其他高级特性</h3> <ul><li><a href="./3_1_go_c">如何实现Go调用C代码</a></li> <li><a href="./3_2_go_defer">defer 的底层原理</a></li> <li><a href="./3_3_go_recover">recover 如何在panic中拯救程序</a></li> <li><a href="./3_4_go_reflect">Go是怎么实现反射的</a></li> <li><a href="./3_5_go_reflect_use">实战:使用反射调用方法</a></li> <li><a href="./3_6_go_learning">其他学习资料</a></li></ul> <h2 id="质量如何"><a href="#质量如何" class="header-anchor">#</a> 质量如何？</h2> <p>《深入理解Golang》的质量慕溪说的不算，读者说的算！</p> <p>如果你感觉还不错，希望可以找到慕溪，进行反馈哦！也推荐给身边喜欢 golang 的朋友~</p> <h2 id="有错误怎么办"><a href="#有错误怎么办" class="header-anchor">#</a> 有错误怎么办？</h2> <p>慕溪是个手残党，时常写出错别字。</p> <p>如果你在学习的过程中，<strong>如果你发现有任何错误或者疑惑的地方，欢迎你通过邮箱留言给慕溪</strong>，勘误邮箱：153080686@qq.com</p> <p>慕溪抽时间会逐个修正，一起迭代出更好知识库！也可以联系下方微信~</p> <center><img src="/pagesidebar/muxi.jpg?raw=true" alt="drawing" width="180px"> <div style="font-size:18px;">慕溪微信</div> <br></center></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">3/19/2023,</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/golang/1_1_why_go.html">
+          为什么是Go？
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">深入理解Golang</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/golang/#适合什么群体" class="toc-sidebar-link">适合什么群体？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/#要怎么阅读" class="toc-sidebar-link">要怎么阅读？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/#基础及入门" class="toc-sidebar-link">基础及入门</a></li><li class="toc-sidebar-sub-header"><a href="/golang/#高并发下的工具" class="toc-sidebar-link">高并发下的工具</a></li><li class="toc-sidebar-sub-header"><a href="/golang/#其他高级特性" class="toc-sidebar-link">其他高级特性</a></li></ul></li><li><a href="/golang/#质量如何" class="toc-sidebar-link">质量如何？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/#有错误怎么办" class="toc-sidebar-link">有错误怎么办？</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">深入理解Golang</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/golang/#适合什么群体" class="toc-sidebar-link">适合什么群体？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/#要怎么阅读" class="toc-sidebar-link">要怎么阅读？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/#基础及入门" class="toc-sidebar-link">基础及入门</a></li><li class="toc-sidebar-sub-header"><a href="/golang/#高并发下的工具" class="toc-sidebar-link">高并发下的工具</a></li><li class="toc-sidebar-sub-header"><a href="/golang/#其他高级特性" class="toc-sidebar-link">其他高级特性</a></li></ul></li><li><a href="/golang/#质量如何" class="toc-sidebar-link">质量如何？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/#有错误怎么办" class="toc-sidebar-link">有错误怎么办？</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/golang/" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <!----> <div title="为什么是Go？" class="option-box" style="padding-left:2px;text-align:center;"><a href="/golang/1_1_why_go.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle><!----></div></div>
+    <script src="/assets/js/app.74027bed.js" defer></script><script src="/assets/js/3.ecd64a98.js" defer></script><script src="/assets/js/4.3a10a309.js" defer></script><script src="/assets/js/49.b1da8187.js" defer></script>
+  </body>
+</html>
