@@ -25,39 +25,47 @@ const navs = [
       {
         text: '基础',
         items: [
+          { text: '算法简介', link: '/algorithm/' },
           { text: '二进制', link: '/algorithm/base/binary/' },
-          { text: '线性结构', link: '/algorithm/base/linearstructure/' },
-          { text: '非线性结构', link: '/algorithm/nonlinearstructure/' },
+          { text: '线性结构', link: '/waiting/' },
+          { text: '非线性结构', link: '/algorithm/base/nonlinearstructure/code01_sum_of_factorial.md' },
         ]
       },
       {
         text: '进阶',
         items: [
-          { text: '图', link: '/algorithm/forward/graph' },
-          { text: '线段树', link: '/algorithm/forward/sagement' },
-          { text: '并查集', link: '/algorithm/forward/uionset' },
-          { text: '有序表', link: '/algorithm/forward/ordertable' },
-          { text: '字典树', link: '/algorithm/forward/tiretree' },
-          { text: 'bfprt', link: '/algorithm/forward/bfprt' },
-          { text: 'kmp', link: '/algorithm/forward/kmp' },
-          { text: 'manacher', link: '/algorithm/forward/manacher' },
+          { text: '图', link: '/waiting/' },
+          { text: '线段树', link: '/waiting/' },
+          { text: '并查集', link: '/waiting/' },
+          { text: '有序表', link: '/waiting/' },
+          { text: '字典树', link: '/waiting/' },
+          { text: 'bfprt', link: '/waiting/' },
+          { text: 'kmp', link: '/waiting/' },
+          { text: 'manacher', link: '/waiting/' },
+          // { text: '图', link: '/algorithm/forward/graph' },
+          // { text: '线段树', link: '/algorithm/forward/sagement' },
+          // { text: '并查集', link: '/algorithm/forward/uionset' },
+          // { text: '有序表', link: '/algorithm/forward/ordertable' },
+          // { text: '字典树', link: '/algorithm/forward/tiretree' },
+          // { text: 'bfprt', link: '/algorithm/forward/bfprt' },
+          // { text: 'kmp', link: '/algorithm/forward/kmp' },
+          // { text: 'manacher', link: '/algorithm/forward/manacher' },
         ]
       },
       {
         text: '动态规划',
         items: [
-          { text: '暴力递归', link: '/algorithm/recursion/' },
-          { text: '记忆化搜索', link: '/algorithm/remenber/' },
-          { text: '动态规划', link: '/algorithm/dp/' },
+          { text: '暴力递归', link: '/waiting/' },
+          { text: '记忆化搜索', link: '/waiting/' },
+          { text: '动态规划', link: '/waiting/' },
         ]
       },
       {
         text: '实战篇',
-        link: '/algorithm/actual/',
         items: [
-          { text: '阶段一', link: '/algorithm/actual1/' },
-          { text: '阶段二', link: '/algorithm/actual2/' },
-          { text: '阶段三', link: '/algorithm/actual3/' },
+          { text: '阶段一', link: '/waiting/' },
+          { text: '阶段二', link: '/waiting/' },
+          { text: '阶段三', link: '/waiting/' },
           { text: '阶段四', link: '/algorithm/actual4/' },
         ]
       },
@@ -76,7 +84,7 @@ const navs = [
       {
         text: '一些示例',
         items: [
-          { text: 'mongodb使用示例', link: '/develop/examples/1_mongoDb' },
+          { text: 'mongodb使用示例', link: '/develop/examples/1_mongo' },
           { text: 'python基础知识点', link: '/develop/examples/2_python' },
         ]
       }
@@ -106,19 +114,22 @@ const navs = [
       {
         text: '樊登读书',
         items: [
-          { text: '《樊登读书简介》', link: '/growth/fandeng/' },
-          // { text: '《高效能人士的七个习惯》', link: '/growth/fandeng/' },
-          // { text: '《高效演讲》', link: '/growth/fandeng/' },
-          // { text: '《生活的哲学》', link: '/growth/fandeng/' },
-          // { text: '《身心合一的奇迹力量》', link: '/growth/fandeng/' },
+          { text: '简介', link: '/growth/fandeng/' },
+          { text: '心灵', link: '/waiting/' },
+          { text: '个人成长', link: '/waiting/' },
+          { text: '亲子家庭', link: '/waiting/' },
+          { text: '人文历史', link: '/waiting/' },
+          { text: '商业财经', link: '/waiting/' },
+          { text: '社科新知', link: '/waiting/' },
+          { text: '健康生活', link: '/waiting/' },
         ]
       },
-      // {
-      //   text: '网络文章收藏',
-      //   items: [
-      //     // { text: '《》', link: '/architecture/tools/' },
-      //   ]
-      // }
+      {
+        text: '文章收藏',
+        items: [
+          { text: '说明', link: '/growth/article/' },
+        ]
+      }
     ]
   },
   // {

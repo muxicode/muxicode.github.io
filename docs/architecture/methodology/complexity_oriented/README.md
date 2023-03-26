@@ -30,26 +30,26 @@ title: 面向复杂度的架构设计
 
 ### 理清概念
 
-- [什么是架构](./part_one_1_)
-- [如何画出优秀的架构图](./strcut)
-- [什么是面向复杂度架构设计](./strcut)
+- [什么是架构](/waiting/)
+- [如何画出优秀的架构图](/waiting/)
+- [什么是面向复杂度架构设计](/waiting/)
 
 ### 架构理论
 
-- [如何设计可拓展架构](./css-resset)
-- [如何设计高性能架构](./css-flexible-box)
-- [如何设计高可用架构](./css-flexible-box)
-- [如何全面提升架构设计质量](./css-flexible-box)
-- [如何保证设计出合理的架构](./css-flexible-box)
-- [如何设计业务高性能高可用存储架构](./css-flexible-box)
-- [如何设计业务高性能高可用计算架构](./css-flexible-box)
-- [如何设计业务的微服务架构](./css-flexible-box)
+- [如何设计可拓展架构](/waiting/)
+- [如何设计高性能架构](/waiting/)
+- [如何设计高可用架构](/waiting/)
+- [如何全面提升架构设计质量](/waiting/)
+- [如何保证设计出合理的架构](/waiting/)
+- [如何设计业务高性能高可用存储架构](/waiting/)
+- [如何设计业务高性能高可用计算架构](/waiting/)
+- [如何设计业务的微服务架构](/waiting/)
 
 ### 架构实战
 
-- [外包学生管理系统实战](./css-base-elem-center)
-- [学生管理系统云平台实战](./css-pseudo-class-pseudo-el)
-- [微信红包高性能复杂度分析实战](./css-base-elem-center)
+- [外包学生管理系统实战](/waiting/)
+- [学生管理系统云平台实战](/waiting/)
+- [微信红包高性能复杂度分析实战](/waiting/)
 
 
 ## 有错误怎么办？

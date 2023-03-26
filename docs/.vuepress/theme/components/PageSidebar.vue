@@ -11,7 +11,7 @@
               <div style="font-weight:bold;text-align:center;">{{ pageSidebarItems[0].title }}</div>
               <hr />
               <div class="toc-box">
-                <PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="3" />
+                <PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="4" />
               </div>
             </div>
           </div>
