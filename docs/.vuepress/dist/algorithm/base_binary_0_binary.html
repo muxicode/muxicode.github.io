@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.为什么需要学二进制? | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.0323c785.css" as="style"><link rel="preload" href="/assets/js/app.ee9fd5c4.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/22.82fdcd49.js" as="script"><link rel="prefetch" href="/assets/js/10.1b12bfa0.js"><link rel="prefetch" href="/assets/js/11.74b73545.js"><link rel="prefetch" href="/assets/js/12.7ee669c1.js"><link rel="prefetch" href="/assets/js/13.5ce5828e.js"><link rel="prefetch" href="/assets/js/14.8d8c7ee1.js"><link rel="prefetch" href="/assets/js/15.a4146677.js"><link rel="prefetch" href="/assets/js/16.c80b2196.js"><link rel="prefetch" href="/assets/js/17.76fb3463.js"><link rel="prefetch" href="/assets/js/18.2083c718.js"><link rel="prefetch" href="/assets/js/19.374b2c89.js"><link rel="prefetch" href="/assets/js/20.46b8b619.js"><link rel="prefetch" href="/assets/js/21.9e377f92.js"><link rel="prefetch" href="/assets/js/23.b283eacd.js"><link rel="prefetch" href="/assets/js/24.65111833.js"><link rel="prefetch" href="/assets/js/25.8ec72b88.js"><link rel="prefetch" href="/assets/js/26.0620c24c.js"><link rel="prefetch" href="/assets/js/27.84a17d1d.js"><link rel="prefetch" href="/assets/js/28.747207e5.js"><link rel="prefetch" href="/assets/js/29.e67ef142.js"><link rel="prefetch" href="/assets/js/30.1cae0333.js"><link rel="prefetch" href="/assets/js/31.e2a4a2ab.js"><link rel="prefetch" href="/assets/js/32.78e2a2f0.js"><link rel="prefetch" href="/assets/js/33.112fdc6e.js"><link rel="prefetch" href="/assets/js/34.d8b9cb55.js"><link rel="prefetch" href="/assets/js/35.cd7c39d2.js"><link rel="prefetch" href="/assets/js/36.6a9ba547.js"><link rel="prefetch" href="/assets/js/37.8c338b10.js"><link rel="prefetch" href="/assets/js/38.dbd86ff3.js"><link rel="prefetch" href="/assets/js/39.8e27ea9f.js"><link rel="prefetch" href="/assets/js/40.2d3a56cb.js"><link rel="prefetch" href="/assets/js/41.ecc3dbfa.js"><link rel="prefetch" href="/assets/js/42.515ddf46.js"><link rel="prefetch" href="/assets/js/43.a693c36b.js"><link rel="prefetch" href="/assets/js/44.dc762568.js"><link rel="prefetch" href="/assets/js/45.668be9ff.js"><link rel="prefetch" href="/assets/js/46.261fa2f0.js"><link rel="prefetch" href="/assets/js/47.a99ba73a.js"><link rel="prefetch" href="/assets/js/48.6508da68.js"><link rel="prefetch" href="/assets/js/49.ac141166.js"><link rel="prefetch" href="/assets/js/5.81af5f3d.js"><link rel="prefetch" href="/assets/js/50.b0cdf43b.js"><link rel="prefetch" href="/assets/js/51.947e2eff.js"><link rel="prefetch" href="/assets/js/52.c2a3a02c.js"><link rel="prefetch" href="/assets/js/53.8cc2708a.js"><link rel="prefetch" href="/assets/js/54.82d75d22.js"><link rel="prefetch" href="/assets/js/6.f5a2e6a6.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/9.6808e7d3.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0323c785.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link router-link-active">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/methodology/ddd/" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/methodology/complexity_oriented/" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools/uml.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link router-link-active">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/methodology/ddd/" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/methodology/complexity_oriented/" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools/uml.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Algorithm</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/" aria-current="page" class="sidebar-link">什么是算法?</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础-二进制</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/base_binary_0_binary.html" aria-current="page" class="active sidebar-link">1.为什么需要学二进制?</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/base_binary_0_binary.html#为什么需要了解二进制" class="sidebar-link">为什么需要了解二进制?</a></li><li class="sidebar-sub-header"><a href="/algorithm/base_binary_0_binary.html#学会二进制有什么优势" class="sidebar-link">学会二进制有什么优势？</a></li><li class="sidebar-sub-header"><a href="/algorithm/base_binary_0_binary.html#掌握二进制" class="sidebar-link">掌握二进制</a></li><li class="sidebar-sub-header"><a href="/algorithm/base_binary_0_binary.html#有错误怎么办" class="sidebar-link">有错误怎么办？</a></li></ul></li><li><a href="/algorithm/base_binary_1_gte_binary.html" class="sidebar-link">2.int类型的二进制码</a></li><li><a href="/algorithm/base_binary_2_binary_calc.html" class="sidebar-link">3.二进制实现加减乘除</a></li><li><a href="/algorithm/base_binary_3_bit_map.html" class="sidebar-link">4.位图</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础-非线性结构</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="sidebar-link">1. 阶乘累加</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>阶段4-part-one</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="sidebar-link">1.矩阵最长增长路径</a></li><li><a href="/algorithm/actual4_part_one_2_max_sub_array_sum_less_or_equal_k.html" class="sidebar-link">2.累加和小于等于k</a></li><li><a href="/algorithm/actual4_part_one_3_max_sum_of_rectangle_no_larger_than_k.html" class="sidebar-link">3.矩阵累加和小于等于k</a></li><li><a href="/algorithm/actual4_part_one_4_wordsearch.html" class="sidebar-link">4.组成单词</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>阶段4-part-two</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/actual4_part_two_1_best_time_buy_sell_stock1.html" class="sidebar-link">1.购买一次股票</a></li><li><a href="/algorithm/actual4_part_two_2_best_time_buy_sell_stock2.html" class="sidebar-link">2.购买任意次股票</a></li><li><a href="/algorithm/actual4_part_two_3_best_time_buy_sell_staock_follow.html" class="sidebar-link">3.指定次数购买股票</a></li><li><a href="/algorithm/actual4_part_two_4_distinct_subsequences.html" class="sidebar-link">4.子串不同子序列</a></li><li><a href="/algorithm/actual4_part_two_5_dungeon_game.html" class="sidebar-link">5.通关最少血量</a></li><li><a href="/algorithm/actual4_part_two_6_cherry_pickup.html" class="sidebar-link">6.最大路径和</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h2 id="为什么需要了解二进制"><a href="#为什么需要了解二进制" class="header-anchor">#</a> 为什么需要了解二进制?</h2> <p>二进制（Binary）就是一种只有两个数字（0和1）的数制。它是计算机的基础，因为计算机里面的所有信息都是用0和1来表示的。如果你想学习计算机科学或者编程语言，你就必须要了解二进制👍。</p> <p>了解二进制有什么好处呢❓</p> <ul><li>你可以更好地理解计算机的工作原理和逻辑。</li> <li>你可以更容易地学习其他数制，比如八进制、十六进制等。</li> <li>你可以更方便地进行数据转换、加密、压缩等操作。</li> <li>你可以更快地解决一些编程问题和bug。</li></ul> <p>所以，了解二进制对于任何想要掌握计算机科学和编程语言的人来说都是非常重要和有用的😍</p> <h2 id="学会二进制有什么优势"><a href="#学会二进制有什么优势" class="header-anchor">#</a> 学会二进制有什么优势？</h2> <ul><li>在很多基础的包中，你经常会看见如：<code>a &gt;&gt; 1</code>，其实就是使用的二进制进行运算，使用二进制的运算会比普通的除法(/)的方式常数时间更快。</li> <li>更节省空间，如实现签到功能，一个 int64 类型的数字，包含 64 bit 的信息，每一个 bit 可以表示两个状态，那么采用二进制进行统计，会节省更多空间。</li> <li>优化算法的常数时间，将普通运算使用位运算进行代替</li></ul> <h2 id="掌握二进制"><a href="#掌握二进制" class="header-anchor">#</a> 掌握二进制</h2> <p>快速熟悉二进制，直接开刷，以下的题目，最好是按顺序往下刷，可以让你从了解二进制到学会实现一些二进制的经典算法。冲！！！👊🏻作者相信算法思路是一样的，任何语言都可以实现，算法的核心不在于语言，由于作者平时使用golang比较多所以该专题都由golang实现~</p> <ul><li><a href="./base_binary_1_gte_binary">1.int类型的二进制码</a></li> <li><a href="./base_binary_2_binary_calc">2.二进制实现加减乘除</a></li> <li><a href="./base_binary_3_bit_map">3.位图</a></li></ul> <h2 id="有错误怎么办"><a href="#有错误怎么办" class="header-anchor">#</a> 有错误怎么办？</h2> <p>慕溪是个手残党，时常写出错别字。</p> <p>如果你在学习的过程中，<strong>如果你发现有任何错误或者疑惑的地方，欢迎你通过邮箱留言给慕溪</strong>，勘误邮箱：153080686@qq.com</p> <p>慕溪抽时间会逐个修正，一起迭代出更好知识库！也可以联系下方微信~</p> <center><img src="/pagesidebar/muxi.jpg?raw=true" alt="drawing" width="180px"> <div style="font-size:18px;">慕溪微信</div> <br></center></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">3/27/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/algorithm/" class="prev router-link-active">
+          什么是算法?
+        </a></span> <span class="next"><a href="/algorithm/base_binary_1_gte_binary.html">
+          2.int类型的二进制码
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">1.为什么需要学二进制?</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/algorithm/base_binary_0_binary.html#为什么需要了解二进制" class="toc-sidebar-link">为什么需要了解二进制?</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/algorithm/base_binary_0_binary.html#学会二进制有什么优势" class="toc-sidebar-link">学会二进制有什么优势？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/algorithm/base_binary_0_binary.html#掌握二进制" class="toc-sidebar-link">掌握二进制</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/algorithm/base_binary_0_binary.html#有错误怎么办" class="toc-sidebar-link">有错误怎么办？</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">1.为什么需要学二进制?</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/algorithm/base_binary_0_binary.html#为什么需要了解二进制" class="toc-sidebar-link">为什么需要了解二进制?</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/algorithm/base_binary_0_binary.html#学会二进制有什么优势" class="toc-sidebar-link">学会二进制有什么优势？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/algorithm/base_binary_0_binary.html#掌握二进制" class="toc-sidebar-link">掌握二进制</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/algorithm/base_binary_0_binary.html#有错误怎么办" class="toc-sidebar-link">有错误怎么办？</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/algorithm/base_binary_0_binary.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="什么是算法?" class="option-box" style="padding-left:2px;text-align:center;"><a href="/algorithm/" class="router-link-active"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <div title="2.int类型的二进制码" class="option-box" style="padding-left:2px;text-align:center;"><a href="/algorithm/base_binary_1_gte_binary.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.ee9fd5c4.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/22.82fdcd49.js" defer></script>
+  </body>
+</html>
