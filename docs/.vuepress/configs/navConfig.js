@@ -26,9 +26,9 @@ const navs = [
         text: '基础',
         items: [
           { text: '算法简介', link: '/algorithm/' },
-          { text: '二进制', link: '/algorithm/base/binary/' },
+          { text: '二进制', link: '/algorithm/base_binary_0_binary' },
           { text: '线性结构', link: '/waiting/' },
-          { text: '非线性结构', link: '/algorithm/base/nonlinearstructure/code01_sum_of_factorial.md' },
+          { text: '非线性结构', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
         ]
       },
       {
@@ -66,7 +66,7 @@ const navs = [
           { text: '阶段一', link: '/waiting/' },
           { text: '阶段二', link: '/waiting/' },
           { text: '阶段三', link: '/waiting/' },
-          { text: '阶段四', link: '/algorithm/actual4/' },
+          { text: '阶段四', link: '/algorithm/actual4_part_one_1_longest_increasing_path' },
         ]
       },
     ],
