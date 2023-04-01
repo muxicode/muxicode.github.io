@@ -27,8 +27,7 @@ autoGroup-1: 心灵
   transform: translateY(-3%);
   left: 0;
   position: relative;
-  min-width: 60%;
-  display:none;
+  width: 60%;
 }
 @media screen and (min-width: 1338px) {
   .wrapper {
@@ -77,8 +76,6 @@ autoGroup-1: 心灵
 2.人们生气往往是因为期待和现实之间存在着一定的差距。我们总认为一切都是另一个人的错，是对方加重了我们的情绪负担，可是真正让我们陷入牢笼的其实是我们自己不切实际的期待。P.164
 
 3.离婚并不能解决一段关系当中的情感问题。离婚只是给你一种法律的许可，让你与另外一个人重复相同的婚姻模式！离婚不会给你自由。P.166注：上述页码为句子在实体书中所在的页码。
-
-## 
 
 
 
