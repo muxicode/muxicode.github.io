@@ -115,7 +115,7 @@ const navs = [
         text: '樊登读书',
         items: [
           { text: '简介', link: '/growth/fandeng/' },
-          { text: '心灵', link: '/waiting/' },
+          { text: '心灵', link: '/growth/fandeng/mind_1_the_gift' },
           { text: '个人成长', link: '/waiting/' },
           { text: '亲子家庭', link: '/waiting/' },
           { text: '人文历史', link: '/waiting/' },
