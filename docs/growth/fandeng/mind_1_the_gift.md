@@ -19,17 +19,18 @@ autoGroup-1: 心灵
 
 ## 思维导图
 
-<div class="crop">
+<div class="margin-top-crop">
   <img src="/mind_1_the_gift.assets/image-20230330205011468.png" alt="图片" />
 </div>
 <style>
   /* (A) 容器 */
-  .crop {
+  .margin-top-crop {
     /* (A2) 隐藏超出内容 */
     overflow: hidden;
+    margin: 0 auto 0;
   }
   /* (B) 图片 */
-  .crop img {
+  .margin-top-crop img {
     /* (B1) 宽度为100% */
     width: 100%;
     /* (B2) 调整图片位置 */
@@ -38,7 +39,7 @@ autoGroup-1: 心灵
   /* (C) 媒体查询 */
   @media screen and (min-width: 768px) {
     /* (C1) 在电脑端，容器宽度为50% */
-    .crop {
+    .margin-top-crop {
       width: 60%;
     }
   }

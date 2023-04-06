@@ -42,3 +42,19 @@ table {
 .no-sidebar .me-toolbar-sidebar {
   display: none;
 }
+
+// 适配手机端图片的样式设置
+.crop {
+  overflow: hidden;
+  margin: 0 auto 0;
+}
+
+.crop img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .crop {
+    width: 60%;
+  }
+}

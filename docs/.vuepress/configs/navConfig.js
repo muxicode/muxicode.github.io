@@ -27,7 +27,7 @@ const navs = [
         items: [
           { text: '算法简介', link: '/algorithm/' },
           { text: '二进制', link: '/algorithm/base_binary_0_binary' },
-          { text: '线性结构', link: '/waiting/' },
+          { text: '线性结构', link: '/algorithm/base_line_code01_select_sort' },
           { text: '非线性结构', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
         ]
       },

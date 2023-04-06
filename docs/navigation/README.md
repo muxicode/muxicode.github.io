@@ -814,9 +814,77 @@
     </a></div><!--]-->
 </div>
 
+
+## 推荐知库
+
+<div class="cc-row cc-row-gutter-20"><!--[-->
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://xiaolincoding.com/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="小林Coding"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/xiaolincoding.webp" style="height:35px;">
+          <div style="height:40px;float:right;">小林Coding</div>
+        </div>
+        <div class="cc-nav-des" title="计算机网络，计算机基础等基础知识">计算机网络，计算机基础等基础知识</div>
+      </div>
+    </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://coder.itclan.cn/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="Docsify"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/itclancoder.jpeg" style="height:35px;">
+          <div style="height:40px;float:right;">川川的博客</div>
+        </div>
+        <div class="cc-nav-des" title="笔尖下的文字随性而写，不拘泥于技术，希望能在岁月的侵蚀中留下自己一点足迹，让成长有迹可寻，努力成为一个有故事的人">笔尖下的文字随性而写，不拘泥于技术，希望能在岁月的侵蚀中留下自己一点足迹，让成长有迹可寻，努力成为一个有故事的人</div>
+      </div>
+    </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://pdai.tech/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="VuePress"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/pdai.gif" style="height:35px;">
+          <div style="height:40px;float:right;">Java 全栈知识体系</div>
+        </div>
+        <div class="cc-nav-des" title="做一些系统化的学习来提升自我的认知效率">做一些系统化的学习来提升自我的认知效率</div>
+      </div>
+    </a></div>
+      <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://binghe001.github.io/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="VuePress"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/binghe-001.png" style="height:35px;">
+          <div style="height:40px;float:right;">冰河技术</div>
+        </div>
+        <div class="cc-nav-des" title="互联网资深技术专家、MySQL技术专家、分布式与微服务架构专家">互联网资深技术专家、MySQL技术专家、分布式与微服务架构专家</div>
+      </div>
+    </a></div>
+</div>
+
+
 ## 其它资源
 
 <div class="cc-row cc-row-gutter-20"><!--[-->
+
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://aitool.itclan.cn/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="zeplin"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/aitool-logo.png" style="height:40px;">
+          <div style="height:40px;float:right;">aitool</div>
+        </div>
+        <div class="cc-nav-des" title="ai工具大全">ai工具大全</div>
+      </div>
+    </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://github.com/algorithmzuo"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="zeplin"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/github2.jpg" style="height:40px;">
+          <div style="height:40px;float:right;">左程云算法仓库</div>
+        </div>
+        <div class="cc-nav-des" title="左程云算法仓库">左程云算法仓库</div>
+      </div>
+    </a></div>
   <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://app.zeplin.io/"
       target="_blank">
       <div class="my-nav-item">

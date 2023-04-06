@@ -30,7 +30,7 @@ title: 面向复杂度的架构设计
 
 ### 理清概念
 
-- [什么是架构](/waiting/)
+- [什么是架构](/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue)
 - [如何画出优秀的架构图](/waiting/)
 - [什么是面向复杂度架构设计](/waiting/)
 
