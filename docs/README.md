@@ -14,6 +14,7 @@ footer: MIT Licensed | Copyright © 2022-present Evan Muxi
 
 - [👉《深入理解golang原理》](/golang/) 从基础数据结构到高并发特性核心原理，源码分析，让你拥有看源码的能力。
 - [👉《数据结构与算法》](/algorithm/) 通俗易懂解析经典数据结构，结合 400+ 道题目让你从容面对数据结构与算法。
+- [👉《架构》](/architecture/ddd_1_introduce) 架构相关的理论及实践，包括DDD，面向复杂设计，及相关的工具，架构并不神秘。
 
 ### 💡 个人成长
 

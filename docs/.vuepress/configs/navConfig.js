@@ -96,14 +96,14 @@ const navs = [
       {
         text: '方法论',
         items: [
-          { text: 'DDD', link: '/architecture/methodology/ddd/' },
-          { text: '面向复杂度的架构设计', link: '/architecture/methodology/complexity_oriented/' },
+          { text: 'DDD', link: '/architecture/ddd_1_introduce' },
+          { text: '面向复杂度的架构设计', link: '/architecture/complexity_oriented_1_introduce' },
         ]
       },
       {
         text: '工具',
         items: [
-          { text: 'UML', link: '/architecture/tools/uml' },
+          { text: 'UML', link: '/architecture/tools_1_introduce' },
         ]
       }
     ]

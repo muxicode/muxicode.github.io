@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. 什么是架构 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.8472fd10.css" as="style"><link rel="preload" href="/assets/js/app.3d3c5ff0.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/30.ab4226ee.js" as="script"><link rel="prefetch" href="/assets/js/10.b882a439.js"><link rel="prefetch" href="/assets/js/11.ddc4af4b.js"><link rel="prefetch" href="/assets/js/12.7ee669c1.js"><link rel="prefetch" href="/assets/js/13.b7a63871.js"><link rel="prefetch" href="/assets/js/14.020809a4.js"><link rel="prefetch" href="/assets/js/15.ec6c77b4.js"><link rel="prefetch" href="/assets/js/16.b05c2a55.js"><link rel="prefetch" href="/assets/js/17.261cf9a0.js"><link rel="prefetch" href="/assets/js/18.2083c718.js"><link rel="prefetch" href="/assets/js/19.374b2c89.js"><link rel="prefetch" href="/assets/js/20.e396862b.js"><link rel="prefetch" href="/assets/js/21.6a293008.js"><link rel="prefetch" href="/assets/js/22.9e970321.js"><link rel="prefetch" href="/assets/js/23.b283eacd.js"><link rel="prefetch" href="/assets/js/24.9e2182b5.js"><link rel="prefetch" href="/assets/js/25.43b650b8.js"><link rel="prefetch" href="/assets/js/26.ff207c08.js"><link rel="prefetch" href="/assets/js/27.c318cfc9.js"><link rel="prefetch" href="/assets/js/28.ae9301ca.js"><link rel="prefetch" href="/assets/js/29.ee6767c8.js"><link rel="prefetch" href="/assets/js/31.560c387d.js"><link rel="prefetch" href="/assets/js/32.83e4eb4d.js"><link rel="prefetch" href="/assets/js/33.7fbee6a3.js"><link rel="prefetch" href="/assets/js/34.030ffc30.js"><link rel="prefetch" href="/assets/js/35.9dc9f6fc.js"><link rel="prefetch" href="/assets/js/36.e8de33b5.js"><link rel="prefetch" href="/assets/js/37.c389ecfa.js"><link rel="prefetch" href="/assets/js/38.de9bb7e5.js"><link rel="prefetch" href="/assets/js/39.4430340d.js"><link rel="prefetch" href="/assets/js/40.c1921371.js"><link rel="prefetch" href="/assets/js/41.ca7f2e18.js"><link rel="prefetch" href="/assets/js/42.743ba10c.js"><link rel="prefetch" href="/assets/js/43.7f6452c1.js"><link rel="prefetch" href="/assets/js/44.2af4b9dc.js"><link rel="prefetch" href="/assets/js/45.7cced0f2.js"><link rel="prefetch" href="/assets/js/46.3f30b958.js"><link rel="prefetch" href="/assets/js/47.70d8533d.js"><link rel="prefetch" href="/assets/js/48.0b963b6d.js"><link rel="prefetch" href="/assets/js/49.841efbae.js"><link rel="prefetch" href="/assets/js/5.29345a8c.js"><link rel="prefetch" href="/assets/js/50.023988b9.js"><link rel="prefetch" href="/assets/js/51.d4814502.js"><link rel="prefetch" href="/assets/js/52.5579b3ba.js"><link rel="prefetch" href="/assets/js/53.b1db5788.js"><link rel="prefetch" href="/assets/js/54.b697b85f.js"><link rel="prefetch" href="/assets/js/55.f957741f.js"><link rel="prefetch" href="/assets/js/56.8f2d1a7b.js"><link rel="prefetch" href="/assets/js/57.f8ff9e2f.js"><link rel="prefetch" href="/assets/js/58.038cc00e.js"><link rel="prefetch" href="/assets/js/59.e4347feb.js"><link rel="prefetch" href="/assets/js/6.f5a2e6a6.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/9.b9515c24.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8472fd10.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/methodology/ddd/" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/methodology/complexity_oriented/" class="nav-link router-link-active">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools/uml.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/methodology/ddd/" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/methodology/complexity_oriented/" class="nav-link router-link-active">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools/uml.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Complexity Oriented</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/methodology/complexity_oriented/" aria-current="page" class="sidebar-link">面向复杂度的架构设计</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>理清概念</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html" aria-current="page" class="active sidebar-link">1. 什么是架构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#教学目标" class="sidebar-link">教学目标</a></li><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#系统与子系统" class="sidebar-link">系统与子系统</a></li><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#模块与组件" class="sidebar-link">模块与组件</a></li><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#架构与框架" class="sidebar-link">架构与框架</a></li><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#重新定义架构" class="sidebar-link">重新定义架构</a></li><li class="sidebar-sub-header"><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#_4r架构的应用" class="sidebar-link">4R架构的应用</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="_1-什么是架构"><a href="#_1-什么是架构" class="header-anchor">#</a> 1. 什么是架构</h1> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/1.png" alt="图片"></div> <h2 id="教学目标"><a href="#教学目标" class="header-anchor">#</a> 教学目标</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/2.png" alt="图片"></div> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/3.png" alt="图片"></div> <h2 id="系统与子系统"><a href="#系统与子系统" class="header-anchor">#</a> 系统与子系统</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/4.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/5.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/6.png" alt="图片"></div> <h2 id="模块与组件"><a href="#模块与组件" class="header-anchor">#</a> 模块与组件</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/7.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/8.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/9.png" alt="图片"></div> <h2 id="架构与框架"><a href="#架构与框架" class="header-anchor">#</a> 架构与框架</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/10.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/11.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/12.png" alt="图片"></div> <h2 id="重新定义架构"><a href="#重新定义架构" class="header-anchor">#</a> 重新定义架构</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/13.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/14.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/15.png" alt="图片"></div> <h2 id="_4r架构的应用"><a href="#_4r架构的应用" class="header-anchor">#</a> 4R架构的应用</h2> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/16.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/17.png" alt="图片"></div> <div class="crop"><img src="/1_what_is_soft_architectrue.assets/18.png" alt="图片"></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/6/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/architecture/methodology/complexity_oriented/" class="prev router-link-active">
+          面向复杂度的架构设计
+        </a></span> <!----></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">1. 什么是架构</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#教学目标" class="toc-sidebar-link">教学目标</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#目录" class="toc-sidebar-link">目录</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#系统与子系统" class="toc-sidebar-link">系统与子系统</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#模块与组件" class="toc-sidebar-link">模块与组件</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#架构与框架" class="toc-sidebar-link">架构与框架</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#重新定义架构" class="toc-sidebar-link">重新定义架构</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#_4r架构的应用" class="toc-sidebar-link">4R架构的应用</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">1. 什么是架构</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#教学目标" class="toc-sidebar-link">教学目标</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#目录" class="toc-sidebar-link">目录</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#系统与子系统" class="toc-sidebar-link">系统与子系统</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#模块与组件" class="toc-sidebar-link">模块与组件</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#架构与框架" class="toc-sidebar-link">架构与框架</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#重新定义架构" class="toc-sidebar-link">重新定义架构</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html#_4r架构的应用" class="toc-sidebar-link">4R架构的应用</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/architecture/methodology/complexity_oriented/1_what_is_soft_architectrue.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="面向复杂度的架构设计" class="option-box" style="padding-left:2px;text-align:center;"><a href="/architecture/methodology/complexity_oriented/" class="router-link-active"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.3d3c5ff0.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/30.ab4226ee.js" defer></script>
+  </body>
+</html>
