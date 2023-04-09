@@ -82,6 +82,12 @@ const navs = [
         ]
       },
       {
+        text: '部署',
+        items: [
+          { text: '项目容器化', link: '/develop/deployment/1_docker_built_project' },
+        ]
+      },
+      {
         text: '一些示例',
         items: [
           { text: 'mongodb使用示例', link: '/develop/examples/1_mongo' },

@@ -875,6 +875,16 @@
         <div class="cc-nav-des" title="ai工具大全">ai工具大全</div>
       </div>
     </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://md.openwrite.cn/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="zeplin"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/github2.jpg" style="height:40px;">
+          <div style="height:40px;float:right;">aitool</div>
+        </div>
+        <div class="cc-nav-des" title="markdown格式化为订阅号文章">markdown格式化为订阅号文章</div>
+      </div>
+    </a></div>
   <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://github.com/algorithmzuo"
       target="_blank">
       <div class="my-nav-item">
