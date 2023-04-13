@@ -153,7 +153,7 @@ const navs = [
   // { text: '方法论', link: '/methodology/' },
   { text: '关于', link: '/about/' },
   {
-    text: 'Github', link: 'https://github.com/muxicode'
+    text: 'Github', link: 'https://github.com/muxicode/muxicode.github.io'
     // 下拉框的配置
     // items: [
     //     { text: 'Github', link: 'https://github.com/muxicode' }

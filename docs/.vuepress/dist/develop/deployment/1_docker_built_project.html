@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>项目容器化 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.193a2c9c.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/39.76009977.js" as="script"><link rel="prefetch" href="/assets/js/10.eafc2b5a.js"><link rel="prefetch" href="/assets/js/11.677060d2.js"><link rel="prefetch" href="/assets/js/12.63ad9e0e.js"><link rel="prefetch" href="/assets/js/13.34a69ee1.js"><link rel="prefetch" href="/assets/js/14.ae5d3ad1.js"><link rel="prefetch" href="/assets/js/15.ba7d5548.js"><link rel="prefetch" href="/assets/js/16.f29c7905.js"><link rel="prefetch" href="/assets/js/17.f0b94382.js"><link rel="prefetch" href="/assets/js/18.7761df96.js"><link rel="prefetch" href="/assets/js/19.cac0ec70.js"><link rel="prefetch" href="/assets/js/20.9aba4529.js"><link rel="prefetch" href="/assets/js/21.7249e48a.js"><link rel="prefetch" href="/assets/js/22.9d26a4cb.js"><link rel="prefetch" href="/assets/js/23.2831b2a1.js"><link rel="prefetch" href="/assets/js/24.e8d40e5c.js"><link rel="prefetch" href="/assets/js/25.a412af57.js"><link rel="prefetch" href="/assets/js/26.6103fcac.js"><link rel="prefetch" href="/assets/js/27.d59ab1be.js"><link rel="prefetch" href="/assets/js/28.3ac0c277.js"><link rel="prefetch" href="/assets/js/29.8625b588.js"><link rel="prefetch" href="/assets/js/30.11c71999.js"><link rel="prefetch" href="/assets/js/31.71c9976b.js"><link rel="prefetch" href="/assets/js/32.841b883d.js"><link rel="prefetch" href="/assets/js/33.71afce5d.js"><link rel="prefetch" href="/assets/js/34.6196e277.js"><link rel="prefetch" href="/assets/js/35.6904bad8.js"><link rel="prefetch" href="/assets/js/36.d9897a45.js"><link rel="prefetch" href="/assets/js/37.436cb3eb.js"><link rel="prefetch" href="/assets/js/38.223250b8.js"><link rel="prefetch" href="/assets/js/40.42e150ea.js"><link rel="prefetch" href="/assets/js/41.6d413eab.js"><link rel="prefetch" href="/assets/js/42.38294312.js"><link rel="prefetch" href="/assets/js/43.c6e3f583.js"><link rel="prefetch" href="/assets/js/44.8f461b8f.js"><link rel="prefetch" href="/assets/js/45.b0214d9c.js"><link rel="prefetch" href="/assets/js/46.90d044e1.js"><link rel="prefetch" href="/assets/js/47.8d701ec3.js"><link rel="prefetch" href="/assets/js/48.14d01b46.js"><link rel="prefetch" href="/assets/js/49.b846fcbd.js"><link rel="prefetch" href="/assets/js/5.8927071e.js"><link rel="prefetch" href="/assets/js/50.9da0f3be.js"><link rel="prefetch" href="/assets/js/51.60fc17e2.js"><link rel="prefetch" href="/assets/js/52.d9db3c04.js"><link rel="prefetch" href="/assets/js/53.a2bc6432.js"><link rel="prefetch" href="/assets/js/54.7e5841b7.js"><link rel="prefetch" href="/assets/js/55.48921bbb.js"><link rel="prefetch" href="/assets/js/56.f6d64cdf.js"><link rel="prefetch" href="/assets/js/57.f4f7166b.js"><link rel="prefetch" href="/assets/js/58.4e7f48bc.js"><link rel="prefetch" href="/assets/js/59.95913706.js"><link rel="prefetch" href="/assets/js/6.09917d06.js"><link rel="prefetch" href="/assets/js/60.fde3d439.js"><link rel="prefetch" href="/assets/js/61.4a013b31.js"><link rel="prefetch" href="/assets/js/62.7d9ab3ab.js"><link rel="prefetch" href="/assets/js/63.ef71a872.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/9.9ce857c9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Deployment</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/develop/deployment/1_docker_built_project.html" aria-current="page" class="active sidebar-link">项目容器化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/develop/deployment/1_docker_built_project.html#容器化目录设置" class="sidebar-link">容器化目录设置</a></li><li class="sidebar-sub-header"><a href="/develop/deployment/1_docker_built_project.html#dockerfile" class="sidebar-link">Dockerfile</a></li><li class="sidebar-sub-header"><a href="/develop/deployment/1_docker_built_project.html#dockercommit-sh" class="sidebar-link">DockerCommit.sh</a></li><li class="sidebar-sub-header"><a href="/develop/deployment/1_docker_built_project.html#具体步骤" class="sidebar-link">具体步骤</a></li><li class="sidebar-sub-header"><a href="/develop/deployment/1_docker_built_project.html#容器编排-管理" class="sidebar-link">容器编排&amp;管理</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="withouttoc page"> <div class="theme-default-content content__default"><h1 id="项目容器化"><a href="#项目容器化" class="header-anchor">#</a> 项目容器化</h1> <p>服务容器化是什么？</p> <p>服务容器化是一种将应用程序及其依赖项打包到一个可移植的容器中的方法 💻📦。</p> <p>这种方法的好处包括：</p> <ul><li><p>✨ 提高应用程序的可移植性、可靠性和可扩展性</p></li> <li><p>💰 降低部署和维护成本</p></li></ul> <p>容器化的好处不仅局限于这些，还包括：</p> <ul><li><p>🚀 加快构建、测试和部署应用程序的速度</p></li> <li><p>👨‍💻 更轻松地管理和维护基础架构</p></li></ul> <p>因此，服务容器化是一种非常有用的技术 💪，它可以使开发人员和 IT 运营人员更加轻松地工作。</p> <h2 id="容器化目录设置"><a href="#容器化目录设置" class="header-anchor">#</a> 容器化目录设置</h2> <p>当前以python的项目为例之作为示例，当然其他语言也可以根据内容的原理进行改造成适配自己使用的容器化方案。</p> <p>按照下图在项目根目录中添加Dockerfile、DockerCommit.sh文件</p> <p><img src="/1_docker_built_project.assets/%E6%9C%8D%E5%8A%A1%E5%AE%B9%E5%99%A8%E5%8C%96.drawio.png" alt=""></p> <h2 id="dockerfile"><a href="#dockerfile" class="header-anchor">#</a> Dockerfile</h2> <blockquote><p>该文件为DockerCommit.sh中docker build命令的依赖，当执行docker buil是，默认使用Dockerfile指定的内容及步骤去构建一个镜像</p></blockquote> <p>通过Dockerfile构建镜像：</p> <p>文件名：Dockerfile</p> <div class="language-dockerfile line-numbers-mode"><pre class="language-dockerfile"><code><span class="token comment"># &lt;镜像名称&gt; 使用的基础镜像名称</span>
+<span class="token instruction"><span class="token keyword">FROM</span> &lt;镜像名称&gt;</span>
+<span class="token comment"># 作者名称</span>
+<span class="token instruction"><span class="token keyword">MAINTAINER</span> &lt;author&gt;</span>
+<span class="token comment"># 设置工作目录</span>
+<span class="token instruction"><span class="token keyword">WORKDIR</span> /app</span>
+<span class="token comment"># 将当前文件夹下的所有文件拷贝到 /app 目录下</span>
+<span class="token instruction"><span class="token keyword">COPY</span> . /app</span>
+<span class="token comment"># 将当前文件夹下的所有文件拷贝到 /app 目录下</span>
+<span class="token instruction"><span class="token keyword">EXPOSE</span> &lt;port&gt;</span>
+<span class="token comment"># 启动容器后，在容器内部执行 “/bin/sh” 即后续命令使用shell命令行解释器</span>
+<span class="token instruction"><span class="token keyword">CMD</span> /bin/sh</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="dockercommit-sh"><a href="#dockercommit-sh" class="header-anchor">#</a> DockerCommit.sh</h2> <blockquote><p>该文件将打包docker镜像，以及推送镜像的步骤，通过shell脚本合并成一个文件，简化步骤</p></blockquote> <p>文件名：DockerCommit.sh，实质是一个shell脚本：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#!/bin/sh</span>
+<span class="token comment"># -e表示在脚本执行过程中，只要有任何一个命令执行失败，就立即退出整个脚本；set -x表示在执行脚本时，会将执行的每一行命令及其参数都打印出来，方便调试</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-ex</span>
+<span class="token comment"># &lt;ip:port&gt; 填写目标仓储，比如自己搭建的docker仓储</span>
+<span class="token assign-left variable">DOCKER_REGISTRY</span><span class="token operator">=</span><span class="token operator">&lt;</span>ip:port<span class="token operator">&gt;</span>
+<span class="token comment"># 获取版本参数可不传，不传默认版本号为latest,</span>
+<span class="token comment"># 传参方式示例：./DockerCommit.sh 1.0.1</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token string">&quot;latest&quot;</span>
+<span class="token keyword">else</span>
+        <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token keyword">fi</span>
+<span class="token function">sudo</span> <span class="token function">docker</span> build <span class="token parameter variable">-q</span> --force-rm <span class="token parameter variable">-t</span> <span class="token variable">$DOCKER_REGISTRY</span>/docker-name:<span class="token variable">$version</span> ./
+<span class="token function">sudo</span> <span class="token function">docker</span> push <span class="token variable">$DOCKER_REGISTRY</span>/docker-name:<span class="token variable">$version</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="具体步骤"><a href="#具体步骤" class="header-anchor">#</a> 具体步骤</h2> <p>代码改写完并提交验证后，执行</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>./DockerCommit.sh <span class="token operator">&lt;</span>versionId<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>需要将 versionId 替换为自己项目的版本号</p></blockquote> <p>执行完毕后，即可构建并推送镜像至仓储</p> <h2 id="容器编排-管理"><a href="#容器编排-管理" class="header-anchor">#</a> 容器编排&amp;管理</h2> <p>除了容器的构建，我们还需要关注，容器的编排与管理，平时工作中使用较多的是rancher，以下对rancher做一个介绍。</p> <p>Rancher是一个非常好用的容器管理平台，它具有以下功能和优点：</p> <ul><li>🌟 <strong>多云支持</strong>：Rancher可以在多个云平台上部署容器化应用程序，如AWS、Azure、Google Cloud等，用户可以轻松地在不同的云平台之间迁移应用程序。</li> <li>🌟 <strong>直观易用的界面</strong>：Rancher提供了直观、易用的Web界面，用户可以使用它来创建、部署、管理容器、集群和应用程序。</li> <li>🌟 <strong>高可用性和灵活性</strong>：Rancher具有高可用性和灵活性，可以轻松地扩展和管理Kubernetes集群，自动管理容器的故障恢复，确保应用程序始终可用。</li> <li>🌟 <strong>安全性</strong>：Rancher提供了多层安全措施，如网络隔离、访问控制和审计日志等，可以帮助用户轻松管理容器的安全性。</li> <li>🌟 <strong>日志和监控</strong>：Rancher提供了内置的日志和监控工具，用户可以实时监控和管理容器和应用程序的性能和状态。</li> <li>🌟 <strong>多种编排平台支持</strong>：Rancher支持多种编排平台，如Kubernetes、Docker Swarm、Mesos和Cattle等，使用户可以选择最适合他们的编排平台。</li> <li>🌟 <strong>自定义</strong>：Rancher提供了许多自定义选项，用户可以根据自己的需求定制他们的容器环境。</li></ul> <p>总之，Rancher是一个<strong>功能强大</strong>、<strong>易用</strong>和<strong>灵活</strong>的<strong>容器管理平台</strong>，可以帮助用户更轻松地构建、部署和管理容器化应用程序。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/10/2023,</span></div></footer> <!----> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><!----> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">项目容器化</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/develop/deployment/1_docker_built_project.html#容器化目录设置" class="toc-sidebar-link">容器化目录设置</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/deployment/1_docker_built_project.html#dockerfile" class="toc-sidebar-link">Dockerfile</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/deployment/1_docker_built_project.html#dockercommit-sh" class="toc-sidebar-link">DockerCommit.sh</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/deployment/1_docker_built_project.html#具体步骤" class="toc-sidebar-link">具体步骤</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/deployment/1_docker_built_project.html#容器编排-管理" class="toc-sidebar-link">容器编排&amp;管理</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/develop/deployment/1_docker_built_project.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <!----> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.193a2c9c.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/39.76009977.js" defer></script>
+  </body>
+</html>
