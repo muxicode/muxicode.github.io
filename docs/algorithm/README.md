@@ -59,7 +59,7 @@
 题目：
 
 给定一个参数 N,
-返回： 1! + 2! + 3! + ... + N! 的结果。[题目解析](/algorithm/base/nonlinearstructure/code01_sum_of_factorial)
+返回： 1! + 2! + 3! + ... + N! 的结果。[题目解析](./base_nonline_code01_sum_of_factorial)
 
 > 同学 A(N)
 >

@@ -115,6 +115,17 @@ const navs = [
     ]
   },
   {
+    text: '数据库',
+    items: [
+      {
+        text: 'NoSQL 数据库',
+        items: [
+          { text: 'redis 部署方式', link: '/database/nosql_1_redis_deploy' },
+        ]
+      }
+    ]
+  },
+  {
     text: '个人成长',
     items: [
       {
