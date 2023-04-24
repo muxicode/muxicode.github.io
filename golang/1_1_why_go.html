@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>为什么是Go？ | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.8472fd10.css" as="style"><link rel="preload" href="/assets/js/app.ef70de6f.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/46.0ecd1581.js" as="script"><link rel="prefetch" href="/assets/js/10.d1ca610a.js"><link rel="prefetch" href="/assets/js/11.c48e8933.js"><link rel="prefetch" href="/assets/js/12.c7fdb193.js"><link rel="prefetch" href="/assets/js/13.3ad1d819.js"><link rel="prefetch" href="/assets/js/14.bfddfa33.js"><link rel="prefetch" href="/assets/js/15.fa59c44e.js"><link rel="prefetch" href="/assets/js/16.e25b3825.js"><link rel="prefetch" href="/assets/js/17.cff19f1e.js"><link rel="prefetch" href="/assets/js/18.b5450872.js"><link rel="prefetch" href="/assets/js/19.7042d5a5.js"><link rel="prefetch" href="/assets/js/20.595e976a.js"><link rel="prefetch" href="/assets/js/21.0af28463.js"><link rel="prefetch" href="/assets/js/22.6666b792.js"><link rel="prefetch" href="/assets/js/23.29277800.js"><link rel="prefetch" href="/assets/js/24.5498488e.js"><link rel="prefetch" href="/assets/js/25.ede8ae45.js"><link rel="prefetch" href="/assets/js/26.1f954d5f.js"><link rel="prefetch" href="/assets/js/27.87958704.js"><link rel="prefetch" href="/assets/js/28.56877372.js"><link rel="prefetch" href="/assets/js/29.3e7cdb9a.js"><link rel="prefetch" href="/assets/js/30.71088dd5.js"><link rel="prefetch" href="/assets/js/31.e7d31ff5.js"><link rel="prefetch" href="/assets/js/32.8fe27087.js"><link rel="prefetch" href="/assets/js/33.546a5ea9.js"><link rel="prefetch" href="/assets/js/34.e30bbef1.js"><link rel="prefetch" href="/assets/js/35.8649ca01.js"><link rel="prefetch" href="/assets/js/36.28004b1f.js"><link rel="prefetch" href="/assets/js/37.84f86df6.js"><link rel="prefetch" href="/assets/js/38.78a27c92.js"><link rel="prefetch" href="/assets/js/39.5bae0b75.js"><link rel="prefetch" href="/assets/js/40.527f4d29.js"><link rel="prefetch" href="/assets/js/41.2e5a9879.js"><link rel="prefetch" href="/assets/js/42.23b95415.js"><link rel="prefetch" href="/assets/js/43.a1f84282.js"><link rel="prefetch" href="/assets/js/44.10d5e3b7.js"><link rel="prefetch" href="/assets/js/45.eb5bb8fa.js"><link rel="prefetch" href="/assets/js/47.765d5397.js"><link rel="prefetch" href="/assets/js/48.dddf79d0.js"><link rel="prefetch" href="/assets/js/49.83868331.js"><link rel="prefetch" href="/assets/js/5.995aeec7.js"><link rel="prefetch" href="/assets/js/50.a435f84d.js"><link rel="prefetch" href="/assets/js/51.a16152e4.js"><link rel="prefetch" href="/assets/js/52.76d569db.js"><link rel="prefetch" href="/assets/js/53.2ed13ef7.js"><link rel="prefetch" href="/assets/js/54.ccfdbdef.js"><link rel="prefetch" href="/assets/js/55.79d7e662.js"><link rel="prefetch" href="/assets/js/56.28096cb4.js"><link rel="prefetch" href="/assets/js/57.f840e8da.js"><link rel="prefetch" href="/assets/js/58.66577cf1.js"><link rel="prefetch" href="/assets/js/59.3f6a5c17.js"><link rel="prefetch" href="/assets/js/6.f5a2e6a6.js"><link rel="prefetch" href="/assets/js/60.a7abfd25.js"><link rel="prefetch" href="/assets/js/61.03a4ca53.js"><link rel="prefetch" href="/assets/js/62.c364a064.js"><link rel="prefetch" href="/assets/js/63.c0e19856.js"><link rel="prefetch" href="/assets/js/64.85f98546.js"><link rel="prefetch" href="/assets/js/65.db0a794c.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/9.9ce857c9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8472fd10.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link router-link-active">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link router-link-active">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Golang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/" aria-current="page" class="sidebar-link">深入理解Golang</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础及入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/1_1_why_go.html" aria-current="page" class="active sidebar-link">为什么是Go？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#自身优势" class="sidebar-link">自身优势？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#c-c" class="sidebar-link">C/C++</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#java" class="sidebar-link">Java</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go" class="sidebar-link">Go</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结" class="sidebar-link">总结</a></li></ul></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#何为runtime" class="sidebar-link">何为RunTime？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#很多语言都有runtime" class="sidebar-link">很多语言都有Runtime</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go中runtime的特点" class="sidebar-link">GO中Runtime的特点</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go中runtime的能力" class="sidebar-link">Go中Runtime的能力</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-2" class="sidebar-link">总结</a></li></ul></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go程序是如何编译的" class="sidebar-link">Go程序是如何编译的？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#词法分析" class="sidebar-link">词法分析</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#句法分析" class="sidebar-link">句法分析</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#语义分析" class="sidebar-link">语义分析</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#中间码生成" class="sidebar-link">中间码生成</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#机器码生成" class="sidebar-link">机器码生成</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#链接" class="sidebar-link">链接</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-3" class="sidebar-link">总结</a></li></ul></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go程序是如何运行的" class="sidebar-link">Go程序是如何运行的？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go程序的入口" class="sidebar-link">go程序的入口？</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#保存参数" class="sidebar-link">保存参数</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化g0執行栈" class="sidebar-link">初始化g0執行栈</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#运行时检测" class="sidebar-link">运行时检测</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化runtime-args" class="sidebar-link">初始化runtime.args</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#调度器的初始化-runtime-schedinit" class="sidebar-link">调度器的初始化 runtime.schedinit</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#创建主协程" class="sidebar-link">创建主协程</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化m" class="sidebar-link">初始化M</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#主协程用来执行主函数" class="sidebar-link">主协程用来执行主函数</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-4" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#问题" class="sidebar-link">问题</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#体会" class="sidebar-link">体会</a></li></ul></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go程序是面向对象的吗" class="sidebar-link">Go程序是面向对象的吗？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#yes-and-no" class="sidebar-link">Yes and No</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的-类" class="sidebar-link">Go的“类“</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的继承" class="sidebar-link">Go的继承</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的接口" class="sidebar-link">Go的接口</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-5" class="sidebar-link">总结</a></li></ul></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#实战-企业级go项目包管理方法" class="sidebar-link">实战：企业级Go项目包管理方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go包管理困境" class="sidebar-link">Go包管理困境</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#尝试解决" class="sidebar-link">尝试解决</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#go-moudles-1-11-之后" class="sidebar-link">Go Moudles（1.11 之后）</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#使用modules" class="sidebar-link">使用Modules</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#github-无法访问怎么办" class="sidebar-link">Github 无法访问怎么办</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#想用本地文件替代怎么办" class="sidebar-link">想用本地文件替代怎么办</a></li><li class="sidebar-sub-header"><a href="/golang/1_1_why_go.html#同步到github" class="sidebar-link">同步到github</a></li></ul></li></ul></li><li><a href="/golang/1_2_struct.html" class="sidebar-link">数据结构</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>高并发下的工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="sidebar-link">高并发利器-协程</a></li><li><a href="/golang/2_2_high_concurrency_security_ock_mechanism.html" class="sidebar-link">高并发下的保安-锁机制</a></li><li><a href="/golang/2_3_channel.html" class="sidebar-link">通信宝藏-channel</a></li><li><a href="/golang/2_4_tcp_newwork.html" class="sidebar-link">TCP网络编程</a></li><li><a href="/golang/2_5_memory_model_and_garbage_collection.html" class="sidebar-link">内存模型与垃圾回收</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他高级特性</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/3_1_go_c.html" class="sidebar-link">如何实现 GO 调用 C 代码？</a></li><li><a href="/golang/3_2_go_defer.html" class="sidebar-link">defer 的底层原理是怎样的？</a></li><li><a href="/golang/3_3_go_recover.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_4_go_reflect.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_5_go_reflect_use.html" class="sidebar-link">实战：使用反射调用方法</a></li><li><a href="/golang/3_6_go_learning.html" class="sidebar-link">其他学习资料</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="为什么是go"><a href="#为什么是go" class="header-anchor">#</a> 为什么是GO？</h1> <h2 id="自身优势"><a href="#自身优势" class="header-anchor">#</a> 自身优势？</h2> <h3 id="c-c"><a href="#c-c" class="header-anchor">#</a> C/C++</h3> <ul><li>C 语言不是面向对象</li> <li>直接编译为机器码，不需要执行环境</li> <li>一次编码只能适用一种平台</li> <li>自己处理GC问题</li></ul> <h3 id="java"><a href="#java" class="header-anchor">#</a> Java</h3> <ul><li>编译为中间码（字节码）</li> <li>需要特定执行环境（JVM）</li> <li>一次编译多处执行</li> <li>有虚拟化损失</li></ul> <p>JavaScript</p> <ul><li>不需要编译，直接解释执行</li> <li>需要执行环境（浏览器）</li> <li>有虚拟化损失</li></ul> <h3 id="go"><a href="#go" class="header-anchor">#</a> Go</h3> <ul><li>直接编译为二进制，没有虚拟化损失</li> <li>自带运行环境，无需处理GC问题</li> <li>一次编码可以适用多种平台</li> <li>超强的并发支持能力与并发易用性</li></ul> <p><img src="/why_go.assets/go%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE.drawio.png" alt=""></p> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <ul><li>Go综合了多种语言的优势</li> <li>Go是一种天生支持高性能并发的场景</li> <li>Go在工业界有广泛的应用</li></ul> <h2 id="何为runtime"><a href="#何为runtime" class="header-anchor">#</a> 何为RunTime？</h2> <h3 id="很多语言都有runtime"><a href="#很多语言都有runtime" class="header-anchor">#</a> 很多语言都有Runtime</h3> <ul><li>Runtime 就是程序的运行环境</li> <li>Java：Java虚拟机</li> <li>JavaScript：浏览器内核</li></ul> <h3 id="go中runtime的特点"><a href="#go中runtime的特点" class="header-anchor">#</a> GO中Runtime的特点</h3> <ul><li>没有虚拟机的概念</li> <li>作为程序的一部分打包进二进制的产物</li> <li>随用户程序一起运行</li> <li>与用户程序没有明显界限，直接通过函数调用</li></ul> <h3 id="go中runtime的能力"><a href="#go中runtime的能力" class="header-anchor">#</a> Go中Runtime的能力</h3> <ul><li>内存管理能力</li> <li>垃圾回收机制</li> <li>超强的并发机制（协程调度）</li></ul> <p>其他：</p> <ul><li>有一定的屏蔽系统调用能力</li> <li>一些go关键字其实是Runtime下的函数</li></ul> <p><img src="/why_go.assets/go%E5%85%B3%E9%94%AE%E5%AD%97.drawio.png" alt=""></p> <h3 id="总结-2"><a href="#总结-2" class="header-anchor">#</a> 总结</h3> <ul><li>go的runtime负责内存管理，垃圾回收，协会调度</li> <li>go的runtime被编译为用户程序的一部分，一起运行</li></ul> <h2 id="go程序是如何编译的"><a href="#go程序是如何编译的" class="header-anchor">#</a> Go程序是如何编译的？</h2> <p><img src="/why_go.assets/%E7%BC%96%E8%AF%91%E8%A7%A3%E6%9E%90.drawio.png" alt=""></p> <p>编译过程</p> <p><img src="/why_go.assets/go%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.drawio.png" alt=""></p> <h3 id="词法分析"><a href="#词法分析" class="header-anchor">#</a> 词法分析</h3> <ul><li>将源代码翻译成Token</li> <li>Token是代码中的最小语义结构</li></ul> <h3 id="句法分析"><a href="#句法分析" class="header-anchor">#</a> 句法分析</h3> <p><img src="/why_go.assets/%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90.drawio.png" alt=""></p> <h3 id="语义分析"><a href="#语义分析" class="header-anchor">#</a> 语义分析</h3> <ul><li>类型检查</li> <li>类型推断</li> <li>查看类型是否匹配</li> <li>函数调用内联</li> <li>逃逸分析</li></ul> <h3 id="中间码生成"><a href="#中间码生成" class="header-anchor">#</a> 中间码生成</h3> <ul><li>为了处理不同平台的差异，先生成中间码（SSA）【平台无关的汇编】</li></ul> <p><img src="/why_go.assets/%E4%B8%AD%E9%97%B4%E7%A0%81.drawio.png" alt=""></p> <ul><li>查看从代码到SSA中间码的整个过程</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>windows cmd： set GOSSAFUNC=main
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="/why_go.assets/%E6%9F%A5%E7%9C%8B%E4%B8%AD%E9%97%B4%E7%A0%81%E7%94%9F%E6%88%90.drawio.png" alt=""></p> <h3 id="机器码生成"><a href="#机器码生成" class="header-anchor">#</a> 机器码生成</h3> <ul><li>先生成Plan9汇编代码</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">go</span> build <span class="token operator">-</span>gcflags <span class="token operator">-</span>S main<span class="token punctuation">.</span><span class="token keyword">go</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="链接"><a href="#链接" class="header-anchor">#</a> 链接</h3> <ul><li>将各个包及逆行链接，包括runtime</li></ul> <h3 id="总结-3"><a href="#总结-3" class="header-anchor">#</a> 总结</h3> <p><img src="/why_go.assets/%E7%BC%96%E8%AF%91%E6%80%BB%E7%BB%93.drawio.png" alt=""></p> <h2 id="go程序是如何运行的"><a href="#go程序是如何运行的" class="header-anchor">#</a> Go程序是如何运行的？</h2> <h3 id="go程序的入口"><a href="#go程序的入口" class="header-anchor">#</a> go程序的入口？</h3> <ul><li>main方法？</li> <li>runtime/rt0_XXX.s（汇编语言）</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code>CALL	runtime·<span class="token function">args</span><span class="token punctuation">(</span>SB<span class="token punctuation">)</span> <span class="token comment">// 对命令中的args进行初处理</span>
+	初始化runtime包中的参数
+	argc <span class="token operator">--</span><span class="token operator">-</span> 参数数量
+	argv <span class="token operator">--</span><span class="token operator">-</span> 参数值
+	
+CALL	runtime·<span class="token function">osinit</span><span class="token punctuation">(</span>SB<span class="token punctuation">)</span> <span class="token comment">// 检查多核，给schedule初始化</span>
+
+CALL	runtime·<span class="token function">schedinit</span><span class="token punctuation">(</span>SB<span class="token punctuation">)</span> <span class="token comment">// 初始化调度器</span>
+全局栈空间内存分配
+加载命令行参数到 os<span class="token punctuation">.</span>Args
+堆内存空间的初始化
+加载操作系统环境变量
+初始化当前系统线程
+垃圾回收机制的参数初始化
+算法初始化（<span class="token keyword">map</span>、hash）
+设置process数量
+
+<span class="token comment">// 取主函数的地址，放入协程</span>
+MOVQ	$runtime·<span class="token function">mainPC</span><span class="token punctuation">(</span>SB<span class="token punctuation">)</span><span class="token punctuation">,</span> AX		<span class="token comment">// 指向runtime.main 函数</span>
+
+<span class="token comment">// 创建协程，放入调度器，等待调度</span>
+CALL	runtime·<span class="token function">newproc</span><span class="token punctuation">(</span>SB<span class="token punctuation">)</span>
+
+<span class="token comment">// 初始化m ，用来调度主协程</span>
+CALL	runtime·<span class="token function">mstart</span><span class="token punctuation">(</span>SB<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// 进入runtime包 的 main方法</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>g <span class="token operator">:=</span> <span class="token function">getg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 初始化</span>
+<span class="token function">doInit</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>runtime_inittask<span class="token punctuation">)</span> <span class="token comment">// Must be before defer.</span>
+
+<span class="token comment">// 打开了垃圾回收器</span>
+<span class="token function">gcenable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 执行go中的主函数</span>
+fn <span class="token operator">:=</span> main_main 
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="保存参数"><a href="#保存参数" class="header-anchor">#</a> 保存参数</h3> <ul><li>保存 argc、argv到栈上</li></ul> <h3 id="初始化g0執行栈"><a href="#初始化g0執行栈" class="header-anchor">#</a> 初始化g0執行栈</h3> <ul><li>g0是为了调度协程而产生的协程</li> <li>g0是go程序的第一个协程</li></ul> <h3 id="运行时检测"><a href="#运行时检测" class="header-anchor">#</a> 运行时检测</h3> <ul><li>检查各种类型的长度</li> <li>检查指针操作</li> <li>检查结构体字段偏移量</li> <li>检查atomic原子操作</li> <li>检查CAS操作</li> <li>检查栈大小是否是2的幂次</li></ul> <h3 id="初始化runtime-args"><a href="#初始化runtime-args" class="header-anchor">#</a> 初始化runtime.args</h3> <ul><li>对命令行中的参数进行处理</li> <li>参数数量赋值给argc int32</li> <li>参数值复制给给argv **byte</li></ul> <h3 id="调度器的初始化-runtime-schedinit"><a href="#调度器的初始化-runtime-schedinit" class="header-anchor">#</a> 调度器的初始化 runtime.schedinit</h3> <ul><li>全局栈空间内存分配</li> <li>加载命令行参数到 os.Args</li> <li>堆内存空间的初始化</li> <li>加载操作系统环境变量</li> <li>初始化当前系统线程</li> <li>垃圾回收机制的参数初始化</li> <li>算法初始化（map、hash）</li> <li>设置process数量</li></ul> <h3 id="创建主协程"><a href="#创建主协程" class="header-anchor">#</a> 创建主协程</h3> <ul><li>创建一个新的协程，执行runtime.main</li> <li>放入调度器等待调度</li></ul> <h3 id="初始化m"><a href="#初始化m" class="header-anchor">#</a> 初始化M</h3> <ul><li>初始化一个M，用来调度主协程</li></ul> <h3 id="主协程用来执行主函数"><a href="#主协程用来执行主函数" class="header-anchor">#</a> 主协程用来执行主函数</h3> <ul><li>执行runtime包中的init方法</li> <li>启动GC垃圾收集器</li> <li>执行用户包依赖的init方法</li> <li>执行用户的主函数，main_main(go:linkename main_main main.main)</li></ul> <h3 id="总结-4"><a href="#总结-4" class="header-anchor">#</a> 总结</h3> <ul><li>Go启动时经理了检查、各种初始化，初始化协程调度的过程</li> <li>main.main()也是在协程中运行的</li></ul> <h3 id="问题"><a href="#问题" class="header-anchor">#</a> 问题</h3> <ul><li>调度器是什么？</li> <li>为什么初始化M？</li> <li>为什么不是执行main.main()，而是放到调度器执行。</li></ul> <h3 id="体会"><a href="#体会" class="header-anchor">#</a> 体会</h3> <ul><li>Go程序的启动过程像不像一个虚拟机或者框架？</li></ul> <h2 id="go程序是面向对象的吗"><a href="#go程序是面向对象的吗" class="header-anchor">#</a> Go程序是面向对象的吗？</h2> <h3 id="yes-and-no"><a href="#yes-and-no" class="header-anchor">#</a> Yes and No</h3> <ul><li>Go允许OO风格</li> <li>Go的Struct可以看作其他语言的Class</li> <li>Go缺乏其他语言的继承结构</li> <li>Go的接口与其他语言有很大的差异</li></ul> <h3 id="go的-类"><a href="#go的-类" class="header-anchor">#</a> Go的“类“</h3> <ul><li>其他语言中，往往用class表示一类数据</li> <li>class的每个实例称作”对象“</li> <li>Go中用strcut表示一类数据</li> <li>strcut每个实例并不是”对象“，而是此类型的”值“</li> <li>struct也可以定义方法</li></ul> <h3 id="go的继承"><a href="#go的继承" class="header-anchor">#</a> Go的继承</h3> <ul><li>Go没有继承</li> <li>Go的继承是组合</li> <li>组合中的匿名字段，通过语法糖达成了类似的继承的效果</li></ul> <h3 id="go的接口"><a href="#go的接口" class="header-anchor">#</a> Go的接口</h3> <ul><li>隐式实现接口（不想java需要指定实现的接口）</li></ul> <h3 id="总结-5"><a href="#总结-5" class="header-anchor">#</a> 总结</h3> <ul><li>Go没有对象，没有类，没有继承</li> <li>Go通过组合匿名字段达到类似的继承效果</li> <li>通过以上手段去掉了面向对象中复杂而冗余的部分</li> <li>保留了基本的面向对象的特性</li></ul> <h2 id="实战-企业级go项目包管理方法"><a href="#实战-企业级go项目包管理方法" class="header-anchor">#</a> 实战：企业级Go项目包管理方法</h2> <h3 id="go包管理困境"><a href="#go包管理困境" class="header-anchor">#</a> Go包管理困境</h3> <ul><li>没有统一的包管理方式</li> <li>包之间的依赖关系很难维护</li> <li>如果同时需要一个包的不同版本，非常麻烦</li></ul> <h3 id="尝试解决"><a href="#尝试解决" class="header-anchor">#</a> 尝试解决</h3> <ul><li>产生过hi使用godep、govendor、glide等解决</li> <li>未测地解决GOPATH存在的问题</li> <li>使用起来麻烦</li></ul> <h3 id="go-moudles-1-11-之后"><a href="#go-moudles-1-11-之后" class="header-anchor">#</a> Go Moudles（1.11 之后）</h3> <ul><li>本质上，一个Go包就是一个项目的源码</li> <li>gomod的作用：将Go包和Git项目关联起来</li> <li>Go包的版本就是Git项目的Tag</li> <li>gomod就是解决”需要哪个git项目的什么版本“</li></ul> <h3 id="使用modules"><a href="#使用modules" class="header-anchor">#</a> 使用Modules</h3> <ul><li><p>github.com/Jeffail/tunny</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>go get github.com/Jeffail/tunny
+go get github.com/Jeffail/tunny@version
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li></ul> <h3 id="github-无法访问怎么办"><a href="#github-无法访问怎么办" class="header-anchor">#</a> Github 无法访问怎么办</h3> <ul><li><p>使用 goproxy.cn作为代理</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>go env -w GOPROXY=https://goproxy.cn,direct
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li></ul> <h3 id="想用本地文件替代怎么办"><a href="#想用本地文件替代怎么办" class="header-anchor">#</a> 想用本地文件替代怎么办</h3> <ul><li><p>go.mod 文件追加：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>replace github.com/jeffail/tunny =&gt; xxx/xxx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>go vender 缓存到本地</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>go mod vendor // 不是之前的 go vendor, 将依赖包缓存到本地
+go build -mod vendor // 不会去远程拉版本 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li></ul> <h3 id="同步到github"><a href="#同步到github" class="header-anchor">#</a> 同步到github</h3> <ul><li>初始化mod文件</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>go mod init github.com/jeffail/tunny
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>提交到代码仓库</li> <li>打上tag</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">3/12/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/golang/" class="prev router-link-active">
+          深入理解Golang
+        </a></span> <span class="next"><a href="/golang/1_2_struct.html">
+          数据结构
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">为什么是Go？</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/golang/1_1_why_go.html#自身优势" class="toc-sidebar-link">自身优势？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#c-c" class="toc-sidebar-link">C/C++</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#java" class="toc-sidebar-link">Java</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go" class="toc-sidebar-link">Go</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#何为runtime" class="toc-sidebar-link">何为RunTime？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#很多语言都有runtime" class="toc-sidebar-link">很多语言都有Runtime</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go中runtime的特点" class="toc-sidebar-link">GO中Runtime的特点</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go中runtime的能力" class="toc-sidebar-link">Go中Runtime的能力</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-2" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#go程序是如何编译的" class="toc-sidebar-link">Go程序是如何编译的？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#词法分析" class="toc-sidebar-link">词法分析</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#句法分析" class="toc-sidebar-link">句法分析</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#语义分析" class="toc-sidebar-link">语义分析</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#中间码生成" class="toc-sidebar-link">中间码生成</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#机器码生成" class="toc-sidebar-link">机器码生成</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#链接" class="toc-sidebar-link">链接</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-3" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#go程序是如何运行的" class="toc-sidebar-link">Go程序是如何运行的？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go程序的入口" class="toc-sidebar-link">go程序的入口？</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#保存参数" class="toc-sidebar-link">保存参数</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化g0執行栈" class="toc-sidebar-link">初始化g0執行栈</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#运行时检测" class="toc-sidebar-link">运行时检测</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化runtime-args" class="toc-sidebar-link">初始化runtime.args</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#调度器的初始化-runtime-schedinit" class="toc-sidebar-link">调度器的初始化 runtime.schedinit</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#创建主协程" class="toc-sidebar-link">创建主协程</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化m" class="toc-sidebar-link">初始化M</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#主协程用来执行主函数" class="toc-sidebar-link">主协程用来执行主函数</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-4" class="toc-sidebar-link">总结</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#问题" class="toc-sidebar-link">问题</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#体会" class="toc-sidebar-link">体会</a></li></ul></li><li><a href="/golang/1_1_why_go.html#go程序是面向对象的吗" class="toc-sidebar-link">Go程序是面向对象的吗？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#yes-and-no" class="toc-sidebar-link">Yes and No</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的-类" class="toc-sidebar-link">Go的“类“</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的继承" class="toc-sidebar-link">Go的继承</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的接口" class="toc-sidebar-link">Go的接口</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-5" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#实战-企业级go项目包管理方法" class="toc-sidebar-link">实战：企业级Go项目包管理方法</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go包管理困境" class="toc-sidebar-link">Go包管理困境</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#尝试解决" class="toc-sidebar-link">尝试解决</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go-moudles-1-11-之后" class="toc-sidebar-link">Go Moudles（1.11 之后）</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#使用modules" class="toc-sidebar-link">使用Modules</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#github-无法访问怎么办" class="toc-sidebar-link">Github 无法访问怎么办</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#想用本地文件替代怎么办" class="toc-sidebar-link">想用本地文件替代怎么办</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#同步到github" class="toc-sidebar-link">同步到github</a></li></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">为什么是Go？</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/golang/1_1_why_go.html#自身优势" class="toc-sidebar-link">自身优势？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#c-c" class="toc-sidebar-link">C/C++</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#java" class="toc-sidebar-link">Java</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go" class="toc-sidebar-link">Go</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#何为runtime" class="toc-sidebar-link">何为RunTime？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#很多语言都有runtime" class="toc-sidebar-link">很多语言都有Runtime</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go中runtime的特点" class="toc-sidebar-link">GO中Runtime的特点</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go中runtime的能力" class="toc-sidebar-link">Go中Runtime的能力</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-2" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#go程序是如何编译的" class="toc-sidebar-link">Go程序是如何编译的？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#词法分析" class="toc-sidebar-link">词法分析</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#句法分析" class="toc-sidebar-link">句法分析</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#语义分析" class="toc-sidebar-link">语义分析</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#中间码生成" class="toc-sidebar-link">中间码生成</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#机器码生成" class="toc-sidebar-link">机器码生成</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#链接" class="toc-sidebar-link">链接</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-3" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#go程序是如何运行的" class="toc-sidebar-link">Go程序是如何运行的？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go程序的入口" class="toc-sidebar-link">go程序的入口？</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#保存参数" class="toc-sidebar-link">保存参数</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化g0執行栈" class="toc-sidebar-link">初始化g0執行栈</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#运行时检测" class="toc-sidebar-link">运行时检测</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化runtime-args" class="toc-sidebar-link">初始化runtime.args</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#调度器的初始化-runtime-schedinit" class="toc-sidebar-link">调度器的初始化 runtime.schedinit</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#创建主协程" class="toc-sidebar-link">创建主协程</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#初始化m" class="toc-sidebar-link">初始化M</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#主协程用来执行主函数" class="toc-sidebar-link">主协程用来执行主函数</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-4" class="toc-sidebar-link">总结</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#问题" class="toc-sidebar-link">问题</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#体会" class="toc-sidebar-link">体会</a></li></ul></li><li><a href="/golang/1_1_why_go.html#go程序是面向对象的吗" class="toc-sidebar-link">Go程序是面向对象的吗？</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#yes-and-no" class="toc-sidebar-link">Yes and No</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的-类" class="toc-sidebar-link">Go的“类“</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的继承" class="toc-sidebar-link">Go的继承</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go的接口" class="toc-sidebar-link">Go的接口</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#总结-5" class="toc-sidebar-link">总结</a></li></ul></li><li><a href="/golang/1_1_why_go.html#实战-企业级go项目包管理方法" class="toc-sidebar-link">实战：企业级Go项目包管理方法</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go包管理困境" class="toc-sidebar-link">Go包管理困境</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#尝试解决" class="toc-sidebar-link">尝试解决</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#go-moudles-1-11-之后" class="toc-sidebar-link">Go Moudles（1.11 之后）</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#使用modules" class="toc-sidebar-link">使用Modules</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#github-无法访问怎么办" class="toc-sidebar-link">Github 无法访问怎么办</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#想用本地文件替代怎么办" class="toc-sidebar-link">想用本地文件替代怎么办</a></li><li class="toc-sidebar-sub-header"><a href="/golang/1_1_why_go.html#同步到github" class="toc-sidebar-link">同步到github</a></li></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/golang/1_1_why_go.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="深入理解Golang" class="option-box" style="padding-left:2px;text-align:center;"><a href="/golang/" class="router-link-active"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <div title="数据结构" class="option-box" style="padding-left:2px;text-align:center;"><a href="/golang/1_2_struct.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.ef70de6f.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/46.0ecd1581.js" defer></script>
+  </body>
+</html>

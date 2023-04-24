@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UML | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.8472fd10.css" as="style"><link rel="preload" href="/assets/js/app.ef70de6f.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/39.5bae0b75.js" as="script"><link rel="prefetch" href="/assets/js/10.d1ca610a.js"><link rel="prefetch" href="/assets/js/11.c48e8933.js"><link rel="prefetch" href="/assets/js/12.c7fdb193.js"><link rel="prefetch" href="/assets/js/13.3ad1d819.js"><link rel="prefetch" href="/assets/js/14.bfddfa33.js"><link rel="prefetch" href="/assets/js/15.fa59c44e.js"><link rel="prefetch" href="/assets/js/16.e25b3825.js"><link rel="prefetch" href="/assets/js/17.cff19f1e.js"><link rel="prefetch" href="/assets/js/18.b5450872.js"><link rel="prefetch" href="/assets/js/19.7042d5a5.js"><link rel="prefetch" href="/assets/js/20.595e976a.js"><link rel="prefetch" href="/assets/js/21.0af28463.js"><link rel="prefetch" href="/assets/js/22.6666b792.js"><link rel="prefetch" href="/assets/js/23.29277800.js"><link rel="prefetch" href="/assets/js/24.5498488e.js"><link rel="prefetch" href="/assets/js/25.ede8ae45.js"><link rel="prefetch" href="/assets/js/26.1f954d5f.js"><link rel="prefetch" href="/assets/js/27.87958704.js"><link rel="prefetch" href="/assets/js/28.56877372.js"><link rel="prefetch" href="/assets/js/29.3e7cdb9a.js"><link rel="prefetch" href="/assets/js/30.71088dd5.js"><link rel="prefetch" href="/assets/js/31.e7d31ff5.js"><link rel="prefetch" href="/assets/js/32.8fe27087.js"><link rel="prefetch" href="/assets/js/33.546a5ea9.js"><link rel="prefetch" href="/assets/js/34.e30bbef1.js"><link rel="prefetch" href="/assets/js/35.8649ca01.js"><link rel="prefetch" href="/assets/js/36.28004b1f.js"><link rel="prefetch" href="/assets/js/37.84f86df6.js"><link rel="prefetch" href="/assets/js/38.78a27c92.js"><link rel="prefetch" href="/assets/js/40.527f4d29.js"><link rel="prefetch" href="/assets/js/41.2e5a9879.js"><link rel="prefetch" href="/assets/js/42.23b95415.js"><link rel="prefetch" href="/assets/js/43.a1f84282.js"><link rel="prefetch" href="/assets/js/44.10d5e3b7.js"><link rel="prefetch" href="/assets/js/45.eb5bb8fa.js"><link rel="prefetch" href="/assets/js/46.0ecd1581.js"><link rel="prefetch" href="/assets/js/47.765d5397.js"><link rel="prefetch" href="/assets/js/48.dddf79d0.js"><link rel="prefetch" href="/assets/js/49.83868331.js"><link rel="prefetch" href="/assets/js/5.995aeec7.js"><link rel="prefetch" href="/assets/js/50.a435f84d.js"><link rel="prefetch" href="/assets/js/51.a16152e4.js"><link rel="prefetch" href="/assets/js/52.76d569db.js"><link rel="prefetch" href="/assets/js/53.2ed13ef7.js"><link rel="prefetch" href="/assets/js/54.ccfdbdef.js"><link rel="prefetch" href="/assets/js/55.79d7e662.js"><link rel="prefetch" href="/assets/js/56.28096cb4.js"><link rel="prefetch" href="/assets/js/57.f840e8da.js"><link rel="prefetch" href="/assets/js/58.66577cf1.js"><link rel="prefetch" href="/assets/js/59.3f6a5c17.js"><link rel="prefetch" href="/assets/js/6.f5a2e6a6.js"><link rel="prefetch" href="/assets/js/60.a7abfd25.js"><link rel="prefetch" href="/assets/js/61.03a4ca53.js"><link rel="prefetch" href="/assets/js/62.c364a064.js"><link rel="prefetch" href="/assets/js/63.c0e19856.js"><link rel="prefetch" href="/assets/js/64.85f98546.js"><link rel="prefetch" href="/assets/js/65.db0a794c.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/9.9ce857c9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8472fd10.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Architecture</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>DDD</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/ddd_1_introduce.html" class="sidebar-link">DDD导读</a></li><li><a href="/architecture/ddd_2_ddd.html" class="sidebar-link">DDD 思想解读及优秀实践</a></li><li><a href="/architecture/ddd_3_dci&amp;ddd.html" class="sidebar-link">DCI架构是如何解决DDD战术建模缺点的？</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>面向复杂度的架构设计</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/complexity_oriented_1_introduce.html" class="sidebar-link">面向复杂度的架构设计</a></li><li><a href="/architecture/complexity_oriented_2_what_is_soft_architectrue.html" class="sidebar-link">什么是架构？</a></li><li><a href="/architecture/complexity_oriented_3_draw_good_architecture_diagrams.html" class="sidebar-link">如何画出优秀的架构图？</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>常用工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/tools_1_introduce.html" class="sidebar-link">工具导航</a></li><li><a href="/architecture/tools_2_uml.html" aria-current="page" class="active sidebar-link">UML</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#初步探索" class="sidebar-link">初步探索</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#基础示例" class="sidebar-link">基础示例</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#循环" class="sidebar-link">循环</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#标注" class="sidebar-link">标注</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#分割线" class="sidebar-link">分割线</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#分支" class="sidebar-link">分支</a></li><li class="sidebar-sub-header"><a href="/architecture/tools_2_uml.html#相关推荐" class="sidebar-link">相关推荐</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="uml-时序图"><a href="#uml-时序图" class="header-anchor">#</a> UML-时序图</h1> <p>当我查看一些项目文档时，经常看到有些大佬做的时序图，如👇：</p> <p>如此大作，真是思路清晰，让人叹为观止😱，让我对整体的调用都明朗了的图，这到底是怎么做出来的呢？要是我自己用画图软件，估计得画20分钟！</p> <p><img src="/uml.assets/uml%E6%97%B6%E5%BA%8F%E5%9B%BE%E5%B1%95%E7%A4%BA.drawio.png" alt=""></p> <p>基于此，抱着学习的心态让我们一窥究竟，让我们也可以用该种技能提升我们的工作效率~</p> <p>本文以具体的列子，作为导向，让你看起来不枯燥，看其中的例子，即可入手，如果需要深入学习，可以查看文章末尾的链接。</p> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>先了解一下UML吧😊~ UML，Unified Modeling Language，统一建模语言，是一种开放的方法，用于说明、可视化、构建和编写一个正在开发的、面向对象的、软件密集系统的制品的开放方法。</p> <h2 id="初步探索"><a href="#初步探索" class="header-anchor">#</a> 初步探索</h2> <p>经过一番资料的搜索，这是基于 plant UML 画出的时序图。</p> <p>Plant UML是一门类似于HTML的标记性语言，采用graphviz来渲染PlantUML，可集成在markdown。故而可以像维护代码一样维护 UML 图的历史版本，编写脚本就会自动生成UML图。用于会议讨论、流程设计、需求编写等环节。支持的工具集<a href="https://plantuml.com/zh/running" target="_blank" rel="noopener noreferrer">tools<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>不要太多！同时提供在线版工具：<a href="http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000" target="_blank" rel="noopener noreferrer">online-plantuml<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>本文演示较常用的时序图的演示，如果达不到需求，可以参考<a href="https://plantuml.com/zh/sequence-diagram" target="_blank" rel="noopener noreferrer">时序图<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：</p> <h2 id="基础示例"><a href="#基础示例" class="header-anchor">#</a> 基础示例</h2> <p><img src="/uml.assets/uml%E6%97%B6%E5%BA%8F%E5%9B%BE%E5%B1%95%E7%A4%BA.drawio.png" alt=""></p> <p>UML 图所对应的 plant UML 的标记性语言，如👇：</p> <div class="language-plant UML line-numbers-mode"><pre class="language-text"><code>@startuml
+actor user
+user -&gt; web: 勾选数据并删除
+web-&gt; dataService: 批量删除
+dataService -&gt; dataService : 创建批量删除任务启动协程删除，返回任务号
+dataService --&gt; web: 收到任务号
+web -&gt; fileService: 查询进度
+fileService--&gt;web: 返回进度详情
+web -&gt; web:  展示进度
+web --&gt; user: 实时展示进度
+@enduml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>于是可以简单理解，画出该图，需要如下关键字</p> <ul><li>actor    扮演</li> <li>user     小人</li> <li>-&gt;          实线</li> <li>--&gt;         虚线</li> <li>x -&gt; y: 行为的解释</li></ul> <p>还有统一的 @startuml: 开始， @enduml 截至。其余的关键字多为系统实际的组件，或者模块。</p> <h2 id="循环"><a href="#循环" class="header-anchor">#</a> 循环</h2> <p><img src="/uml.assets/plantUML%E5%BE%AA%E7%8E%AF.drawio.png" alt=""></p> <p>对应plant UML，如👇：</p> <div class="language-plant UML line-numbers-mode"><pre class="language-text"><code>@startuml
+loop 总进度未完成
+    bantchDeleteService -&gt; fileService: 查询删除子进度详情
+    bantchDeleteService -&gt; bantchDeleteService: 根据子任务进度详情，更新任务进度
+    bantchDeleteService --&gt; fileService: 更新总进度
+end
+@enduml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="标注"><a href="#标注" class="header-anchor">#</a> 标注</h2> <p><img src="/uml.assets/%E6%A0%87%E6%B3%A8.drawio.png" alt=""></p> <p>对应plant UML，如👇：</p> <div class="language-plant UML line-numbers-mode"><pre class="language-text"><code>@startuml
+zhangsan -&gt; lisi: 说了一句悄悄话
+note right: 你真帅
+zhangsan -&gt; zhangsan: 小声嘀咕：差不多有我一半帅吧
+lisi --&gt; zhangsan: 谢谢你，真有你的~
+@enduml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="分割线"><a href="#分割线" class="header-anchor">#</a> 分割线</h2> <p><img src="/uml.assets/%E5%88%86%E5%89%B2%E7%BA%BF.drawio.png" alt=""></p> <p>对应plant UML，如👇：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@startuml
+muxi -&gt; muxi: 填饱肚子
+== 以下为具体填饱肚子的步骤 ==
+muxi -&gt; 厨具架: 请求水果刀
+厨具架 --&gt;muxi:返回水果刀
+muxi -&gt; 冰箱: 需要苹果
+冰箱 --&gt; muxi: 提供苹果
+muxi -&gt; muxi: 把苹果吃掉
+@enduml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="分支"><a href="#分支" class="header-anchor">#</a> 分支</h2> <p><img src="/uml.assets/%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF.drawio.png" alt=""></p> <p>对应plant UML，如👇：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@startuml
+muxi -&gt; 户外细胞: 周末要去哪里玩？
+alt 户外细胞活跃:
+ 户外细胞 --&gt; muxi:去一个公园野餐
+ else 户外细胞不活跃:
+  户外细胞 --&gt; muxi:躺在床上吧
+end
+muxi --&gt; muxi: 还是躺床上香
+@enduml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="相关推荐"><a href="#相关推荐" class="header-anchor">#</a> 相关推荐</h2> <p><a href="https://blog.csdn.net/AlbenXie/article/details/122048583" target="_blank" rel="noopener noreferrer">程序员绘图工具-Plantuml<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/7/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/architecture/tools_1_introduce.html" class="prev">
+          工具导航
+        </a></span> <!----></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">UML</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/architecture/tools_2_uml.html#简介" class="toc-sidebar-link">简介</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#初步探索" class="toc-sidebar-link">初步探索</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#基础示例" class="toc-sidebar-link">基础示例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#循环" class="toc-sidebar-link">循环</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#标注" class="toc-sidebar-link">标注</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#分割线" class="toc-sidebar-link">分割线</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#分支" class="toc-sidebar-link">分支</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#相关推荐" class="toc-sidebar-link">相关推荐</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">UML</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/architecture/tools_2_uml.html#简介" class="toc-sidebar-link">简介</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#初步探索" class="toc-sidebar-link">初步探索</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#基础示例" class="toc-sidebar-link">基础示例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#循环" class="toc-sidebar-link">循环</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#标注" class="toc-sidebar-link">标注</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#分割线" class="toc-sidebar-link">分割线</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#分支" class="toc-sidebar-link">分支</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/tools_2_uml.html#相关推荐" class="toc-sidebar-link">相关推荐</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/architecture/tools_2_uml.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="工具导航" class="option-box" style="padding-left:2px;text-align:center;"><a href="/architecture/tools_1_introduce.html"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.ef70de6f.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/39.5bae0b75.js" defer></script>
+  </body>
+</html>
