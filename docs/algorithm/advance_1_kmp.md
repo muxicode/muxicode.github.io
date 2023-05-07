@@ -1,13 +1,13 @@
 ---
-title: KMP
-autoGroup-2: 进阶
+title: 图解KMP
+autoGroup-2: KMP
 ---
 
 # KMP
 
 开始讲解KMP之前，我们先来看一个实际的题目：
 
-![img](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_question.drawio-16829351440049.png)
+![img](/advance_1_kmp.assets/kmp_question.drawio-16829351440049.png)
 
 我们需要一个函数，该函数接收两个，参数，参数1 为原始字符串，参数2 为子字符串，该函数根据子字符串是否被原子字符串包含，若包含，则返回子字符串再原始字符串中开始的下标，如图上所示，该函数返回 **2**。
 
@@ -19,7 +19,7 @@ autoGroup-2: 进阶
 
 > 最差情况
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_fuzadu.drawio.png)
+![](/advance_1_kmp.assets/kmp_fuzadu.drawio.png)
 
 如果我们的数据状况，如上所示，原始字符串为 "aaaaaa" ，子字符串为 "aad"，则我们使用常规思路去匹配子字符串，则在原始字符串中，我们每一个字符串的位置都将与子串进行匹配3次，而且最后一次为 "a" 匹配 "d"，匹配失败。
 
@@ -49,7 +49,7 @@ kmp算法是一种很厉害的字符串匹配算法，它可以帮助我们在�
 
 我们以一个具体的例子体会，kmp算法的具体流程，我们需要用到下图的原始字符串，子字符串，next数组。
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_算法流程.drawio-168294425373116.png)
+![](/advance_1_kmp.assets/kmp_算法流程.drawio-168294425373116.png)
 
 在开始之前，我们需要了解 最长相等的前后缀的概念，其实就是上图中的next数组
 
@@ -67,7 +67,7 @@ kmp算法是一种很厉害的字符串匹配算法，它可以帮助我们在�
 
 看以下具体的子字符对应的next数组的数据的由来：
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_prefix.drawio-16834483836601.png)
+![](/advance_1_kmp.assets/kmp_prefix.drawio-16834522287101.png)
 
 
 
@@ -75,15 +75,15 @@ kmp算法是一种很厉害的字符串匹配算法，它可以帮助我们在�
 
 1. 第一步：与暴力匹配一样，我们选择原始字符串开始的位置，与子字符匹配，直到走到不匹配的位置。
 
-   ![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_process.drawio.png)
+   ![](/advance_1_kmp.assets/kmp_process.drawio.png)
 
 2. 第二步：根据我们的next数组进行回退，从`b`字符的位置开始匹配
 
-   ![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_process2.drawio.png)
+   ![](/advance_1_kmp.assets/kmp_process2.drawio.png)
 
    3. 第三步：继续匹配，直到原始字符串越界或者子字符越界停止
 
-      ![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_process3.drawio.png)
+      ![](/advance_1_kmp.assets/kmp_process3.drawio.png)
 
    4. 第四步：如何判断原始字符串与子字符串是否匹配，正确的匹配位置在哪里？上图可以知道：当原始字符串中，子字符串可以匹配上时，子字符串下一个可对比的位置一定是越界的，所以可以知道
 
@@ -132,19 +132,19 @@ func FindIndex(originalString string, substring string) int {
 
 > 子字符串下一次对比位置回退
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_next_help.drawio.png)
+![](/advance_1_kmp.assets/kmp_next_help.drawio.png)
 
 在暴力匹配过程中，当我们匹配不上时，我们直接回退对比位置到下标 0，但是在kmp中，我们借助 next 数组，我们可以知道，当5位置的c不匹配时，我们可以将下一个匹配位置直接回退到 2 而不是 0，因为 3，4 位置的 aa 已经通过匹配了，此时 0，1 位置与 3，4位置相等，所以0，1位置我们不用匹配，这个过程可以跳过，直接从2位置开始继续与原始字符串匹配。
 
 > 回退时原始串的实际匹配的起始位置
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_next_help2.drawio-168338525894014.png)
+![](/advance_1_kmp.assets/kmp_next_help2.drawio-168338525894014.png)
 
 当子字符串回退到 2 开始匹配，但是原始字符串匹配位置不变时，相当于原始字符串匹配的开头位置来到3位置，直接跳过了 1， 2 的位置，相比暴力匹配会更快。
 
 但是为什么 1，2 位置开头不可能匹配出子字符串呢？
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_jump.drawio.png)
+![](/advance_1_kmp.assets/kmp_jump.drawio.png)
 
 上图假设 原始字符串中存在 2 位置开头的字符串与 子字符串完全匹配，则方框1中的3个字符，与方框2中的3个字符一定相等，因为假设2位置开头存在与子字符串相匹配的字符。
 
@@ -162,13 +162,13 @@ func FindIndex(originalString string, substring string) int {
 
 
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_gen_next.drawio-168343261441023.png)
+![](/advance_1_kmp.assets/kmp_gen_next.drawio-168343261441023.png)
 
 **第一步初始化next数组：**上图next数组中，前两个位置是固定的，0位置之前没有字符串，不存在最长相等前后缀的概念，填充 -1。1位置前只有一个字符串，但是最长相等前后缀要求最长前后缀不能等于字符之前所有的字符串，所以该位置填充 0。
 
 
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_gen_next1.drawio.png)
+![](/advance_1_kmp.assets/kmp_gen_next1.drawio.png)
 
 **第二步填充next数组2位置：**
 
@@ -186,7 +186,7 @@ func FindIndex(originalString string, substring string) int {
 
 
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_gen_next2.drawio.png)
+![](/advance_1_kmp.assets/kmp_gen_next2.drawio.png)
 
 **第三步填充next数组 3 位置：**
 
@@ -195,7 +195,7 @@ func FindIndex(originalString string, substring string) int {
 1. ` cI `指向的 `a` 不等于 `nI -1` 指向的 `b`，此时`cI `需要回退
 2. ` cI`根据next数组回退 `cI=next[cI]`，所以` cI`回退为 `0`
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_gen_next3.drawio.png)
+![](/advance_1_kmp.assets/kmp_gen_next3.drawio.png)
 
 3. 回退后，继续对比子字符中的`cI`与 `nI -1` 的字符，此时还是不相等
 4. 此时 `cI` 为 `0`在 next 中的 `0` 位置指向 `-1` 已经无法回退
@@ -204,7 +204,7 @@ func FindIndex(originalString string, substring string) int {
 
 
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_gen_next4.drawio.png)
+![](/advance_1_kmp.assets/kmp_gen_next4.drawio.png)
 
 
 
@@ -217,7 +217,7 @@ func FindIndex(originalString string, substring string) int {
 
 
 
-![](D:/个人项目/github/muxicode.github.io/docs/.vuepress/public/advance_1_kmp.assets/kmp_gen_next5.drawio-168343612809034.png)
+![](/advance_1_kmp.assets/kmp_gen_next5.drawio-168343612809034.png)
 
 
 
