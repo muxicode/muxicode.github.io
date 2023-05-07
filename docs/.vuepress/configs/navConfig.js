@@ -34,13 +34,13 @@ const navs = [
       {
         text: '进阶',
         items: [
+          { text: 'kmp', link: '/waiting/' },
           { text: '图', link: '/waiting/' },
           { text: '线段树', link: '/waiting/' },
           { text: '并查集', link: '/waiting/' },
           { text: '有序表', link: '/waiting/' },
           { text: '字典树', link: '/waiting/' },
           { text: 'bfprt', link: '/waiting/' },
-          { text: 'kmp', link: '/waiting/' },
           { text: 'manacher', link: '/waiting/' },
           // { text: '图', link: '/algorithm/forward/graph' },
           // { text: '线段树', link: '/algorithm/forward/sagement' },

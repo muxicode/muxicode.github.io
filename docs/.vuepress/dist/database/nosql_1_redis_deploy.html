@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>redis 部署方式及优缺点 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.8472fd10.css" as="style"><link rel="preload" href="/assets/js/app.ef70de6f.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/40.527f4d29.js" as="script"><link rel="prefetch" href="/assets/js/10.d1ca610a.js"><link rel="prefetch" href="/assets/js/11.c48e8933.js"><link rel="prefetch" href="/assets/js/12.c7fdb193.js"><link rel="prefetch" href="/assets/js/13.3ad1d819.js"><link rel="prefetch" href="/assets/js/14.bfddfa33.js"><link rel="prefetch" href="/assets/js/15.fa59c44e.js"><link rel="prefetch" href="/assets/js/16.e25b3825.js"><link rel="prefetch" href="/assets/js/17.cff19f1e.js"><link rel="prefetch" href="/assets/js/18.b5450872.js"><link rel="prefetch" href="/assets/js/19.7042d5a5.js"><link rel="prefetch" href="/assets/js/20.595e976a.js"><link rel="prefetch" href="/assets/js/21.0af28463.js"><link rel="prefetch" href="/assets/js/22.6666b792.js"><link rel="prefetch" href="/assets/js/23.29277800.js"><link rel="prefetch" href="/assets/js/24.5498488e.js"><link rel="prefetch" href="/assets/js/25.ede8ae45.js"><link rel="prefetch" href="/assets/js/26.1f954d5f.js"><link rel="prefetch" href="/assets/js/27.87958704.js"><link rel="prefetch" href="/assets/js/28.56877372.js"><link rel="prefetch" href="/assets/js/29.3e7cdb9a.js"><link rel="prefetch" href="/assets/js/30.71088dd5.js"><link rel="prefetch" href="/assets/js/31.e7d31ff5.js"><link rel="prefetch" href="/assets/js/32.8fe27087.js"><link rel="prefetch" href="/assets/js/33.546a5ea9.js"><link rel="prefetch" href="/assets/js/34.e30bbef1.js"><link rel="prefetch" href="/assets/js/35.8649ca01.js"><link rel="prefetch" href="/assets/js/36.28004b1f.js"><link rel="prefetch" href="/assets/js/37.84f86df6.js"><link rel="prefetch" href="/assets/js/38.78a27c92.js"><link rel="prefetch" href="/assets/js/39.5bae0b75.js"><link rel="prefetch" href="/assets/js/41.2e5a9879.js"><link rel="prefetch" href="/assets/js/42.23b95415.js"><link rel="prefetch" href="/assets/js/43.a1f84282.js"><link rel="prefetch" href="/assets/js/44.10d5e3b7.js"><link rel="prefetch" href="/assets/js/45.eb5bb8fa.js"><link rel="prefetch" href="/assets/js/46.0ecd1581.js"><link rel="prefetch" href="/assets/js/47.765d5397.js"><link rel="prefetch" href="/assets/js/48.dddf79d0.js"><link rel="prefetch" href="/assets/js/49.83868331.js"><link rel="prefetch" href="/assets/js/5.995aeec7.js"><link rel="prefetch" href="/assets/js/50.a435f84d.js"><link rel="prefetch" href="/assets/js/51.a16152e4.js"><link rel="prefetch" href="/assets/js/52.76d569db.js"><link rel="prefetch" href="/assets/js/53.2ed13ef7.js"><link rel="prefetch" href="/assets/js/54.ccfdbdef.js"><link rel="prefetch" href="/assets/js/55.79d7e662.js"><link rel="prefetch" href="/assets/js/56.28096cb4.js"><link rel="prefetch" href="/assets/js/57.f840e8da.js"><link rel="prefetch" href="/assets/js/58.66577cf1.js"><link rel="prefetch" href="/assets/js/59.3f6a5c17.js"><link rel="prefetch" href="/assets/js/6.f5a2e6a6.js"><link rel="prefetch" href="/assets/js/60.a7abfd25.js"><link rel="prefetch" href="/assets/js/61.03a4ca53.js"><link rel="prefetch" href="/assets/js/62.c364a064.js"><link rel="prefetch" href="/assets/js/63.c0e19856.js"><link rel="prefetch" href="/assets/js/64.85f98546.js"><link rel="prefetch" href="/assets/js/65.db0a794c.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/9.9ce857c9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8472fd10.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><a href="/golang/" class="nav-link">
+  深入理解Golang
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  算法简介
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_line_code01_select_sort.html" class="nav-link">
+  线性结构
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  非线性结构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Database</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>NoSQL 数据库</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/database/nosql_1_redis_deploy.html" aria-current="page" class="active sidebar-link">redis 部署方式及优缺点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#一、单节点模式" class="sidebar-link">一、单节点模式</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#二、主从模式" class="sidebar-link">二、主从模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-主从复制" class="sidebar-link">2.1 主从复制</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-1-复制原理" class="sidebar-link" style="padding-left:3rem;">2.1.1 复制原理</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-1-1-全量复制" class="sidebar-link" style="padding-left:3rem;">2.1.1.1 全量复制</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-1-2-增量复制" class="sidebar-link" style="padding-left:3rem;">2.1.1.2 增量复制</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-2-读写分离" class="sidebar-link">2.2 读写分离</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-3-主要作用" class="sidebar-link">2.3 主要作用</a></li></ul></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#三、哨兵模式" class="sidebar-link">三、哨兵模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-1-定时监控任务" class="sidebar-link">3.1 定时监控任务</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-2-主观下线和客观下线" class="sidebar-link">3.2 主观下线和客观下线</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-3-sentinel集群的领导者选举" class="sidebar-link">3.3 Sentinel集群的领导者选举</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-4-故障转移" class="sidebar-link">3.4 故障转移</a></li></ul></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#四、-集群模式" class="sidebar-link">四、 集群模式</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#五、常见问题" class="sidebar-link">五、常见问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_1、sentinel节点为什么是至少三个且奇数个" class="sidebar-link">1、Sentinel节点为什么是至少三个且奇数个？</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2、redis集群节点数为什么至少是6个" class="sidebar-link">2、Redis集群节点数为什么至少是6个？</a></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3、为什么redis-cluster槽位设计成16384个" class="sidebar-link">3、为什么Redis Cluster槽位设计成16384个？</a></li></ul></li><li class="sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#六、文章来源" class="sidebar-link">六、文章来源</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="withouttoc page"> <div class="theme-default-content content__default"><h1 id="redis四种部署模式"><a href="#redis四种部署模式" class="header-anchor">#</a> Redis四种部署模式</h1> <ul><li>单节点模式</li> <li>主从模式</li> <li>哨兵模式（Sentinel）【2.8版本开始提供】</li> <li>集群模式（Cluster）【3.0版本开始提供】</li></ul> <h2 id="一、单节点模式"><a href="#一、单节点模式" class="header-anchor">#</a> 一、单节点模式</h2> <p><img src="/nosql_1_redis_deploy.assets/master.png" alt="img"></p> <blockquote><p>Redis默认启动，什么都不配置，默认就是Master节点，简单却不具备高可用。</p> <p>优点</p> <p>配置简单，操作简单
+缺点</p> <p>单点的宕机引来的服务的灾难、数据丢失
+单点服务器内存瓶颈，无法无限纵向扩容
+解决办法</p> <p>单节点宕机，可以由其他节点暂时顶替，宕机的慢慢排查</p></blockquote> <h2 id="二、主从模式"><a href="#二、主从模式" class="header-anchor">#</a> 二、主从模式</h2> <p><img src="/nosql_1_redis_deploy.assets/20210915004402460.png" alt=""></p> <blockquote><p>优点</p> <p>有了主从，提高了Redis整体的可用性，当主节点（master）挂了，可以把从节点（slave）手动升级为主节点继续服务。</p> <p>缺点</p> <p>master挂了整个Redis将失去写操作的能力，仅具备读操作，需要运维半夜爬起来手动升级，中间的请求失败数据丢失无法容忍。
+解决办法</p> <p>可以有一种方式自动升级slave为master      ------【哨兵】</p></blockquote> <h3 id="_2-1-主从复制"><a href="#_2-1-主从复制" class="header-anchor">#</a> 2.1 主从复制</h3> <p><img src="/nosql_1_redis_deploy.assets/2021091522311961.png" alt=""></p> <p>​        从一台Redis服务器的数据（主节点master），复制到其他Redis服务器（从节点slave）。数据复制单向，只能由主节点到从节点，master可读可写，slave只可读不可写；默认每台Redis服务器都是主节点，从节点需要在配置文件中单独配置，才会从默认的主节点变成从节点。一个主节点可以有0个或多个从节点，但每个从节点只能有一个主节点。</p> <h4 id="_2-1-1-复制原理"><a href="#_2-1-1-复制原理" class="header-anchor">#</a> 2.1.1 复制原理</h4> <ul><li><p>slave第一次连接master，一定会执行一次全量复制</p></li> <li><p>全量复制数据量过大，会造成很大的网络开销，消耗CPU/内存/硬盘IO</p></li> <li><p>增量复制用于处理在主从复制中因网络等数据丢失的场景，当slave再次连接上master，并且就是原来的master，如果条件允许，master补发数据给slave，补发数据量小，避免全量复制的开销（到底能不能复制还要看offset和buffer的情况）</p></li> <li><p>如果slave再次连上的master是新选举的master，那么只能进行全量复制</p></li> <li><p>早期的redis只有全量复制，增量复制是对全量复制的重大优化，尽量采用2.8以上版本</p></li></ul> <h4 id="_2-1-1-1-全量复制"><a href="#_2-1-1-1-全量复制" class="header-anchor">#</a> 2.1.1.1 全量复制</h4> <ul><li><p>slave给master发一个sync同步命令</p></li> <li><p>master通过bgsave命令fork子进程，持久化生成RDB文件</p></li> <li><p>master通过网络将RDB文件传给slave</p></li> <li><p>slave清空老数据，载入新的RDB文件，此时slave阻塞，无法响应客户端，专心复制</p></li></ul> <h4 id="_2-1-1-2-增量复制"><a href="#_2-1-1-2-增量复制" class="header-anchor">#</a> 2.1.1.2 增量复制</h4> <ul><li><p>主从节点各自维护自己的复制偏移量offset，主节点写入命令时，offset=offset+命令字节长度；从节点收到主节点命令也会相应增加自己的offset，并同步给主节点。主节点同时维护自己的offset和从节点的offset，以此来判断主从节点数据是否一致。</p></li> <li><p>主节点指令记录在本地buffer（缓冲区），异步将buffer同步给从节点</p></li> <li><p>若网络不好，同步速度慢了，buffer满了就会从头开始覆盖前面的内容，于是无法增量复制，必须全量复制</p></li></ul> <h3 id="_2-2-读写分离"><a href="#_2-2-读写分离" class="header-anchor">#</a> 2.2 读写分离</h3> <p>​        大部分情况都是读操作，将读操作放在从节点，写操作放在主节点，减缓服务器压力；同时一些执行耗时比较久的操作也可以放在一台从节点完成，例如keys、sort。（什么时候连主节点写，什么时候连从节点读，由客户端自己控制）</p> <div class="language- extra-class"><pre><code>    最低配：一主二从，当主节点宕机后，其中一个从节点升级为主节点，还能剩一个从节点。
+</code></pre></div><h3 id="_2-3-主要作用"><a href="#_2-3-主要作用" class="header-anchor">#</a> 2.3 主要作用</h3> <ol><li>数据冗余：热备份，持久化另一种方式</li> <li>故障恢复：master宕机，快速升级slave为master</li> <li>读写分离：master写，slave，提高服务器负载能力，同时可以根据需求添加slave</li> <li>负载均衡：配合读写分离，读多写少场景，多个slave分担负载，大大提高并发</li> <li>高可用基石：是实现哨兵和集群的基础</li></ol> <h2 id="三、哨兵模式"><a href="#三、哨兵模式" class="header-anchor">#</a> 三、哨兵模式</h2> <p><img src="/nosql_1_redis_deploy.assets/20210915004448949.png" alt=""></p> <p>​    试想一下，如果主从模式中，大半夜主节点挂了，运维从床上迷迷糊糊爬起来，打开电脑，手动升级处理，怕不是第二天就要上头条了。</p> <p>​    哨兵模式的出现用于解决主从模式中无法自动升级主节点的问题，一个哨兵是一个节点，用于监控主从节点的健康，当主节点挂掉的时候，自动选择一个最优从节点升级为主节点。</p> <p>​    但哨兵如果挂了怎么办？于是哨兵一般都会是一个集群，是集群高可用的心脏，一般由3-5个节点组成，即使个别节点挂了，集群还可以正常运行。</p> <blockquote><p>优点</p> <ul><li>可以在master挂掉后自动选举新的master</li></ul> <p>缺点</p> <ul><li><p>master挂了，切换新的master会造成未来得及主从同步的数据丢失</p></li> <li><p>大数据高并发，单个master内存仍存在上限</p></li> <li><p>主从全量同步仍然要耗费大量时间</p></li> <li><p>单个Redis只能利用CPU的单个核心，应对海量数据捉襟见肘</p></li></ul> <p>解决办法</p> <ul><li>Redis集群方案</li></ul></blockquote> <p><img src="/nosql_1_redis_deploy.assets/20210915004503755.png" alt=""></p> <p>​    客户端连接Redis，会首先连接<strong>Sentinel</strong>，通过Sentinel查询master地址，然后再连接master进行数据交互。当master挂了，客户端重新跟Sentinel要master地址，连接新的master。</p> <p>​    上图中可看，master挂了，原先的主从复制断开，客户端和master也断开。然后一个slave变成新的master，和其余的slave进行新的主从复制，客户端通过新的master继续交互，Sentinel持续监控已经挂掉的旧的master，<strong>一旦旧的master恢复</strong>，集群会变为下图，<strong>旧的master成为新的slave，从新的master建立主从复制关系。</strong></p> <p><img src="/nosql_1_redis_deploy.assets/2021091500451855.png" alt=""></p> <ul><li>一个Sentinel或Sentinel集群可以管理多个主从Redis，如果只有一个Redis，Sentinel没有意义</li> <li>master挂了，Sentinel在slave中选举一个升级为master，并修改配置文件</li> <li>挂了的master恢复后，只能当slave，跟新选举的master主从复制</li> <li>Sentinel有可能会挂，所以Sentinel一般都是一个集群</li> <li>每个Sentinel节点定期检测Redis数据节点、其余Sentinel节点是否可达</li> <li>对于节点的故障是由多个Sentinel节点共同完成，有效防止误判</li> <li>Redis主从复制为异步，master挂了，从节点可能会丢失一部分信息，Sentinel无法保证消息完全不丢失，但可以做到尽量少丢失</li> <li>Sentinel.slave_for方法可以从连接池内采用轮询方案拿出一个slave地址，实现负载均衡</li></ul> <h3 id="_3-1-定时监控任务"><a href="#_3-1-定时监控任务" class="header-anchor">#</a> 3.1 定时监控任务</h3> <ul><li>每隔10秒，每个Sentinel节点会向主节点和从节点发送info命令获取最近的拓扑结构，可以感知新加入或故障转移的Redis数据节点</li> <li>每隔2秒，每个Sentinel节点会与其他Sentinel节点通信，可以发现新的Sentinel节点，并与其他Sentinel节点交换对主节点的判断信息，方便故障转移及选举</li> <li>每隔1秒，每个Sentinel节点会向主节点、从节点以及其他的Sentinel节点发送ping做一次心跳检测，来确认这些节点是否可达，实现对每个节点的监控</li></ul> <h3 id="_3-2-主观下线和客观下线"><a href="#_3-2-主观下线和客观下线" class="header-anchor">#</a> 3.2 主观下线和客观下线</h3> <p><strong>主观下线</strong></p> <p>​    当Sentinel节点ping其他节点，超时未回复，Sentinel节点就会对该节点做失败判定。主观下线是当前Sentinel节点的一家之言，存在误判可能</p> <p><strong>客观下线</strong></p> <p>​    当Sentinel主观下线的节点是master，该Sentinel会询问其他Sentinel对master的判断，当大部分Sentinel都对master的下线做了同意判断，那么这个判断就是比较客观的</p> <h3 id="_3-3-sentinel集群的领导者选举"><a href="#_3-3-sentinel集群的领导者选举" class="header-anchor">#</a> 3.3 Sentinel集群的领导者选举</h3> <p>Sentinel节点已经对master做了客观下线，但还不能立刻进行故障转移，因为故障转移工作只需要一个Sentinel节点来完成，因此在Sentinel集群中要选出一个leader来进行故障转移。</p> <p>Redis使用了Raft算法实现领导者选举：</p> <ul><li><p>每个在线的Sentinel节点都有资格成为领导者，他要求其他节点来投自己一票</p></li> <li><p>先收到谁的要求就给谁投票，但不能给自己投</p></li> <li><p>首先拿到大多数（即一半+1）的票当选领导者</p></li></ul> <h3 id="_3-4-故障转移"><a href="#_3-4-故障转移" class="header-anchor">#</a> 3.4 故障转移</h3> <p>Sentinel集群领导者负责此次故障转移</p> <ol><li><p>排除主观下线的从节点</p></li> <li><p>选择优先级高的从节点，如果没有再进行3</p></li> <li><p>选择复制偏移量最大的从节点（复制的最完整），如果没有再进行4</p></li> <li><p>选择runid最小的从节点</p></li></ol> <h2 id="四、-集群模式"><a href="#四、-集群模式" class="header-anchor">#</a> 四、 集群模式</h2> <p><img src="/nosql_1_redis_deploy.assets/20210915004424387.png" alt=""></p> <p>​     集群方案真正实现了Redis高可用，有很多种实现方式，目前最常用的Redis Cluster是Redis的亲儿子，是Redis作者自己提供的Redis集群化方案，从Redis3.0版本开始正式提供。</p> <p>​    集群由多个Redis主从组成，每一个主从代表一个节点，每个节点负责一部分数据，他们之间通过一种特殊的二进制协议交互集群信息。</p> <p>​    Redis Cluster将所有数据分片，分成16384个槽位，Redis Cluster对key值使用crc16算法进行hash，然后用除留余数发模除16384得到具体的槽位，每个节点负责其中一部分槽位。</p> <p>当客户端连接集群，会得到一份集群的槽位匹配信息，当客户端要查找key，可以直接定位到目标节点。</p> <p>​    Cluster去中心化，由多个节点组成，客户端连接时可以只用一个节点的地址，其余节点可通过该节点自动发现，但如果该节点挂了，就必须手动更换地址，因此连接多个地址安全性更高。</p> <p><strong>容错</strong></p> <p>​    Redis Cluster拥有类似哨兵的功能，每个节点仍需设置若干从节点，主节点发生故障，集群可将slave升级为master；否则如果master挂了，集群完全不可用；</p> <p>​    且Redis Cluster是去中心化，集群内某个节点不可用时，一个节点认为他失联并不代表所以节点都认为他失联，集群要进行一次商议，只有大多数节点认为他失联，才会认为其需要主从切换来容错。</p> <p><strong>动态扩容</strong></p> <p>​    假如原先集群中有3个节点，一共3000个数据，可能1-1000在第一个节点，1001-2000在第二个节点，2001-3000在第三个节点。</p> <p>​    当新节点加入集群，需要手动将槽和数据迁移到新节点，可以使用redis-trib工具或手动命令迁移（略）。</p> <p><strong>大致流程：</strong></p> <ul><li><strong>从源节点获取内容</strong></li> <li><strong>存到目标节点</strong></li> <li><strong>删除源节点内容</strong></li></ul> <blockquote><p>优点</p> <ul><li><p>无中心架构，支持动态扩容</p></li> <li><p>Cluster自动具备哨兵监控和故障转移（主从切换）能力</p></li> <li><p>客户端连接集群内部地址可自动发现</p></li> <li><p>高性能、高可用，有效解决了Redis分布式需求</p></li></ul> <p>缺点</p> <ul><li>运维复杂</li> <li>只能使用0号数据库</li></ul></blockquote> <h2 id="五、常见问题"><a href="#五、常见问题" class="header-anchor">#</a> 五、常见问题</h2> <h3 id="_1、sentinel节点为什么是至少三个且奇数个"><a href="#_1、sentinel节点为什么是至少三个且奇数个" class="header-anchor">#</a> 1、Sentinel节点为什么是至少三个且奇数个？</h3> <ul><li>因为投票机制需要满足多数派原则，就是说至少有半数以上的节点同意才能生效。如果Sentinel节点只有两个，那么当其中一个节点失效时，另一个节点无法获得多数派的支持，也就无法进行故障转移。😭如果Sentinel节点是偶数个，那么当出现网络分区时，可能会导致两个子集都无法获得多数派的支持，也就无法进行故障转移。😭所以我们需要至少三个节点，来保证Sentinel集群自身的高可用。😊</li> <li>当然了，这三个Sentinel节点肯定都推荐部署到「不同的」机器上，如果所有的Sentinel节点都部署到了同一台机器上，那当这台机器挂了，整个Sentinel也就不复存在了。😭所以我们要注意分散风险，让我们的Redis数据库更安全、更可靠。👍</li></ul> <h3 id="_2、redis集群节点数为什么至少是6个"><a href="#_2、redis集群节点数为什么至少是6个" class="header-anchor">#</a> 2、Redis集群节点数为什么至少是6个？</h3> <p>因为Redis集群需要满足以下两个条件：👇</p> <ul><li>每个主节点都要有一个从节点，来保证数据的复制和备份。这样当主节点出现故障时，从节点可以接替主节点的角色，继续提供服务。👍</li> <li>集群中的主节点数量要超过半数，来保证集群的可用性。这样当出现网络分区时，可以避免脑裂的情况，即两个子集都认为自己是集群的一部分。😭</li></ul> <p>​      所以，如果我们只有两个节点，那么就无法满足第一个条件，因为没有从节点来复制数据。😭如果我们只有四个节点，那么就无法满足第二个条件，因为当两个主节点失去联系时，就会出现脑裂的情况。😭所以我们至少需要六个节点，来满足这两个条件，让我们的Redis集群更稳定、更可靠。😊</p> <p>​       假设我们只有两个节点，A和B，都是主节点。那么当A节点出现故障时，B节点就没有从节点可以接替A节点的角色，也就无法提供A节点原本负责的数据。这样就会导致数据丢失和服务中断。😭所以我们需要至少一个从节点来复制A节点的数据，这样当A节点出现故障时，从节点可以顶上，继续提供服务。👍</p> <p>​       假设我们有四个节点，A和B是主节点，C和D是从节点。那么当A和B之间的网络出现故障时，就会导致集群分成两个子集，一个是A和C，一个是B和D。这样就会出现脑裂的情况，即两个子集都认为自己是集群的一部分。😭这样就会导致数据不一致和服务混乱。所以我们需要至少三个主节点，来保证集群中的主节点数量要超过半数，这样当出现网络分区时，只有一个子集可以获得多数派的支持，继续提供服务。👍</p> <h3 id="_3、为什么redis-cluster槽位设计成16384个"><a href="#_3、为什么redis-cluster槽位设计成16384个" class="header-anchor">#</a> 3、为什么Redis Cluster槽位设计成16384个？</h3> <p>这个数字主要考虑了以下几个因素：👇</p> <ul><li><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">集群设计最多支持1000个分片（shard），也就是1000个主节点。16384是相对比较好的选择，需要保证在最大集群规模下，槽位均匀分布场景下，每个分片平均分到的槽位不至于太小。<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">所以16384是在正确的范围内，以确保每个主节点有足够的槽位，最多1000个主节点，但这个数量足够小，可以轻松地将整个集群状态存储在每个节点中。<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">如果槽位数量太大，比如100万个，那么每次迁移槽位时，需要迁移的数据量就会很小，导致迁移次数增多，网络开销增大。<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>而且每个节点需要维护一个很大的槽位映射表，占用更多的内存空间。😭</li> <li><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">如果槽位数量太小，比如1000个，那么每次迁移槽位时，需要迁移的数据量就会很大，导致迁移时间增长，影响服务质量。<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><a href="https://cloud.tencent.com/developer/article/1912954" target="_blank" rel="noopener noreferrer">1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>而且每个分片平均分到的槽位就会很少，导致数据分布不均匀，负载不平衡。😭</li></ul> <p>所以，16384是一个比较合理的数字，既能保证数据分布均匀，又能保证迁移效率高，还能保证内存占用低。😊</p> <h2 id="六、文章来源"><a href="#六、文章来源" class="header-anchor">#</a> 六、文章来源</h2> <ul><li><a href="https://blog.csdn.net/qq_26012495/article/details/120299332" target="_blank" rel="noopener noreferrer">csdn<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/25/2023,</span></div></footer> <!----> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><!----> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">redis 部署方式及优缺点</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/database/nosql_1_redis_deploy.html#一、单节点模式" class="toc-sidebar-link">一、单节点模式</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/database/nosql_1_redis_deploy.html#二、主从模式" class="toc-sidebar-link">二、主从模式</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-主从复制" class="toc-sidebar-link">2.1 主从复制</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-1-复制原理" class="toc-sidebar-link">2.1.1 复制原理</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-1-1-全量复制" class="toc-sidebar-link">2.1.1.1 全量复制</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-1-1-2-增量复制" class="toc-sidebar-link">2.1.1.2 增量复制</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-2-读写分离" class="toc-sidebar-link">2.2 读写分离</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2-3-主要作用" class="toc-sidebar-link">2.3 主要作用</a></li></ul></li><li><a href="/database/nosql_1_redis_deploy.html#三、哨兵模式" class="toc-sidebar-link">三、哨兵模式</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-1-定时监控任务" class="toc-sidebar-link">3.1 定时监控任务</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-2-主观下线和客观下线" class="toc-sidebar-link">3.2 主观下线和客观下线</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-3-sentinel集群的领导者选举" class="toc-sidebar-link">3.3 Sentinel集群的领导者选举</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3-4-故障转移" class="toc-sidebar-link">3.4 故障转移</a></li></ul></li><li><a href="/database/nosql_1_redis_deploy.html#四、-集群模式" class="toc-sidebar-link">四、 集群模式</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/database/nosql_1_redis_deploy.html#五、常见问题" class="toc-sidebar-link">五、常见问题</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_1、sentinel节点为什么是至少三个且奇数个" class="toc-sidebar-link">1、Sentinel节点为什么是至少三个且奇数个？</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_2、redis集群节点数为什么至少是6个" class="toc-sidebar-link">2、Redis集群节点数为什么至少是6个？</a></li><li class="toc-sidebar-sub-header"><a href="/database/nosql_1_redis_deploy.html#_3、为什么redis-cluster槽位设计成16384个" class="toc-sidebar-link">3、为什么Redis Cluster槽位设计成16384个？</a></li></ul></li><li><a href="/database/nosql_1_redis_deploy.html#六、文章来源" class="toc-sidebar-link">六、文章来源</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/database/nosql_1_redis_deploy.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <!----> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.ef70de6f.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/40.527f4d29.js" defer></script>
+  </body>
+</html>

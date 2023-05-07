@@ -7,8 +7,9 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d ./docs/.vuepress/dist",
-    "deploy:build": "npm run docs:build && gh-pages -d ./docs/.vuepress/dist"
+    "deploy": "gh-pages -d ./docs/.vuepress/dist ",
+    "deploy:build": "npm run docs:build && gh-pages -d ./docs/.vuepress/dist",
+    "testgh": "gh-pages -h"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,13 @@
   "license": "ISC",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.9",
+    "@vuepress/plugin-medium-zoom": "^1.8.2",
     "gh-pages": "^5.0.0",
     "vuepress": "^1.9.8",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-smooth-scroll": "^0.0.10",
-    "vuepress-plugin-toolbar": "^1.0.1",
-    "@vuepress/plugin-medium-zoom": "^1.8.2"
+    "vuepress-plugin-toolbar": "^1.0.1"
   },
   "dependencies": {
     "screenfull": "^5.1.0"
