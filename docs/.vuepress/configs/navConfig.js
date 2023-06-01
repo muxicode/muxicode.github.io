@@ -8,16 +8,14 @@ const navs = [
   { text: '首页', link: '/' },
   { text: '导航', link: '/navigation/' },
   {
-    text: '深入理解Golang', link: '/golang/',
-    // items: [
-    //   { text: '数据结构', link: '/golang/struct' },
-    //   { text: '协程', link: '/golang/routine' },
-    //   { text: '并发锁', link: '/golang/lock' },
-    //   { text: '管道', link: '/golang/channel' },
-    //   { text: '网络编程', link: '/golang/network' },
-    //   { text: '垃圾回收', link: '/golang/gc' },
-    //   { text: '其他高级特性', link: '/golang/features' },
-    // ],
+    text: 'Golang',
+    items: [
+      { text: '目录导读', link: '/golang/' },
+      { text: '基础入门', link: '/golang/1_2_struct' },
+      { text: '高并发下的工具', link: '/golang/2_1_high_concurrency_sharps_coroutines' },
+      { text: '其他高级特性', link: '/golang/3_1_go_c' },
+      { text: '测试相关', link: '/golang/4_1_golang_test' },
+    ],
   },
   {
     text: '数据结构与算法',

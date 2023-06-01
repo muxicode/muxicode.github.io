@@ -214,6 +214,16 @@
 ## 工具合集
 
 <div class="cc-row cc-row-gutter-20"><!--[-->
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://www.deepl.com/translator"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="deepl翻译器"><img class="nozoom medium-zoom-image"
+            src="/images/tool-logo/deepl.svg" style="height:35px;">
+          <div style="height:40px;float:right;">deepl翻译器</div>
+        </div>
+        <div class="cc-nav-des" title="deepl翻译器">deepl翻译器</div>
+      </div>
+    </a></div>
   <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://chrome.pictureknow.com/"
       target="_blank">
       <div class="my-nav-item">
