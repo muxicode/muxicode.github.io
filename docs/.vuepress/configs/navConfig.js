@@ -33,7 +33,7 @@ const navs = [
         text: '进阶',
         items: [
           { text: 'kmp', link: '/algorithm/advance_1_kmp_1' },
-          { text: '图', link: '/waiting/' },
+          { text: '图', link: '/algorithm/advance_2_graph_1_base' },
           { text: '线段树', link: '/waiting/' },
           { text: '并查集', link: '/waiting/' },
           { text: '有序表', link: '/waiting/' },
