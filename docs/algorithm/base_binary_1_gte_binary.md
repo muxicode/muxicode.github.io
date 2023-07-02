@@ -1,6 +1,6 @@
 ---
 title: 2.int类型的二进制码
-autoGroup-1: 基础-二进制
+autoGroup-1: 基础
 ---
 
 # 1.int类型的二进制码

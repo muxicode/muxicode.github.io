@@ -1,6 +1,6 @@
 ---
-title: 2. 冒泡排序
-autoGroup-2-1: 基础-线性结构
+title: 6. 冒泡排序
+autoGroup-1: 基础
 ---
 
 # 2. 冒泡排序

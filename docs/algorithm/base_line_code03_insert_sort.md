@@ -1,6 +1,6 @@
 ---
-title: 3. 插入排序
-autoGroup-2-1: 基础-线性结构
+title: 7. 插入排序
+autoGroup-1: 基础
 ---
 
 # 3. 插入排序

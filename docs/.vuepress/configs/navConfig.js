@@ -23,19 +23,21 @@ const navs = [
       {
         text: '基础',
         items: [
-          { text: '算法简介', link: '/algorithm/' },
+          { text: '初识算法', link: '/algorithm/' },
           { text: '二进制', link: '/algorithm/base_binary_0_binary' },
-          { text: '线性结构', link: '/algorithm/base_line_code01_select_sort' },
-          { text: '非线性结构', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
+          { text: '排序', link: '/algorithm/base_line_code01_select_sort' },
+          { text: '并查集', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
+          { text: '其他', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
         ]
       },
       {
         text: '进阶',
         items: [
           { text: 'kmp', link: '/algorithm/advance_1_kmp_1' },
+          { text: '堆', link: '/waiting/' },
+          { text: '并查集', link: '/waiting/' },
           { text: '图', link: '/algorithm/advance_2_graph_1_base' },
           { text: '线段树', link: '/waiting/' },
-          { text: '并查集', link: '/waiting/' },
           { text: '有序表', link: '/waiting/' },
           { text: '字典树', link: '/waiting/' },
           { text: 'bfprt', link: '/waiting/' },

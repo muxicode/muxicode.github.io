@@ -1,6 +1,6 @@
 ---
 title: 4.位图
-autoGroup-1: 基础-二进制
+autoGroup-1: 基础
 ---
 
 # 3.位图
