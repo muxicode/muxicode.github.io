@@ -18,15 +18,28 @@ const navs = [
     ],
   },
   {
+    text: 'Web框架',
+    items: [
+      { text: '熟悉http包', link: '/waiting/' },
+      { text: 'server抽象', link: '/waiting/' },
+      { text: '错误处理', link: '/waiting/' },
+      { text: '简单路树', link: '/waiting/' },
+      { text: '并发编程', link: '/waiting/' },
+      { text: '文件操作', link: '/waiting/' },
+      { text: '泛型', link: '/waiting/' },
+    ],
+  },
+  {
     text: '数据结构与算法',
     items: [
       {
         text: '基础',
         items: [
           { text: '初识算法', link: '/algorithm/' },
-          { text: '二进制', link: '/algorithm/base_binary_0_binary' },
-          { text: '排序', link: '/algorithm/base_line_code01_select_sort' },
-          { text: '并查集', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
+          { text: '二进制', link: '/algorithm/base_1_binary_0_binary' },
+          { text: '排序', link: '/algorithm/base_5_line_code01_select_sort' },
+          { text: '并查集', link: '/algorithm/base_8_union_set_1' },
+          { text: '堆', link: '/algorithm/base_9_heap' },
           { text: '其他', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
         ]
       },

@@ -50,7 +50,7 @@ autoGroup-2-2: 图
 
 ## 代码实现
 
-- 该代码中使用基础章节中的[并查集](/algorithm/base_union_set_1)，若不了解该内容，需要先阅读该章节。
+- 该代码中使用基础章节中的[并查集](/algorithm/base_8_union_set_1)、[堆](/algorithm/base_9_heap)，若不了解该内容，需要先阅读该章节。
 
 ```go
 /*
