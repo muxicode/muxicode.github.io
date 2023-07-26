@@ -21,31 +21,32 @@
 
 举个例子，假设我们有一个类叫做 Calculator，其中有一个方法 add 用于计算两个数的和：
 
-python
-Copy code
+```python
 class Calculator:
     def add(self, a, b):
         return a + b
+```
+
 现在，我们想要添加一个新的方法 subtract，用于计算两个数的差。我们可以直接复制粘贴 add 方法，并做一些修改：
 
-python
-Copy code
+```python
 class Calculator:
     def add(self, a, b):
         return a + b
-    
-    def subtract(self, a, b):
-        return a - b
+
+	def subtract(self, a, b):
+    	return a - b
+```
 这样做虽然可以实现我们的需求，但是代码的重复度很高，也不符合设计原则。我们可以通过重构来改进代码：
 
-python
-Copy code
+```python
 class Calculator:
     def add(self, a, b):
         return a + b
     
-    def subtract(self, a, b):
-        return self.add(a, -b)
+	def subtract(self, a, b):
+    	return self.add(a, -b)
+```
 这个重构的过程非常简单，我们只需要将 subtract 方法的实现委托给 add 方法，同时改变一个参数的符号即可。这样做的好处是，我们避免了重复的代码，同时也保持了代码的可读性和可维护性。
 
 👀 总结
