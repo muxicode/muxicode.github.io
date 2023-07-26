@@ -49,6 +49,11 @@ title: 深入理解Golang
 
 ### 测试相关
 - [构建测试](./4_1_golang_test)
+- [基准测试](./4_2_golang_benchmark)
+
+### 实战
+- [pprof 实践](./actual_1_pprof)
+- [问题定位](./actual_2_pro_problem)
 
 ## 有错误怎么办？
 
