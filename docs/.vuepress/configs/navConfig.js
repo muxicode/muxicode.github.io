@@ -20,10 +20,10 @@ const navs = [
   {
     text: 'Web框架',
     items: [
-      { text: '熟悉http包', link: '/waiting/' },
-      { text: 'server抽象', link: '/waiting/' },
-      { text: '错误处理', link: '/waiting/' },
-      { text: '简单路树', link: '/waiting/' },
+      { text: '熟悉http包', link: '/web/1_http' },
+      { text: 'server抽象', link: '/web/2_server' },
+      { text: 'context抽象', link: '/web/3_context' },
+      { text: '简单路树', link: '/web/4_simple_route' },
       { text: '并发编程', link: '/waiting/' },
       { text: '文件操作', link: '/waiting/' },
       { text: '泛型', link: '/waiting/' },
