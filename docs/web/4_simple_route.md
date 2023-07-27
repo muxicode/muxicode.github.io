@@ -18,10 +18,10 @@ type SDKHTTPServer struct {
 
 ```go
 func (S *SDKHTTPServer) Route(
-	method string, //
+	method string,
 	pattern string,
 	handleFunc func(*Context)) {
-	S.handler.handlers[S.key(method, pattern)] = handleFunc
+	S.handler.handlers[S.handler.key(method, pattern)] = handleFunc
 }
 ```
 
@@ -61,7 +61,7 @@ type HandlerBaseOnMap struct {
 func (h *HandlerBaseOnMap) ServeHTTP(
 	writer http.ResponseWriter,
 	request *http.Request) {
-	key := h.key(request)
+	key := h.key(request.Method, request.URL.Path)
 	if handler, ok := h.handlers[key]; ok {
 		handler(NewContext(writer, request))
 	} else {
@@ -70,9 +70,7 @@ func (h *HandlerBaseOnMap) ServeHTTP(
 	}
 }
 
-func(h *HandlerBaseOnMap) key(request *http.Request) string {
-	method := request.Method
-	pattern := request.URL.Path
+func(h *HandlerBaseOnMap) key(method, pattern string) string {
 	return fmt.Sprintf("%s#%s", method, pattern)
 }
 ```

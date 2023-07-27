@@ -42,6 +42,8 @@ const navs = [
       { text: 'server抽象', link: '/web/2_server' },
       { text: 'context抽象', link: '/web/3_context' },
       { text: '简单路树', link: '/web/4_simple_route' },
+      { text: 'handler抽象', link: '/web/5_handler' },
+      { text: 'filter实现AOP', link: '/web/6_filter' },
       { text: '并发编程', link: '/waiting/' },
       { text: '文件操作', link: '/waiting/' },
       { text: '泛型', link: '/waiting/' },
