@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>handler抽象 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.c1ee2277.js" as="script"><link rel="preload" href="/assets/js/3.1bf1a0da.js" as="script"><link rel="preload" href="/assets/js/4.879358fa.js" as="script"><link rel="preload" href="/assets/js/84.45e24855.js" as="script"><link rel="prefetch" href="/assets/js/10.0abfc0d2.js"><link rel="prefetch" href="/assets/js/11.c48e8933.js"><link rel="prefetch" href="/assets/js/12.47f2bd5b.js"><link rel="prefetch" href="/assets/js/13.3ad1d819.js"><link rel="prefetch" href="/assets/js/14.45708af6.js"><link rel="prefetch" href="/assets/js/15.fa59c44e.js"><link rel="prefetch" href="/assets/js/16.8960b987.js"><link rel="prefetch" href="/assets/js/17.686bcc1d.js"><link rel="prefetch" href="/assets/js/18.396eade6.js"><link rel="prefetch" href="/assets/js/19.7042d5a5.js"><link rel="prefetch" href="/assets/js/20.74778425.js"><link rel="prefetch" href="/assets/js/21.461b7957.js"><link rel="prefetch" href="/assets/js/22.d111b99d.js"><link rel="prefetch" href="/assets/js/23.e3d12d1c.js"><link rel="prefetch" href="/assets/js/24.38c46b7c.js"><link rel="prefetch" href="/assets/js/25.1b6d4d40.js"><link rel="prefetch" href="/assets/js/26.79db8dac.js"><link rel="prefetch" href="/assets/js/27.e4a5c0dd.js"><link rel="prefetch" href="/assets/js/28.5385bae4.js"><link rel="prefetch" href="/assets/js/29.bd31877b.js"><link rel="prefetch" href="/assets/js/30.c437da89.js"><link rel="prefetch" href="/assets/js/31.ffbf6099.js"><link rel="prefetch" href="/assets/js/32.2cf83173.js"><link rel="prefetch" href="/assets/js/33.8dffd96f.js"><link rel="prefetch" href="/assets/js/34.0a0ee6bf.js"><link rel="prefetch" href="/assets/js/35.5043cb20.js"><link rel="prefetch" href="/assets/js/36.cd9d7e3c.js"><link rel="prefetch" href="/assets/js/37.3a18b344.js"><link rel="prefetch" href="/assets/js/38.5145a17c.js"><link rel="prefetch" href="/assets/js/39.0865f810.js"><link rel="prefetch" href="/assets/js/40.6993a526.js"><link rel="prefetch" href="/assets/js/41.4a78c82b.js"><link rel="prefetch" href="/assets/js/42.4694ffa0.js"><link rel="prefetch" href="/assets/js/43.8362f7c2.js"><link rel="prefetch" href="/assets/js/44.f5592cdb.js"><link rel="prefetch" href="/assets/js/45.17aef609.js"><link rel="prefetch" href="/assets/js/46.17166318.js"><link rel="prefetch" href="/assets/js/47.c77b57a0.js"><link rel="prefetch" href="/assets/js/48.2909441b.js"><link rel="prefetch" href="/assets/js/49.89f620bf.js"><link rel="prefetch" href="/assets/js/5.26ad2499.js"><link rel="prefetch" href="/assets/js/50.e26fa73d.js"><link rel="prefetch" href="/assets/js/51.dc848a39.js"><link rel="prefetch" href="/assets/js/52.c577fa55.js"><link rel="prefetch" href="/assets/js/53.72e2657f.js"><link rel="prefetch" href="/assets/js/54.3b71ceb4.js"><link rel="prefetch" href="/assets/js/55.5d3280da.js"><link rel="prefetch" href="/assets/js/56.d32ee1c4.js"><link rel="prefetch" href="/assets/js/57.021f4ed8.js"><link rel="prefetch" href="/assets/js/58.6b01ccbd.js"><link rel="prefetch" href="/assets/js/59.81e60c02.js"><link rel="prefetch" href="/assets/js/6.09917d06.js"><link rel="prefetch" href="/assets/js/60.3cb38969.js"><link rel="prefetch" href="/assets/js/61.0e9f5018.js"><link rel="prefetch" href="/assets/js/62.b5d40b2d.js"><link rel="prefetch" href="/assets/js/63.b7f1678a.js"><link rel="prefetch" href="/assets/js/64.5b59a2bf.js"><link rel="prefetch" href="/assets/js/65.25d944e8.js"><link rel="prefetch" href="/assets/js/66.3e0600ae.js"><link rel="prefetch" href="/assets/js/67.21ac6783.js"><link rel="prefetch" href="/assets/js/68.b3fac42f.js"><link rel="prefetch" href="/assets/js/69.f82b67ba.js"><link rel="prefetch" href="/assets/js/7.5371b7fe.js"><link rel="prefetch" href="/assets/js/70.2db95211.js"><link rel="prefetch" href="/assets/js/71.6bf06fd2.js"><link rel="prefetch" href="/assets/js/72.a34e68d1.js"><link rel="prefetch" href="/assets/js/73.618dfa95.js"><link rel="prefetch" href="/assets/js/74.cd8f01ca.js"><link rel="prefetch" href="/assets/js/75.06e9d64b.js"><link rel="prefetch" href="/assets/js/76.bd85d5b8.js"><link rel="prefetch" href="/assets/js/77.afea2e07.js"><link rel="prefetch" href="/assets/js/78.a7b19b51.js"><link rel="prefetch" href="/assets/js/79.ba44fff9.js"><link rel="prefetch" href="/assets/js/8.ccd3ea0a.js"><link rel="prefetch" href="/assets/js/80.68bdc3c8.js"><link rel="prefetch" href="/assets/js/81.6699fba3.js"><link rel="prefetch" href="/assets/js/82.b0b3514c.js"><link rel="prefetch" href="/assets/js/83.58243bd0.js"><link rel="prefetch" href="/assets/js/85.48eff5cc.js"><link rel="prefetch" href="/assets/js/9.8314678a.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-item"><!----> <a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-item"><!----> <a href="/web/5_handler.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  handler抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  文件操作
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  泛型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  初识算法
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_1_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/advance_1_kmp_1.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/advance_2_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-item"><!----> <a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-item"><!----> <a href="/web/5_handler.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  handler抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  文件操作
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  泛型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/" class="nav-link">
+  初识算法
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_1_binary_0_binary.html" class="nav-link">
+  二进制
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/algorithm/base_nonline_code01_sum_of_factorial.html" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/advance_1_kmp_1.html" class="nav-link">
+  kmp
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/advance_2_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  字典树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  bfprt
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  manacher
+</a></li></ul></li><li class="dropdown-item"><h4>
+          动态规划
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  暴力递归
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  记忆化搜索
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  动态规划
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战篇
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段一
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段二
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  阶段三
+</a></li><li class="dropdown-subitem"><a href="/algorithm/actual4_part_one_1_longest_increasing_path.html" class="nav-link">
+  阶段四
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Web</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/1_http.html" class="sidebar-link">http包基础</a></li><li><a href="/web/2_server.html" class="sidebar-link">Server 的抽象</a></li><li><a href="/web/3_context.html" class="sidebar-link">Context抽象</a></li><li><a href="/web/4_simple_route.html" class="sidebar-link">路由的简单实现</a></li><li><a href="/web/5_handler.html" aria-current="page" class="active sidebar-link">handler抽象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/5_handler.html#组合实现接口" class="sidebar-link">组合实现接口</a></li><li class="sidebar-sub-header"><a href="/web/5_handler.html#server端" class="sidebar-link">Server端</a></li><li class="sidebar-sub-header"><a href="/web/5_handler.html#route接口" class="sidebar-link">Route接口</a></li></ul></li><li><a href="/web/6_filter.html" class="sidebar-link">Filter实现AOP</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="handler抽象"><a href="#handler抽象" class="header-anchor">#</a> handler抽象</h1> <p>在上一章节中，我们新增了<code>handler</code>并且基于<code>map</code>实现了我们的简单路由。我们看看以<code>Server</code>中的<code>Route</code>函数：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>S <span class="token operator">*</span>SDKHTTPServer<span class="token punctuation">)</span> <span class="token function">Route</span><span class="token punctuation">(</span>
+	method <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token comment">//</span>
+	pattern <span class="token builtin">string</span><span class="token punctuation">,</span>
+	handleFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	S<span class="token punctuation">.</span>handler<span class="token punctuation">.</span>handlers<span class="token punctuation">[</span>S<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> pattern<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> handleFunc
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>我们可以看到我们直接访问了 <code>handler</code>的属性，并设置了值，实际上这样写是不太好的，我们可以尝试将这部分依赖接口，而不是依赖具体的细节。</p> <h2 id="组合实现接口"><a href="#组合实现接口" class="header-anchor">#</a> 组合实现接口</h2> <p>我们的<code>handler</code>中已经实现了<code>http.Handler</code>的接口，在这个基础上我们还想要有一个自己的接口，但是这个接口需要实现<code>http.Handler</code>这个接口。在<code>go</code>中，我们通常使用组合的方式实现。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Handler <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	http<span class="token punctuation">.</span>Handler
+	<span class="token function">Route</span><span class="token punctuation">(</span>method <span class="token builtin">string</span><span class="token punctuation">,</span> pattern <span class="token builtin">string</span><span class="token punctuation">,</span> handleFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><code>HandlerBaseOnMap</code>需要实现<code>Route</code>以实现<code>Handler</code>接口</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>h <span class="token operator">*</span>HandlerBaseOnMap<span class="token punctuation">)</span> <span class="token function">Route</span><span class="token punctuation">(</span>
+	method <span class="token builtin">string</span><span class="token punctuation">,</span>
+	pattern <span class="token builtin">string</span><span class="token punctuation">,</span>
+	handleFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	h<span class="token punctuation">.</span>handlers<span class="token punctuation">[</span>h<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> pattern<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> handleFunc
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="server端"><a href="#server端" class="header-anchor">#</a> Server端</h2> <p>为了不让<code>Server</code>依赖细节，可以在让<code>Handler</code>接口实现<code>Route</code>方法，让<code>Server</code>直接委托即可，此时<code>Server</code>的代码：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>S <span class="token operator">*</span>SDKHTTPServer<span class="token punctuation">)</span> <span class="token function">Route</span><span class="token punctuation">(</span>
+	method <span class="token builtin">string</span><span class="token punctuation">,</span>
+	pattern <span class="token builtin">string</span><span class="token punctuation">,</span>
+	handleFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	S<span class="token punctuation">.</span>handler<span class="token punctuation">.</span><span class="token function">Route</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> pattern<span class="token punctuation">,</span> handleFunc<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这也是我们常用的重构的移动的方式，将方法或类移动到其逻辑上更合适的位置。</p> <p>其他修改：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">NewServer</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> Server <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token operator">&amp;</span>SDKHTTPServer<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span> name<span class="token punctuation">,</span>
+		handler<span class="token punctuation">:</span> <span class="token function">NewHandlerBaseOnMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 使用简单创建函数即可，不依赖细节</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> SDKHTTPServer <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Name <span class="token builtin">string</span>
+	handler Handler  <span class="token comment">// handler 依赖接口即可</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="route接口"><a href="#route接口" class="header-anchor">#</a> Route接口</h2> <p>通过上面修改，我们发现<code>Route</code>即存在在<code>Handler</code>中，也存在在<code>Server</code>中，这两个是委托关系，参数都是一致的，其实也可以抽象成接口。于是我们把<code>Route</code>也抽象出来：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> RouteAble <span class="token keyword">interface</span><span class="token punctuation">{</span>
+	<span class="token function">Route</span><span class="token punctuation">(</span>method <span class="token builtin">string</span><span class="token punctuation">,</span> pattern <span class="token builtin">string</span><span class="token punctuation">,</span> handleFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><code>Handler</code>接口：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Handler <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	http<span class="token punctuation">.</span>Handler
+	RouteAble
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><code>Server</code>接口:</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Server <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+	RouteAble
+	<span class="token function">Start</span><span class="token punctuation">(</span>port <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">7/28/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/web/4_simple_route.html" class="prev">
+          路由的简单实现
+        </a></span> <span class="next"><a href="/web/6_filter.html">
+          Filter实现AOP
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">handler抽象</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/web/5_handler.html#组合实现接口" class="toc-sidebar-link">组合实现接口</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/5_handler.html#server端" class="toc-sidebar-link">Server端</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/5_handler.html#route接口" class="toc-sidebar-link">Route接口</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">handler抽象</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/web/5_handler.html#组合实现接口" class="toc-sidebar-link">组合实现接口</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/5_handler.html#server端" class="toc-sidebar-link">Server端</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/5_handler.html#route接口" class="toc-sidebar-link">Route接口</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/web/5_handler.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="路由的简单实现" class="option-box" style="padding-left:2px;text-align:center;"><a href="/web/4_simple_route.html"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <div title="Filter实现AOP" class="option-box" style="padding-left:2px;text-align:center;"><a href="/web/6_filter.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.c1ee2277.js" defer></script><script src="/assets/js/3.1bf1a0da.js" defer></script><script src="/assets/js/4.879358fa.js" defer></script><script src="/assets/js/84.45e24855.js" defer></script>
+  </body>
+</html>
