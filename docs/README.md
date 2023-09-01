@@ -4,7 +4,7 @@ heroText: 慕溪 x go全栈知识体系
 tagline: 打造你的知识体系，深入原理真正掌握，让知识为你所用！
 heroImage: /waterbee.png
 actionLinks:
-- link: /golang/
+- link: /golang/1_0_nav
   text: 即刻GO →
   class: primary
 footer: MIT Licensed | Copyright © 2022-present Evan Muxi
