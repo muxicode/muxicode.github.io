@@ -60,6 +60,7 @@ const navs = [
         items: [
           { text: '位运算', link: '/algorithm/g1_base_1_binary_0_binary' },
           { text: '排序', link: '/algorithm/g1_base_5_line_code01_select_sort' },
+          { text: '对数器', link: '/algorithm/g1_compare_for_ans' },
           { text: '二分及其拓展', link: '/waiting/' },
           { text: '递归到动态规划', link: '/waiting/' },
           { text: '链表', link: '/waiting/' },
