@@ -1,6 +1,6 @@
 ---
-title: 2.购买任意次股票
-autoGroup-4-4: 阶段4-part-two
+title: dp-2-购买任意次股票
+autoGroup-5: 📒练习集📒
 ---
 
 # 2. 购买任意次股票

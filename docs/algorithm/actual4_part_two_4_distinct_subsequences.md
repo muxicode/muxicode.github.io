@@ -1,6 +1,6 @@
 ---
-title: 4.子串不同子序列
-autoGroup-4-4: 阶段4-part-two
+title: dp-4-子串不同子序列
+autoGroup-5: 📒练习集📒
 ---
 
 # 4. 子串不同子序列

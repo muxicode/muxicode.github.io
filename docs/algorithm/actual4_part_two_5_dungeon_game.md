@@ -1,6 +1,6 @@
 ---
-title: 5.通关最少血量
-autoGroup-4-4: 阶段4-part-two
+title: dp-5-通关最少血量
+autoGroup-5: 📒练习集📒
 ---
 
 # 5. 通关最少血量

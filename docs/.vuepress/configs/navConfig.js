@@ -54,33 +54,33 @@ const navs = [
     text: '数据结构与算法',
     items: [
       { text: '体系学习总览', link: '/algorithm/' },
+      { text: '什么是算法?', link: '/algorithm/about_algorithm' },
       {
-        text: '🌱阶段一：初出茅庐🌱',
+        text: '阶段一：初出茅庐',
         items: [
-          { text: '初识算法', link: '/algorithm/base_0_about_algorithm' },
-          { text: '位运算', link: '/algorithm/base_1_binary_0_binary' },
-          { text: '排序', link: '/algorithm/base_5_line_code01_select_sort' },
+          { text: '位运算', link: '/algorithm/g1_base_1_binary_0_binary' },
+          { text: '排序', link: '/algorithm/g1_base_5_line_code01_select_sort' },
           { text: '二分及其拓展', link: '/waiting/' },
           { text: '递归到动态规划', link: '/waiting/' },
           { text: '链表', link: '/waiting/' },
           { text: '队列', link: '/waiting/' },
           { text: '栈', link: '/waiting/' },
           { text: '哈希表的使用', link: '/waiting/' },
-          { text: '堆', link: '/algorithm/base_9_heap' },
+          { text: '堆', link: '/algorithm/g1_base_9_heap' },
           { text: '加强堆', link: '/waiting/' },
           { text: '前缀树', link: '/waiting/' },
           { text: '二叉树', link: '/waiting/' },
-          { text: '并查集', link: '/algorithm/base_8_union_set_1' },
-          { text: '图', link: '/algorithm/advance_2_graph_1_base' },
+          { text: '并查集', link: '/algorithm/g1_base_8_union_set_1' },
+          { text: '图', link: '/algorithm/g1_graph_1_base' },
           { text: '哈夫曼树', link: '/waiting/' },
-          { text: '其他', link: '/algorithm/base_nonline_code01_sum_of_factorial' },
+          { text: '其他', link: '/waiting/' },
         ]
       },
       {
-        text: '🚀阶段二：知识的升华🚀',
+        text: '阶段二：知识的升华',
         items: [
           { text: '斐波那契数列', link: '/waiting/' },
-          { text: 'KMP算法', link: '/algorithm/advance_1_kmp_1' },
+          { text: 'KMP算法', link: '/algorithm/g2_advance_1_kmp_1' },
           { text: 'Manacher算法', link: '/waiting/' },
           { text: '无序数组寻找第 K 小的值', link: '/waiting/' },
           { text: '蓄水池算法', link: '/waiting/' },
@@ -93,7 +93,7 @@ const navs = [
           { text: '状态压缩的动态规划', link: '/waiting/' },
           { text: '设计简化外部信息的动态规划', link: '/waiting/' },
           { text: '窗口内最大值和最小值的更新结构', link: '/waiting/' },
-          { text: '单调栈', link: '/algorithm/advance_1_kmp_1' },
+          { text: '单调栈', link: '/waiting/' },
           { text: '线段树', link: '/waiting/' },
           { text: 'IndexTree', link: '/waiting/' },
           { text: 'AC自动机', link: '/waiting/' },
@@ -102,7 +102,7 @@ const navs = [
         ]
       },
       {
-        text: '🌟阶段三：高峰之巅🌟',
+        text: '阶段三：高峰之巅',
         items: [
           { text: '编辑距离', link: '/waiting/' },
           { text: 'Nimi博弈', link: '/waiting/' },
@@ -118,7 +118,7 @@ const navs = [
         ]
       },
       {
-        text: '🔝阶段四：登峰造极🔝',
+        text: '阶段四：登峰造极',
         items: [
           { text: '有序表', link: '/waiting/' },
           { text: '四边形不等式', link: '/waiting/' },
