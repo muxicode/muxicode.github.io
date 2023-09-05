@@ -45,6 +45,8 @@ const navs = [
       { text: 'handler抽象', link: '/web/5_handler' },
       { text: 'filter实现AOP', link: '/web/6_filter' },
       { text: 'handler路由树', link: '/web/7_handler' },
+      { text: 'context池化', link: '/web/8_context_pool' },
+      { text: 'gin路由树', link: '/web/9_gin_router' },
       { text: '并发编程', link: '/waiting/' },
       { text: '文件操作', link: '/waiting/' },
       { text: '泛型', link: '/waiting/' },
