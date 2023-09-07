@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gin路由树生成及匹配 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.07dea49a.js" as="script"><link rel="preload" href="/assets/js/3.a918bb29.js" as="script"><link rel="preload" href="/assets/js/4.9382fba3.js" as="script"><link rel="preload" href="/assets/js/93.17a7b535.js" as="script"><link rel="prefetch" href="/assets/js/10.42f0914b.js"><link rel="prefetch" href="/assets/js/11.f6df4a62.js"><link rel="prefetch" href="/assets/js/12.3bd7a7ad.js"><link rel="prefetch" href="/assets/js/13.315d2146.js"><link rel="prefetch" href="/assets/js/14.eb90a1dc.js"><link rel="prefetch" href="/assets/js/15.93f7315f.js"><link rel="prefetch" href="/assets/js/16.1a52dd92.js"><link rel="prefetch" href="/assets/js/17.fc3b6149.js"><link rel="prefetch" href="/assets/js/18.589a26dd.js"><link rel="prefetch" href="/assets/js/19.9a12e8a4.js"><link rel="prefetch" href="/assets/js/20.c97bb6ed.js"><link rel="prefetch" href="/assets/js/21.69cd689c.js"><link rel="prefetch" href="/assets/js/22.402ce343.js"><link rel="prefetch" href="/assets/js/23.f5978bdc.js"><link rel="prefetch" href="/assets/js/24.6c4f001a.js"><link rel="prefetch" href="/assets/js/25.1fff51e3.js"><link rel="prefetch" href="/assets/js/26.37c8de49.js"><link rel="prefetch" href="/assets/js/27.22c063d5.js"><link rel="prefetch" href="/assets/js/28.f3383ed4.js"><link rel="prefetch" href="/assets/js/29.73037344.js"><link rel="prefetch" href="/assets/js/30.a926f285.js"><link rel="prefetch" href="/assets/js/31.deb1343d.js"><link rel="prefetch" href="/assets/js/32.1ba93dd2.js"><link rel="prefetch" href="/assets/js/33.f1c289b8.js"><link rel="prefetch" href="/assets/js/34.1a24f96a.js"><link rel="prefetch" href="/assets/js/35.12ba299b.js"><link rel="prefetch" href="/assets/js/36.0bf4e64c.js"><link rel="prefetch" href="/assets/js/37.bfad855a.js"><link rel="prefetch" href="/assets/js/38.bf906482.js"><link rel="prefetch" href="/assets/js/39.80fad3a0.js"><link rel="prefetch" href="/assets/js/40.4012f9a2.js"><link rel="prefetch" href="/assets/js/41.26d2ccda.js"><link rel="prefetch" href="/assets/js/42.b28967f6.js"><link rel="prefetch" href="/assets/js/43.77a662be.js"><link rel="prefetch" href="/assets/js/44.79e70863.js"><link rel="prefetch" href="/assets/js/45.2632e2a6.js"><link rel="prefetch" href="/assets/js/46.c6171ab7.js"><link rel="prefetch" href="/assets/js/47.95d81bf0.js"><link rel="prefetch" href="/assets/js/48.d2e2b4f1.js"><link rel="prefetch" href="/assets/js/49.c65da5f1.js"><link rel="prefetch" href="/assets/js/5.2f24630b.js"><link rel="prefetch" href="/assets/js/50.6dd2022a.js"><link rel="prefetch" href="/assets/js/51.08dc2502.js"><link rel="prefetch" href="/assets/js/52.807a6e81.js"><link rel="prefetch" href="/assets/js/53.683428a2.js"><link rel="prefetch" href="/assets/js/54.f5bac95e.js"><link rel="prefetch" href="/assets/js/55.d02a5992.js"><link rel="prefetch" href="/assets/js/56.4145e80b.js"><link rel="prefetch" href="/assets/js/57.f69bb91a.js"><link rel="prefetch" href="/assets/js/58.b48f1b1b.js"><link rel="prefetch" href="/assets/js/59.7bd340b6.js"><link rel="prefetch" href="/assets/js/6.3c15e6b3.js"><link rel="prefetch" href="/assets/js/60.c89d55d2.js"><link rel="prefetch" href="/assets/js/61.825b8a72.js"><link rel="prefetch" href="/assets/js/62.22abeb24.js"><link rel="prefetch" href="/assets/js/63.4e0ee776.js"><link rel="prefetch" href="/assets/js/64.ba11372e.js"><link rel="prefetch" href="/assets/js/65.ab12ca7b.js"><link rel="prefetch" href="/assets/js/66.2d18d605.js"><link rel="prefetch" href="/assets/js/67.a84e280c.js"><link rel="prefetch" href="/assets/js/68.e9a92d5e.js"><link rel="prefetch" href="/assets/js/69.5445eb73.js"><link rel="prefetch" href="/assets/js/7.dacd2863.js"><link rel="prefetch" href="/assets/js/70.560794ca.js"><link rel="prefetch" href="/assets/js/71.30a23c14.js"><link rel="prefetch" href="/assets/js/72.c5730f4c.js"><link rel="prefetch" href="/assets/js/73.2a2413cb.js"><link rel="prefetch" href="/assets/js/74.b90ac4e1.js"><link rel="prefetch" href="/assets/js/75.aff6ff22.js"><link rel="prefetch" href="/assets/js/76.daf5a3fe.js"><link rel="prefetch" href="/assets/js/77.fa843018.js"><link rel="prefetch" href="/assets/js/78.aee6c436.js"><link rel="prefetch" href="/assets/js/79.7ff728f7.js"><link rel="prefetch" href="/assets/js/8.1e3a48c8.js"><link rel="prefetch" href="/assets/js/80.1e2988f4.js"><link rel="prefetch" href="/assets/js/81.59df2fcc.js"><link rel="prefetch" href="/assets/js/82.920a11d3.js"><link rel="prefetch" href="/assets/js/83.f84b66a8.js"><link rel="prefetch" href="/assets/js/84.18323b1f.js"><link rel="prefetch" href="/assets/js/85.2b64bcbe.js"><link rel="prefetch" href="/assets/js/86.a06933f7.js"><link rel="prefetch" href="/assets/js/87.c6b628f9.js"><link rel="prefetch" href="/assets/js/88.53c463d2.js"><link rel="prefetch" href="/assets/js/89.c8e8962f.js"><link rel="prefetch" href="/assets/js/9.17edc6d0.js"><link rel="prefetch" href="/assets/js/90.972fb7b7.js"><link rel="prefetch" href="/assets/js/91.37b7e37f.js"><link rel="prefetch" href="/assets/js/92.dce5d06f.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-item"><!----> <a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-item"><!----> <a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-item"><!----> <a href="/web/7_handler.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-item"><!----> <a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-item"><!----> <a href="/web/9_gin_router.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  gin路由树
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  文件操作
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  泛型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-item"><!----> <a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-item"><!----> <a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-item"><!----> <a href="/web/7_handler.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-item"><!----> <a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-item"><!----> <a href="/web/9_gin_router.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  gin路由树
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  文件操作
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  泛型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Web</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/1_http.html" class="sidebar-link">http包基础</a></li><li><a href="/web/2_server.html" class="sidebar-link">Server 的抽象</a></li><li><a href="/web/3_context.html" class="sidebar-link">Context抽象</a></li><li><a href="/web/4_simple_route.html" class="sidebar-link">路由的简单实现</a></li><li><a href="/web/5_handler.html" class="sidebar-link">Handler抽象</a></li><li><a href="/web/6_filter.html" class="sidebar-link">Filter实现AOP</a></li><li><a href="/web/7_handler_tree.html" class="sidebar-link">Handler路由树</a></li><li><a href="/web/8_context_pool.html" class="sidebar-link">Context 池化</a></li><li><a href="/web/9_gin_router.html" aria-current="page" class="active sidebar-link">Gin路由树生成及匹配</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/9_gin_router.html#目录" class="sidebar-link">目录</a></li><li class="sidebar-sub-header"><a href="/web/9_gin_router.html#路由结构" class="sidebar-link">路由结构</a></li><li class="sidebar-sub-header"><a href="/web/9_gin_router.html#路由的构建" class="sidebar-link">路由的构建</a></li><li class="sidebar-sub-header"><a href="/web/9_gin_router.html#路由的匹配" class="sidebar-link">路由的匹配</a></li><li class="sidebar-sub-header"><a href="/web/9_gin_router.html#小结" class="sidebar-link">小结</a></li><li class="sidebar-sub-header"><a href="/web/9_gin_router.html#拓展" class="sidebar-link">拓展</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="gin路由树生成及匹配"><a href="#gin路由树生成及匹配" class="header-anchor">#</a> Gin路由树生成及匹配</h1> <p>路由是如何构建和匹配的？</p> <p>Go 版本：1.14</p> <p>Gin 版本：v1.5.0</p> <h2 id="目录"><a href="#目录" class="header-anchor">#</a> 目录</h2> <ul><li>路由结构</li> <li>路由的构建</li> <li>路由的匹配</li> <li>小结</li></ul> <h2 id="路由结构"><a href="#路由结构" class="header-anchor">#</a> 路由结构</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code>router <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+router <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>在使用 Gin 的时候，我们一般会使用以上两种方式中的其中一种来创建 Gin 的引擎 <code>gin.Engine</code>，那么，这个引擎，到底是个什么东西呢？我们一起来看一下 <code>gin.Engine</code> 结构体的定义以及 <code>gin.Default()</code> 和 <code>gin.New()</code> 函数：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Engine <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    RouterGroup
+    trees methodTrees
+    <span class="token comment">// 省略多数无相关属性</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>Engine <span class="token punctuation">{</span>
+    <span class="token function">debugPrintWARNINGDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    engine <span class="token operator">:=</span> <span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    engine<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span><span class="token function">Logger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Recovery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> engine
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>Engine <span class="token punctuation">{</span>
+    <span class="token function">debugPrintWARNINGNew</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    engine <span class="token operator">:=</span> <span class="token operator">&amp;</span>Engine<span class="token punctuation">{</span>
+        RouterGroup<span class="token punctuation">:</span> RouterGroup<span class="token punctuation">{</span>
+            Handlers<span class="token punctuation">:</span> <span class="token boolean">nil</span><span class="token punctuation">,</span>
+            basePath<span class="token punctuation">:</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span>
+            root<span class="token punctuation">:</span>     <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        FuncMap<span class="token punctuation">:</span>                template<span class="token punctuation">.</span>FuncMap<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        RedirectTrailingSlash<span class="token punctuation">:</span>  <span class="token boolean">true</span><span class="token punctuation">,</span>
+        RedirectFixedPath<span class="token punctuation">:</span>      <span class="token boolean">false</span><span class="token punctuation">,</span>
+        HandleMethodNotAllowed<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        ForwardedByClientIP<span class="token punctuation">:</span>    <span class="token boolean">true</span><span class="token punctuation">,</span>
+        AppEngine<span class="token punctuation">:</span>              defaultAppEngine<span class="token punctuation">,</span>
+        UseRawPath<span class="token punctuation">:</span>             <span class="token boolean">false</span><span class="token punctuation">,</span>
+        UnescapePathValues<span class="token punctuation">:</span>     <span class="token boolean">true</span><span class="token punctuation">,</span>
+        MaxMultipartMemory<span class="token punctuation">:</span>     defaultMultipartMemory<span class="token punctuation">,</span>
+        trees<span class="token punctuation">:</span>                  <span class="token function">make</span><span class="token punctuation">(</span>methodTrees<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        delims<span class="token punctuation">:</span>                 render<span class="token punctuation">.</span>Delims<span class="token punctuation">{</span>Left<span class="token punctuation">:</span> <span class="token string">&quot;{{&quot;</span><span class="token punctuation">,</span> Right<span class="token punctuation">:</span> <span class="token string">&quot;}}&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        secureJsonPrefix<span class="token punctuation">:</span>       <span class="token string">&quot;while(1);&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    engine<span class="token punctuation">.</span>RouterGroup<span class="token punctuation">.</span>engine <span class="token operator">=</span> engine
+    engine<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>New <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> engine<span class="token punctuation">.</span><span class="token function">allocateContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> engine
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p>此处省略 <code>gin.Engine</code> 中的许多与我们主题无相关的属性，如：重定向配置 <code>RedirectTrailingSlash</code> 和 <code>RedirectFixedPath</code>，无路由处理函数切片 <code>noRoute</code> 和 <code>allNoRoute</code>，HTML templates 相关渲染配置 <code>delims</code> 和 <code>HTMLRender</code> 等。</p> <p>从上面的 <code>gin.Engine</code> 结构体中，可以发现其嵌入了一个 <code>RouterGroup</code> 结构体，以及还有一个 <code>methodTrees</code> 类型的属性 <code>trees</code>。</p> <p>在 <code>gin.Default()</code> 函数内部调用了 <code>gin.New()</code> 函数来创建 Gin 的路由引擎，然后为该引擎添加了 <code>Logger()</code> 和 <code>Recovery()</code> 两个中间件。</p> <p><code>gin.New()</code> 函数用于创建 Gin 路由引擎，其主要用于为该即将被创建的引擎做一些初始化配置。</p> <p>接下来我们来看一下 <code>gin.Engine</code> 结构体中所引用到的 <code>RouterGroup</code> 和 <code>methodTree</code> 的结构定义：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// RouterGroup is used internally to configure router, a RouterGroup is associated with</span>
+<span class="token comment">// a prefix and an array of handlers (middleware).</span>
+<span class="token keyword">type</span> RouterGroup <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    Handlers HandlersChain
+    basePath <span class="token builtin">string</span>
+    engine   <span class="token operator">*</span>Engine
+    root     <span class="token builtin">bool</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// HandlersChain defines a HandlerFunc array.</span>
+<span class="token keyword">type</span> HandlersChain <span class="token punctuation">[</span><span class="token punctuation">]</span>HandlerFunc
+
+<span class="token comment">// HandlerFunc defines the handler used by gin middleware as return value.</span>
+<span class="token keyword">type</span> HandlerFunc <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> methodTrees <span class="token punctuation">[</span><span class="token punctuation">]</span>methodTree
+
+<span class="token keyword">type</span> methodTree <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    method <span class="token builtin">string</span>
+    root   <span class="token operator">*</span>node
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>从源代码中给的注释，我们可以知道 <code>RouterGroup</code> 在 Gin 内部用于配置路由器，其与<strong>前缀</strong>和<strong>处理函数（中间件）数组</strong>相关联。</p> <p><code>Handlers</code> 是一个类型为 <code>HandlersChain</code> 的属性，而 <code>HandlersChain</code> 类型定义的是一个 <code>HandlerFunc</code> 类型的切片，最后 <code>HandlerFunc</code> 类型则是 Gin 中间件使用的处理函数，即其为 Gin 的处理函数对象，所以 <code>RouterGroup.Handlers</code> 为 Gin 的处理函数（中间件）切片；</p> <p><code>basePath</code> 则表示该 <code>RouterGroup</code> 所对应的路由前缀；</p> <p><code>engine</code> 则是该 <code>RouterGroup</code> 对应 <code>gin.Engine</code> 的引用；</p> <p><code>root</code> 表示该 <code>RouterGroup</code> 是否为根，在路由的构建中说明。</p> <p>接下来是 <code>methodTrees</code> 类型，是一种 <code>methodTree</code> 类型的切片，而 <code>methodTree</code> 含有两个属性 <code>method</code> 和 <code>root</code>，这是位于 Gin 路由结构顶端的方法树，其 <code>method</code> 属性表示请求的方法类型，如：<code>GET</code>，<code>POST</code>，<code>PUT</code> 等，而 <code>root</code> 属性则指向对应路由树的根节点。</p> <p>下面我们来看一下这个 <code>node</code> 结构体的结构定义：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> node <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    path      <span class="token builtin">string</span>
+    indices   <span class="token builtin">string</span>
+    children  <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>node
+    handlers  HandlersChain
+    priority  <span class="token builtin">uint32</span>
+    nType     nodeType
+    maxParams <span class="token builtin">uint8</span>
+    wildChild <span class="token builtin">bool</span>
+    fullPath  <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">(</span>
+    static nodeType <span class="token operator">=</span> <span class="token boolean">iota</span> <span class="token comment">// default</span>
+    root
+    param
+    catchAll
+<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>在 Gin 内部，使用查找树 <code>Trie</code> 存储路由结构，所以 <code>node</code> 也满足查找树 <code>Trie</code> 节点的表示结构。</p> <p>假如创建了两个请求方法类型相同的路由 <code>/use</code> 和 <code>/uso</code>，以该方法树的根节点为例，<code>path</code> 表示当前节点的前缀路径，此处为 <code>/us</code>；<code>indices</code> 表示当前节点的孩子节点索引，此处为 <code>eo</code>；<code>children</code> 则用于保存当前节点的孩子节点切片，此处存储了 <code>path</code> 为 <code>e</code> 和 <code>o</code> 的两个节点；<code>handlers</code> 保存当前 <code>path</code> 的处理函数切片，此处由于没有创建针对 <code>/us</code> 的处理函数，因此为 <code>nil</code>；<code>priority</code> 表示当前节点的优先级，孩子节点数量越多，优先级越高，用于调整索引和孩子节点切片顺序，提高查找效率；<code>nType</code> 表示当前节点的类型，Gin 定义了四种类型，<code>static</code>，<code>root</code>，<code>param</code> 和 <code>catchAll</code>，<code>static</code> 表示普通节点，<code>root</code> 表示根节点，<code>param</code> 表示通配符节点，匹配以 <code>:</code> 开头的参数，<code>catchAll</code> 同为通配符节点，匹配以 <code>/*</code> 开头的参数，与 <code>param</code> 不同之处在于 <code>catchAll</code> 会匹配 <code>/*</code> 后的所有内容；<code>maxParams</code> 表示该路由可匹配到参数的最多数量；<code>wildChild</code> 用于判断当前节点的孩子节点是否为通配符节点；<code>fullPath</code> 表示当前节点对应的完整路径。</p> <p>下面以一个具体例子结合图片来看一下这个路由树的结构：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    router <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/users&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/user/:id&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/user/:id/*action&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/create&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/deletes&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/deleted&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">DELETE</span><span class="token punctuation">(</span><span class="token string">&quot;/use&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">DELETE</span><span class="token punctuation">(</span><span class="token string">&quot;/uso&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token string">&quot;:8000&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><img src="/9_gin_router.assets/webp.webp" alt="img"></p> <p>比较有疑惑的地方，可能是 GET 方法的路由树的第4~6层，为什么会有两个 <code>path</code> 为 <code>&quot;&quot;</code> 的节点以及两个 <code>nType</code> 为 <code>catchAll</code> 的节点呢？带着这个问题，我们来学习 Gin 是如何构建路由树的。</p> <h2 id="路由的构建"><a href="#路由的构建" class="header-anchor">#</a> 路由的构建</h2> <p>我们先来看一下上面源代码中的 <code>router.GET(relativePath, handlers)</code>，<code>router.POST(relativePath, handlers)</code> 和 <code>router.DELETE(relativePath, handlers)</code> 函数：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>group <span class="token operator">*</span>RouterGroup<span class="token punctuation">)</span> <span class="token function">GET</span><span class="token punctuation">(</span>relativePath <span class="token builtin">string</span><span class="token punctuation">,</span> handlers <span class="token operator">...</span>HandlerFunc<span class="token punctuation">)</span> IRoutes <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> group<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> relativePath<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>group <span class="token operator">*</span>RouterGroup<span class="token punctuation">)</span> <span class="token function">POST</span><span class="token punctuation">(</span>relativePath <span class="token builtin">string</span><span class="token punctuation">,</span> handlers <span class="token operator">...</span>HandlerFunc<span class="token punctuation">)</span> IRoutes <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> group<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span><span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span> relativePath<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>group <span class="token operator">*</span>RouterGroup<span class="token punctuation">)</span> <span class="token function">DELETE</span><span class="token punctuation">(</span>relativePath <span class="token builtin">string</span><span class="token punctuation">,</span> handlers <span class="token operator">...</span>HandlerFunc<span class="token punctuation">)</span> IRoutes <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> group<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span><span class="token string">&quot;DELETE&quot;</span><span class="token punctuation">,</span> relativePath<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>从源代码中可以发现它们实际上都是对 <code>group.handle(httpMethod, relativePath, handlers)</code> 函数的调用，只不过传入的 <code>httpMethod</code> 不同，我们来看一下 <code>group.handle(httpMethod, relativePath, handlers)</code> 函数相关的源代码：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>group <span class="token operator">*</span>RouterGroup<span class="token punctuation">)</span> <span class="token function">handle</span><span class="token punctuation">(</span>httpMethod<span class="token punctuation">,</span> relativePath <span class="token builtin">string</span><span class="token punctuation">,</span> handlers HandlersChain<span class="token punctuation">)</span> IRoutes <span class="token punctuation">{</span>
+    absolutePath <span class="token operator">:=</span> group<span class="token punctuation">.</span><span class="token function">calculateAbsolutePath</span><span class="token punctuation">(</span>relativePath<span class="token punctuation">)</span>
+    handlers <span class="token operator">=</span> group<span class="token punctuation">.</span><span class="token function">combineHandlers</span><span class="token punctuation">(</span>handlers<span class="token punctuation">)</span>
+    group<span class="token punctuation">.</span>engine<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span>httpMethod<span class="token punctuation">,</span> absolutePath<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> group<span class="token punctuation">.</span><span class="token function">returnObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>group <span class="token operator">*</span>RouterGroup<span class="token punctuation">)</span> <span class="token function">calculateAbsolutePath</span><span class="token punctuation">(</span>relativePath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">joinPaths</span><span class="token punctuation">(</span>group<span class="token punctuation">.</span>basePath<span class="token punctuation">,</span> relativePath<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>group <span class="token operator">*</span>RouterGroup<span class="token punctuation">)</span> <span class="token function">combineHandlers</span><span class="token punctuation">(</span>handlers HandlersChain<span class="token punctuation">)</span> HandlersChain <span class="token punctuation">{</span>
+    finalSize <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>group<span class="token punctuation">.</span>Handlers<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">len</span><span class="token punctuation">(</span>handlers<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> finalSize <span class="token operator">&gt;=</span> <span class="token function">int</span><span class="token punctuation">(</span>abortIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">&quot;too many handlers&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    mergedHandlers <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span>HandlersChain<span class="token punctuation">,</span> finalSize<span class="token punctuation">)</span>
+    <span class="token function">copy</span><span class="token punctuation">(</span>mergedHandlers<span class="token punctuation">,</span> group<span class="token punctuation">.</span>Handlers<span class="token punctuation">)</span>
+    <span class="token function">copy</span><span class="token punctuation">(</span>mergedHandlers<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>group<span class="token punctuation">.</span>Handlers<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> mergedHandlers
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>首先以传递进来的相对路径 <code>relativePath</code> 作为参数，调用 <code>group.calculateAbsolutePath(relativePath)</code> 函数计算并获取绝对路径 <code>absolutePath</code>，在 <code>group.calculateAbsolutePath(relativePath)</code> 函数中使用该 <code>RouterGroup</code> 的 <code>basePath</code> 结合传递进来的相对路径参数 <code>relativePath</code> 调用 <code>joinPaths(absolutePath, relativePath)</code> 函数进行路径合并操作。</p> <p>然后以传递进来的处理函数切片 <code>handlers</code> 作为参数，调用 <code>group.combineHandlers(handlers)</code> 函数，合并处理函数，在 <code>group.combineHandlers(handlers)</code> 函数中使用该 <code>RouterGroup</code> 自身的 <code>Handlers</code> 的长度与传递进来的 <code>handlers</code> 的长度创建新的处理函数切片，并先将 <code>group.Handlers</code> 复制到新创建的处理函数切片中，再将 <code>handlers</code> 复制进去，最后将合并后的处理函数切片返回并重新赋值给 <code>handlers</code>。</p> <p>对一个处理函数切片来说，一般除了最后一个处理函数之外的其他处理函数都为中间件，如果使用 <code>gin.Default()</code> 创建路由引擎，那么此处的 <code>Handlers</code> 正常情况下包括 <code>Logger()</code> 和 <code>Recovery()</code> 两个中间件。</p> <p>接下来看一下核心的 <code>group.engine.addRoute(method, path, handlers)</code> 函数的源代码：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>engine <span class="token operator">*</span>Engine<span class="token punctuation">)</span> <span class="token function">addRoute</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> path <span class="token builtin">string</span><span class="token punctuation">,</span> handlers HandlersChain<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">assert1</span><span class="token punctuation">(</span>path<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'/'</span><span class="token punctuation">,</span> <span class="token string">&quot;path must begin with '/'&quot;</span><span class="token punctuation">)</span>
+    <span class="token function">assert1</span><span class="token punctuation">(</span>method <span class="token operator">!=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;HTTP method can not be empty&quot;</span><span class="token punctuation">)</span>
+    <span class="token function">assert1</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>handlers<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">&quot;there must be at least one handler&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token function">debugPrintRoute</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> path<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+    root <span class="token operator">:=</span> engine<span class="token punctuation">.</span>trees<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>method<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> root <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        root <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+        root<span class="token punctuation">.</span>fullPath <span class="token operator">=</span> <span class="token string">&quot;/&quot;</span>
+        engine<span class="token punctuation">.</span>trees <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>engine<span class="token punctuation">.</span>trees<span class="token punctuation">,</span> methodTree<span class="token punctuation">{</span>method<span class="token punctuation">:</span> method<span class="token punctuation">,</span> root<span class="token punctuation">:</span> root<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    root<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>首先是对传进来的三个参数 <code>method</code>，<code>path</code> 和 <code>handlers</code> 进行断言，分别是 <code>path</code> 要以 <code>&quot;/&quot;</code> 为前缀，<code>method</code> 不能为空字符串，<code>handlers</code> 切片的长度必须大于 0；</p> <p>然后是通过传进来的 <code>method</code> 参数，即 HTTP 方法类型，作为参数来获取对应方法树的根节点，如果获取到的根节点为 <code>nil</code>，则表示不存在该方法树，这时创建一个新的根节点作为新方法树的根节点，并将该新的方法树追加至该引擎的方法树切片中，最后使用传递进来的 <code>path</code> 和 <code>handlers</code> 作为参数，调用该根节点内置的 <code>addRoute(path, handlers)</code> 函数，下面，我们来看一下该函数的源代码：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>n <span class="token operator">*</span>node<span class="token punctuation">)</span> <span class="token function">addRoute</span><span class="token punctuation">(</span>path <span class="token builtin">string</span><span class="token punctuation">,</span> handlers HandlersChain<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fullPath <span class="token operator">:=</span> path
+    n<span class="token punctuation">.</span>priority<span class="token operator">++</span>
+    <span class="token comment">// 根据 path 中的 &quot;/&quot; 和 &quot;*&quot; 计算 param 数量</span>
+    numParams <span class="token operator">:=</span> <span class="token function">countParams</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+
+    parentFullPathIndex <span class="token operator">:=</span> <span class="token number">0</span>
+
+    <span class="token comment">// non-empty tree</span>
+    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+    walk<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Update maxParams of the current node</span>
+            <span class="token keyword">if</span> numParams <span class="token operator">&gt;</span> n<span class="token punctuation">.</span>maxParams <span class="token punctuation">{</span>
+                n<span class="token punctuation">.</span>maxParams <span class="token operator">=</span> numParams
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// Find the longest common prefix.</span>
+            <span class="token comment">// This also implies that the common prefix contains no ':' or '*'</span>
+            <span class="token comment">// since the existing key can't contain those chars.</span>
+            <span class="token comment">// 计算 path 与 n.path 的公共前缀长度</span>
+            <span class="token comment">// 假如 path=&quot;/user/:id&quot;, n.path=&quot;/users&quot;</span>
+            <span class="token comment">// 则他们的公共前缀 i=5</span>
+            i <span class="token operator">:=</span> <span class="token number">0</span>
+            max <span class="token operator">:=</span> <span class="token function">min</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> i <span class="token operator">&lt;</span> max <span class="token operator">&amp;&amp;</span> path<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> n<span class="token punctuation">.</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+                i<span class="token operator">++</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// Split edge</span>
+            <span class="token comment">// 如果 i &lt; n.path，表示需要进行节点分裂</span>
+            <span class="token comment">// 假如 path=&quot;/user/:id&quot;, n.path=&quot;/users&quot;</span>
+            <span class="token comment">// 由于 i=5 &lt; len(n.path), 则对 n 进行分裂, 为其添加 path=&quot;s&quot; 的孩子节点</span>
+            <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                child <span class="token operator">:=</span> node<span class="token punctuation">{</span>
+                    path<span class="token punctuation">:</span>      n<span class="token punctuation">.</span>path<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    wildChild<span class="token punctuation">:</span> n<span class="token punctuation">.</span>wildChild<span class="token punctuation">,</span>
+                    indices<span class="token punctuation">:</span>   n<span class="token punctuation">.</span>indices<span class="token punctuation">,</span>
+                    children<span class="token punctuation">:</span>  n<span class="token punctuation">.</span>children<span class="token punctuation">,</span>  <span class="token comment">// 将 n 节点中的所有 children 转移至 child.children 中</span>
+                    handlers<span class="token punctuation">:</span>  n<span class="token punctuation">.</span>handlers<span class="token punctuation">,</span>
+                    priority<span class="token punctuation">:</span>  n<span class="token punctuation">.</span>priority <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                    fullPath<span class="token punctuation">:</span>  n<span class="token punctuation">.</span>fullPath<span class="token punctuation">,</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// Update maxParams (max of all children)</span>
+                <span class="token comment">// 更新该 child 节点的 maxParams</span>
+                <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> child<span class="token punctuation">.</span>children <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> child<span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>maxParams <span class="token operator">&gt;</span> child<span class="token punctuation">.</span>maxParams <span class="token punctuation">{</span>
+                        child<span class="token punctuation">.</span>maxParams <span class="token operator">=</span> child<span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>maxParams
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// 修改 n 中的 children 仅为当前创建的 child 节点</span>
+                n<span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>node<span class="token punctuation">{</span><span class="token operator">&amp;</span>child<span class="token punctuation">}</span>
+                <span class="token comment">// []byte for proper unicode char conversion, see #65</span>
+                <span class="token comment">// 修改 n 中的索引 indices 为分裂节点的首字符</span>
+                n<span class="token punctuation">.</span>indices <span class="token operator">=</span> <span class="token function">string</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">{</span>n<span class="token punctuation">.</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token comment">// 修改 n.path 为分裂位置之前的路径值</span>
+                n<span class="token punctuation">.</span>path <span class="token operator">=</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span>
+                n<span class="token punctuation">.</span>handlers <span class="token operator">=</span> <span class="token boolean">nil</span>
+                n<span class="token punctuation">.</span>wildChild <span class="token operator">=</span> <span class="token boolean">false</span>
+                n<span class="token punctuation">.</span>fullPath <span class="token operator">=</span> fullPath<span class="token punctuation">[</span><span class="token punctuation">:</span>parentFullPathIndex<span class="token operator">+</span>i<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// Make new node a child of this node</span>
+            <span class="token comment">// 将新节点添加至 n 的子节点</span>
+            <span class="token comment">// 假设 n{path: &quot;/&quot;, fullPath: &quot;/user/:id&quot;, wildChild: true}, path=&quot;/:id/*action&quot;</span>
+            <span class="token comment">// 则 i=1, i &lt; path</span>
+            <span class="token comment">// 这时 n 不需要分裂子节点, 并且新节点将成为 n 的子孙节点</span>
+            <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 同样以 n{path: &quot;/&quot;, fullPath: &quot;/user/:id&quot;, wildChild: true}, path=&quot;/:id/*action&quot; 为例</span>
+                <span class="token comment">// path=&quot;:id/*action&quot;</span>
+                path <span class="token operator">=</span> path<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+                <span class="token comment">// 如果 n 为通配符节点, 即 nType 为 param 或 catchAll 的上一个节点</span>
+                <span class="token keyword">if</span> n<span class="token punctuation">.</span>wildChild <span class="token punctuation">{</span>
+                    <span class="token comment">// 无需再对 n 进行匹配, 直接移动当前父节点完整路径游标</span>
+                    parentFullPathIndex <span class="token operator">+=</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+                    <span class="token comment">// 将 n 设置为 n 的子节点 (通配符节点只会有一个子节点)</span>
+                    n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                    <span class="token comment">// 增加新的 n 的优先级</span>
+                    n<span class="token punctuation">.</span>priority<span class="token operator">++</span>
+
+                    <span class="token comment">// Update maxParams of the child node</span>
+                    <span class="token comment">// 更新新的 n 的最大可匹配参数值 maxParams</span>
+                    <span class="token keyword">if</span> numParams <span class="token operator">&gt;</span> n<span class="token punctuation">.</span>maxParams <span class="token punctuation">{</span>
+                        n<span class="token punctuation">.</span>maxParams <span class="token operator">=</span> numParams
+                    <span class="token punctuation">}</span>
+                    <span class="token comment">// 由于已遇到通配符节点, 因此当前要添加 path 的 numParams 减 1</span>
+                    numParams<span class="token operator">--</span>
+
+                    <span class="token comment">// Check if the wildcard matches</span>
+                    <span class="token comment">// 检查通配符是否匹配</span>
+                    <span class="token comment">// 如当前 n.path 已匹配至 &quot;:id&quot;</span>
+                    <span class="token comment">// 而 path 为 &quot;:id/*action&quot;</span>
+                    <span class="token comment">// 此时 n.path=&quot;:id&quot; == path[:len(n.path)]=&quot;:id&quot;</span>
+                    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>path <span class="token operator">==</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// check for longer wildcard, e.g. :name and :names</span>
+                        <span class="token comment">// 继续检查更长的通配符</span>
+                        <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">||</span> path<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'/'</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">continue</span> walk
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+
+                    pathSeg <span class="token operator">:=</span> path
+                    <span class="token keyword">if</span> n<span class="token punctuation">.</span>nType <span class="token operator">!=</span> catchAll <span class="token punctuation">{</span>
+                        pathSeg <span class="token operator">=</span> strings<span class="token punctuation">.</span><span class="token function">SplitN</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span>
+                    prefix <span class="token operator">:=</span> fullPath<span class="token punctuation">[</span><span class="token punctuation">:</span>strings<span class="token punctuation">.</span><span class="token function">Index</span><span class="token punctuation">(</span>fullPath<span class="token punctuation">,</span> pathSeg<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">+</span> n<span class="token punctuation">.</span>path
+                    <span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">&quot;'&quot;</span> <span class="token operator">+</span> pathSeg <span class="token operator">+</span>
+                        <span class="token string">&quot;' in new path '&quot;</span> <span class="token operator">+</span> fullPath <span class="token operator">+</span>
+                        <span class="token string">&quot;' conflicts with existing wildcard '&quot;</span> <span class="token operator">+</span> n<span class="token punctuation">.</span>path <span class="token operator">+</span>
+                        <span class="token string">&quot;' in existing prefix '&quot;</span> <span class="token operator">+</span> prefix <span class="token operator">+</span>
+                        <span class="token string">&quot;'&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+                c <span class="token operator">:=</span> path<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+                <span class="token comment">// slash after param</span>
+                <span class="token comment">// 假设 n={path: &quot;:id&quot;, fullPath: &quot;/user/:id&quot;, indices: &quot;/&quot;, nType=param}, path=&quot;/:post/*action&quot;, fullPath=&quot;/user/:id/:post/*action&quot;</span>
+                <span class="token comment">// 如果 n 还存在孩子节点, 则将 n 修改为其孩子节点, 从该孩子节点继续为 path 匹配合适位置</span>
+                <span class="token keyword">if</span> n<span class="token punctuation">.</span>nType <span class="token operator">==</span> param <span class="token operator">&amp;&amp;</span> c <span class="token operator">==</span> <span class="token char">'/'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+                    parentFullPathIndex <span class="token operator">+=</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+                    n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                    n<span class="token punctuation">.</span>priority<span class="token operator">++</span>
+                    <span class="token keyword">continue</span> walk
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// Check if a child with the next path byte exists</span>
+                <span class="token comment">// 检查 n 中是否存在符合 path 的索引, 若存在则将该索引对应的节点赋值给 n, 从该节点继续为 path 匹配合适位置</span>
+                <span class="token comment">// 假设 n={path: &quot;/user&quot;, fullPath: &quot;/user&quot;, indices: &quot;/s&quot;}, path=&quot;/:id/*action&quot;, c=&quot;/&quot;</span>
+                <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> c <span class="token operator">==</span> n<span class="token punctuation">.</span>indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+                        parentFullPathIndex <span class="token operator">+=</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+                        i <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">incrementChildPrio</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+                        n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                        <span class="token keyword">continue</span> walk
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// Otherwise insert it</span>
+                <span class="token comment">// 假设 n={path: &quot;/user&quot;, fullPath: &quot;/user&quot;}, path=&quot;/:id&quot;, fullPath=&quot;/user/:id&quot;</span>
+                <span class="token comment">// 那么直接将该 path 为 &quot;/:id&quot;, fullPath 为 &quot;/user/:id&quot; 的新节点添加至 n 的子节点中</span>
+                <span class="token keyword">if</span> c <span class="token operator">!=</span> <span class="token char">':'</span> <span class="token operator">&amp;&amp;</span> c <span class="token operator">!=</span> <span class="token char">'*'</span> <span class="token punctuation">{</span>
+                    <span class="token comment">// []byte for proper unicode char conversion, see #65</span>
+                    n<span class="token punctuation">.</span>indices <span class="token operator">+=</span> <span class="token function">string</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">{</span>c<span class="token punctuation">}</span><span class="token punctuation">)</span>
+                    child <span class="token operator">:=</span> <span class="token operator">&amp;</span>node<span class="token punctuation">{</span>
+                        maxParams<span class="token punctuation">:</span> numParams<span class="token punctuation">,</span>
+                        fullPath<span class="token punctuation">:</span>  fullPath<span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span>
+                    n<span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>children<span class="token punctuation">,</span> child<span class="token punctuation">)</span>
+                    <span class="token comment">// 增加 n 孩子节点的优先级</span>
+                    n<span class="token punctuation">.</span><span class="token function">incrementChildPrio</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>indices<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                    n <span class="token operator">=</span> child
+                <span class="token punctuation">}</span>
+                <span class="token comment">// 将该 path 添加至 n 的孩子节点中</span>
+                n<span class="token punctuation">.</span><span class="token function">insertChild</span><span class="token punctuation">(</span>numParams<span class="token punctuation">,</span> path<span class="token punctuation">,</span> fullPath<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Make node a (in-path) leaf</span>
+                <span class="token keyword">if</span> n<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                    <span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">&quot;handlers are already registered for path '&quot;</span> <span class="token operator">+</span> fullPath <span class="token operator">+</span> <span class="token string">&quot;'&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                n<span class="token punctuation">.</span>handlers <span class="token operator">=</span> handlers
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// Empty tree</span>
+        <span class="token comment">// 当前树为空, 直接将该 path 添加至 n 的孩子节点中</span>
+        n<span class="token punctuation">.</span><span class="token function">insertChild</span><span class="token punctuation">(</span>numParams<span class="token punctuation">,</span> path<span class="token punctuation">,</span> fullPath<span class="token punctuation">,</span> handlers<span class="token punctuation">)</span>
+        <span class="token comment">// 设置该节点为 root 节点</span>
+        n<span class="token punctuation">.</span>nType <span class="token operator">=</span> root
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br></div></div><p>该部分的源代码内容有点多，而且有点绕，建议配合第一部分末尾给出的路由树图观看，其中 <code>n.incrementChildPrio(post)</code> 函数用于为新组合的子节点添加优先级，并且在必要时，对索引以及子节点切片进行重新排序，<code>n.insertChild(numParams, path, fullPath, handlers)</code> 函数用于创建新节点，同时设置其节点类型，处理函数等，并将其插入至 n 的子节点中。</p> <p>以上是 Gin 路由树的构建过程，该部分稍微比较复杂，且需要对查找树 <code>Trie</code> 有一定了解。</p> <h2 id="路由的匹配"><a href="#路由的匹配" class="header-anchor">#</a> 路由的匹配</h2> <p>讲完路由的构建，我们来看看 Gin 是如何实现路由匹配的，看一下下面的这段代码：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    router <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/users&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/user/:id&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/user/:id/*action&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/create&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/deletes&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/deleted&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">DELETE</span><span class="token punctuation">(</span><span class="token string">&quot;/use&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    router<span class="token punctuation">.</span><span class="token function">DELETE</span><span class="token punctuation">(</span><span class="token string">&quot;/uso&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    router<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token string">&quot;:8000&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>engine <span class="token operator">*</span>Engine<span class="token punctuation">)</span> <span class="token function">Run</span><span class="token punctuation">(</span>addr <span class="token operator">...</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">debugPrintError</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    address <span class="token operator">:=</span> <span class="token function">resolveAddress</span><span class="token punctuation">(</span>addr<span class="token punctuation">)</span>
+    <span class="token function">debugPrint</span><span class="token punctuation">(</span><span class="token string">&quot;Listening and serving HTTP on %s\n&quot;</span><span class="token punctuation">,</span> address<span class="token punctuation">)</span>
+    err <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span>address<span class="token punctuation">,</span> engine<span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>从源代码中可以发现，Gin 内部实际上调用了 Go 自带函数库 <code>net/http</code> 库中的 <code>http.ListenAndServe(addr, handler)</code> 函数，并且该函数的 <code>handler</code> 为 <code>Handler</code> 接口类型，其源代码如下：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Handler <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">ServeHTTP</span><span class="token punctuation">(</span>ResponseWriter<span class="token punctuation">,</span> <span class="token operator">*</span>Request<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>由此，我们可以知道，在 Gin 的 <code>Engine</code> 结构中，实现了该接口，所以，我们只需把关注点放到 Gin 实现 <code>Handler</code> 接口的 <code>ServeHTTP(ResponseWriter, *Request)</code> 函数中即可，下面我们来看一下 Gin 对该接口的实现源代码：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>engine <span class="token operator">*</span>Engine<span class="token punctuation">)</span> <span class="token function">ServeHTTP</span><span class="token punctuation">(</span>w http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> req <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    c <span class="token operator">:=</span> engine<span class="token punctuation">.</span>pool<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>Context<span class="token punctuation">)</span>
+    c<span class="token punctuation">.</span>writermem<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+    c<span class="token punctuation">.</span>Request <span class="token operator">=</span> req
+    c<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    engine<span class="token punctuation">.</span><span class="token function">handleHTTPRequest</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+    engine<span class="token punctuation">.</span>pool<span class="token punctuation">.</span><span class="token function">Put</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>首先是从引擎的对象池中获取一个 Gin 的上下文对象，并对其属性进行重置操作，至于 Gin 上下文的内容这里不做展开讨论，在本系列的后续文章中，会与 Go 自带函数库中的 <code>context</code> 库结合讨论。</p> <p>然后以该 <code>Context</code> 对象作为参数调用 <code>engine.handleHTTPRequest(c)</code> 函数对请求进行处理，最后再将该 <code>Context</code> 重新放入该 Gin 引擎的对象池中。下面来看一下该函数的源代码，在本系列的第一篇文章 <a href="https://www.jianshu.com/p/87df4a810ae5" target="_blank" rel="noopener noreferrer">Gin 源码学习（一）丨请求中 URL 的参数是如何解析的？<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 中有对其稍微介绍过，所以我们这里同样，只针对路由匹配的内容来对其进行讲解：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>engine <span class="token operator">*</span>Engine<span class="token punctuation">)</span> <span class="token function">handleHTTPRequest</span><span class="token punctuation">(</span>c <span class="token operator">*</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    httpMethod <span class="token operator">:=</span> c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>Method
+    rPath <span class="token operator">:=</span> c<span class="token punctuation">.</span>Request<span class="token punctuation">.</span>URL<span class="token punctuation">.</span>Path
+        <span class="token comment">// 省略部分代码</span>
+
+    <span class="token comment">// Find root of the tree for the given HTTP method</span>
+    t <span class="token operator">:=</span> engine<span class="token punctuation">.</span>trees
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> tl <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> tl<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 遍历方法树切片, 获取与请求方法相同的方法树的根节点</span>
+        <span class="token keyword">if</span> t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>method <span class="token operator">!=</span> httpMethod <span class="token punctuation">{</span>
+            <span class="token keyword">continue</span>
+        <span class="token punctuation">}</span>
+        root <span class="token operator">:=</span> t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>root
+        <span class="token comment">// Find route in tree</span>
+        <span class="token comment">// 根据请求 URI 从该方法树中进行路由匹配并获取请求参数</span>
+        value <span class="token operator">:=</span> root<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span>rPath<span class="token punctuation">,</span> c<span class="token punctuation">.</span>Params<span class="token punctuation">,</span> unescape<span class="token punctuation">)</span>
+        <span class="token comment">// 如果获取到的 value.handlers 不为 nil, 表示路由树中存在处理该 URI 的路由</span>
+        <span class="token keyword">if</span> value<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+            c<span class="token punctuation">.</span>handlers <span class="token operator">=</span> value<span class="token punctuation">.</span>handlers
+            c<span class="token punctuation">.</span>Params <span class="token operator">=</span> value<span class="token punctuation">.</span>params
+            c<span class="token punctuation">.</span>fullPath <span class="token operator">=</span> value<span class="token punctuation">.</span>fullPath
+            c<span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            c<span class="token punctuation">.</span>writermem<span class="token punctuation">.</span><span class="token function">WriteHeaderNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 如果无匹配路由, 并且请求方法不为 &quot;CONNECT&quot;, 请求的 URI 不为 &quot;/&quot;</span>
+        <span class="token comment">// 则判断是否开启重定向配置, 若开启, 则进行重定向操作</span>
+        <span class="token keyword">if</span> httpMethod <span class="token operator">!=</span> <span class="token string">&quot;CONNECT&quot;</span> <span class="token operator">&amp;&amp;</span> rPath <span class="token operator">!=</span> <span class="token string">&quot;/&quot;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> value<span class="token punctuation">.</span>tsr <span class="token operator">&amp;&amp;</span> engine<span class="token punctuation">.</span>RedirectTrailingSlash <span class="token punctuation">{</span>
+                <span class="token function">redirectTrailingSlash</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> engine<span class="token punctuation">.</span>RedirectFixedPath <span class="token operator">&amp;&amp;</span> <span class="token function">redirectFixedPath</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> root<span class="token punctuation">,</span> engine<span class="token punctuation">.</span>RedirectFixedPath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 如果开启 HandleMethodNotAllowed, 则在其他请求类型的方法树中进行匹配</span>
+    <span class="token keyword">if</span> engine<span class="token punctuation">.</span>HandleMethodNotAllowed <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> tree <span class="token operator">:=</span> <span class="token keyword">range</span> engine<span class="token punctuation">.</span>trees <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> tree<span class="token punctuation">.</span>method <span class="token operator">==</span> httpMethod <span class="token punctuation">{</span>
+                <span class="token keyword">continue</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// 如果在其他请求类型的方法树中能够匹配到该请求 URI, 并且处理函数切片不为空, 则返回 405 错误</span>
+            <span class="token keyword">if</span> value <span class="token operator">:=</span> tree<span class="token punctuation">.</span>root<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span>rPath<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> unescape<span class="token punctuation">)</span><span class="token punctuation">;</span> value<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                c<span class="token punctuation">.</span>handlers <span class="token operator">=</span> engine<span class="token punctuation">.</span>allNoMethod
+                <span class="token function">serveError</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> http<span class="token punctuation">.</span>StatusMethodNotAllowed<span class="token punctuation">,</span> default405Body<span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 返回 404 错误</span>
+    c<span class="token punctuation">.</span>handlers <span class="token operator">=</span> engine<span class="token punctuation">.</span>allNoRoute
+    <span class="token function">serveError</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> http<span class="token punctuation">.</span>StatusNotFound<span class="token punctuation">,</span> default404Body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><p>从上面源代码中，我们可以发现，路由的匹配操作，是在 <code>root.getValue(rPath, po, unescape)</code> 函数中进行的，下面我们来看一下该函数的源代码并结合具体实例来对其进行分析，该函数同样在本系列的第一篇文章中出现过，此处仅对路由匹配的内容进行讲解：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>n <span class="token operator">*</span>node<span class="token punctuation">)</span> <span class="token function">getValue</span><span class="token punctuation">(</span>path <span class="token builtin">string</span><span class="token punctuation">,</span> po Params<span class="token punctuation">,</span> unescape <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>value nodeValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    value<span class="token punctuation">.</span>params <span class="token operator">=</span> po
+walk<span class="token punctuation">:</span> <span class="token comment">// Outer loop for walking the tree</span>
+    <span class="token comment">// 使用 for 循环进行节点访问匹配操作</span>
+    <span class="token keyword">for</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 判断当前请求的 path 长度是否比当前节点的 n.path 长</span>
+        <span class="token comment">// 如果是, 则使用当前节点的 n.path 与 path 进行匹配</span>
+        <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 判断当前路由节点的 path 与请求的 path 前缀是否完全一致</span>
+            <span class="token keyword">if</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">==</span> n<span class="token punctuation">.</span>path <span class="token punctuation">{</span>
+                <span class="token comment">// 对请求的 path 进行重新截取, 去除与当前节点完全匹配的前缀部分</span>
+                path <span class="token operator">=</span> path<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+                <span class="token comment">// If this node does not have a wildcard (param or catchAll)</span>
+                <span class="token comment">// child,  we can just look up the next child node and continue</span>
+                <span class="token comment">// to walk down the tree</span>
+                <span class="token comment">// 如果当前节点不为通配符节点</span>
+                <span class="token keyword">if</span> <span class="token operator">!</span>n<span class="token punctuation">.</span>wildChild <span class="token punctuation">{</span>
+                    <span class="token comment">// 获取请求 path 的第一个字符</span>
+                    c <span class="token operator">:=</span> path<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                    <span class="token comment">// 遍历当前路由节点的 indices, 判断是否存在与请求 path 匹配的索引</span>
+                    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">if</span> c <span class="token operator">==</span> n<span class="token punctuation">.</span>indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+                            <span class="token comment">// 如果存在, 将当前路由节点修改为该子节点</span>
+                            n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                            <span class="token comment">// 跳转至 walk, 开始下一轮匹配</span>
+                            <span class="token keyword">continue</span> walk
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+
+                    <span class="token comment">// Nothing found.</span>
+                    <span class="token comment">// We can recommend to redirect to the same URL without a</span>
+                    <span class="token comment">// trailing slash if a leaf exists for that path.</span>
+                    value<span class="token punctuation">.</span>tsr <span class="token operator">=</span> path <span class="token operator">==</span> <span class="token string">&quot;/&quot;</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span>
+                    <span class="token keyword">return</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// handle wildcard child</span>
+                <span class="token comment">// 当前节点为通配符节点</span>
+                <span class="token comment">// 表示其仅有一个子节点, 且节点类型为 param 或者 catchAll</span>
+                n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                <span class="token keyword">switch</span> n<span class="token punctuation">.</span>nType <span class="token punctuation">{</span>
+                <span class="token keyword">case</span> param<span class="token punctuation">:</span> <span class="token comment">// 如果当前路由节点类型为 param</span>
+                    <span class="token comment">// find param end (either '/' or path end)</span>
+                    end <span class="token operator">:=</span> <span class="token number">0</span>
+                    <span class="token keyword">for</span> end <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> path<span class="token punctuation">[</span>end<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token char">'/'</span> <span class="token punctuation">{</span>
+                        end<span class="token operator">++</span>
+                    <span class="token punctuation">}</span>
+
+                    <span class="token comment">// save param value</span>
+                    <span class="token keyword">if</span> <span class="token function">cap</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>params<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token function">int</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>maxParams<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        value<span class="token punctuation">.</span>params <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span>Params<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">.</span>maxParams<span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                    i <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>params<span class="token punctuation">)</span>
+                    value<span class="token punctuation">.</span>params <span class="token operator">=</span> value<span class="token punctuation">.</span>params<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">// expand slice within preallocated capacity</span>
+                    value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Key <span class="token operator">=</span> n<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+                    val <span class="token operator">:=</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span>end<span class="token punctuation">]</span>
+                    <span class="token keyword">if</span> unescape <span class="token punctuation">{</span>
+                        <span class="token keyword">var</span> err <span class="token builtin">error</span>
+                        <span class="token keyword">if</span> value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Value<span class="token punctuation">,</span> err <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">QueryUnescape</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                            value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Value <span class="token operator">=</span> val <span class="token comment">// fallback, in case of error</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Value <span class="token operator">=</span> val
+                    <span class="token punctuation">}</span>
+
+                    <span class="token comment">// we need to go deeper!</span>
+                    <span class="token comment">// 如果用于匹配参数的 end 下标小于当前请求 path 的长度</span>
+                    <span class="token keyword">if</span> end <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// 如果当前路由节点存在孩子节点</span>
+                        <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+                            <span class="token comment">// 对当前请求 path 进行重新截取</span>
+                            path <span class="token operator">=</span> path<span class="token punctuation">[</span>end<span class="token punctuation">:</span><span class="token punctuation">]</span>
+                            <span class="token comment">// 获取当前路由节点的孩子节点</span>
+                            n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                            <span class="token comment">// 跳转至 walk, 开始下一轮匹配</span>
+                            <span class="token keyword">continue</span> walk
+                        <span class="token punctuation">}</span>
+
+                        <span class="token comment">// ... but we can't</span>
+                        value<span class="token punctuation">.</span>tsr <span class="token operator">=</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">==</span> end<span class="token operator">+</span><span class="token number">1</span>
+                        <span class="token keyword">return</span>
+                    <span class="token punctuation">}</span>
+
+                    <span class="token comment">// 如果当前的 handlers 不为空, 则返回</span>
+                    <span class="token keyword">if</span> value<span class="token punctuation">.</span>handlers <span class="token operator">=</span> n<span class="token punctuation">.</span>handlers<span class="token punctuation">;</span> value<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                        value<span class="token punctuation">.</span>fullPath <span class="token operator">=</span> n<span class="token punctuation">.</span>fullPath
+                        <span class="token keyword">return</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token comment">// 如果当前路由节点有一个子节点</span>
+                    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// No handle found. Check if a handle for this path + a</span>
+                        <span class="token comment">// trailing slash exists for TSR recommendation</span>
+                        <span class="token comment">// 没有找到处理该请求 path 的处理函数</span>
+                        <span class="token comment">// 如果当前路由节点的子节点的 path 为 &quot;/&quot; 且存在处理函数</span>
+                        <span class="token comment">// 则设置 value.tsr 为true</span>
+                        n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                        value<span class="token punctuation">.</span>tsr <span class="token operator">=</span> n<span class="token punctuation">.</span>path <span class="token operator">==</span> <span class="token string">&quot;/&quot;</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span>
+                    <span class="token punctuation">}</span>
+
+                    <span class="token keyword">return</span>
+
+                <span class="token keyword">case</span> catchAll<span class="token punctuation">:</span>  <span class="token comment">// 如果当前路由节点的类型为 catchAll</span>
+                    <span class="token comment">// 直接将当前的请求 path 存储至 value.params 中</span>
+                    <span class="token comment">// save param value</span>
+                    <span class="token keyword">if</span> <span class="token function">cap</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>params<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token function">int</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>maxParams<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        value<span class="token punctuation">.</span>params <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span>Params<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">.</span>maxParams<span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                    i <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span>params<span class="token punctuation">)</span>
+                    value<span class="token punctuation">.</span>params <span class="token operator">=</span> value<span class="token punctuation">.</span>params<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">// expand slice within preallocated capacity</span>
+                    value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Key <span class="token operator">=</span> n<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+                    <span class="token keyword">if</span> unescape <span class="token punctuation">{</span>
+                        <span class="token keyword">var</span> err <span class="token builtin">error</span>
+                        <span class="token keyword">if</span> value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Value<span class="token punctuation">,</span> err <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">QueryUnescape</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                            value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Value <span class="token operator">=</span> path <span class="token comment">// fallback, in case of error</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        value<span class="token punctuation">.</span>params<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>Value <span class="token operator">=</span> path
+                    <span class="token punctuation">}</span>
+
+                    value<span class="token punctuation">.</span>handlers <span class="token operator">=</span> n<span class="token punctuation">.</span>handlers
+                    value<span class="token punctuation">.</span>fullPath <span class="token operator">=</span> n<span class="token punctuation">.</span>fullPath
+                    <span class="token keyword">return</span>
+
+                <span class="token keyword">default</span><span class="token punctuation">:</span>
+                    <span class="token function">panic</span><span class="token punctuation">(</span><span class="token string">&quot;invalid node type&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> path <span class="token operator">==</span> n<span class="token punctuation">.</span>path <span class="token punctuation">{</span>  <span class="token comment">// 如果当前请求的 path 与当前节点的 path 相同</span>
+            <span class="token comment">// We should have reached the node containing the handle.</span>
+            <span class="token comment">// Check if this node has a handle registered.</span>
+            <span class="token comment">// 由于路由已匹配完成, 因此只需检查当前已创建的路由节点中是否存在处理函数</span>
+            <span class="token comment">// 如果存在处理函数, 则直接返回</span>
+            <span class="token keyword">if</span> value<span class="token punctuation">.</span>handlers <span class="token operator">=</span> n<span class="token punctuation">.</span>handlers<span class="token punctuation">;</span> value<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                value<span class="token punctuation">.</span>fullPath <span class="token operator">=</span> n<span class="token punctuation">.</span>fullPath
+                <span class="token keyword">return</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// 如果当前匹配的路由节点中不存在处理函数</span>
+            <span class="token comment">// 且当前请求的 path 为 &quot;/&quot;, 并且当前节点的子节点为 param 节点或 catchAll 节点, 且当前节点不为 root 节点</span>
+            <span class="token comment">// 则设置 tsr(trailing slash redirect, 尾部斜线重定向) 为 true, 并返回</span>
+            <span class="token keyword">if</span> path <span class="token operator">==</span> <span class="token string">&quot;/&quot;</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>wildChild <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>nType <span class="token operator">!=</span> root <span class="token punctuation">{</span>
+                value<span class="token punctuation">.</span>tsr <span class="token operator">=</span> <span class="token boolean">true</span>
+                <span class="token keyword">return</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// No handle found. Check if a handle for this path + a</span>
+            <span class="token comment">// trailing slash exists for trailing slash recommendation</span>
+            <span class="token comment">// 没有找到匹配路由的处理函数</span>
+            <span class="token comment">// 检查该路由节点是否存在 path 仅为 &quot;/&quot; 且处理函数不为空的子节点, 或者节点类型为 catchAll 且处理函数不为空的子节点, 若存在, 则设置 tsr 为 true, 并返回</span>
+            <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> n<span class="token punctuation">.</span>indices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'/'</span> <span class="token punctuation">{</span>
+                    n <span class="token operator">=</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                    value<span class="token punctuation">.</span>tsr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span><span class="token punctuation">)</span> <span class="token operator">||</span>
+                        <span class="token punctuation">(</span>n<span class="token punctuation">.</span>nType <span class="token operator">==</span> catchAll <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+                    <span class="token keyword">return</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Nothing found. We can recommend to redirect to the same URL with an</span>
+        <span class="token comment">// extra trailing slash if a leaf exists for that path</span>
+        <span class="token comment">// 当前请求的 path 的长度比当前路由节点的 path 的长度短</span>
+        <span class="token comment">// 尝试在请求的 path 尾部添加 &quot;/&quot;, 如果添加后的请求 path 与当前路由节点的 path 相同, 且当前路由节点存在处理函数, 则设置 tsr 为 true, 并返回</span>
+        value<span class="token punctuation">.</span>tsr <span class="token operator">=</span> <span class="token punctuation">(</span>path <span class="token operator">==</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span> <span class="token operator">||</span>
+            <span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'/'</span> <span class="token operator">&amp;&amp;</span>
+                path <span class="token operator">==</span> n<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">.</span>handlers <span class="token operator">!=</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br></div></div><p>例如，一个 URI 为 <code>/user/1/send</code> 的 GET 请求的匹配过程，如下图所示：</p> <p><img src="/9_gin_router.assets/webp-16939313732303.webp" alt="img"></p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>这篇文章讲解了 Gin 路由的结构、构建以及匹配过程，Gin 内部使用查找树 <code>Trie</code> 来存储路由节点。<a href="https://www.jianshu.com/p/ffc7bae654e5" target="_blank" rel="noopener noreferrer">原文链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="拓展"><a href="#拓展" class="header-anchor">#</a> 拓展</h2> <p>在相同长度为26的<code>map[string]string</code>、<code>string</code>、<code>arr []string</code>中，找同一个字符&quot;z&quot;，哪个性能好？</p> <blockquote><p>查找函数</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> find
+
+
+<span class="token keyword">func</span> <span class="token function">MapFind</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">,</span> m <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token boolean">_</span><span class="token punctuation">,</span> ok <span class="token operator">:=</span> m<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token boolean">true</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">StringFind</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">,</span> longS <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	i <span class="token operator">:=</span> <span class="token number">0</span>
+	<span class="token keyword">for</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>longS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> longS<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token boolean">true</span>
+		<span class="token punctuation">}</span>
+		i<span class="token operator">++</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">ArrFind</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">,</span> arrs <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	i <span class="token operator">:=</span> <span class="token number">0</span>
+	<span class="token keyword">for</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>arrs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> arrs<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> s <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token boolean">true</span>
+		<span class="token punctuation">}</span>
+		i<span class="token operator">++</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><blockquote><p>基准测试</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> find
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;testing&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">TestIsFind</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 可以放初始化代码，时间过长，需要使用 b.ResetTimer()</span>
+	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> b <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span> <span class="token punctuation">{</span>
+		m<span class="token punctuation">[</span><span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	arrs <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> b <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span> <span class="token punctuation">{</span>
+		arrs <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>arrs<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 将计时器归零, 避免循环之前的初始化代码的干扰</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">MapFind</span><span class="token punctuation">(</span><span class="token string">&quot;z&quot;</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">StringFind</span><span class="token punctuation">(</span><span class="token string">&quot;z&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">ArrFind</span><span class="token punctuation">(</span><span class="token string">&quot;z&quot;</span><span class="token punctuation">,</span> arrs<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">BenchmarkMapFind</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 可以放初始化代码，时间过长，需要使用 b.ResetTimer()</span>
+	m <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> b <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span> <span class="token punctuation">{</span>
+		m<span class="token punctuation">[</span><span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 将计时器归零, 避免循环之前的初始化代码的干扰</span>
+	<span class="token comment">// 排除初始化代码的影响，只测试循环内部的代码性能。</span>
+	b<span class="token punctuation">.</span><span class="token function">ResetTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// loop b.N times</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 待测试性能的函数</span>
+		<span class="token function">MapFind</span><span class="token punctuation">(</span><span class="token string">&quot;z&quot;</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">BenchmarkStringFind</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 可以放初始化代码，时间过长，需要使用 b.ResetTimer()</span>
+	longS <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+	<span class="token comment">// 将计时器归零, 避免循环之前的初始化代码的干扰</span>
+	<span class="token comment">// 排除初始化代码的影响，只测试循环内部的代码性能。</span>
+	b<span class="token punctuation">.</span><span class="token function">ResetTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">// loop b.N times</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 待测试性能的函数</span>
+		<span class="token function">StringFind</span><span class="token punctuation">(</span><span class="token string">&quot;z&quot;</span><span class="token punctuation">,</span> longS<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">BenchmarkArrsFind</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 可以放初始化代码，时间过长，需要使用 b.ResetTimer()</span>
+	<span class="token comment">// 可以放初始化代码，时间过长，需要使用 b.ResetTimer()</span>
+	arrs <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> b <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span> <span class="token punctuation">{</span>
+		arrs <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>arrs<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 将计时器归零, 避免循环之前的初始化代码的干扰</span>
+	<span class="token comment">// 排除初始化代码的影响，只测试循环内部的代码性能。</span>
+	b<span class="token punctuation">.</span><span class="token function">ResetTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// loop b.N times</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 待测试性能的函数</span>
+		<span class="token function">ArrFind</span><span class="token punctuation">(</span><span class="token string">&quot;z&quot;</span><span class="token punctuation">,</span> arrs<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br></div></div><p>测试结果：</p> <p><img src="D:%5C%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE%5Cgithub%5Cmuxicode.github.io%5Cdocs.vuepress%5Cpublic%5C9_gin_router.assets%5Cimage-20230906013334315.png" alt="image-20230906013334315"></p> <p>我们发现在字符串中找的速度最快，比<code>map</code>还快！</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">9/6/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/web/8_context_pool.html" class="prev">
+          Context 池化
+        </a></span> <!----></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">Gin路由树生成及匹配</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/web/9_gin_router.html#目录" class="toc-sidebar-link">目录</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#路由结构" class="toc-sidebar-link">路由结构</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#路由的构建" class="toc-sidebar-link">路由的构建</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#路由的匹配" class="toc-sidebar-link">路由的匹配</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#小结" class="toc-sidebar-link">小结</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#拓展" class="toc-sidebar-link">拓展</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">Gin路由树生成及匹配</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/web/9_gin_router.html#目录" class="toc-sidebar-link">目录</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#路由结构" class="toc-sidebar-link">路由结构</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#路由的构建" class="toc-sidebar-link">路由的构建</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#路由的匹配" class="toc-sidebar-link">路由的匹配</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#小结" class="toc-sidebar-link">小结</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/9_gin_router.html#拓展" class="toc-sidebar-link">拓展</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/web/9_gin_router.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="Context 池化" class="option-box" style="padding-left:2px;text-align:center;"><a href="/web/8_context_pool.html"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.07dea49a.js" defer></script><script src="/assets/js/3.a918bb29.js" defer></script><script src="/assets/js/4.9382fba3.js" defer></script><script src="/assets/js/93.17a7b535.js" defer></script>
+  </body>
+</html>
