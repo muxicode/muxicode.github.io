@@ -29,5 +29,7 @@ DDD（Domain-Driven Design）中文翻译为领域驱动设计，是一种软件
 
 ### 知识导航
 
-- [DDD 思想解读及优秀实践](./1_ddd)
-- [DCI架构是如何解决DDD战术建模缺点的？](./2_dci&ddd)
+- [DDD 思想解读及优秀实践](./ddd_2_ddd)
+- [DDD 事件风暴](./ddd_3_event_strom)
+- [DDD 总结](./ddd_4_summarize)
+- [DCI架构是如何解决DDD战术建模缺点的？](./dci_1_dci&ddd)

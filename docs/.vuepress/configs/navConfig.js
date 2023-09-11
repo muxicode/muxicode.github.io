@@ -162,6 +162,9 @@ const navs = [
         text: '方法论',
         items: [
           { text: 'DDD', link: '/architecture/ddd_1_introduce' },
+          { text: 'DDD工程实践', link: '/architecture/ddd_2_ddd' },
+          { text: 'DDD事件风暴', link: '/architecture/ddd_3_event_strom' },
+          { text: 'DCI', link: '/architecture/dci_1_dci&ddd' },
           { text: '面向复杂度的架构设计', link: '/architecture/complexity_oriented_1_introduce' },
         ]
       },
