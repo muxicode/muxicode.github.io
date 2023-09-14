@@ -1,6 +1,6 @@
 ---
 title: 工具导航
-autoGroup-3: 常用工具
+autoGroup-2: 常用工具
 ---
 
 ## 工欲善其事必先利其器

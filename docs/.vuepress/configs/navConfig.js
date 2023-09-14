@@ -173,6 +173,12 @@ const navs = [
         items: [
           { text: 'UML', link: '/architecture/tools_1_introduce' },
         ]
+      },
+      {
+        text: '实践',
+        items: [
+          { text: '解析服务实践', link: '/architecture/practice_1_parse_service' },
+        ]
       }
     ]
   },

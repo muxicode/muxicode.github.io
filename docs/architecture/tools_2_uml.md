@@ -1,6 +1,6 @@
 ---
 title: UML
-autoGroup-3: 常用工具
+autoGroup-2: 常用工具
 ---
 
 # UML-时序图
