@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>解析服务实践 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.d669c1fe.js" as="script"><link rel="preload" href="/assets/js/3.a918bb29.js" as="script"><link rel="preload" href="/assets/js/4.9382fba3.js" as="script"><link rel="preload" href="/assets/js/56.bf5b5546.js" as="script"><link rel="prefetch" href="/assets/js/10.976a7cab.js"><link rel="prefetch" href="/assets/js/100.f6bc1588.js"><link rel="prefetch" href="/assets/js/11.1649bcd4.js"><link rel="prefetch" href="/assets/js/12.49fc23fd.js"><link rel="prefetch" href="/assets/js/13.315d2146.js"><link rel="prefetch" href="/assets/js/14.6ad113d0.js"><link rel="prefetch" href="/assets/js/15.2d94b637.js"><link rel="prefetch" href="/assets/js/16.83dc422c.js"><link rel="prefetch" href="/assets/js/17.409889b0.js"><link rel="prefetch" href="/assets/js/18.9ee7d11d.js"><link rel="prefetch" href="/assets/js/19.a03571f6.js"><link rel="prefetch" href="/assets/js/20.f142bb23.js"><link rel="prefetch" href="/assets/js/21.69cd689c.js"><link rel="prefetch" href="/assets/js/22.402ce343.js"><link rel="prefetch" href="/assets/js/23.f5978bdc.js"><link rel="prefetch" href="/assets/js/24.9969c98b.js"><link rel="prefetch" href="/assets/js/25.c462b031.js"><link rel="prefetch" href="/assets/js/26.cfdb7117.js"><link rel="prefetch" href="/assets/js/27.d79b6f6f.js"><link rel="prefetch" href="/assets/js/28.9633d67f.js"><link rel="prefetch" href="/assets/js/29.575a858c.js"><link rel="prefetch" href="/assets/js/30.0bb07a24.js"><link rel="prefetch" href="/assets/js/31.6a6fe0d2.js"><link rel="prefetch" href="/assets/js/32.55aaeb97.js"><link rel="prefetch" href="/assets/js/33.bec1c3c0.js"><link rel="prefetch" href="/assets/js/34.10a52dac.js"><link rel="prefetch" href="/assets/js/35.a9641782.js"><link rel="prefetch" href="/assets/js/36.5138a5df.js"><link rel="prefetch" href="/assets/js/37.b8c24eb6.js"><link rel="prefetch" href="/assets/js/38.cc89aad8.js"><link rel="prefetch" href="/assets/js/39.4927a83e.js"><link rel="prefetch" href="/assets/js/40.91f5d0cf.js"><link rel="prefetch" href="/assets/js/41.b94f23ea.js"><link rel="prefetch" href="/assets/js/42.0f0b4fac.js"><link rel="prefetch" href="/assets/js/43.bffab371.js"><link rel="prefetch" href="/assets/js/44.8eb3e2eb.js"><link rel="prefetch" href="/assets/js/45.03f24a6a.js"><link rel="prefetch" href="/assets/js/46.2ba19379.js"><link rel="prefetch" href="/assets/js/47.2f1193fd.js"><link rel="prefetch" href="/assets/js/48.5f756cbe.js"><link rel="prefetch" href="/assets/js/49.477ae4f6.js"><link rel="prefetch" href="/assets/js/5.fb2b5e2b.js"><link rel="prefetch" href="/assets/js/50.885229f0.js"><link rel="prefetch" href="/assets/js/51.2cd7b9ae.js"><link rel="prefetch" href="/assets/js/52.dc57098c.js"><link rel="prefetch" href="/assets/js/53.ca4f7f6f.js"><link rel="prefetch" href="/assets/js/54.e62623a5.js"><link rel="prefetch" href="/assets/js/55.3666cf66.js"><link rel="prefetch" href="/assets/js/57.2856d37e.js"><link rel="prefetch" href="/assets/js/58.7926970a.js"><link rel="prefetch" href="/assets/js/59.2e312829.js"><link rel="prefetch" href="/assets/js/6.3c15e6b3.js"><link rel="prefetch" href="/assets/js/60.1baa05fb.js"><link rel="prefetch" href="/assets/js/61.0fa77e9b.js"><link rel="prefetch" href="/assets/js/62.366a016c.js"><link rel="prefetch" href="/assets/js/63.6978dbb3.js"><link rel="prefetch" href="/assets/js/64.172cc746.js"><link rel="prefetch" href="/assets/js/65.568bd9ee.js"><link rel="prefetch" href="/assets/js/66.dc2797f9.js"><link rel="prefetch" href="/assets/js/67.3d8740e5.js"><link rel="prefetch" href="/assets/js/68.adb2e757.js"><link rel="prefetch" href="/assets/js/69.927eaf0c.js"><link rel="prefetch" href="/assets/js/7.dacd2863.js"><link rel="prefetch" href="/assets/js/70.b81cc078.js"><link rel="prefetch" href="/assets/js/71.7db80259.js"><link rel="prefetch" href="/assets/js/72.fa3fbcca.js"><link rel="prefetch" href="/assets/js/73.31364767.js"><link rel="prefetch" href="/assets/js/74.22b59356.js"><link rel="prefetch" href="/assets/js/75.13e8eac9.js"><link rel="prefetch" href="/assets/js/76.2b39485d.js"><link rel="prefetch" href="/assets/js/77.2f04fc09.js"><link rel="prefetch" href="/assets/js/78.14d9a99e.js"><link rel="prefetch" href="/assets/js/79.af5b1da0.js"><link rel="prefetch" href="/assets/js/8.1e3a48c8.js"><link rel="prefetch" href="/assets/js/80.d073cd04.js"><link rel="prefetch" href="/assets/js/81.8bcc51c6.js"><link rel="prefetch" href="/assets/js/82.24c0895b.js"><link rel="prefetch" href="/assets/js/83.5bbb8d06.js"><link rel="prefetch" href="/assets/js/84.05ddb750.js"><link rel="prefetch" href="/assets/js/85.683db97d.js"><link rel="prefetch" href="/assets/js/86.91a4ebd1.js"><link rel="prefetch" href="/assets/js/87.62fb961d.js"><link rel="prefetch" href="/assets/js/88.51aceec0.js"><link rel="prefetch" href="/assets/js/89.3bea04db.js"><link rel="prefetch" href="/assets/js/9.17edc6d0.js"><link rel="prefetch" href="/assets/js/90.25229de5.js"><link rel="prefetch" href="/assets/js/91.1e1afe18.js"><link rel="prefetch" href="/assets/js/92.14be1aba.js"><link rel="prefetch" href="/assets/js/93.39972ac5.js"><link rel="prefetch" href="/assets/js/94.f594d0fa.js"><link rel="prefetch" href="/assets/js/95.f5bd2beb.js"><link rel="prefetch" href="/assets/js/96.9a5823ef.js"><link rel="prefetch" href="/assets/js/97.751b896e.js"><link rel="prefetch" href="/assets/js/98.29230f80.js"><link rel="prefetch" href="/assets/js/99.7d6d0bbd.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-item"><!----> <a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-item"><!----> <a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-item"><!----> <a href="/web/7_handler.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-item"><!----> <a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-item"><!----> <a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  文件操作
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  泛型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-item"><!----> <a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-item"><!----> <a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-item"><!----> <a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-item"><!----> <a href="/web/7_handler.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-item"><!----> <a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-item"><!----> <a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  并发编程
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  文件操作
+</a></li><li class="dropdown-item"><!----> <a href="/waiting/" class="nav-link">
+  泛型
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Architecture</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>DDD</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/dci_1_dci&amp;ddd.html" class="sidebar-link">DCI架构是如何解决DDD战术建模缺点的？</a></li><li><a href="/architecture/ddd_1_introduce.html" class="sidebar-link">DDD导读</a></li><li><a href="/architecture/ddd_2_ddd.html" class="sidebar-link">DDD 思想解读及优秀实践</a></li><li><a href="/architecture/ddd_3_event_strom.html" class="sidebar-link">DDD事件风暴工作坊</a></li><li><a href="/architecture/ddd_4_summarize.html" class="sidebar-link">DDD落地总结</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>面向复杂度的架构设计</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/complexity_oriented_1_introduce.html" class="sidebar-link">面向复杂度的架构设计</a></li><li><a href="/architecture/complexity_oriented_2_what_is_soft_architectrue.html" class="sidebar-link">什么是架构？</a></li><li><a href="/architecture/complexity_oriented_3_draw_good_architecture_diagrams.html" class="sidebar-link">如何画出优秀的架构图？</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>常用工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/tools_1_introduce.html" class="sidebar-link">工具导航</a></li><li><a href="/architecture/tools_2_uml.html" class="sidebar-link">UML</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>实践</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/practice_1_parse_service.html" aria-current="page" class="active sidebar-link">解析服务实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#穿刺算法选择" class="sidebar-link">穿刺算法选择</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#场景" class="sidebar-link">场景</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#方案" class="sidebar-link">方案</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#采用持久化" class="sidebar-link" style="padding-left:3rem;">采用持久化：</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#算法选择" class="sidebar-link" style="padding-left:3rem;">算法选择：</a></li></ul></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#持久化方案" class="sidebar-link">持久化方案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#并发持久化" class="sidebar-link">并发持久化</a></li></ul></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#用例库实体" class="sidebar-link">用例库实体</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#优化用例树" class="sidebar-link">优化用例树</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#增量解析方案" class="sidebar-link">增量解析方案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本一" class="sidebar-link">版本一</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本二" class="sidebar-link">版本二</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本三" class="sidebar-link">版本三</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#思考" class="sidebar-link" style="padding-left:3rem;">思考</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#增量任务" class="sidebar-link" style="padding-left:4rem;">增量任务：</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#删除任务" class="sidebar-link" style="padding-left:4rem;">删除任务:</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#修改任务" class="sidebar-link" style="padding-left:4rem;">修改任务:</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#释放任务" class="sidebar-link" style="padding-left:4rem;">释放任务：</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#最终解决方案" class="sidebar-link" style="padding-left:3rem;">最终解决方案</a></li></ul></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#多实例" class="sidebar-link">多实例</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#我们ddd了吗" class="sidebar-link">我们DDD了吗？</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#事件风暴重新设计" class="sidebar-link">事件风暴重新设计</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本一-2" class="sidebar-link">版本一</a></li><li class="sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本二-2" class="sidebar-link">版本二</a></li></ul></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="解析服务实践"><a href="#解析服务实践" class="header-anchor">#</a> 解析服务实践</h1> <p>用例库脚本非常的庞大达到<code>3.5G</code>，如果一次性解析全部的节点，并向用户展示，则花费时间相当长，用户需要等待近<code>2</code>分钟才可以选择用例，如树形组件所示：</p> <p><img src="/practice_1_parse_service.assets/image-20230914215817120.png" alt="image-20230914215817120"></p> <ul><li>一次性解析时间过长，采用持久化方案，提供查询接口</li> <li><code>gerrit</code>代码库界面里的点击目录展开的操作达到了<code>8S</code>，因为代码库过大</li> <li>采用持久化方案，提供查询接口</li></ul> <h2 id="穿刺算法选择"><a href="#穿刺算法选择" class="header-anchor">#</a> 穿刺算法选择</h2> <h3 id="场景"><a href="#场景" class="header-anchor">#</a> 场景</h3> <p><strong>实际项目目录：</strong></p> <p><img src="/practice_1_parse_service.assets/example.drawio.png" alt=""></p> <p><strong>访问web网页选择当前项目后：</strong></p> <ol><li><p>网页展示当前目录的目录，初始默认展示前两级</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token operator">-</span> root
+	<span class="token operator">-</span> dir1
+	<span class="token operator">-</span> dir2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p>点击<code>dir1</code>后</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token operator">-</span> root
+	<span class="token operator">-</span> dir1
+		<span class="token operator">-</span>dir3
+	<span class="token operator">-</span> dir2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>点击 <code>dir3</code>后</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token operator">-</span> root
+	<span class="token operator">-</span> dir1
+		<span class="token operator">-</span>dir3
+			<span class="token operator">-</span> <span class="token keyword">case</span>
+	<span class="token operator">-</span> dir2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p><strong>采用逐级展开的方式，要求速度要快</strong></p></li></ol> <h3 id="方案"><a href="#方案" class="header-anchor">#</a> 方案</h3> <h4 id="采用持久化"><a href="#采用持久化" class="header-anchor">#</a> 采用持久化：</h4> <div class="language-go line-numbers-mode"><pre class="language-go"><code>nodes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pNodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dir&quot;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;dir1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pNodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dir&quot;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;dir3&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pNodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dir&quot;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;case&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pNodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;testcase&quot;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;dir2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pNodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dir&quot;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;dir4&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;nodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;4&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pNodeId&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dir&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span class="token comment">// 点击目录 dir3 的时候，获取到 dir3的nodeId</span>
+<span class="token comment">// 请求后端接口用dir3的nodeId，作为pNodeId=dir3Id,的查询条件，查询出结果返回给前端展开</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="算法选择"><a href="#算法选择" class="header-anchor">#</a> 算法选择：</h4> <p>生成节点持久化的时候，需要遍历我们的目录文件获取信息，而遍历算法在树状的结构中，分为两种：</p> <ul><li>宽度优先遍历</li> <li>深度优先遍历</li></ul> <blockquote><p>使用宽度优先遍历？</p></blockquote> <p>优势：</p> <ol><li>非递归，采用自己实现的队列结构，不会出现栈溢出的问题。</li> <li>在一般场景下占用的内存较大，维持每层的节点队列。</li></ol> <p>劣势：需要有一定的代码基础，相对于递归版本的深度优先遍历，较难理解</p> <blockquote><p>使用深度优先遍历？</p></blockquote> <p>优势：</p> <ol><li>前期可采用递归的方式，代码更易理解。</li> <li>深度优先可先收集叶子节点信息，从而有更大的拓展性</li></ol> <p>劣势：递归的方式下有可能存在栈溢出的问题，但是可改非递归版本。</p> <p>暂时使用深度优先遍历代码示例：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Parser <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    nodes <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">parse</span><span class="token punctuation">(</span>path <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">.</span><span class="token function">parseProcess</span><span class="token punctuation">(</span>strings<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> uuid<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">traversalProcess</span><span class="token punctuation">(</span>pathList <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> myUuid <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果是文件，则使用文件解析实例解析，并且依赖接口方便拓展</span>
+    
+    <span class="token comment">// 根据路径获取到子文件</span>
+    files <span class="token operator">:=</span> dir<span class="token punctuation">.</span><span class="token function">List</span><span class="token punctuation">(</span>pathList<span class="token punctuation">)</span>
+    <span class="token comment">// 遍历所有子文件</span>
+    <span class="token keyword">for</span> fileName <span class="token operator">:=</span> <span class="token keyword">range</span> files <span class="token punctuation">{</span>
+        <span class="token comment">// 添加下一级路径</span>
+        pathList <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span>
+        <span class="token comment">// 递归处理所有的节点，可设置返回值，根据返回值做一些特殊处理</span>
+        p<span class="token punctuation">.</span><span class="token function">parseProcess</span><span class="token punctuation">(</span>pathList<span class="token punctuation">,</span> uuid<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment">// 回退路径，防止影响下一个文件</span>
+        pathList <span class="token operator">=</span> pathList<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>pathList<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 收集当前节点的名称</span>
+    p<span class="token punctuation">.</span><span class="token function">Collect</span><span class="token punctuation">(</span>pathList<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">Collect</span><span class="token punctuation">(</span>node <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">.</span>nodes <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>nodes<span class="token punctuation">,</span> node<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><ul><li><p>将解析算法抽象成接口？依赖接口，方便算法替换。</p></li> <li><p>用例数量：<code>77548</code>，节点总数: <code>105712</code>，怎么辅助分析我们的深度遍历解析出来的节点是正确的？</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// 提取节点成结构体</span>
+<span class="token keyword">type</span> node <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    name <span class="token builtin">string</span>
+    paht <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 格式化打印节点树</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">FormatPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> n <span class="token operator">:=</span> <span class="token keyword">range</span> p<span class="token punctuation">.</span>nodes <span class="token punctuation">{</span>
+		<span class="token function">FormatPrint1</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>strings<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>Path<span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>PathSeparator<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> n<span class="token punctuation">.</span>Name <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">&quot;%+v&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">.</span>Tag<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">FormatPrint1</span><span class="token punctuation">(</span>level <span class="token builtin">int</span><span class="token punctuation">,</span> name <span class="token builtin">string</span><span class="token punctuation">,</span> formatLen <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	rightLen <span class="token operator">:=</span> formatLen <span class="token operator">-</span> <span class="token function">len</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">GetSpace</span><span class="token punctuation">(</span>level<span class="token operator">*</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token function">GetSpace</span><span class="token punctuation">(</span>rightLen<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p><img src="/practice_1_parse_service.assets/print_tree.drawio.png" alt=""></p></li> <li><p>为什么不写测试用例？深度遍历没有很复杂，通过上面打印树状结构，即可看出来对不对。（主要还是自信）</p></li></ul> <blockquote><p><code>DDD</code>分层</p></blockquote> <ul><li><p>穿刺阶段暂时只有一个解析的实例，先放在领域层</p> <p><img src="/practice_1_parse_service.assets/ddd_1.drawio.png" alt=""></p></li></ul> <h2 id="持久化方案"><a href="#持久化方案" class="header-anchor">#</a> 持久化方案</h2> <p>节点解析过程中，我们会收集节点，节点如何做持久化呢？</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Parser <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    nodes <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">Collect</span><span class="token punctuation">(</span>node <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">.</span>nodes <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>nodes<span class="token punctuation">,</span> node<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">Persistence</span><span class="token punctuation">(</span>node <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 一把持久化节点</span>
+    <span class="token comment">// 分批持久化节点</span>
+	<span class="token comment">// 调用仓储持久化</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ul><li>nodes 列表过大，十几万个节点常驻内存，垃圾回收性能低</li> <li>解析完才持久化，为什么不便解析边持久化呢？</li></ul> <h3 id="并发持久化"><a href="#并发持久化" class="header-anchor">#</a> 并发持久化</h3> <p><img src="/practice_1_parse_service.assets/node_persistence.drawio.png" alt=""></p> <ul><li>为了提高性能，我们起协程做持久化，通过<code>channel</code>，来传输节点做持久化。没有使用过<code>go</code>语言的话，暂时可以将<code>channel</code>理解为消息队列。</li> <li>通过<code>channel</code>协同，在保持一个本都长度为<code>1000</code>的数组，做批量存储，当数组放满节点时，将所有节点做一次持久化。</li></ul> <p>部分代码映射：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Parser <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Res         <span class="token keyword">chan</span> <span class="token operator">*</span>node<span class="token punctuation">.</span>Node  <span class="token comment">// channel 节点通信</span>
+	Done        <span class="token keyword">chan</span> <span class="token builtin">string</span>      <span class="token comment">// 是否解析完成，解析完成的话，持久化协程需要退出</span>
+	LibId       <span class="token builtin">string</span>
+	NodeRepo    <span class="token operator">*</span>node<span class="token punctuation">.</span>NodeRepository  <span class="token comment">// 持有仓储做持久化</span>
+	Lib         <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib
+	mu          sync<span class="token punctuation">.</span>Mutex       <span class="token comment">// 并发下的锁</span>
+	wg          <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup
+	insertIndex <span class="token builtin">int</span>
+	nodePool    <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>node<span class="token punctuation">.</span>Node <span class="token comment">// 本地数组</span>
+	isDebug     <span class="token builtin">bool</span>         <span class="token comment">// 是否是调试模式</span>
+	DebugRes    <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>node<span class="token punctuation">.</span>Node <span class="token comment">// 调试节点</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">Parse</span><span class="token punctuation">(</span>localDirPath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	pathList <span class="token operator">:=</span> dir<span class="token punctuation">.</span><span class="token function">ToPathList</span><span class="token punctuation">(</span>localDirPath<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> p<span class="token punctuation">.</span>isDebug <span class="token punctuation">{</span>
+		p<span class="token punctuation">.</span><span class="token function">PreProcess</span><span class="token punctuation">(</span>pathList<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> utility<span class="token punctuation">.</span><span class="token function">GetUuidByString</span><span class="token punctuation">(</span>pathList<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>pathList<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		<span class="token keyword">go</span> p<span class="token punctuation">.</span><span class="token function">PreProcess</span><span class="token punctuation">(</span>pathList<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> utility<span class="token punctuation">.</span><span class="token function">GetUuidByString</span><span class="token punctuation">(</span>pathList<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>pathList<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+		<span class="token comment">// 同步持久化，持久化完毕后，Parse 函数才退出</span>
+		p<span class="token punctuation">.</span><span class="token function">Persistence</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>node 结构体</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Node <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ------- 目前阶段需要用到的字段-------</span>
+	NodeId            <span class="token builtin">string</span>   <span class="token string">`bson:&quot;nodeId&quot; json:&quot;nodeId&quot;`</span>   <span class="token comment">// 随机生成</span>
+	PNodeId           <span class="token builtin">string</span>   <span class="token string">`bson:&quot;pNodeId&quot; json:&quot;pNodeId&quot;`</span> <span class="token comment">// 父节点的id</span>
+	Name              <span class="token builtin">string</span>   <span class="token string">`bson:&quot;name&quot; json:&quot;name&quot;`</span>       <span class="token comment">// 目录/用例名称</span>
+	Tag               <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token string">`bson:&quot;tag&quot; json:&quot;tag&quot;`</span>         <span class="token comment">// 用例标签</span>
+    Type              <span class="token builtin">string</span>   <span class="token string">`bson:&quot;type&quot; json:&quot;type&quot;`</span>       <span class="token comment">// 节点类型，区分用例还是目录</span>
+	Path              <span class="token builtin">string</span>   <span class="token string">`bson:&quot;path&quot; json:&quot;path&quot;`</span>       <span class="token comment">// id路径，为了应对重命名时，我们不改变id，对于路径节点的修改我们不需要动全部节点，否则路径上的节点都要修改</span>
+
+    <span class="token comment">// ------- 后续需求拓展字段-------------</span>
+    TestCenterCaseIds <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token string">`bson:&quot;testCenterCaseIds&quot; json:&quot;testCenterCaseIds&quot;`</span>
+	Content           <span class="token builtin">string</span>   <span class="token string">`bson:&quot;content&quot; json:&quot;content&quot;`</span>
+	NamePath          <span class="token builtin">string</span>   <span class="token string">`bson:&quot;namePath&quot; json:&quot;namePath&quot;`</span>    <span class="token comment">// 当前节点的相对路径</span>
+	PNamePath         <span class="token builtin">string</span>   <span class="token string">`bson:&quot;pNamePath&quot; json:&quot;pNamePath&quot;`</span>  <span class="token comment">// 父亲节点的相对路径</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><blockquote><p><code>DDD</code>分层</p></blockquote> <p><img src="/practice_1_parse_service.assets/ddd_2.drawio.png" alt=""></p> <h2 id="用例库实体"><a href="#用例库实体" class="header-anchor">#</a> 用例库实体</h2> <p><strong>解析的核心功能已经穿刺完毕了，需要提供那些接口？</strong></p> <ul><li>支持不同项目接入，所以需要让用户自己定义配置自己的用例库。</li></ul> <p><strong>如何确定唯一的用例库？</strong></p> <ul><li><code>gerritUrl</code> + <code>branch</code></li></ul> <p><strong>有哪些方法？</strong></p> <ul><li><code>lib.Dir()</code>  返回项目根目录，根目录在项目根目录下创建自身<code>id</code>的文件夹，防止不同分支打架</li> <li><code>lib.Pull()</code>在自身目录下拉取代码</li> <li><code>lib.UpdateAccount()</code> 修改密码等等方法..</li></ul> <blockquote><p>结构体</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> Lib <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Id        <span class="token builtin">string</span> <span class="token string">`bson:&quot;_id&quot; json:&quot;_id&quot;`</span>
+	GerritUrl <span class="token builtin">string</span> <span class="token string">`bson:&quot;gerritUrl&quot; json:&quot;gerritUrl&quot;`</span>
+	Password  <span class="token builtin">string</span> <span class="token string">`bson:&quot;password&quot; json:&quot;password&quot;`</span>
+	Branch    <span class="token builtin">string</span> <span class="token string">`bson:&quot;branch&quot; json:&quot;branch&quot;`</span>
+	User      <span class="token builtin">string</span> <span class="token string">`bson:&quot;user&quot; json:&quot;user&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><blockquote><p><code>DDD</code>分层</p></blockquote> <ul><li><p>接口层：提供两个接口，<code>config</code>配置用例库，<code>trigger</code>促发解析用例库</p></li> <li><p><code>service</code>层：<code>testcase_analys_service</code>，组合领域层的对象干活</p> <p>如：触发解析则先实例化<code>lib</code>找到<code>lib</code>后，使用解析器对<code>lib</code>进行解析</p></li></ul> <p><img src="/practice_1_parse_service.assets/ddd_3.drawio.png" alt=""></p> <blockquote><p>问题</p></blockquote> <ul><li>没有增量解析，目前还不能上线使用，需要完善增量解析</li></ul> <h2 id="优化用例树"><a href="#优化用例树" class="header-anchor">#</a> 优化用例树</h2> <p>新增需求：目录下没有用例的节点不展示。</p> <p><img src="/practice_1_parse_service.assets/example.drawio.png" alt=""></p> <p>方案：</p> <ul><li>为我们的递归新增一个返回值，含义为是否包含用例，上层节点根据返回值判断自身是否入库</li></ul> <p><img src="/practice_1_parse_service.assets/deepth_return.drawio.png" alt=""></p> <h2 id="增量解析方案"><a href="#增量解析方案" class="header-anchor">#</a> 增量解析方案</h2> <p>全量解析已经可行，但是增量解析并未确定，但是用户肯定需要增量解析才可以保证用例库的快速解析。</p> <h3 id="版本一"><a href="#版本一" class="header-anchor">#</a> 版本一</h3> <p>如何判断增量解析?</p> <ul><li><p>如果用例库目录已经存在，则使用 <code>git pull</code> 指令，获取变更信息如：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code>domain<span class="token operator">/</span><span class="token punctuation">{</span> <span class="token operator">=</span><span class="token operator">&gt;</span> execution<span class="token punctuation">}</span><span class="token operator">/</span>lib<span class="token operator">/</span>lib<span class="token punctuation">.</span><span class="token keyword">go</span>                   <span class="token operator">|</span>  <span class="token number">0</span>     <span class="token comment">// 单纯新增目录</span>
+domain<span class="token operator">/</span>changeanalyzer<span class="token operator">/</span><span class="token punctuation">{</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1111</span><span class="token punctuation">}</span><span class="token operator">/</span>changeanalyzer<span class="token punctuation">.</span><span class="token keyword">go</span>  <span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">+</span><span class="token operator">-</span>  <span class="token comment">// 新增目录+修改</span>
+domain<span class="token operator">/</span>execution<span class="token operator">/</span>lib<span class="token operator">/</span>case_progress_repo<span class="token punctuation">.</span><span class="token keyword">go</span>          <span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">+</span><span class="token operator">-</span>  <span class="token comment">// 单纯修改</span>
+domain<span class="token operator">/</span>execution<span class="token operator">/</span>lib<span class="token operator">/</span>case_progress_repo1<span class="token punctuation">.</span><span class="token keyword">go</span>         <span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">--</span>  <span class="token comment">// 单纯减少</span>
+domain<span class="token operator">/</span>execution<span class="token operator">/</span>lib<span class="token operator">/</span>lib<span class="token punctuation">.</span><span class="token keyword">go</span>                         <span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">++</span>  <span class="token comment">// 单纯增量</span>
+domain<span class="token operator">/</span><span class="token punctuation">{</span> <span class="token operator">=</span><span class="token operator">&gt;</span> execution<span class="token operator">/</span>abc<span class="token punctuation">}</span><span class="token operator">/</span>lib<span class="token operator">/</span>lib<span class="token punctuation">.</span><span class="token keyword">go</span>               <span class="token operator">|</span>  <span class="token number">0</span>     <span class="token comment">// 多层移动</span>
+domain<span class="token operator">/</span><span class="token punctuation">{</span> a <span class="token operator">=</span><span class="token operator">&gt;</span> execution<span class="token operator">/</span>abc<span class="token punctuation">}</span><span class="token operator">/</span>lib<span class="token operator">/</span>lib<span class="token punctuation">.</span><span class="token keyword">go</span>             <span class="token operator">|</span>  <span class="token number">0</span>     <span class="token comment">// 重命名文件无改动</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li></ul> <blockquote><p>解决方案</p></blockquote> <p>我们使用<code>lib</code>实例，执行<code>git pull</code> 获取到变更信息后，直接给解析器，解析器将变更拆分开来**，遍历每一个变更，到数据库做增删改查**。</p> <p>以纯新增场景为例：纯新增，遍历路径上的节点，不存在则新建节点入库，直到最后一个节点的时候删除文件，重新解析，解析完毕后，有可能目录下不包含用例，那么之前路径上创建的节点需要释放。释放流程则需要查询父节点之下还有没有其他目录，有的话则父节点保存。</p> <p>其他场景暂不说明，这种方式有一种<strong>致命缺陷</strong>，那就是十分的慢，每个变更串行，<strong>一次增量解析比一次全解析时间还长</strong></p> <p>经过分析，我们知道场景非常的复杂，则此时<strong>需要构建好我们的测试用例</strong>，尽量覆盖所有的变更类型产生的影响，否则一旦代码出现<code>bug</code>，库的数据乱了之后，无法恢复。<strong>此时开始以测试驱动我们的开发</strong>。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// 1.初始化实体目录</span>
+<span class="token comment">//    写一些工具方法，给一个路径，将路径所有文件创建好，便于初始化我们的测试场景</span>
+
+<span class="token comment">//  2.使用解析器解析</span>
+
+<span class="token comment">//  3.比较解析结果与预期</span>
+<span class="token comment">//    依赖数据库需要mock一个数据库出来吗？</span>
+
+<span class="token comment">//   其他：尽量将我们的用例的字段对其，方便直接拓展</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li><strong>这次开发的用例是开发的基础！！！</strong></li> <li><strong>测试代码几百行，核心代码几十行</strong></li></ul> <h3 id="版本二"><a href="#版本二" class="header-anchor">#</a> 版本二</h3> <p>经过版本一的尝试和分析，我们发现，其实处理变更还挺麻烦的，我们可以把处理变更的逻辑更内聚一些，于是，我们又有了一个变更分析器。</p> <p>而且基于之前的经验，变更如果不并发处理，我们没有办法再提升速度</p> <p>于是变更分析器，我们想要的结果是分好类的变更信息：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;增量&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/A/B/C/x.tsv&quot;</span>， <span class="token string">&quot;/A/B/C/y.tsv&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/A/B/D/y.tsv&quot;</span><span class="token punctuation">]</span>
+	<span class="token string">&quot;减量&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/A/B/C/x.tsv&quot;</span>， <span class="token string">&quot;/A/B/C/y.tsv&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/A/B/D/y.tsv&quot;</span><span class="token punctuation">]</span>
+    <span class="token string">&quot;修改&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/A/B/C/x.tsv&quot;</span>， <span class="token string">&quot;/A/B/C/y.tsv&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/A/B/D/y.tsv&quot;</span><span class="token punctuation">]</span>
+    <span class="token string">&quot;移动&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/A/{B =&gt; D}/C/x.tsv&quot;</span>， <span class="token string">&quot;/A/{B =&gt; D}/C/y.tsv&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/A/{B =&gt; D}/D/y.tsv&quot;</span><span class="token punctuation">]</span>
+    <span class="token string">&quot;多层移动&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/A/{B =&gt; D/E }/C/x.tsv&quot;</span>， <span class="token string">&quot;/A/{B =&gt; D/E }/C/y.tsv&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">ParseByChanges</span><span class="token punctuation">(</span>changesMap <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span>changeanalyzer<span class="token punctuation">.</span>Change<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> cType<span class="token punctuation">,</span> changes <span class="token operator">:=</span> <span class="token keyword">range</span> changesMap <span class="token punctuation">{</span>
+		logger<span class="token punctuation">.</span><span class="token function">Infof</span><span class="token punctuation">(</span><span class="token string">&quot;handle changes: %+v&quot;</span><span class="token punctuation">,</span> changes<span class="token punctuation">)</span>
+		<span class="token keyword">switch</span> cType <span class="token punctuation">{</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>AddType<span class="token punctuation">:</span>
+			p<span class="token punctuation">.</span><span class="token function">AddHandle</span><span class="token punctuation">(</span>changes<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>ReduceType<span class="token punctuation">:</span>
+			p<span class="token punctuation">.</span><span class="token function">ReduceHandle</span><span class="token punctuation">(</span>changes<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>ModifyType<span class="token punctuation">:</span>
+			p<span class="token punctuation">.</span><span class="token function">ModifyHandle</span><span class="token punctuation">(</span>changes<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token operator">...</span><span class="token punctuation">:</span>
+            <span class="token operator">...</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>NoChangeType<span class="token punctuation">:</span>
+			logger<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;Hasn't NoChangeType handler !!! change: %+v /n&quot;</span><span class="token punctuation">,</span> changes<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>和版本一的效率差不多，只是多了变更分析器，有没有并发方式？</p> <h3 id="版本三"><a href="#版本三" class="header-anchor">#</a> 版本三</h3> <p>经过了众多尝试，各种场景罗列，考虑各种场景并发下，会出现哪些问题？简直爆炸了。比如：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token string">&quot;/A/B/C/x.tsv ++&quot;</span>
+<span class="token string">&quot;/A/B/C/y.tsv ++&quot;</span>
+<span class="token comment">// 假设： C 文件夹和 x.tsv y.tsv 都是新增文件</span>
+<span class="token comment">// 那么如果并发执行增量逻辑，就是两个协程同时查询数据库，发现 C 目录不存在，一起入库！导致重复</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>再比如：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token string">&quot;/A/B/C/x.tsv ++&quot;</span>
+<span class="token string">&quot;/A/B/C/y.tsv --&quot;</span>
+<span class="token comment">// 要求目录下没有用例则，不需要该目录</span>
+<span class="token comment">// 假设 x.tsv 存在用例，此时删掉x.tsv及其子用例，重新解析x.tsv入库</span>
+<span class="token comment">// 此时 y.tsv 为整体删除，那么我们是不是需要删掉整体的 y.tsv 自身及其子节点，删除的同时，我们可能时最后一个文件，那么他的父节肯定也需要删除。我们可以采用查看父节点的子节点的数量如果为0，则没有用例了，删除自身即可。</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>写完了代码十分的复杂，而且经常测出问题，一出问题全是并发，还不好复现，查个鬼！！！</p> <h4 id="思考"><a href="#思考" class="header-anchor">#</a> 思考</h4> <ul><li>类型混合+并发场景太多了，有没有办法化简？</li> <li>有没有一些数据结构或者算法可以帮助我们</li></ul> <p>增量并发冲突处理，使用<strong>字典树+协程</strong>：</p> <p><img src="/practice_1_parse_service.assets/%E5%AD%97%E5%85%B8%E6%A0%91_%E5%8D%8F%E7%A8%8B%E8%A7%A3%E6%9E%90.drawio.png" alt=""></p> <ul><li>将我们的多个增量变更组成树状结构，让每次判断变成原子操作</li> <li>每个节点可以自身启动协程处理后继节点，将路径变为并发</li> <li>协程太多，<code>gc</code>压力大？使用第三方协程池</li></ul> <p>构建字典树+增量解析：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">NewAddParser</span><span class="token punctuation">(</span>changes <span class="token punctuation">[</span><span class="token punctuation">]</span>changeanalyzer<span class="token punctuation">.</span>Change<span class="token punctuation">,</span> lib <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib<span class="token punctuation">,</span> rc <span class="token operator">*</span>ReleaseTaskCollector<span class="token punctuation">)</span> AddParser <span class="token punctuation">{</span>
+	ap <span class="token operator">:=</span> AddParser<span class="token punctuation">{</span>rc<span class="token punctuation">:</span> rc<span class="token punctuation">}</span>
+	ap<span class="token punctuation">.</span>root <span class="token operator">=</span> <span class="token operator">&amp;</span>DirTireNode<span class="token punctuation">{</span> <span class="token comment">// 初始化根节点</span>
+		<span class="token operator">...</span>
+	<span class="token punctuation">}</span>
+	ap<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">1</span>
+	ap<span class="token punctuation">.</span>lib <span class="token operator">=</span> lib
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> chg <span class="token operator">:=</span> <span class="token keyword">range</span> changes <span class="token punctuation">{</span> <span class="token comment">// 遍历路径插入字典树</span>
+		ap<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span>chg<span class="token punctuation">.</span><span class="token function">GetFileRelativePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	ap<span class="token punctuation">.</span><span class="token function">PaintSizeProcess</span><span class="token punctuation">(</span>ap<span class="token punctuation">.</span>root<span class="token punctuation">)</span> <span class="token comment">// 遍历节点给节点增加子节点数量，用于并发控制</span>
+	<span class="token keyword">return</span> ap
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>ap <span class="token operator">*</span>AddParser<span class="token punctuation">)</span> <span class="token function">Insert</span><span class="token punctuation">(</span>path <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	ps <span class="token operator">:=</span> <span class="token function">string</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>PathSeparator<span class="token punctuation">)</span>
+	nodes <span class="token operator">:=</span> strings<span class="token punctuation">.</span><span class="token function">Split</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> ps<span class="token punctuation">)</span>
+	cur <span class="token operator">:=</span> ap<span class="token punctuation">.</span>root
+	relativePath <span class="token operator">:=</span> <span class="token string">&quot;&quot;</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> nodes <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token boolean">_</span><span class="token punctuation">,</span> ok <span class="token operator">:=</span> cur<span class="token punctuation">.</span>Next<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
+			cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>Next<span class="token punctuation">[</span>v<span class="token punctuation">]</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 不存在则创建节点</span>
+			cur<span class="token punctuation">.</span>Next<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>DirTireNode<span class="token punctuation">{</span>
+			<span class="token punctuation">}</span>
+			<span class="token comment">// 节点下移</span>
+			cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>Next<span class="token punctuation">[</span>v<span class="token punctuation">]</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	cur<span class="token punctuation">.</span>End <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>ap <span class="token operator">*</span>AddParser<span class="token punctuation">)</span> <span class="token function">Run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 根节点进入队列</span>
+	<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
+	wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>ap<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+	err <span class="token operator">:=</span> routinepool<span class="token punctuation">.</span>Pool<span class="token punctuation">.</span><span class="token function">Submit</span><span class="token punctuation">(</span><span class="token function">AddNodeHandleWrap</span><span class="token punctuation">(</span>ap<span class="token punctuation">.</span>root<span class="token punctuation">,</span> <span class="token operator">&amp;</span>wg<span class="token punctuation">,</span> ap<span class="token punctuation">.</span>lib<span class="token punctuation">,</span> ap<span class="token punctuation">.</span>rc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 将根节点的任务交给协程池</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		logger<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;AddParser run Submit task error: %s&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><blockquote><p>变更类型合并</p></blockquote> <p>重命名和移动的本质是什么？</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code>domain<span class="token operator">/</span><span class="token punctuation">{</span> A <span class="token operator">=</span><span class="token operator">&gt;</span> B <span class="token punctuation">}</span><span class="token operator">/</span>lib<span class="token operator">/</span>lib<span class="token punctuation">.</span><span class="token keyword">go</span>
+<span class="token comment">// 是不是就等于 domain/A/lib/lib.go 文件删除（删除任务），重新增量解析domain/B/lib/lib.go(增量任务)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>于是我们有了三种<strong>基础类型的操作任务</strong>加一<strong>种特殊的释放任务</strong>：</p> <h5 id="增量任务"><a href="#增量任务" class="header-anchor">#</a> 增量任务：</h5> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AddNodeHandleWrap</span><span class="token punctuation">(</span>node <span class="token operator">*</span>DirTireNode<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">,</span> curLib <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib<span class="token punctuation">,</span> rc <span class="token operator">*</span>ReleaseTaskCollector<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 当前任务完成</span>
+		<span class="token keyword">if</span> <span class="token operator">!</span>node<span class="token punctuation">.</span>End <span class="token punctuation">{</span>
+			<span class="token comment">//处理当前节点的任务，判断当前节点是否存在，不存在创建，存在则返回当前节点的NodeId，继续提交创建任务</span>
+			<span class="token function">HandlePathDir</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> wg<span class="token punctuation">,</span> curLib<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 叶子节点需要解析tsv文件，解析用例</span>
+			<span class="token comment">// 在解析完毕并入库的时候取消在跑的任务，如果不取消，会一直跑不了</span>
+			<span class="token function">HandleLeafNode</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> curLib<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">HandlePathDir</span><span class="token punctuation">(</span>node <span class="token operator">*</span>DirTireNode<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">,</span> curLib <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib<span class="token punctuation">,</span> rc <span class="token operator">*</span>ReleaseTaskCollector<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">//处理当前节点的任务，判断当前节点是否存在，不存在创建，存在则返回当前节点的NodeId</span>
+	nodeId <span class="token operator">:=</span> <span class="token function">AddHandleNode</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> curLib<span class="token punctuation">.</span>Id<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> nodeId <span class="token operator">==</span> <span class="token string">&quot;&quot;</span> <span class="token punctuation">{</span>
+		<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>node<span class="token punctuation">.</span>CurSize<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+			wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> next <span class="token operator">:=</span> <span class="token keyword">range</span> node<span class="token punctuation">.</span>Next <span class="token punctuation">{</span>
+		<span class="token comment">// 补充子节点信息，并提交子节点任务</span>
+		next<span class="token punctuation">.</span>PNodeId <span class="token operator">=</span> nodeId
+		next<span class="token punctuation">.</span>ParentIdPath <span class="token operator">=</span> node<span class="token punctuation">.</span>ParentIdPath <span class="token operator">+</span> <span class="token function">string</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>PathSeparator<span class="token punctuation">)</span> <span class="token operator">+</span> nodeId
+		next<span class="token punctuation">.</span>AbsPath <span class="token operator">=</span> node<span class="token punctuation">.</span>AbsPath <span class="token operator">+</span> <span class="token function">string</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>PathSeparator<span class="token punctuation">)</span> <span class="token operator">+</span> next<span class="token punctuation">.</span>Name
+		err <span class="token operator">:=</span> routinepool<span class="token punctuation">.</span>Pool<span class="token punctuation">.</span><span class="token function">Submit</span><span class="token punctuation">(</span><span class="token function">AddNodeHandleWrap</span><span class="token punctuation">(</span>next<span class="token punctuation">,</span> wg<span class="token punctuation">,</span> curLib<span class="token punctuation">,</span> rc<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			logger<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">HandleLeafNode</span><span class="token punctuation">(</span>fileNode <span class="token operator">*</span>DirTireNode<span class="token punctuation">,</span> curLib <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib<span class="token punctuation">,</span>rc <span class="token operator">*</span>ReleaseTaskCollector<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// 查询之前是否存在当前文件节点，如果存在需要删除</span>
+	n<span class="token punctuation">,</span> err <span class="token operator">:=</span> node<span class="token punctuation">.</span><span class="token function">GetNodeRepositoryInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+		<span class="token function">FindNodeByNameAndPId</span><span class="token punctuation">(</span>fileNode<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> fileNode<span class="token punctuation">.</span>PNodeId<span class="token punctuation">,</span> curLib<span class="token punctuation">.</span>Id<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		logger<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;Add parser FindNodeChildrenByPath err: %s&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> n <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		err <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">GetNodeRepositoryInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DeleteNodesCoverNodesWithSelf</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>NodeId<span class="token punctuation">,</span> curLib<span class="token punctuation">.</span>Id<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			logger<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;Add parser DeleteNodesCoverNodesWithSelf err: %s&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 叶子节点需要解析tsv文件，解析用例</span>
+	<span class="token comment">// 在解析完毕并入库的时候取消在跑的任务，如果不取消，会一直跑不了</span>
+	nP <span class="token operator">:=</span> <span class="token function">NewParser</span><span class="token punctuation">(</span>curLib<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+	pDone <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">go</span> nP<span class="token punctuation">.</span><span class="token function">PersistenceWithSignal</span><span class="token punctuation">(</span>pDone<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token operator">!</span>nP<span class="token punctuation">.</span><span class="token function">PreProcess</span><span class="token punctuation">(</span> <span class="token comment">// 解析tsv，如果没有用例，需要释放上层目录</span>
+		dir<span class="token punctuation">.</span><span class="token function">ToPathList</span><span class="token punctuation">(</span>fileNode<span class="token punctuation">.</span>AbsPath<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		dir<span class="token punctuation">.</span><span class="token function">IdPathToIdList</span><span class="token punctuation">(</span>fileNode<span class="token punctuation">.</span>ParentIdPath<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		utility<span class="token punctuation">.</span><span class="token function">GetUuidByString</span><span class="token punctuation">(</span>fileNode<span class="token punctuation">.</span>PNodeId<span class="token operator">+</span>fileNode<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token function">len</span><span class="token punctuation">(</span>dir<span class="token punctuation">.</span><span class="token function">IdPathToIdList</span><span class="token punctuation">(</span>fileNode<span class="token punctuation">.</span>ParentIdPath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 收集释放任务</span>
+		rc<span class="token punctuation">.</span><span class="token function">Collect</span><span class="token punctuation">(</span>fileNode<span class="token punctuation">.</span>ParentIdPath<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token operator">&lt;-</span>pDone
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><h5 id="删除任务"><a href="#删除任务" class="header-anchor">#</a> 删除任务:</h5> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ReduceWrap</span><span class="token punctuation">(</span>chg changeanalyzer<span class="token punctuation">.</span>Change<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">,</span> cLib <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib<span class="token punctuation">,</span> rc <span class="token operator">*</span>ReleaseTaskCollector<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token comment">// 找到第一个不存在的实际目录，并转化为项目相对路径</span>
+		<span class="token comment">// 获取该目录，并且删除该目录及其子目录</span>
+		<span class="token comment">// 将路径放入 ReleaseTaskCollector[释放任务控制]做统一释放</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h5 id="修改任务"><a href="#修改任务" class="header-anchor">#</a> 修改任务:</h5> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ModifyWrap</span><span class="token punctuation">(</span>chg changeanalyzer<span class="token punctuation">.</span>Change<span class="token punctuation">,</span> wg <span class="token operator">*</span>sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">,</span> clib <span class="token operator">*</span>lib<span class="token punctuation">.</span>Lib<span class="token punctuation">,</span> rc <span class="token operator">*</span>ReleaseTaskCollector<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 删除该目录及其子目录</span>
+    <span class="token comment">// 调用解析器重新解析</span>
+    <span class="token comment">// 判断是否存在用例，</span>
+    <span class="token comment">//    如果存在将路径放入 ReleaseTaskCollector[释放任务控制]</span>
+    <span class="token comment">//    否则停止</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h5 id="释放任务"><a href="#释放任务" class="header-anchor">#</a> 释放任务：</h5> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ReleaseWrap</span><span class="token punctuation">(</span>idPath <span class="token builtin">string</span><span class="token punctuation">,</span> libId <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		idList <span class="token operator">:=</span> dir<span class="token punctuation">.</span><span class="token function">IdPathToIdList</span><span class="token punctuation">(</span>idPath<span class="token punctuation">)</span>
+		<span class="token keyword">var</span> children <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+		<span class="token keyword">var</span> err <span class="token builtin">error</span>
+		<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token function">len</span><span class="token punctuation">(</span>idList<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&gt;=</span><span class="token number">0</span> <span class="token punctuation">;</span> i<span class="token operator">--</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 从最后一级往前释放</span>
+			<span class="token comment">// 如果该节点子节点数量为0 则删除该节点，并向上移动，否则退出</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="最终解决方案"><a href="#最终解决方案" class="header-anchor">#</a> 最终解决方案</h4> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">ParseByChanges</span><span class="token punctuation">(</span>changesMap <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span>changeanalyzer<span class="token punctuation">.</span>Change<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	p<span class="token punctuation">.</span>wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>changesMap<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 不同类型变更允许并发，设置并发组的数量</span>
+	rc <span class="token operator">:=</span> <span class="token function">NewReleaseTaskCollector</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>Lib<span class="token punctuation">)</span> <span class="token comment">// 释放任务搜集器，将需要释放的最后统一释放</span>
+	<span class="token keyword">for</span> cType<span class="token punctuation">,</span> changes <span class="token operator">:=</span> <span class="token keyword">range</span> changesMap <span class="token punctuation">{</span>
+		logger<span class="token punctuation">.</span><span class="token function">Infof</span><span class="token punctuation">(</span><span class="token string">&quot;handle changes: %+v&quot;</span><span class="token punctuation">,</span> changes<span class="token punctuation">)</span>
+		<span class="token keyword">switch</span> cType <span class="token punctuation">{</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>AddType<span class="token punctuation">:</span>    <span class="token comment">// 并发处理增量变更</span>
+			<span class="token keyword">go</span> p<span class="token punctuation">.</span><span class="token function">AddHandle</span><span class="token punctuation">(</span>changes<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>ReduceType<span class="token punctuation">:</span> <span class="token comment">// 并发处理删除变更</span>
+			<span class="token keyword">go</span> p<span class="token punctuation">.</span><span class="token function">ReduceHandle</span><span class="token punctuation">(</span>changes<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>ModifyType<span class="token punctuation">:</span> <span class="token comment">// 并发处理修改变更</span>
+			<span class="token keyword">go</span> p<span class="token punctuation">.</span><span class="token function">ModifyHandle</span><span class="token punctuation">(</span>changes<span class="token punctuation">,</span> rc<span class="token punctuation">)</span>
+		<span class="token keyword">case</span> constv<span class="token punctuation">.</span>NoChangeType<span class="token punctuation">:</span> <span class="token comment">// 未知类型日志记录定位</span>
+			p<span class="token punctuation">.</span>wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 未知类型直接结束</span>
+			logger<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;Hasn't NoChangeType handler !!! change: %+v /n&quot;</span><span class="token punctuation">,</span> changes<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	p<span class="token punctuation">.</span>wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">// 最后执行释放任务，防止协程间，由于数据库查询与插入非原子操作，造成误删</span>
+	rc<span class="token punctuation">.</span><span class="token function">RunTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 集中释放节点</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>于是我们的领域模型变成了这样：</p> <p><img src="/practice_1_parse_service.assets/ddd_4.drawio.png" alt=""></p> <p>走一遍增量解析场景：</p> <ol><li>用户触发解析</li> <li>服务调用实例化<code>lib</code>，判断是否已经拉取过代码</li> <li>代码已拉取过，走增量解析，拉取代码，变更信息交给变更解析器处理</li> <li>处理后的变更信息交给解析器走增量解析</li></ol> <h2 id="多实例"><a href="#多实例" class="header-anchor">#</a> 多实例</h2> <p>解决了上述的问题后，还有一些问题：</p> <ol><li>拉取代码库，直接拉取到微服务容器内部，拉几个大项目微服务被杀死。</li> <li>多个实例并发解析，如果是同一个库可以在不同实例同时解析的话，数组会重复</li> <li>我们的节点id在入库的是随机生成的，用例文件修改后，用例节点重新生成，<code>id</code>发生变更，一旦修改原本的<code>id</code>会找不到用例。</li> <li>服务升级的时候库解析到一半，已经入库了一些数据，下一次解析怎么保证已入库的数据不再次解析</li> <li>解析接口要求异步，防止链接过多</li></ol> <p>解决：</p> <ol><li>采用容器数据卷，拉取用例库做持久化，省去服务启动拉取代码的速度，并且防止容器崩溃</li> <li>分布式锁，每个实例需要获取到锁，之后才可以开始执行解析</li> <li>设置节点<code>id</code>变为根据path做哈希，只要path没变，我们的节点<code>id</code>就不会变</li> <li>加入版本控制，需要记录用例库已经解析的版本，<code>git diff version1 version2</code>的方式获取     变更信息。获取变更信息后，如果上一次未解析完毕，不会入库最新的解析版本，而是拿到上一次的变更信息重新做一次解析，我们将节点的<code>id</code>设置为唯一索引，则可以保证节点数据不会重复入库。</li> <li>识别出需要保存用例库解析的相关状态数据，添加领域对象<code>parse recorder</code>解析记录，对应新增一张表</li></ol> <blockquote><p>增量解析算法可以再次升级，增量，只需2次数据库 IO</p></blockquote> <ul><li>我们将增量路径组装成字典树的过程，可是使用节点路径算出当前节点的<code>id</code>,已经知道所有节点的<code>id</code>，我们可以一把查询路径中所有的节点是否存在，遍历字典树的过程中，判断是否存在的时候就可以不访问数据库了，遇到不存在的节点直接入库即可（还未实现的）</li></ul> <h2 id="我们ddd了吗"><a href="#我们ddd了吗" class="header-anchor">#</a> 我们<code>DDD</code>了吗？</h2> <p>代码的分层看起来和<code>ddd</code>的风格保持了一致，好像<code>ddd</code>了，<code>ddd</code>战术设计中的我们需要识别领域对象、值对象、聚合、服务、工厂等概念。</p> <p><strong>开发的阶段，对当前问题域的理解还不够透彻</strong>，我们在开发的过程中，慢慢的会发现一些实体，然后根据<code>ddd</code>的一些原则，归为领域对象，或者需要仓储，或者需要增加服务。</p> <p><strong>这个过程是不可避免的</strong>，<code>ddd</code>实际上是根据我们对业务问题域理解，划分不同的问题域，将复杂的问题简单化，当问题域够小的时候，我们进行战术设计，来讨论一个微服务内部的划分和组织代码。</p> <p>在起初，其实我们对业务的理解并不深入，无法识别所有的领域对象，但是还是需要实现功能，我们还是需要写代码解决问题。在这个过程中，<strong>写测试用例十分重要，但是一定是&quot;有用的测试用例&quot;</strong>，<code>crud</code>类的用例，有精力可以写。</p> <p>测试用例可以在我们识别领域模型之后，我们对模型有重新理解的时候，帮助我们更快的修改模型，并保证功能的正确性，也便于重构。所以我觉的好的测试用例是领域驱动设计的基础，也是代码重构的基础。</p> <h2 id="事件风暴重新设计"><a href="#事件风暴重新设计" class="header-anchor">#</a> 事件风暴重新设计</h2> <h3 id="版本一-2"><a href="#版本一-2" class="header-anchor">#</a> 版本一</h3> <p><img src="/practice_1_parse_service.assets/event_1.drawio.png" alt=""></p> <ul><li>粒度太粗了，代码几乎无法映射，因为我们对解析的概念十分的不清晰，但是也没又办法，没有人做过，也没有相关的业务专家</li></ul> <h3 id="版本二-2"><a href="#版本二-2" class="header-anchor">#</a> 版本二</h3> <p><img src="/practice_1_parse_service.assets/event_2.drawio.png" alt=""></p> <ul><li>使用事件风暴根据业务的行为，梳理出在用例库解析及查询过程中发生的这些行为的所有实体和值对象。</li> <li>从众多实体中选出合适作为对象管理者的根实体，也就是聚合根。</li> <li>根据业务单一职责和高内聚原则，找出与聚合根关联的所有依赖的实体和值对象，构建出一个包含聚合根、多个实体和值对象的集合，这个集合就是聚合。</li> <li>在聚合内根据聚合根、实体和值对象的依赖关系，画出对象的引用和依赖模型</li> <li>多个聚合根据业务和语义和上下文一起划分到同一个限界上下文</li></ul> <p><img src="/practice_1_parse_service.assets/event_3.drawio.png" alt=""></p> <p>对比之前模型的变化：</p> <ul><li>出现了用例库聚合，聚合根为用例库</li> <li>数据更内聚了，少了解析记录和解析记录仓储</li></ul> <p>问题：</p> <ol><li><p>为什么有例库聚合？没有不行吗？依据是什么？</p> <p><img src="/practice_1_parse_service.assets/link.drawio.png" alt=""></p></li> <li><p>解析器、变更分析器虽然作为一个实体，但是并不持久化，只做数据处理或计算，很独立，为什么要放在用例聚合中？</p> <p>在不少数据统计和计算的场景中，很多实体之间相互独立，只参与计算和统计分析，但是这类场景中业务内聚性又很高，你找不出管理这些实体的聚合根。我称这种业务模型为非典型领域模型。虽然在有些方面（比如聚合根）不符合<code>DDD</code>的一些原则，但是我们也可以按照<code>DDD</code>的方法来完成设计。</p></li> <li><p>这么设计之后有什么好处？</p> <ul><li>之前的领域层的实体很多，服务后期还加入了测试执行，执行记录相关的实体，领域模型越来越多，越不好管理，使用聚合分离业务有利于我们维护与拓展。</li> <li>如果我们抽到聚合中，未来用例库解析成为了微服务的瓶颈的时候，可以直接将用例库聚合提取出来，成为一个新的服务</li> <li>聚合作为主要作用是保证聚合内部数据的一致性，虽然当前服务没有一致性问题，但是使我们的数据跟内聚了。我们之前的解析状态分散到解析记录实体中，我们查询状态的时候需要跨越多个表，执行了多次的数据库<code>io</code>，但是如果在用例库中，可以直接查到。</li></ul></li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">9/14/2023,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/architecture/tools_2_uml.html" class="prev">
+          UML
+        </a></span> <!----></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">解析服务实践</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/architecture/practice_1_parse_service.html#穿刺算法选择" class="toc-sidebar-link">穿刺算法选择</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#场景" class="toc-sidebar-link">场景</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#方案" class="toc-sidebar-link">方案</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#采用持久化" class="toc-sidebar-link">采用持久化：</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#算法选择" class="toc-sidebar-link">算法选择：</a></li></ul></li><li><a href="/architecture/practice_1_parse_service.html#持久化方案" class="toc-sidebar-link">持久化方案</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#并发持久化" class="toc-sidebar-link">并发持久化</a></li></ul></li><li><a href="/architecture/practice_1_parse_service.html#用例库实体" class="toc-sidebar-link">用例库实体</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#优化用例树" class="toc-sidebar-link">优化用例树</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#增量解析方案" class="toc-sidebar-link">增量解析方案</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本一" class="toc-sidebar-link">版本一</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本二" class="toc-sidebar-link">版本二</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本三" class="toc-sidebar-link">版本三</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#思考" class="toc-sidebar-link">思考</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#增量任务" class="toc-sidebar-link">增量任务：</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#删除任务" class="toc-sidebar-link">删除任务:</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#修改任务" class="toc-sidebar-link">修改任务:</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#释放任务" class="toc-sidebar-link">释放任务：</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#最终解决方案" class="toc-sidebar-link">最终解决方案</a></li></ul></li><li><a href="/architecture/practice_1_parse_service.html#多实例" class="toc-sidebar-link">多实例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#我们ddd了吗" class="toc-sidebar-link">我们DDD了吗？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#事件风暴重新设计" class="toc-sidebar-link">事件风暴重新设计</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本一-2" class="toc-sidebar-link">版本一</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本二-2" class="toc-sidebar-link">版本二</a></li></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">解析服务实践</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/architecture/practice_1_parse_service.html#穿刺算法选择" class="toc-sidebar-link">穿刺算法选择</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#场景" class="toc-sidebar-link">场景</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#方案" class="toc-sidebar-link">方案</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#采用持久化" class="toc-sidebar-link">采用持久化：</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#算法选择" class="toc-sidebar-link">算法选择：</a></li></ul></li><li><a href="/architecture/practice_1_parse_service.html#持久化方案" class="toc-sidebar-link">持久化方案</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#并发持久化" class="toc-sidebar-link">并发持久化</a></li></ul></li><li><a href="/architecture/practice_1_parse_service.html#用例库实体" class="toc-sidebar-link">用例库实体</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#优化用例树" class="toc-sidebar-link">优化用例树</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#增量解析方案" class="toc-sidebar-link">增量解析方案</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本一" class="toc-sidebar-link">版本一</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本二" class="toc-sidebar-link">版本二</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本三" class="toc-sidebar-link">版本三</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#思考" class="toc-sidebar-link">思考</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#增量任务" class="toc-sidebar-link">增量任务：</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#删除任务" class="toc-sidebar-link">删除任务:</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#修改任务" class="toc-sidebar-link">修改任务:</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#释放任务" class="toc-sidebar-link">释放任务：</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#最终解决方案" class="toc-sidebar-link">最终解决方案</a></li></ul></li><li><a href="/architecture/practice_1_parse_service.html#多实例" class="toc-sidebar-link">多实例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#我们ddd了吗" class="toc-sidebar-link">我们DDD了吗？</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/architecture/practice_1_parse_service.html#事件风暴重新设计" class="toc-sidebar-link">事件风暴重新设计</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本一-2" class="toc-sidebar-link">版本一</a></li><li class="toc-sidebar-sub-header"><a href="/architecture/practice_1_parse_service.html#版本二-2" class="toc-sidebar-link">版本二</a></li></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/architecture/practice_1_parse_service.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="UML" class="option-box" style="padding-left:2px;text-align:center;"><a href="/architecture/tools_2_uml.html"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.d669c1fe.js" defer></script><script src="/assets/js/3.a918bb29.js" defer></script><script src="/assets/js/4.9382fba3.js" defer></script><script src="/assets/js/56.bf5b5546.js" defer></script>
+  </body>
+</html>
