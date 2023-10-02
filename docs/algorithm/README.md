@@ -42,13 +42,14 @@
 
 ##### 👉 [位运算](/algorithm/g1_base_1_binary_0_binary)
 
-- [为什么要学二进制？](/algorithm/g1_base_1_binary_0_binary)
-- [`int`类型的二进制](/algorithm/g1_base_2_binary_1_gte_binary)
-- [二进制实现加减乘除](/algorithm/g1_base_3_binary_2_binary_calc)
-- [不用中间变量交换两个数](/algorithm/g1_base_5_binary_4_change_num_without_variable)
-- [位图](/algorithm/g1_base_4_binary_3_bit_map)
-- 找到出现次数奇数次的数
-- 找到出现次数为K次的数
+- [为什么要学二进制？](/algorithm/g1_base_binary_0_binary)
+- [`int`类型的二进制](/algorithm/g1_base_binary_1_gte_binary)
+- [二进制实现加减乘除](/algorithm/g1_base_binary_2_binary_calc)
+- [不用中间变量交换两个数](/algorithm/g1_base_binary_4_change_num_without_variable)
+- [位图](/algorithm/g1_base_binary_3_bit_map)
+- [找到出现次数奇数次的数](/algorithm/g1_base_binary_5_find_odd_times_num)
+- [找到两个出现奇数次的数](/algorithm/g1_base_binary_6_find_odd_times_2_num)
+- [找到出现次数为K次的数](/algorithm/g1_base_binary_7_find_k_times_num)
 - N皇后问题的加速实现（建议递归到动态规划回顾）
 
 ##### 👉 排序
@@ -109,8 +110,8 @@
 
 ##### 👉 链表
 
-- 反转链表
-- 链表中删除指定数字
+- [反转链表](/algorithm/g1_data_struct_linked_list_1_reverse)
+- [链表中删除指定数字](/algorithm/g1_data_struct_linked_list_2_delete)
 - 取链表的中点
 - K个节点之间逆序
 - 合并两个有序链表
@@ -121,7 +122,15 @@
 
 ##### 👉 队列
 
+- [双端队列](/algorithm/g1_data_struct_queue_1_double_ends_queue)
+- [队列](/algorithm/g1_data_struct_queue_2_double_queue)
+- [两个栈实现队列](/algorithm/g1_data_struct_queue_3_double_queue_by_2_stack)
+
 ##### 👉 栈
+
+- [栈](/algorithm/g1_data_struct_stack_1_stack)
+- [栈的最小值](/algorithm/g1_data_struct_stack_2_min_stack)
+- [两个队列实现栈](/algorithm/g1_data_struct_stack_3_stack_by_2_queue)
 
 ##### 👉 哈希表的使用
 
