@@ -38,18 +38,37 @@ const navs = [
   {
     text: 'Web框架',
     items: [
-      { text: '熟悉http包', link: '/web/1_http' },
-      { text: 'server抽象', link: '/web/2_server' },
-      { text: 'context抽象', link: '/web/3_context' },
-      { text: '简单路树', link: '/web/4_simple_route' },
-      { text: 'handler抽象', link: '/web/5_handler' },
-      { text: 'filter实现AOP', link: '/web/6_filter' },
-      { text: 'handler路由树', link: '/web/7_handler' },
-      { text: 'context池化', link: '/web/8_context_pool' },
-      { text: 'gin路由树', link: '/web/9_gin_router' },
-      { text: '并发编程', link: '/waiting/' },
-      { text: '文件操作', link: '/waiting/' },
-      { text: '泛型', link: '/waiting/' },
+      {
+        text: 'web基础封装', items: [
+          { text: '熟悉http包', link: '/web/1_http' },
+          { text: 'server抽象', link: '/web/2_server' },
+          { text: 'context抽象', link: '/web/3_context' },
+          { text: '简单路树', link: '/web/4_simple_route' },
+          { text: 'handler抽象', link: '/web/5_handler' },
+          { text: 'filter实现AOP', link: '/web/6_filter' },
+          { text: 'handler路由树', link: '/web/7_handler_tree' },
+          { text: 'context池化', link: '/web/8_context_pool' },
+          { text: 'gin路由树', link: '/web/9_gin_router' }
+        ]
+      },
+      {
+        text: 'web系统开发', items: [
+          { text: 'web开发总览', link: '/waiting/' }
+        ]
+      },
+    ],
+  },
+  {
+    text: '微服务工程实践',
+    items: [
+      {
+        text: '微服务概览与治理', items: [
+          { text: '微服务概览', link: '/waiting/' },
+          { text: '微服务设计', link: '/waiting/' },
+          { text: 'grpc与服务发现', link: '/waiting/' },
+          { text: '多集群与多租户', link: '/waiting/' }
+        ]
+      },
     ],
   },
   {

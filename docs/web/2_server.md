@@ -1,3 +1,7 @@
+---
+title: Server 的抽象
+autoGroup-1: web基础封装
+---
 # Server 的抽象
 
 了解了golang中http包的基础使用后，我们是否可以直接使用它http来构建我们的web服务器？答案是可以的，但是会有一些问题：
