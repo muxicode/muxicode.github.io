@@ -63,10 +63,10 @@ const navs = [
     items: [
       {
         text: '微服务概览与治理', items: [
-          { text: '微服务概览', link: '/waiting/' },
+          { text: '微服务概览', link: '/microservice/overview_1_overview' },
           { text: '微服务设计', link: '/waiting/' },
           { text: 'grpc与服务发现', link: '/waiting/' },
-          { text: '多集群与多租户', link: '/waiting/' }
+          { text: '多集群与多租户', link: '/microservice/overview_4_multi_tenant' }
         ]
       },
     ],
