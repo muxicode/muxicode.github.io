@@ -31,6 +31,7 @@ const navs = [
         items: [
           { text: 'pprof实战', link: '/golang/actual_1_pprof' },
           { text: '问题定位', link: '/golang/actual_2_pro_problem' },
+          { text: '异常重启定位', link: '/golang/actual_3_restart' },
         ]
       }
     ],
@@ -64,7 +65,7 @@ const navs = [
       {
         text: '微服务概览与治理', items: [
           { text: '微服务概览', link: '/microservice/overview_1_overview' },
-          { text: '微服务设计', link: '/waiting/' },
+          { text: '微服务设计', link: '/microservice/overview_2_desgin' },
           { text: 'grpc与服务发现', link: '/waiting/' },
           { text: '多集群与多租户', link: '/microservice/overview_4_multi_tenant' }
         ]
@@ -80,7 +81,7 @@ const navs = [
         text: '阶段一：初出茅庐',
         items: [
           { text: '位运算', link: '/algorithm/g1_base_1_binary_0_binary' },
-          { text: '排序', link: '/algorithm/g1_base_5_line_code01_select_sort' },
+          { text: '排序', link: '/algorithm/g1_sort_1_select_sort' },
           { text: '对数器', link: '/algorithm/g1_compare_for_ans' },
           { text: '二分及其拓展', link: '/algorithm/g1_bisectiom_1_find_num' },
           { text: '递归到动态规划', link: '/waiting/' },

@@ -54,10 +54,10 @@
 
 ##### 👉 排序
 
-- [选择排序](/algorithm/g1_base_5_line_code01_select_sort)
-- [冒泡排序](/algorithm/g1_base_6_line_code02_bubble_sort)
-- [插入排序](/algorithm/g1_base_7_line_code03_insert_sort)
-- 归并排序
+- [选择排序](/algorithm/g1_sort_1_select_sort)
+- [冒泡排序](/algorithm/g1_sort_2_bubble_sort)
+- [插入排序](/algorithm/g1_sort_3_insert_sort)
+- [归并排序](/algorithm/g1_sort_4_merge_sort)
 - 快速排序
 - 堆排序
 - 计数排序

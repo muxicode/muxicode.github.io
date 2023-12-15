@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>微服务概览 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.f794679b.js" as="script"><link rel="preload" href="/assets/js/3.a918bb29.js" as="script"><link rel="preload" href="/assets/js/4.9382fba3.js" as="script"><link rel="preload" href="/assets/js/101.59f0d38f.js" as="script"><link rel="prefetch" href="/assets/js/10.cf4fe1c8.js"><link rel="prefetch" href="/assets/js/100.78d50a10.js"><link rel="prefetch" href="/assets/js/102.b6d25122.js"><link rel="prefetch" href="/assets/js/103.38ac28e9.js"><link rel="prefetch" href="/assets/js/104.7b41b63c.js"><link rel="prefetch" href="/assets/js/105.e2db8d3f.js"><link rel="prefetch" href="/assets/js/106.afc294f3.js"><link rel="prefetch" href="/assets/js/107.a7cc0a2a.js"><link rel="prefetch" href="/assets/js/108.e27ae58b.js"><link rel="prefetch" href="/assets/js/109.b2dd779e.js"><link rel="prefetch" href="/assets/js/11.f6df4a62.js"><link rel="prefetch" href="/assets/js/110.0549050c.js"><link rel="prefetch" href="/assets/js/111.fca8d5e4.js"><link rel="prefetch" href="/assets/js/112.a0364cce.js"><link rel="prefetch" href="/assets/js/113.4c8516fe.js"><link rel="prefetch" href="/assets/js/12.a2237650.js"><link rel="prefetch" href="/assets/js/13.315d2146.js"><link rel="prefetch" href="/assets/js/14.b270cb97.js"><link rel="prefetch" href="/assets/js/15.a837634a.js"><link rel="prefetch" href="/assets/js/16.9c1d954a.js"><link rel="prefetch" href="/assets/js/17.fa43e765.js"><link rel="prefetch" href="/assets/js/18.9ee7d11d.js"><link rel="prefetch" href="/assets/js/19.a03571f6.js"><link rel="prefetch" href="/assets/js/20.7be748b4.js"><link rel="prefetch" href="/assets/js/21.8c6e7eb7.js"><link rel="prefetch" href="/assets/js/22.14db19c9.js"><link rel="prefetch" href="/assets/js/23.3cb5c518.js"><link rel="prefetch" href="/assets/js/24.6c4f001a.js"><link rel="prefetch" href="/assets/js/25.b6b712a7.js"><link rel="prefetch" href="/assets/js/26.a74a36b6.js"><link rel="prefetch" href="/assets/js/27.a6efe5b6.js"><link rel="prefetch" href="/assets/js/28.a4c36f7a.js"><link rel="prefetch" href="/assets/js/29.668592a1.js"><link rel="prefetch" href="/assets/js/30.6e0b1a6b.js"><link rel="prefetch" href="/assets/js/31.1d49f2c2.js"><link rel="prefetch" href="/assets/js/32.da4a379f.js"><link rel="prefetch" href="/assets/js/33.5721880d.js"><link rel="prefetch" href="/assets/js/34.fbbc8f74.js"><link rel="prefetch" href="/assets/js/35.8c10c3a1.js"><link rel="prefetch" href="/assets/js/36.06be7638.js"><link rel="prefetch" href="/assets/js/37.97b8404d.js"><link rel="prefetch" href="/assets/js/38.a6a536b4.js"><link rel="prefetch" href="/assets/js/39.84983103.js"><link rel="prefetch" href="/assets/js/40.372c406a.js"><link rel="prefetch" href="/assets/js/41.2600f942.js"><link rel="prefetch" href="/assets/js/42.1fea179e.js"><link rel="prefetch" href="/assets/js/43.5be7e489.js"><link rel="prefetch" href="/assets/js/44.4c13a566.js"><link rel="prefetch" href="/assets/js/45.711a47c3.js"><link rel="prefetch" href="/assets/js/46.b9c6ad86.js"><link rel="prefetch" href="/assets/js/47.be7e43ef.js"><link rel="prefetch" href="/assets/js/48.0bc2a62e.js"><link rel="prefetch" href="/assets/js/49.4eb26559.js"><link rel="prefetch" href="/assets/js/5.578c3044.js"><link rel="prefetch" href="/assets/js/50.2fffe1ba.js"><link rel="prefetch" href="/assets/js/51.ee6775b7.js"><link rel="prefetch" href="/assets/js/52.a0954da6.js"><link rel="prefetch" href="/assets/js/53.aa5fb371.js"><link rel="prefetch" href="/assets/js/54.91511073.js"><link rel="prefetch" href="/assets/js/55.4dd61fa9.js"><link rel="prefetch" href="/assets/js/56.a26993ca.js"><link rel="prefetch" href="/assets/js/57.578ddcd1.js"><link rel="prefetch" href="/assets/js/58.d5e293d9.js"><link rel="prefetch" href="/assets/js/59.e31ebb33.js"><link rel="prefetch" href="/assets/js/6.3c15e6b3.js"><link rel="prefetch" href="/assets/js/60.2a13d539.js"><link rel="prefetch" href="/assets/js/61.e583dd8d.js"><link rel="prefetch" href="/assets/js/62.e24742e1.js"><link rel="prefetch" href="/assets/js/63.9aa99b73.js"><link rel="prefetch" href="/assets/js/64.0b8b732e.js"><link rel="prefetch" href="/assets/js/65.10e15c1d.js"><link rel="prefetch" href="/assets/js/66.a3997643.js"><link rel="prefetch" href="/assets/js/67.0f2be0aa.js"><link rel="prefetch" href="/assets/js/68.c486dc9e.js"><link rel="prefetch" href="/assets/js/69.ef40093e.js"><link rel="prefetch" href="/assets/js/7.dacd2863.js"><link rel="prefetch" href="/assets/js/70.3e75d029.js"><link rel="prefetch" href="/assets/js/71.0975523d.js"><link rel="prefetch" href="/assets/js/72.b640db74.js"><link rel="prefetch" href="/assets/js/73.ddecfc85.js"><link rel="prefetch" href="/assets/js/74.8a93c014.js"><link rel="prefetch" href="/assets/js/75.7d406395.js"><link rel="prefetch" href="/assets/js/76.27856e9b.js"><link rel="prefetch" href="/assets/js/77.8fbcf007.js"><link rel="prefetch" href="/assets/js/78.d5951892.js"><link rel="prefetch" href="/assets/js/79.8e4b1834.js"><link rel="prefetch" href="/assets/js/8.1e3a48c8.js"><link rel="prefetch" href="/assets/js/80.6090ed52.js"><link rel="prefetch" href="/assets/js/81.89fbd630.js"><link rel="prefetch" href="/assets/js/82.24465e86.js"><link rel="prefetch" href="/assets/js/83.c7ce3a56.js"><link rel="prefetch" href="/assets/js/84.1bc4f3ef.js"><link rel="prefetch" href="/assets/js/85.f2ea4514.js"><link rel="prefetch" href="/assets/js/86.7a7687a6.js"><link rel="prefetch" href="/assets/js/87.f457b279.js"><link rel="prefetch" href="/assets/js/88.43609103.js"><link rel="prefetch" href="/assets/js/89.f99582af.js"><link rel="prefetch" href="/assets/js/9.17edc6d0.js"><link rel="prefetch" href="/assets/js/90.89b7cdb4.js"><link rel="prefetch" href="/assets/js/91.32065da2.js"><link rel="prefetch" href="/assets/js/92.0dbf1ed7.js"><link rel="prefetch" href="/assets/js/93.bc2c8968.js"><link rel="prefetch" href="/assets/js/94.7f895a13.js"><link rel="prefetch" href="/assets/js/95.7882c321.js"><link rel="prefetch" href="/assets/js/96.dae86a1c.js"><link rel="prefetch" href="/assets/js/97.681f0bae.js"><link rel="prefetch" href="/assets/js/98.7c4681a6.js"><link rel="prefetch" href="/assets/js/99.1fd02ac3.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li></ul></li><li class="dropdown-item"><h4>
+          web系统开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  web开发总览
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li></ul></li><li class="dropdown-item"><h4>
+          web系统开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  web开发总览
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_5_line_code01_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Microservice</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>微服务概览与治理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/microservice/overview_1_overview.html" aria-current="page" class="active sidebar-link">微服务概览</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#单体服务" class="sidebar-link">单体服务</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#微服务起源" class="sidebar-link">微服务起源</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#微服务定义" class="sidebar-link">微服务定义</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#微服务不足" class="sidebar-link">微服务不足</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#组件服务化" class="sidebar-link">组件服务化</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#去中心化" class="sidebar-link">去中心化</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#按业务组织服务" class="sidebar-link">按业务组织服务</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#基础设施自动化" class="sidebar-link">基础设施自动化</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#可用性-兼容性设计" class="sidebar-link">可用性&amp;兼容性设计</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#实践建议" class="sidebar-link">实践建议</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#单体服务演进" class="sidebar-link">单体服务演进</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#如何划分模块" class="sidebar-link">如何划分模块</a></li><li class="sidebar-sub-header"><a href="/microservice/overview_1_overview.html#微服务的粒度" class="sidebar-link">微服务的粒度</a></li></ul></li></ul></li><li><a href="/microservice/overview_4_multi_tenant.html" class="sidebar-link">多集群与多租户</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="微服务概览"><a href="#微服务概览" class="header-anchor">#</a> 微服务概览</h1> <h2 id="单体服务"><a href="#单体服务" class="header-anchor">#</a> 单体服务</h2> <p><img src="/overview_1_overview.assets/microservice_introduce.drawio.png" alt=""></p> <ul><li>前后端分离的单体架构</li></ul> <blockquote><p>服务小时优点</p></blockquote> <ul><li>易部署：只有一个服务需要管理，直接部署即可</li> <li>易测试：外部依赖少，保证单体服务正常即可</li> <li>易开发：逻辑相对简单</li> <li>易拓展：拓展服务器</li></ul> <blockquote><p>服务变复杂后的缺点</p></blockquote> <ul><li>代码量大，模块众多，打包与启动缓慢</li> <li>应用无法拓展，虽然在一个单体中划分了模块，但是由于服务复杂，导致代码难以理解</li> <li>可靠性低：当多个模块都修改，并发布时，问题难以定位只能回滚，导致敏捷开发与部署难以完成</li></ul> <p><strong>应对：化繁为简，分儿治之</strong></p> <ul><li>分儿治之，模块化不是可以吗？为什么要微服务？</li> <li>抓住核心要点，独立部署</li></ul> <p>哔哩哔哩案例：</p> <p><img src="/overview_1_overview.assets/bilibili_extend.drawio.png" alt=""></p> <h2 id="微服务起源"><a href="#微服务起源" class="header-anchor">#</a> 微服务起源</h2> <p>面向服务架构也叫 SOA (Service-Oriented Architecture)架构。与微服务有什么联系？你可以把微服务想成是 SOA 的最佳实践。</p> <p><img src="/overview_1_overview.assets/SOA_architectrue.drawio.png" alt=""></p> <ul><li><strong>小即是美</strong>：小的服务代码少，bug也少，易测试，易维护，也更容易不断迭代完善的精致进而美妙。</li> <li><strong>单一职责</strong>：一个服务也只需要做好一件事，专注才能做好。</li> <li><strong>尽可能早的创建原型</strong>：尽可能早的提供服务API，建立服务锲约，达成服务间沟通的一致性约定，至于实现和完善可以慢慢再做。</li> <li><strong>可移植性比效率更重要</strong>：服务间的轻量级交互协议在效率和可移植性二者间，首要依然考虑兼容性和移植性。</li></ul> <h2 id="微服务定义"><a href="#微服务定义" class="header-anchor">#</a> 微服务定义</h2> <p><img src="/overview_1_overview.assets/micrservice_defined.drawio.png" alt=""></p> <p><strong>围绕业务功能构建</strong>的，服务<strong>关注单一业务</strong>，服务间<strong>采用轻量级的通信机制</strong>，可以<strong>全自动独立部署</strong>，可以使用不同的变成语言和数据存储技术。微服务架构通过业务拆分实践服务组件化，通过组件组合快速开发系统，业务单一的服务组件有可以独立部署，使得整个系统变得清晰灵活：</p> <ul><li><strong>原子服务</strong>    ---    单一的业务场景，单一的业务，<strong>api</strong>由业务单元构建</li> <li><strong>独立进程</strong>    ---    独立部署与交付，小体量4核<strong>4G</strong></li> <li><strong>隔离部署</strong>    ---    隔离包括<strong>DB</strong>、<strong>业务</strong></li> <li><strong>去中心化服务治理</strong>   ---    四层或七层实现负载均衡，容易出现流量过热，尽量让两个服务直连，减少集中式的负载均衡。在需要服务发现的场景下，那无法避免我们也需要一个集中式的服务发现。</li></ul> <p>缺点</p> <ul><li><strong>基础设施建设、复杂度高</strong>       ----      一个巨石应用变成上千个小应用，维护工作变大，需要对接的人变多了，日志不统一（日志中心），可用性、数据一致性的复杂度都会变高（有些需求需要多个服务同时部署）</li></ul> <h2 id="微服务不足"><a href="#微服务不足" class="header-anchor">#</a> 微服务不足</h2> <p><img src="/overview_1_overview.assets/microservice_complexity.drawio.png" alt=""></p> <p>Fred Brooks 在30年前写道，“there are no sliver bullets”。但凡事有利就有弊，微服务也不是万能的</p> <ul><li>微服务应用时分布式系统，由此会带来固有的复杂性。开发者不得不使用 RPC 或则消息传递，来实现进程间通信；此外，必须要写代码来处理消息传递中速度过慢或者服务不可用等局部失效问题。</li> <li>分区的数据库架构，同时更新多个业务主体的事务很普遍。这种事务对于单体式应用来说很容易，因为只有一个数据库。在微服务架构应用中，需要更新不同服务所使用的不同数据库，从而对开发者提出了更高的要求和挑战。</li> <li>测试一个基于微服务架构的应用也是很复杂的任务。</li> <li>服务模块间的依赖，应用的升级由可能会波及多个服务模块的修改。</li> <li>对运维基础设施的挑战比较大。</li></ul> <h2 id="组件服务化"><a href="#组件服务化" class="header-anchor">#</a> 组件服务化</h2> <p><img src="/overview_1_overview.assets/micro_compose.drawio.png" alt=""></p> <p>传统实现组件的方式式通过库(library)，库是和应用一起运行在进程中，库的局部变化意味着整个应用的的重新部署。通过服务来实现组件，意味着将应用拆散为一系列的服务运行在不同的进程中，那么单一服务的局部变化只需要重新部署对应的服务进程。我们用Go实施一个微服务：</p> <ul><li>kit：一个微服务的基础库（框架）</li> <li>service：业务代码 + kit 依赖 + 第三方依赖组成的业务微服务</li> <li>RPC + message queue：轻量级通讯</li></ul> <p>本质上等同于，多个微服务组合完成了一个完整的用户场景。</p> <h2 id="去中心化"><a href="#去中心化" class="header-anchor">#</a> 去中心化</h2> <p><img src="/overview_1_overview.assets/micro_decentration.drawio.png" alt=""></p> <p>每个服务面临的业务场景不同，可以针对性的选择合适的技术解决方案。但页需要避免过度多样化，结合团队实际情况来选择取舍，要是每个服务都用不同的语言技术栈来实现，想想维护成本真是够高的。</p> <ul><li>数据去中心化</li> <li>治理去中心化</li> <li>技术去中心化</li></ul> <p><strong>每个服务独享自身的数据存储设施（缓存，数据库等），不像传统应用共享一个缓存和数据库，这样有历与服务的独立性，隔离相关干扰。</strong></p> <h2 id="按业务组织服务"><a href="#按业务组织服务" class="header-anchor">#</a> 按业务组织服务</h2> <p><img src="/overview_1_overview.assets/micro_team.drawio.png" alt=""></p> <p><strong>按业务能力组织服务的意思是服务提供的能力和业务功能对应</strong>，比如：订单服务和数据访问服务，前者反应了真实的订单相关业务，后者是一种技术抽象服务不反应真实业务。所以按微服务架构理念来划分服务时，是不应该存在数据访问服务这样一个服务的。</p> <p>事实上<strong>传统应用设计架构的分层结构正反映了不同角色的沟通结构</strong>。所以若要按微服务的方式来构建应用，也需要对用调整团队的组织架构。每个微服务背后的小团队的组织是跨功能的，包含实现业务的所需的全面技能。</p> <p>BiliBili模式：<strong>大前端(移动/Web)</strong> =&gt; <strong>网关接入</strong> =》 <strong>业务服务</strong> =&gt; <strong>平台服务</strong> =》 <strong>基础设施(PaaS/Saas)</strong></p> <p>开发团队对软件在生成环境的运行负全部责任！</p> <h2 id="基础设施自动化"><a href="#基础设施自动化" class="header-anchor">#</a> 基础设施自动化</h2> <p><img src="/overview_1_overview.assets/micro_ci.drawio.png" alt=""></p> <p><strong>无自动化不微服务，自动化包括测试和部署</strong>。单一进程的传统应用被拆分为一系列的多进程服务后，意味着开发，调试，测试，监控和部署的复杂度都会相应增大，必须要有合适的自动化基础设施来支撑微服务架构模式，否则开发、运维的成本将大大增大。</p> <ul><li>CICD： Gitlab + Gitlab Hooks + kubernetes</li> <li>Testing: 测试环境、单元测试、API自动化测试</li> <li>在线运行时：kubernetes，以及一系列Prometheus、ELK、Control Panle</li></ul> <h2 id="可用性-兼容性设计"><a href="#可用性-兼容性设计" class="header-anchor">#</a> 可用性&amp;兼容性设计</h2> <p>著姓名的 Design For Failure 思想，微服务架构采用粗粒度的进程间通信，引入了额外的复杂性和需要处理的新问题，如网络延迟、消息格式、负载均衡和容错，忽略其中任何一点都属于对“分布式计算的误解”。</p> <ul><li><strong>隔离</strong></li> <li><strong>超时控制</strong></li> <li><strong>负载保护</strong></li> <li><strong>限流</strong></li> <li><strong>降级</strong></li> <li><strong>重试</strong></li> <li><strong>负载均衡</strong></li></ul> <p>一旦采用了微服务架构模式，那么在服务需要变更时我们要特别小心，服务提供者的变更可能引发服务消费者的兼容性破坏，时刻谨记保持服务契约（接口）的兼容性。</p> <p>Be conservative in what you send, be liberal in what you accept.</p> <p>发送时要保守，接收时要开放。按照伯斯塔尔法则的思想来设计和实现服务时，发送的数据要更保守，意味着最小化的传送必要的信息，接收时更开放意味着要最大限度的容忍冗余数据，保证兼容性。</p> <h2 id="实践建议"><a href="#实践建议" class="header-anchor">#</a> 实践建议</h2> <h3 id="单体服务演进"><a href="#单体服务演进" class="header-anchor">#</a> 单体服务演进</h3> <p><img src="/overview_1_overview.assets/micro_single_update.drawio.png" alt=""></p> <ul><li>混沌一片
+<ol><li>完善单元测试</li> <li>先抽取公共部分，如utils，helper等</li> <li>引入聚合层接触模块间循环依赖</li> <li>按照业务对象划分模块，分到不同的包里</li></ol></li> <li>模块化
+<ol><li>创建不同的代码仓库，将公共部分、业务模块逐个挪到别的代码仓库</li> <li>开始准备微服务环境和微服务框架选型</li> <li>搭建好CI和集成测试环境</li></ol></li> <li>模块依赖化
+<ol><li>业务模块逐个服务化。要解决微服务开发、测试、部署中所遇到的问题</li> <li>搭建自动部署和回滚平台</li> <li>调研服务治理和网关</li> <li>引入消息队列</li> <li>引入分布式事务解决方案</li> <li>引入分布式任务调度</li> <li>搭建可观测性平台-----logging，tracing，metrics，以及对应的告警</li></ol></li></ul> <h3 id="如何划分模块"><a href="#如何划分模块" class="header-anchor">#</a> 如何划分模块</h3> <blockquote><p>垂直划分  -----------   按照业务对象划分</p></blockquote> <p>正统理论：DDD</p> <blockquote><p>水平划分  -----------   按层次划分</p></blockquote> <p><strong>大前端(移动/Web)</strong> =&gt; <strong>网关接入</strong> =》 <strong>业务服务</strong> =&gt; <strong>平台服务</strong> =》 <strong>基础设施(PaaS/Saas)</strong></p> <ol><li>丐中丐版本：直接使用 应用服务组装数据</li> <li>丐版本：加入聚合服务</li> <li>普通版：加入平台服务</li></ol> <h3 id="微服务的粒度"><a href="#微服务的粒度" class="header-anchor">#</a> 微服务的粒度</h3> <ul><li>两个披萨团队</li> <li>一个人能够理解模块的所有细节？</li> <li>事实标准：基本上没有谁能够知道所有的细节，多数情况下，是三两个核心成员合并在一起互相补充，能够说清楚各种细节</li> <li>误超前划分，过小粒度更难以开发。</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">11/9/2023,</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/microservice/overview_4_multi_tenant.html">
+          多集群与多租户
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">微服务概览</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/microservice/overview_1_overview.html#单体服务" class="toc-sidebar-link">单体服务</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#微服务起源" class="toc-sidebar-link">微服务起源</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#微服务定义" class="toc-sidebar-link">微服务定义</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#微服务不足" class="toc-sidebar-link">微服务不足</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#组件服务化" class="toc-sidebar-link">组件服务化</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#去中心化" class="toc-sidebar-link">去中心化</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#按业务组织服务" class="toc-sidebar-link">按业务组织服务</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#基础设施自动化" class="toc-sidebar-link">基础设施自动化</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#可用性-兼容性设计" class="toc-sidebar-link">可用性&amp;兼容性设计</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#实践建议" class="toc-sidebar-link">实践建议</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/microservice/overview_1_overview.html#单体服务演进" class="toc-sidebar-link">单体服务演进</a></li><li class="toc-sidebar-sub-header"><a href="/microservice/overview_1_overview.html#如何划分模块" class="toc-sidebar-link">如何划分模块</a></li><li class="toc-sidebar-sub-header"><a href="/microservice/overview_1_overview.html#微服务的粒度" class="toc-sidebar-link">微服务的粒度</a></li></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">微服务概览</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/microservice/overview_1_overview.html#单体服务" class="toc-sidebar-link">单体服务</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#微服务起源" class="toc-sidebar-link">微服务起源</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#微服务定义" class="toc-sidebar-link">微服务定义</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#微服务不足" class="toc-sidebar-link">微服务不足</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#组件服务化" class="toc-sidebar-link">组件服务化</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#去中心化" class="toc-sidebar-link">去中心化</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#按业务组织服务" class="toc-sidebar-link">按业务组织服务</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#基础设施自动化" class="toc-sidebar-link">基础设施自动化</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#可用性-兼容性设计" class="toc-sidebar-link">可用性&amp;兼容性设计</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/microservice/overview_1_overview.html#实践建议" class="toc-sidebar-link">实践建议</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/microservice/overview_1_overview.html#单体服务演进" class="toc-sidebar-link">单体服务演进</a></li><li class="toc-sidebar-sub-header"><a href="/microservice/overview_1_overview.html#如何划分模块" class="toc-sidebar-link">如何划分模块</a></li><li class="toc-sidebar-sub-header"><a href="/microservice/overview_1_overview.html#微服务的粒度" class="toc-sidebar-link">微服务的粒度</a></li></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/microservice/overview_1_overview.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <!----> <div title="多集群与多租户" class="option-box" style="padding-left:2px;text-align:center;"><a href="/microservice/overview_4_multi_tenant.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.f794679b.js" defer></script><script src="/assets/js/3.a918bb29.js" defer></script><script src="/assets/js/4.9382fba3.js" defer></script><script src="/assets/js/101.59f0d38f.js" defer></script>
+  </body>
+</html>
