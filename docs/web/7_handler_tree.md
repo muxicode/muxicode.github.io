@@ -244,12 +244,10 @@ type Node struct {
 
 	next []*Node
 	// 可以使用以下结构加速
-	// next map[byte][]*Node  使用map以不用字母开头分组
-
-	// next [26][]*Node       使用数组以不用字母开头分组
-	// 		                  第一个字符 - 'a'，不同字母开头位置进行区分
-
-	// next []*Node           采用有序的接口进行二分法查找
+	// 1. next map[byte][]*Node  使用map以不用字母开头分组
+	// 2. next [26][]*Node       使用数组以不用字母开头分组
+	// 		                     第一个字符 - 'a'，不同字母开头位置进行区分
+	// 3. next []*Node           采用有序的接口进行二分法查找
 
 	handleFunc HandleFunc
 	matchFunc  MatchFunc
@@ -322,6 +320,19 @@ func newParamNode(path string) *Node {
 	}
 }
 ```
+
+切片查找加速的几种方式：
+
+```go
+	next []*Node
+	// 可以使用以下结构加速
+	// 1. next map[byte][]*Node  使用map以不用字母开头分组
+	// 2. next [26][]*Node       使用数组以不用字母开头分组
+	// 		                     第一个字符 - 'a'，不同字母开头位置进行区分
+	// 3. next []*Node           采用有序的接口进行二分法查找
+```
+
+
 
 ### 路由树修改
 
@@ -460,4 +471,78 @@ func NewContext(w http.ResponseWriter, r *http.Request) *Context {
 	}
 }
 ```
+
+## 拓展
+
+在之前的基础上，我们还可以做一些抽象，让用户自定义如：
+
+- 节点优先级的选择可以抽象为一个接口，让用户自己决定优先级
+- 支持用户自定义节点，使用自己的匹配规则
+
+### 节点自定义
+
+> 注册工厂
+
+优点：
+
+- 支持自定义工厂，工厂方便拓展
+
+缺点：
+
+- 如何选工厂比较麻烦
+
+```go
+type Factory func() *Node
+
+var factories map[int]Factory
+
+func RegisterFactory(factoryType int, factory Factory) {
+	factories[factoryType]= factory
+}
+```
+
+> 拓展原工厂
+
+优点：
+
+- 较容易实现
+
+缺点：
+
+- 需要提供详细的文档及示例
+
+```go
+
+// 原来的工厂函数
+func NewNode(path string) *Node{
+	if path == NodePathAny {
+		return newAnyNode(path)
+	}
+	if strings.HasPrefix(path, ":") {
+		return newParamNode(path)
+	}
+	return newStaticNode(path)
+}
+
+// 拓展原工厂
+type Factory2 func(path string) *Node
+
+var factory Factory2
+
+func RegisterFactory2(f Factory2) {
+	factory = f
+}
+
+func ExampleFactory2() {
+	RegisterFactory2(func(path string) *Node {
+		if path == "自定义的path" {
+			return &Node{path: "创建自定义的节点"}
+		} else {
+			return NewNode(path)
+		}
+	})
+}
+```
+
+
 

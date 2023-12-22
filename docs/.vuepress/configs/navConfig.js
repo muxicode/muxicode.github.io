@@ -49,14 +49,10 @@ const navs = [
           { text: 'filter实现AOP', link: '/web/6_filter' },
           { text: 'handler路由树', link: '/web/7_handler_tree' },
           { text: 'context池化', link: '/web/8_context_pool' },
-          { text: 'gin路由树', link: '/web/9_gin_router' }
+          { text: 'gin路由树', link: '/web/9_gin_router' },
+          { text: '服务优雅退出', link: '/web/10_graceful_exit' }
         ]
-      },
-      {
-        text: 'web系统开发', items: [
-          { text: 'web开发总览', link: '/waiting/' }
-        ]
-      },
+      }
     ],
   },
   {
