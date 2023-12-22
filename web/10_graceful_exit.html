@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务优雅退出 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.2e5cb2d4.css" as="style"><link rel="preload" href="/assets/js/app.2999399e.js" as="script"><link rel="preload" href="/assets/js/3.a918bb29.js" as="script"><link rel="preload" href="/assets/js/4.9382fba3.js" as="script"><link rel="preload" href="/assets/js/107.928b978a.js" as="script"><link rel="prefetch" href="/assets/js/10.976a7cab.js"><link rel="prefetch" href="/assets/js/100.2d63b2e6.js"><link rel="prefetch" href="/assets/js/101.a80ed731.js"><link rel="prefetch" href="/assets/js/102.cdddd95a.js"><link rel="prefetch" href="/assets/js/103.f232cf46.js"><link rel="prefetch" href="/assets/js/104.43f2244f.js"><link rel="prefetch" href="/assets/js/105.24fd0ac9.js"><link rel="prefetch" href="/assets/js/106.87a81f8f.js"><link rel="prefetch" href="/assets/js/108.9c474b65.js"><link rel="prefetch" href="/assets/js/109.184d8626.js"><link rel="prefetch" href="/assets/js/11.1649bcd4.js"><link rel="prefetch" href="/assets/js/110.bbfb5a92.js"><link rel="prefetch" href="/assets/js/111.f2934c52.js"><link rel="prefetch" href="/assets/js/112.0498ef95.js"><link rel="prefetch" href="/assets/js/113.0a5f6e12.js"><link rel="prefetch" href="/assets/js/114.df293dc3.js"><link rel="prefetch" href="/assets/js/115.50673fa7.js"><link rel="prefetch" href="/assets/js/116.41d6beae.js"><link rel="prefetch" href="/assets/js/12.480d962e.js"><link rel="prefetch" href="/assets/js/13.e54c6e3c.js"><link rel="prefetch" href="/assets/js/14.6ad113d0.js"><link rel="prefetch" href="/assets/js/15.34f1e46c.js"><link rel="prefetch" href="/assets/js/16.bb0f6007.js"><link rel="prefetch" href="/assets/js/17.52c15d8f.js"><link rel="prefetch" href="/assets/js/18.8112eb11.js"><link rel="prefetch" href="/assets/js/19.39ae2cba.js"><link rel="prefetch" href="/assets/js/20.f142bb23.js"><link rel="prefetch" href="/assets/js/21.8c44ec7b.js"><link rel="prefetch" href="/assets/js/22.402ce343.js"><link rel="prefetch" href="/assets/js/23.7908b783.js"><link rel="prefetch" href="/assets/js/24.6c4f001a.js"><link rel="prefetch" href="/assets/js/25.12edbd86.js"><link rel="prefetch" href="/assets/js/26.efc5ade7.js"><link rel="prefetch" href="/assets/js/27.02d4aaf3.js"><link rel="prefetch" href="/assets/js/28.a2797306.js"><link rel="prefetch" href="/assets/js/29.e70c5ee4.js"><link rel="prefetch" href="/assets/js/30.dfdb1fa3.js"><link rel="prefetch" href="/assets/js/31.09f31f57.js"><link rel="prefetch" href="/assets/js/32.0493303e.js"><link rel="prefetch" href="/assets/js/33.b6973700.js"><link rel="prefetch" href="/assets/js/34.ec428b30.js"><link rel="prefetch" href="/assets/js/35.0bf59bf4.js"><link rel="prefetch" href="/assets/js/36.5138a5df.js"><link rel="prefetch" href="/assets/js/37.b8c24eb6.js"><link rel="prefetch" href="/assets/js/38.379ba913.js"><link rel="prefetch" href="/assets/js/39.efed1cc2.js"><link rel="prefetch" href="/assets/js/40.c4337f8f.js"><link rel="prefetch" href="/assets/js/41.9b2c025c.js"><link rel="prefetch" href="/assets/js/42.a554cc6f.js"><link rel="prefetch" href="/assets/js/43.0bbf289d.js"><link rel="prefetch" href="/assets/js/44.1423a6da.js"><link rel="prefetch" href="/assets/js/45.dd67d93b.js"><link rel="prefetch" href="/assets/js/46.5d231ce1.js"><link rel="prefetch" href="/assets/js/47.5a49b43d.js"><link rel="prefetch" href="/assets/js/48.5b1f1af9.js"><link rel="prefetch" href="/assets/js/49.15cfcc5a.js"><link rel="prefetch" href="/assets/js/5.54cb6ebc.js"><link rel="prefetch" href="/assets/js/50.9cc28531.js"><link rel="prefetch" href="/assets/js/51.74598539.js"><link rel="prefetch" href="/assets/js/52.4ff71a91.js"><link rel="prefetch" href="/assets/js/53.8f3186f0.js"><link rel="prefetch" href="/assets/js/54.810c09b2.js"><link rel="prefetch" href="/assets/js/55.e0dae0e5.js"><link rel="prefetch" href="/assets/js/56.633a58a2.js"><link rel="prefetch" href="/assets/js/57.9576e4c1.js"><link rel="prefetch" href="/assets/js/58.602cd46e.js"><link rel="prefetch" href="/assets/js/59.609c382e.js"><link rel="prefetch" href="/assets/js/6.b60c3858.js"><link rel="prefetch" href="/assets/js/60.4cade527.js"><link rel="prefetch" href="/assets/js/61.bdd8bc9d.js"><link rel="prefetch" href="/assets/js/62.4e04712e.js"><link rel="prefetch" href="/assets/js/63.02838df6.js"><link rel="prefetch" href="/assets/js/64.9764e68f.js"><link rel="prefetch" href="/assets/js/65.18e501c5.js"><link rel="prefetch" href="/assets/js/66.d192d005.js"><link rel="prefetch" href="/assets/js/67.e19b0abe.js"><link rel="prefetch" href="/assets/js/68.c4a7b8ed.js"><link rel="prefetch" href="/assets/js/69.30071994.js"><link rel="prefetch" href="/assets/js/7.0b1f2992.js"><link rel="prefetch" href="/assets/js/70.def6969b.js"><link rel="prefetch" href="/assets/js/71.9eb8e4cc.js"><link rel="prefetch" href="/assets/js/72.6b77776b.js"><link rel="prefetch" href="/assets/js/73.ad18c195.js"><link rel="prefetch" href="/assets/js/74.2356afa0.js"><link rel="prefetch" href="/assets/js/75.4ef6f4eb.js"><link rel="prefetch" href="/assets/js/76.cc875835.js"><link rel="prefetch" href="/assets/js/77.335d0f0e.js"><link rel="prefetch" href="/assets/js/78.e32f8f6f.js"><link rel="prefetch" href="/assets/js/79.203ef29c.js"><link rel="prefetch" href="/assets/js/8.1e3a48c8.js"><link rel="prefetch" href="/assets/js/80.8c04c766.js"><link rel="prefetch" href="/assets/js/81.257ebbcb.js"><link rel="prefetch" href="/assets/js/82.858eda17.js"><link rel="prefetch" href="/assets/js/83.f20e6bd5.js"><link rel="prefetch" href="/assets/js/84.d4d1e411.js"><link rel="prefetch" href="/assets/js/85.106c1e97.js"><link rel="prefetch" href="/assets/js/86.573edcfa.js"><link rel="prefetch" href="/assets/js/87.7a44e771.js"><link rel="prefetch" href="/assets/js/88.86632dc8.js"><link rel="prefetch" href="/assets/js/89.f5948a51.js"><link rel="prefetch" href="/assets/js/9.17edc6d0.js"><link rel="prefetch" href="/assets/js/90.c17e393f.js"><link rel="prefetch" href="/assets/js/91.3b2ae11b.js"><link rel="prefetch" href="/assets/js/92.0d15edba.js"><link rel="prefetch" href="/assets/js/93.8b4902f6.js"><link rel="prefetch" href="/assets/js/94.d13c0c30.js"><link rel="prefetch" href="/assets/js/95.cadd57a8.js"><link rel="prefetch" href="/assets/js/96.78b8f967.js"><link rel="prefetch" href="/assets/js/97.b65567ba.js"><link rel="prefetch" href="/assets/js/98.65535540.js"><link rel="prefetch" href="/assets/js/99.0ee83e2b.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2e5cb2d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_3_restart.html" class="nav-link">
+  异常重启定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-subitem"><a href="/web/10_graceful_exit.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  服务优雅退出
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" class="nav-link">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_2_desgin.html" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_sort_1_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_3_restart.html" class="nav-link">
+  异常重启定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-subitem"><a href="/web/10_graceful_exit.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  服务优雅退出
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" class="nav-link">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_2_desgin.html" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_sort_1_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          樊登读书
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/fandeng/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/fandeng/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fontend/1_vue_action.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-item"><!----> <a href="/fontend/2_cross_request.html" class="nav-link">
+  请求封装
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Web</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>web基础封装</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/web/10_graceful_exit.html" aria-current="page" class="active sidebar-link">服务优雅退出</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/10_graceful_exit.html#监听退出信号" class="sidebar-link">监听退出信号</a></li><li class="sidebar-sub-header"><a href="/web/10_graceful_exit.html#hook接口" class="sidebar-link">HOOK接口</a></li><li class="sidebar-sub-header"><a href="/web/10_graceful_exit.html#优雅退出执行hook" class="sidebar-link">优雅退出执行HOOK</a></li><li class="sidebar-sub-header"><a href="/web/10_graceful_exit.html#优雅退出控制" class="sidebar-link">优雅退出控制</a></li><li class="sidebar-sub-header"><a href="/web/10_graceful_exit.html#使用示例" class="sidebar-link">使用示例</a></li></ul></li><li><a href="/web/1_http.html" class="sidebar-link">http包基础</a></li><li><a href="/web/2_server.html" class="sidebar-link">Server 的抽象</a></li><li><a href="/web/3_context.html" class="sidebar-link">Context抽象</a></li><li><a href="/web/4_simple_route.html" class="sidebar-link">路由的简单实现</a></li><li><a href="/web/5_handler.html" class="sidebar-link">Handler抽象</a></li><li><a href="/web/6_filter.html" class="sidebar-link">Filter实现AOP</a></li><li><a href="/web/7_handler_tree.html" class="sidebar-link">Handler路由树</a></li><li><a href="/web/8_context_pool.html" class="sidebar-link">Context 池化</a></li><li><a href="/web/9_gin_router.html" class="sidebar-link">Gin路由树生成及匹配</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="服务优雅退出"><a href="#服务优雅退出" class="header-anchor">#</a> 服务优雅退出</h1> <p><img src="/10_graceful_exit.assets/graceful_exist.drawio.png" alt=""></p> <p>服务器难免要遇到重启、升级的问题，那么当我们的服务器关闭的时候，我们需要考虑：</p> <ol start="0"><li><p>摘掉流量（告诉负载均衡，不要再打流量过来了）</p></li> <li><p>拒绝新的请求</p></li> <li><p>等待当前的所有请求处理完毕</p></li> <li><p>释放资源</p></li> <li><p>关闭服务器</p></li> <li><p>如果这中间超时了，我们要强制关闭了（再次收到关闭请求，就强制退出--方式多用户可能滥用）</p></li></ol> <p><a href="https://gitee.com/add-ice-ice/web-server-go/tree/master/web/12_graceful_exit" target="_blank" rel="noopener noreferrer">参考gitee仓储实践章节<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="监听退出信号"><a href="#监听退出信号" class="header-anchor">#</a> 监听退出信号</h2> <p>我怎么知道要关闭了这件事?</p> <ul><li>监听退出信号，提供超时退出机制</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;os&quot;</span>
+	<span class="token string">&quot;os/signal&quot;</span>
+	<span class="token string">&quot;syscall&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">waitForShutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> <span class="token punctuation">(</span>
+	<span class="token comment">// ShutdownSignals receives shutdown signals to process</span>
+	ShutdownSignals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>os<span class="token punctuation">.</span>Signal<span class="token punctuation">{</span>
+		os<span class="token punctuation">.</span>Interrupt<span class="token punctuation">,</span> os<span class="token punctuation">.</span>Kill<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGKILL<span class="token punctuation">,</span>
+		syscall<span class="token punctuation">.</span>SIGHUP<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGINT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGQUIT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGILL<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTRAP<span class="token punctuation">,</span>
+		syscall<span class="token punctuation">.</span>SIGABRT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTERM<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">waitForShutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	signals <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> os<span class="token punctuation">.</span>Signal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+	signal<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span>signals<span class="token punctuation">,</span> ShutdownSignals<span class="token operator">...</span><span class="token punctuation">)</span>
+	<span class="token keyword">select</span> <span class="token punctuation">{</span>
+		<span class="token keyword">case</span> <span class="token operator">&lt;-</span>signals<span class="token punctuation">:</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;receive signal start shutdown!&quot;</span><span class="token punctuation">)</span>
+			<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 超时被动强制退出</span>
+				time<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+				os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 主动退出</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h2 id="hook接口"><a href="#hook接口" class="header-anchor">#</a> HOOK接口</h2> <p>我们实现了退出的机制，但是并不完全满足我们的要求，因为我们希望等待关闭的时候它能够</p> <ul><li>拒绝新的请求</li> <li>等待旧的请求</li> <li>释放资源</li> <li>...</li></ul> <p>最好服务退出的时候是可以注册钩子函数，这样可以根据我们自身的需要，添加hook函数即可。</p> <p>代码实现：</p> <ul><li>hook接口</li> <li>hook构造</li></ul> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">var</span> ErrorHookTimeout <span class="token operator">=</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">&quot;the hook timeout&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Hook 是一个钩子函数。 注意</span>
+<span class="token comment">// ctx 是一个有超时机制的 context.Context</span>
+<span class="token comment">// 所以你必须处理超时问题</span>
+<span class="token keyword">type</span> Hook <span class="token keyword">func</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token builtin">error</span>
+
+<span class="token comment">// BuildCloseServeHook 这里其实可以考虑使用 errgroup，</span>
+<span class="token comment">// 但是我们这里希望每个 serve 单独关闭</span>
+<span class="token comment">// 互相不影响</span>
+<span class="token keyword">func</span> <span class="token function">BuildCloseServeHook</span><span class="token punctuation">(</span>servers <span class="token operator">...</span>web<span class="token punctuation">.</span>Server<span class="token punctuation">)</span> Hook <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+		wg <span class="token operator">:=</span> sync<span class="token punctuation">.</span>WaitGroup<span class="token punctuation">{</span><span class="token punctuation">}</span>
+		doneCh <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+		wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>servers<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+		<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> s <span class="token operator">:=</span> <span class="token keyword">range</span> servers <span class="token punctuation">{</span>
+			<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span>srv web<span class="token punctuation">.</span>Server<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				err <span class="token operator">:=</span> srv<span class="token punctuation">.</span><span class="token function">Shutdown</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+				<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+					fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;server shutdown err: %v&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+				<span class="token punctuation">}</span>
+				time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+				wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			doneCh <span class="token operator">&lt;-</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+		<span class="token keyword">for</span> <span class="token punctuation">{</span>
+			<span class="token keyword">select</span> <span class="token punctuation">{</span>
+				<span class="token keyword">case</span> <span class="token operator">&lt;-</span> doneCh<span class="token punctuation">:</span>
+					fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;all server shutdown&quot;</span><span class="token punctuation">)</span>
+					<span class="token keyword">return</span> <span class="token boolean">nil</span>
+				<span class="token keyword">case</span> <span class="token operator">&lt;-</span> ctx<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+					fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;close server timeout !!!&quot;</span><span class="token punctuation">)</span>
+					<span class="token keyword">return</span> ErrorHookTimeout
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><h2 id="优雅退出执行hook"><a href="#优雅退出执行hook" class="header-anchor">#</a> 优雅退出执行HOOK</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+   <span class="token string">&quot;context&quot;</span>
+   <span class="token string">&quot;fmt&quot;</span>
+   <span class="token string">&quot;os&quot;</span>
+   <span class="token string">&quot;os/signal&quot;</span>
+   <span class="token string">&quot;syscall&quot;</span>
+   <span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> <span class="token punctuation">(</span>
+   <span class="token comment">// ShutdownSignals receives shutdown signals to process</span>
+   ShutdownSignals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>os<span class="token punctuation">.</span>Signal<span class="token punctuation">{</span>
+      os<span class="token punctuation">.</span>Interrupt<span class="token punctuation">,</span> os<span class="token punctuation">.</span>Kill<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGKILL<span class="token punctuation">,</span>
+      syscall<span class="token punctuation">.</span>SIGHUP<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGINT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGQUIT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGILL<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTRAP<span class="token punctuation">,</span>
+      syscall<span class="token punctuation">.</span>SIGABRT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTERM<span class="token punctuation">,</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">waitForShutdown</span><span class="token punctuation">(</span>hooks <span class="token operator">...</span>Hook<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   signalChan <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> os<span class="token punctuation">.</span>Signal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+   signal<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span>signalChan<span class="token punctuation">,</span> ShutdownSignals<span class="token operator">...</span><span class="token punctuation">)</span>
+
+   <span class="token keyword">select</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token operator">&lt;-</span> signalChan<span class="token punctuation">:</span>
+         fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;server start shutdown !&quot;</span><span class="token punctuation">)</span>
+         <span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 十分钟还未退出，强制退出</span>
+            time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Minute <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+            os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> h <span class="token operator">:=</span> <span class="token keyword">range</span> hooks <span class="token punctuation">{</span>
+            ctx<span class="token punctuation">,</span> cancel <span class="token operator">:=</span> context<span class="token punctuation">.</span><span class="token function">WithTimeout</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Second<span class="token operator">*</span><span class="token number">30</span><span class="token punctuation">)</span>
+            err <span class="token operator">:=</span> <span class="token function">h</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+                fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;failed to run hook err: %v /n&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span>
+         os<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 正常退出</span>
+   <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h2 id="优雅退出控制"><a href="#优雅退出控制" class="header-anchor">#</a> 优雅退出控制</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;context&quot;</span>
+	<span class="token string">&quot;errors&quot;</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;sync/atomic&quot;</span>
+	web <span class="token string">&quot;web-server-go/web/12_graceful_exit/12_0_web&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> ServerExistingError <span class="token operator">=</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">&quot;server is existing! &quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">NewGracefulShutdownController</span><span class="token punctuation">(</span><span class="token punctuation">)</span> GracefulShutdownController <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> GracefulShutdownController <span class="token punctuation">{</span>
+		doneAllReq<span class="token punctuation">:</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> GracefulShutdownController <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	requestCount <span class="token builtin">int64</span>
+	closed       <span class="token builtin">int32</span>
+	doneAllReq   <span class="token keyword">chan</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>g <span class="token operator">*</span>GracefulShutdownController<span class="token punctuation">)</span> <span class="token function">GracefulShutdownBuilder</span><span class="token punctuation">(</span>next web<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span> web<span class="token punctuation">.</span>Filter <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>ctx <span class="token operator">*</span>web<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		closed <span class="token operator">:=</span> atomic<span class="token punctuation">.</span><span class="token function">LoadInt32</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>closed<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> closed <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+			<span class="token boolean">_</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">WriteJSON</span><span class="token punctuation">(</span><span class="token number">502</span><span class="token punctuation">,</span> ServerExistingError<span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+
+		atomic<span class="token punctuation">.</span><span class="token function">AddInt64</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>requestCount<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>       <span class="token comment">// 请求数量加 1</span>
+		<span class="token function">next</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>                                 <span class="token comment">// 处理业务逻辑</span>
+		atomic<span class="token punctuation">.</span><span class="token function">AddInt64</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>requestCount<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>      <span class="token comment">// 请求数量减 1</span>
+		<span class="token keyword">if</span> atomic<span class="token punctuation">.</span><span class="token function">LoadInt32</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>closed<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> atomic<span class="token punctuation">.</span><span class="token function">LoadInt64</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>requestCount<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+			g<span class="token punctuation">.</span>doneAllReq <span class="token operator">&lt;-</span> <span class="token keyword">struct</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>g <span class="token operator">*</span>GracefulShutdownController<span class="token punctuation">)</span> <span class="token function">GracefulShutdown</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+	atomic<span class="token punctuation">.</span><span class="token function">AddInt32</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>closed<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;graceful shutdown: start wait all request exist&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> atomic<span class="token punctuation">.</span><span class="token function">LoadInt64</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>g<span class="token punctuation">.</span>requestCount<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;graceful shutdown: all request existed&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">nil</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">select</span> <span class="token punctuation">{</span>
+		<span class="token keyword">case</span> <span class="token operator">&lt;-</span> g<span class="token punctuation">.</span>doneAllReq<span class="token punctuation">:</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;graceful shutdown: all request existed&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">case</span> <span class="token operator">&lt;-</span> ctx<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;graceful shutdown: timeout&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><h2 id="使用示例"><a href="#使用示例" class="header-anchor">#</a> 使用示例</h2> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	gController <span class="token operator">:=</span> <span class="token function">NewGracefulShutdownController</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	server <span class="token operator">:=</span> web<span class="token punctuation">.</span><span class="token function">NewServer</span><span class="token punctuation">(</span><span class="token string">&quot;graceExistServer&quot;</span><span class="token punctuation">,</span>
+		web<span class="token punctuation">.</span>MetricFilterBuilder<span class="token punctuation">,</span>             <span class="token comment">// 面向切面编程，时间统计</span>
+		gController<span class="token punctuation">.</span>GracefulShutdownBuilder<span class="token punctuation">,</span> <span class="token comment">// 面向切面编程，优雅退出，拒绝新请求</span>
+	<span class="token punctuation">)</span>
+
+	<span class="token boolean">_</span> <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">Route</span><span class="token punctuation">(</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>ctx <span class="token operator">*</span>web<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span>
+		time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+		ctx<span class="token punctuation">.</span><span class="token function">WriteJSON</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 可以启动多个服务</span>
+		port <span class="token operator">:=</span> <span class="token string">&quot;:8888&quot;</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;start server port: &quot;</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> server<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 快速失败，因为服务器都没启动成功，啥也做不了</span>
+			<span class="token function">panic</span><span class="token punctuation">(</span><span class="token function">any</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token function">waitForShutdown</span><span class="token punctuation">(</span> <span class="token comment">// 优雅退出，自定义钩子函数</span>
+		gController<span class="token punctuation">.</span>GracefulShutdown<span class="token punctuation">,</span>
+		<span class="token function">BuildCloseServeHook</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		ReleaseHook<span class="token punctuation">,</span>
+	<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">12/23/2023,</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/web/1_http.html">
+          http包基础
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">服务优雅退出</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/web/10_graceful_exit.html#监听退出信号" class="toc-sidebar-link">监听退出信号</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#hook接口" class="toc-sidebar-link">HOOK接口</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#优雅退出执行hook" class="toc-sidebar-link">优雅退出执行HOOK</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#优雅退出控制" class="toc-sidebar-link">优雅退出控制</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#使用示例" class="toc-sidebar-link">使用示例</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">服务优雅退出</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/web/10_graceful_exit.html#监听退出信号" class="toc-sidebar-link">监听退出信号</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#hook接口" class="toc-sidebar-link">HOOK接口</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#优雅退出执行hook" class="toc-sidebar-link">优雅退出执行HOOK</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#优雅退出控制" class="toc-sidebar-link">优雅退出控制</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/web/10_graceful_exit.html#使用示例" class="toc-sidebar-link">使用示例</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/web/10_graceful_exit.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <!----> <div title="http包基础" class="option-box" style="padding-left:2px;text-align:center;"><a href="/web/1_http.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.2999399e.js" defer></script><script src="/assets/js/3.a918bb29.js" defer></script><script src="/assets/js/4.9382fba3.js" defer></script><script src="/assets/js/107.928b978a.js" defer></script>
+  </body>
+</html>
