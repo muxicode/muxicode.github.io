@@ -544,5 +544,88 @@ func ExampleFactory2() {
 }
 ```
 
+###  默认参数 option 模式
+
+```go
+package main
+
+import "fmt"
+
+type User struct {
+	// 必填
+	Id string
+	Name string
+
+	// 可选参数
+	Address string
+}
+
+type Option func(u *User)
+
+// 采用 option 设置可选参数
+func WithUserAddress(address string) Option {
+	return func (user *User) {
+		user.Address = address
+	}
+}
+
+func NewUser(id, name string, options ...Option) *User  {
+	user := &User{Id: id, Name: name}
+
+	for _, o := range options {
+		o(user)
+	}
+
+	return user
+}
+
+func main() {
+	user := NewUser("123", "xiao ming", WithUserAddress("深圳"))
+	fmt.Println(user)
+}
+```
+
+### Filter配置化
+
+ 自定义注册 filter builder
+
+```go
+ var builderMap map[string]FilterBuilder
+func RegisterFilterBuilder (name string, filterBuilder FilterBuilder) {
+	builderMap[name] = filterBuilder
+}
+
+func GetFilterBuilders(names ... string) []FilterBuilder {
+	filterBuilders := make([]FilterBuilder, 0, len(names))
+
+	for _, name := range names {
+		filterBuilders = append(filterBuilders, builderMap[name])
+	}
+
+	return filterBuilders
+}
+```
+
+初始化服务使用builder的名称
+
+```
+func NewServerWithBuilderNames(serverName string, builderNames ...string) Server {
+	// builderNames 可以从配置文件中获取
+	// 配置文件中可这么配置：filter: "logFilter, panicRecoverFilter, RegisterFilter"
+	return NewServer(serverName, GetFilterBuilders(builderNames...)...)
+}
+```
+
+初始化示例
+
+```go
+func main(){
+	// 读取配置，切割得到字符串切片
+	configBuilders := []string{"logFilter", "recoverFilter"}
+	server := web.NewServerWithBuilderNames("my-server", configBuilders...)
+	_ = server.Start(":8888")
+}
+```
+
 
 
