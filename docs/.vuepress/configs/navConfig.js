@@ -236,8 +236,22 @@ const navs = [
   {
     text: '前端',
     items: [
-      { text: 'vue实战', link: '/fontend/1_vue_action' },
-      { text: '请求封装', link: '/fontend/2_cross_request' },
+      {
+        text: 'vue', items: [
+          { text: 'vue实战', link: '/fontend/vue_1_mall' },
+          { text: 'Props双向修改', link: '/fontend/vue_1_mall' },
+        ]
+      },
+      {
+        text: 'ElementUI', items: [
+          { text: 'table组件自定义', link: '/fontend/element_1_table' },
+        ]
+      },
+      {
+        text: '工具', items: [
+          { text: '请求封装', link: '/fontend/util_1_acrross' },
+        ]
+      }
     ],
   },
   // { text: '数据库', link: '/database/' },
