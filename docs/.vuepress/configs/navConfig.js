@@ -239,7 +239,7 @@ const navs = [
       {
         text: 'vue', items: [
           { text: 'vue实战', link: '/fontend/vue_1_mall' },
-          { text: 'Props双向修改', link: '/fontend/vue_1_mall' },
+          { text: 'Props双向修改', link: '/fontend/vue_2_props_modify' },
         ]
       },
       {

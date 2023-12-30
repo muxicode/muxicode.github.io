@@ -58,7 +58,7 @@
 - [冒泡排序](/algorithm/g1_sort_2_bubble_sort)
 - [插入排序](/algorithm/g1_sort_3_insert_sort)
 - [归并排序](/algorithm/g1_sort_4_merge_sort)
-- 快速排序
+- [快速排序](/algorithm/g1_sort_5_quick_sort)
 - 堆排序
 - 计数排序
 - 基数排序
