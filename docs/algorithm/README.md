@@ -59,7 +59,7 @@
 - [插入排序](/algorithm/g1_sort_3_insert_sort)
 - [归并排序](/algorithm/g1_sort_4_merge_sort)
 - [快速排序](/algorithm/g1_sort_5_quick_sort)
-- 堆排序
+- [堆排序](/algorithm/g1_sort_6_heap_sort)
 - 计数排序
 - 基数排序
 - 排序大总结&避坑指南
