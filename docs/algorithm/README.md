@@ -136,9 +136,8 @@
 
 ##### 👉 堆
 
-- [堆](/algorithm/g1_base_9_heap)
-
-##### 👉 加强堆
+- [堆](/algorithm/g1_heap_1_heap)
+- [加强堆](/algorithm/g1_heap_2_strengthen_heap)
 
 ##### 👉 前缀树
 
