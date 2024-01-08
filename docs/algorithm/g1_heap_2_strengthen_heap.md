@@ -22,7 +22,7 @@ autoGroup-1: 🌱阶段一：初出茅庐🌱
 
 ### 简单方法： 
 
-![](D:\个人项目\github\muxicode.github.io\docs\.vuepress\public\g1_heap_2_strengthen_heap.assets\heap_strengthen_heap.drawio.png)
+![](/g1_heap_2_strengthen_heap.assets/heap_strengthen_heap.drawio.png)
 
 1.  通过遍历所有的线段得到所有的线段所在的区间
 2.  线段开始与结束都为整数，所以在小数的位置如果重合，则线段一定重合，整数区间可能只是点重合
@@ -31,7 +31,7 @@ autoGroup-1: 🌱阶段一：初出茅庐🌱
 
 ### 堆解决：
 
-![](D:\个人项目\github\muxicode.github.io\docs\.vuepress\public\g1_heap_2_strengthen_heap.assets\heap_strengthen_heap2.drawio.png)
+![](/g1_heap_2_strengthen_heap.assets/heap_strengthen_heap2.drawio.png)
 
 ### 代码实现
 
@@ -194,7 +194,7 @@ func (mH *MyHeap)Swap(index1, index2 int) {
 
 下面讲解一种堆，其中仅有一个元素不对的情况下，可以调整该元素并恢复的堆结构：
 
-![](D:\个人项目\github\muxicode.github.io\docs\.vuepress\public\g1_heap_2_strengthen_heap.assets\heap_strengthen_heap3.drawio.png)
+![](/g1_heap_2_strengthen_heap.assets/heap_strengthen_heap3.drawio.png)
 
 
 
@@ -481,7 +481,7 @@ func TestNewHeapGreater(t *testing.T) {
 		//    4          3      9          6
 		// 10    7     8
 	}
-	fmt.Println("\n---------")
+	fmt.Println("/n---------")
 	cuses[4].buy = 20
 	mgh.Resign(cuses[4])
 	// 打印结构体列表的内容
@@ -493,12 +493,12 @@ func TestNewHeapGreater(t *testing.T) {
 		//    4          3      9          20(5->20并调整对了位置)
 		// 10    7     8
 	}
-	fmt.Println("\n---------")
+	fmt.Println("/n---------")
 	mgh.Remove(cuses[3])
 	for _, addr := range mgh.GetAllElements() {
 		fmt.Printf("%+v ", addr.(*Customer).buy)
 	}
-	fmt.Println("\n---------")
+	fmt.Println("/n---------")
 	// &buy:1,buy:2,buy:6,buy:4,buy:3,buy:9,buy:20,buy:10,buy:7,buy:8
 	for mgh.size > 0 {
 		fmt.Println(mgh.Poll())
@@ -508,7 +508,7 @@ func TestNewHeapGreater(t *testing.T) {
 
 ### 买卖商品
 
-![](D:\个人项目\github\muxicode.github.io\docs\.vuepress\public\g1_heap_2_strengthen_heap.assets\heap_strengthen_heap4.drawio.png)
+![](/g1_heap_2_strengthen_heap.assets/heap_strengthen_heap4.drawio.png)
 
 给定一个整型数组， []int arr； 和一个布尔类型数组， []boolean op
 两个数组一定等长， 假设长度为N， arr门表示客户编号， op门表示客户操作
@@ -572,9 +572,353 @@ op=[T， T，  T,    T,   F,  T,    F…
 
 #### 题解
 
-```go
+🌱[题解源码仓储对应目录🌱](https://gitee.com/add-ice-ice/training/tree/master/algorithm/heap/trianning)
 
+> 暴力解法
+
+```go
+package heap_trianning
+
+import (
+	"sort"
+)
+
+type Customer struct {
+	ID    int
+	Buy   int
+	Time  int
+}
+type Daddys []*Customer
+type Cands  []*Customer
+
+func GetTopKCustomers(customers []int, operate []bool, K int) [][]int {
+	customersMap := map[int]*Customer{} // 记录客户是否已经买过东西
+	daddys := make(Daddys, 0)           // 得奖区的客户
+	cands := make(Cands, 0)             // 候奖区的客户
+	ans := make([][]int, 0)             // 初始化结果
+	for i, c := range customers {
+		if _, ok := customersMap[c]; !ok && !operate[i] { // 不存在该客户且退货的，直接跳过
+			ans = append(ans, daddys.GetCustomers())
+			continue
+		}
+		// 获取到当前的顾客，没有的话初始化一个顾客
+		var curC  *Customer
+		if cc, ok := customersMap[c]; ok {
+			curC = cc
+		} else {
+			curC = &Customer{ID: c}
+			customersMap[c] = curC
+		}
+		if operate[i] { // 如果当前是买操作
+			curC.Buy++
+		} else {
+			curC.Buy--
+		}
+		if curC.Buy == 0 { // 如果此时顾客买的数量为0，情况顾客的map
+			delete(customersMap, curC.ID)
+		}
+		// 将当前顾客不在得奖区与候奖区的情况排除
+		if !daddys.Contain(curC) && !cands.Contain(curC) {
+			if len(daddys) < K {
+				curC.Time = i // 赋值进入得奖区的时间
+				daddys = append(daddys, curC)
+			} else {
+				curC.Time = i
+				cands = append(cands, curC)
+			}
+		}
+		daddys.CleanZeroBuy() // 清除得奖区里退货变成0购买的
+		cands.CleanZeroBuy()  // 清除候奖区里退货变成0购买的
+		sort.Sort(cands)      // 得奖区重新调整顺序
+		sort.Sort(daddys)     // 得奖区重新调整顺序
+		move(&daddys, &cands, K, i) // 如果候奖区与得奖区需要替换，则需要移动元素
+		ans = append(ans, daddys.GetCustomers()) // 重新获取得奖区的顾客
+	}
+	return ans
+}
+
+func move(daddys *Daddys, cands *Cands, K int, time int) {
+	if len(*cands) == 0 { // 候选区为空，不需要移动
+		return
+	}
+	if len(*daddys) < K { // 得奖区没满的情况，一定是候选区有，但是得奖区其中有一个顾客退货
+		(*cands)[0].Time = time
+		*daddys = append(*daddys, (*cands)[0])
+		*cands = (*cands)[1:]
+	} else { // 得奖区满了，且候奖区有客户的情况，如果候奖区的顾客最大的购买量超过得奖区的顾客，则发生移动
+		if (*cands)[0].Buy > (*daddys)[0].Buy { // 侯奖区与得奖区客户发生交换
+			oldDaddy := (*daddys)[0]
+			newDaddy := (*cands)[0]
+			oldDaddy.Time = time
+			newDaddy.Time = time
+			(*daddys)[0], (*cands)[0] = (*cands)[0], (*daddys)[0]
+		}
+	}
+}
+
+func (d Daddys) Len() int {
+	return len(d)
+}
+
+func (d Daddys) Less(i, j int) bool {
+	if d[i].Buy != d[j].Buy {
+		return d[i].Buy < d[j].Buy
+	}
+	return d[i].Time < d[j].Time
+}
+
+func (d Daddys) Swap(i, j int) {
+	d[i], d[j] = d[j], d[i]
+}
+
+func (d *Daddys) Contain(cc *Customer) bool {
+	var ans bool
+	for _, dc := range *d {
+		if dc == cc {
+			ans = true
+		}
+	}
+	return ans
+}
+
+func (d *Daddys) CleanZeroBuy()  {
+	var newD Daddys
+	for _, dc := range *d {
+		if dc.Buy != 0 {
+			newD = append(newD, dc)
+		}
+	}
+	*d = newD
+}
+
+func (d *Daddys) GetCustomers() []int {
+	var customers []int
+	for _, dc := range *d {
+		customers = append(customers, dc.ID)
+	}
+	return customers
+}
+
+func (c Cands) Len() int {
+	return len(c)
+}
+
+func (c Cands) Less(i, j int) bool {
+	if c[i].Buy != c[j].Buy {
+		return c[i].Buy > c[j].Buy
+	}
+	return c[i].Time < c[j].Time
+}
+
+func (c Cands) Swap(i, j int) {
+	c[i], c[j] = c[j], c[i]
+}
+
+func (c *Cands) Contain(cc *Customer) bool {
+	var ans bool
+	for _, candc := range *c {
+		if candc == cc {
+			ans = true
+		}
+	}
+	return ans
+}
+
+func (c *Cands) CleanZeroBuy()  {
+	var newD Cands
+	for _, dc := range *c {
+		if dc.Buy != 0 {
+			newD = append(newD, dc)
+		}
+	}
+	*c = newD
+}
+
+func (c *Cands) GetCustomers() []int {
+	var customers []int
+	for _, dc := range *c {
+		customers = append(customers, dc.ID)
+	}
+	return customers
+}
 ```
 
+> 使用加强堆
 
+```go
+package heap_trianning
 
+import (
+	"traning/algorithm/utility/heap02"
+)
+
+func GetTopKCustomersWithGreaterHeap(customers []int, operate []bool, K int) [][]int {
+	ans := make([][]int, 0)
+	if K == 0 {
+		return ans
+	}
+	customersMap := make(map[int]*Customer)
+	daddys := heap02.NewHeapGreater(K, func(c1, c2 interface{}) bool { // 初始化得奖区的加强堆
+		customer1, customer2 := c1.(*Customer), c2.(*Customer)
+		if customer1.Buy != customer2.Buy {
+			return customer1.Buy < customer2.Buy
+		}
+		return customer1.Time < customer2.Time
+	})
+	cands := heap02.NewHeapGreater(len(customers), func(c1, c2 interface{}) bool { // 初始化得奖区的加强堆
+		customer1, customer2 := c1.(*Customer), c2.(*Customer)
+		if customer1.Buy != customer2.Buy {
+			return customer1.Buy > customer2.Buy
+		}
+		return customer1.Time < customer2.Time
+	})
+	for time, customerId := range customers {
+		if _, ok := customersMap[customerId]; !ok && !operate[time] {
+			// 不存在的顾客且发生退货，则直接获取上一次的获奖人，并继续
+			ans = append(ans, ToCustomerIds(daddys.GetAllElements()))
+			continue
+		}
+		var curCustomer *Customer
+		if c, ok := customersMap[customerId]; !ok {
+			curCustomer = &Customer{
+				ID: customerId,
+			}
+			customersMap[customerId] = curCustomer
+		} else {
+			curCustomer = c
+		}
+		if operate[time] {
+			curCustomer.Buy++
+		} else {
+			curCustomer.Buy--
+		}
+		// 清空 customersMap 如果现在顾客的购买量为 0 需要清除
+		if curCustomer.Buy == 0 {
+			delete(customersMap, curCustomer.ID)
+		}
+		// 将新客户加入候将区或得奖区
+		if !daddys.Contain(curCustomer) && !cands.Contain(curCustomer) {
+			if daddys.Size() < K {
+				curCustomer.Time = time
+				daddys.Add(curCustomer)
+			} else {
+				curCustomer.Time = time
+				cands.Add(curCustomer)
+			}
+		}
+		// 此时顾客一定在两个区中且购买量为0，则需要清除
+		if daddys.Contain(curCustomer) && curCustomer.Buy == 0 {
+			daddys.Remove(curCustomer)
+		}
+		if cands.Contain(curCustomer) && curCustomer.Buy == 0 {
+			cands.Remove(curCustomer)
+		}
+		// 元素发生变更需要维护堆
+		if daddys.Contain(curCustomer) {
+			daddys.Resign(curCustomer)
+		}
+		if cands.Contain(curCustomer) {
+			cands.Resign(curCustomer)
+		}
+		moveGreaterHeap(&daddys, &cands, time, K)
+		ans = append(ans, ToCustomerIds(daddys.GetAllElements()))
+	}
+	return ans
+}
+
+func moveGreaterHeap(daddys, cands *heap02.HeapGreater, time, K int) {
+	if cands.Size() == 0 {
+		return
+	}
+	if daddys.Size() < K { // 得奖区有客户退出
+		newDaddy := cands.Peek().(*Customer)
+		cands.Remove(newDaddy)
+		newDaddy.Time = time
+		daddys.Add(newDaddy)
+	} else {
+		if cands.Peek().(*Customer).Buy > daddys.Peek().(*Customer).Buy {
+			newDaddy := cands.Peek().(*Customer)
+			oldDaddy := daddys.Peek().(*Customer)
+			cands.Remove(newDaddy)
+			daddys.Remove(oldDaddy)
+			newDaddy.Time = time
+			oldDaddy.Time = time
+			cands.Add(oldDaddy)
+			daddys.Add(newDaddy)
+		}
+	}
+}
+
+func ToCustomerIds(daddys []interface{}) []int {
+	var daddyIds []int
+	for _, c := range daddys {
+		daddyIds = append(daddyIds, c.(*Customer).ID)
+	}
+	return daddyIds
+}
+```
+
+> 测试代码
+
+```go
+package heap_trianning
+
+import (
+	"fmt"
+	"testing"
+	"traning/algorithm/utility"
+)
+
+func TestCleanZeroBuy(t *testing.T) {
+	var daddys Daddys
+	daddys = append(daddys, &Customer{
+		Buy: 1,
+	})
+	daddys.CleanZeroBuy()
+	fmt.Println(daddys)
+}
+
+// 调试暴力方法
+func TestGetTopKCustomers(t *testing.T) {
+	fmt.Println(GetTopKCustomers(
+		[]int{3,1,1,1,1,2,2},
+		[]bool{true, true, true, false, false, true, true},
+		1,
+		))
+}
+
+// 调试加强堆方法
+func TestGetTopKCustomersWithGreaterHeap(t *testing.T) {
+	fmt.Println(GetTopKCustomersWithGreaterHeap(
+		[]int{1  ,2  ,0 , 4  ,3 , 4},
+		[]bool{false, true, true, true ,false ,true},
+		2,
+	))
+}
+
+// 大数据量对比测试
+func TestGetTopKCustomersWithGreaterHeapOK(t *testing.T) {
+	//a := assert.New(t)
+	testTime := 5000        // 测试次数
+	testArrMaxLen := 1000   // 随机数组的最大长度[0, testArrMaxLen)
+	testArrMaxNum := 15     // 随机数组中最大的数字[0, testArrMaxNum)
+	testMaxK      := 3      // 最大获奖人数
+	randomCreator := utility.GetRandomNumCreator()  // 初始化随机数组生成器
+	for i:=0; i<testTime; i++ { // 开始测试，总共测试50万次
+		// 生成一个 长度为 [0, testArrMaxLen) 数字大小为 [0, testArrMaxNum) 的随机数组
+		customers := randomCreator.GetRandomArr(testArrMaxNum, testArrMaxLen)
+		operates := randomCreator.GetRandomBool(len(customers))
+		K := randomCreator.GetRandom(testMaxK)
+		// 拷贝数组用于进行校验
+		ans1 := GetTopKCustomers(customers, operates, K)
+		ans2 := GetTopKCustomersWithGreaterHeap(customers, operates, K)
+		if !utility.ArrSetEqual(ans1, ans2) {
+			fmt.Println("ans1", ans1)
+			fmt.Println("ans2", ans2)
+			fmt.Println("customers ", customers)
+			fmt.Println("operates  ", operates)
+			panic(any("ans no equal !!!"))
+		}
+	}
+}
+```
