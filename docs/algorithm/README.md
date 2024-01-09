@@ -140,6 +140,7 @@
 - [加强堆](/algorithm/g1_heap_2_strengthen_heap)
 
 ##### 👉 前缀树
+- [前缀树](/algorithm/g1_trie_1)
 
 ##### 👉 二叉树
 
