@@ -78,7 +78,7 @@
 ##### 👉 递归到动态规划
 
 - 递归行为
-  - Master 公式
+  - [Master 公式](/algorithm/g1_dp_recursion_1_master)
   - 汉诺塔问题
   - 生成全子序列
   - 生成全排列
@@ -118,7 +118,7 @@
 - [判断链表的回文结构](/algorithm/g1_data_struct_linked_list_6_palindromic)
 - [链表三分](/algorithm/g1_data_struct_linked_list_7_partition)
 - [拷贝含有随机指针的链表](/algorithm/g1_data_struct_linked_list_8_copy_random_list)
-- 链表相交的系列问题
+- [链表相交的系列问题](/algorithm/g1_data_struct_linked_list_9_inserction)
 
 ##### 👉 队列
 
