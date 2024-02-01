@@ -2,6 +2,51 @@
 
 <link rel="stylesheet" href="/css/nav.css">
 
+## GO开发者
+
+<div class="cc-row cc-row-gutter-20"><!--[-->
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://gophercises.com/"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="OPENAI"><img class="nozoom medium-zoom-image" src="/images/tool-logo/gophercises.png"
+            style="height:35px;">
+          <div style="height:40px;float:right;">coding exercises</div>
+        </div>
+        <div class="cc-nav-des" title="FREE coding exercises for budding gophers">FREE coding exercises for budding gophers</div>
+      </div>
+    </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://github.com/avelino/awesome-go"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="OPENAI"><img class="nozoom medium-zoom-image" src="/images/tool-logo/github2.jpg"
+            style="height:35px;">
+          <div style="height:40px;float:right;">awesome-go</div>
+        </div>
+        <div class="cc-nav-des" title="A curated list of awesome Go frameworks, libraries and software">A curated list of awesome Go frameworks, libraries and software</div>
+      </div>
+    </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://github.com/go-kit/kit"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="OPENAI"><img class="nozoom medium-zoom-image" src="/images/tool-logo/github2.jpg"
+            style="height:35px;">
+          <div style="height:40px;float:right;">go-kit</div>
+        </div>
+        <div class="cc-nav-des" title="A standard library for microservices.">A standard library for microservices.</div>
+      </div>
+    </a></div>
+  <div class="cc-col-xl-4 cc-col-lg-6 cc-col-md-8 cc-col-sm-10 cc-col-xs-12"><a href="https://github.com/gotomicro/ego"
+      target="_blank">
+      <div class="my-nav-item">
+        <div class="cc-nav-title" title="OPENAI"><img class="nozoom medium-zoom-image" src="/images/tool-logo/github2.jpg"
+            style="height:35px;">
+          <div style="height:40px;float:right;">ego</div>
+        </div>
+        <div class="cc-nav-des" title="A simple and component-based microservice kit for go. 一个简单的基于组件的 Go 微服务套件。">A simple and component-based microservice kit for go. 一个简单的基于组件的 Go 微服务套件。</div>
+      </div>
+    </a></div>
+</div>
+
 ## 常用搜索
 
 <div class="cc-row cc-row-gutter-20"><!--[-->
