@@ -24,6 +24,7 @@ const navs = [
         items: [
           { text: '构建测试', link: '/golang/4_1_golang_test' },
           { text: '基准测试', link: '/golang/4_2_golang_benchmark' },
+          { text: '实践&建议', link: '/golang/4_3_golang_test_eample' },
         ]
       },
       {
