@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实践&amp;建议 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.c72ee127.js" as="script"><link rel="preload" href="/assets/js/3.a918bb29.js" as="script"><link rel="preload" href="/assets/js/4.9382fba3.js" as="script"><link rel="preload" href="/assets/js/114.a5ef4c3c.js" as="script"><link rel="prefetch" href="/assets/js/10.976a7cab.js"><link rel="prefetch" href="/assets/js/100.7e68d875.js"><link rel="prefetch" href="/assets/js/101.d7346387.js"><link rel="prefetch" href="/assets/js/102.0531d764.js"><link rel="prefetch" href="/assets/js/103.6a456695.js"><link rel="prefetch" href="/assets/js/104.2ab64be9.js"><link rel="prefetch" href="/assets/js/105.5a03562a.js"><link rel="prefetch" href="/assets/js/106.684df67d.js"><link rel="prefetch" href="/assets/js/107.3dbdd32b.js"><link rel="prefetch" href="/assets/js/108.1f3477d1.js"><link rel="prefetch" href="/assets/js/109.6cee7a92.js"><link rel="prefetch" href="/assets/js/11.1649bcd4.js"><link rel="prefetch" href="/assets/js/110.f418307e.js"><link rel="prefetch" href="/assets/js/111.a7a201ce.js"><link rel="prefetch" href="/assets/js/112.71d35605.js"><link rel="prefetch" href="/assets/js/113.c55e826f.js"><link rel="prefetch" href="/assets/js/115.88379e71.js"><link rel="prefetch" href="/assets/js/116.50e142ce.js"><link rel="prefetch" href="/assets/js/117.98453b26.js"><link rel="prefetch" href="/assets/js/118.49d602c0.js"><link rel="prefetch" href="/assets/js/119.9f8743fb.js"><link rel="prefetch" href="/assets/js/12.346d18ca.js"><link rel="prefetch" href="/assets/js/120.74f0ced8.js"><link rel="prefetch" href="/assets/js/121.14d49cf4.js"><link rel="prefetch" href="/assets/js/122.701ed3f7.js"><link rel="prefetch" href="/assets/js/123.1df5e455.js"><link rel="prefetch" href="/assets/js/124.a3c74e7b.js"><link rel="prefetch" href="/assets/js/125.ebb640cf.js"><link rel="prefetch" href="/assets/js/126.a1c8b383.js"><link rel="prefetch" href="/assets/js/127.73969eb6.js"><link rel="prefetch" href="/assets/js/128.a22229f6.js"><link rel="prefetch" href="/assets/js/129.956600a4.js"><link rel="prefetch" href="/assets/js/13.e54c6e3c.js"><link rel="prefetch" href="/assets/js/130.abe97992.js"><link rel="prefetch" href="/assets/js/131.2ee637a6.js"><link rel="prefetch" href="/assets/js/132.617519d9.js"><link rel="prefetch" href="/assets/js/133.ce719088.js"><link rel="prefetch" href="/assets/js/134.727769c7.js"><link rel="prefetch" href="/assets/js/135.9452ff43.js"><link rel="prefetch" href="/assets/js/136.f5f172eb.js"><link rel="prefetch" href="/assets/js/137.50a833d2.js"><link rel="prefetch" href="/assets/js/14.6d794433.js"><link rel="prefetch" href="/assets/js/15.1b1be2fc.js"><link rel="prefetch" href="/assets/js/16.1a52dd92.js"><link rel="prefetch" href="/assets/js/17.409889b0.js"><link rel="prefetch" href="/assets/js/18.589a26dd.js"><link rel="prefetch" href="/assets/js/19.a03571f6.js"><link rel="prefetch" href="/assets/js/20.f142bb23.js"><link rel="prefetch" href="/assets/js/21.149ea80d.js"><link rel="prefetch" href="/assets/js/22.afe36fca.js"><link rel="prefetch" href="/assets/js/23.1257b889.js"><link rel="prefetch" href="/assets/js/24.9c33512d.js"><link rel="prefetch" href="/assets/js/25.1fff51e3.js"><link rel="prefetch" href="/assets/js/26.516b6615.js"><link rel="prefetch" href="/assets/js/27.b14a6add.js"><link rel="prefetch" href="/assets/js/28.9a55d83c.js"><link rel="prefetch" href="/assets/js/29.e59d345e.js"><link rel="prefetch" href="/assets/js/30.b4b6dbc9.js"><link rel="prefetch" href="/assets/js/31.dd0c93b3.js"><link rel="prefetch" href="/assets/js/32.aaedce57.js"><link rel="prefetch" href="/assets/js/33.14096f7d.js"><link rel="prefetch" href="/assets/js/34.c35d0652.js"><link rel="prefetch" href="/assets/js/35.daace28a.js"><link rel="prefetch" href="/assets/js/36.c55e0a55.js"><link rel="prefetch" href="/assets/js/37.fff59b9a.js"><link rel="prefetch" href="/assets/js/38.d1923414.js"><link rel="prefetch" href="/assets/js/39.3222ed5a.js"><link rel="prefetch" href="/assets/js/40.95680232.js"><link rel="prefetch" href="/assets/js/41.f48f10bb.js"><link rel="prefetch" href="/assets/js/42.e4e18197.js"><link rel="prefetch" href="/assets/js/43.7edaa049.js"><link rel="prefetch" href="/assets/js/44.ee9815fc.js"><link rel="prefetch" href="/assets/js/45.e5eba1e2.js"><link rel="prefetch" href="/assets/js/46.44ff8478.js"><link rel="prefetch" href="/assets/js/47.c8f8fac0.js"><link rel="prefetch" href="/assets/js/48.e79e5be2.js"><link rel="prefetch" href="/assets/js/49.e1e976f1.js"><link rel="prefetch" href="/assets/js/5.bd9f7f2e.js"><link rel="prefetch" href="/assets/js/50.0fbccd7c.js"><link rel="prefetch" href="/assets/js/51.b577f403.js"><link rel="prefetch" href="/assets/js/52.9f3d7fca.js"><link rel="prefetch" href="/assets/js/53.40effefa.js"><link rel="prefetch" href="/assets/js/54.6dea1c6d.js"><link rel="prefetch" href="/assets/js/55.69899c05.js"><link rel="prefetch" href="/assets/js/56.51de01f9.js"><link rel="prefetch" href="/assets/js/57.951840e4.js"><link rel="prefetch" href="/assets/js/58.80f8facc.js"><link rel="prefetch" href="/assets/js/59.877b59c5.js"><link rel="prefetch" href="/assets/js/6.3c15e6b3.js"><link rel="prefetch" href="/assets/js/60.736d59ed.js"><link rel="prefetch" href="/assets/js/61.a7371b43.js"><link rel="prefetch" href="/assets/js/62.e3eec0ba.js"><link rel="prefetch" href="/assets/js/63.9948c212.js"><link rel="prefetch" href="/assets/js/64.19767b0e.js"><link rel="prefetch" href="/assets/js/65.4e4a6e4e.js"><link rel="prefetch" href="/assets/js/66.b40c0f64.js"><link rel="prefetch" href="/assets/js/67.f502cbe9.js"><link rel="prefetch" href="/assets/js/68.10d5bb3c.js"><link rel="prefetch" href="/assets/js/69.0f2fb517.js"><link rel="prefetch" href="/assets/js/7.dacd2863.js"><link rel="prefetch" href="/assets/js/70.7360bf70.js"><link rel="prefetch" href="/assets/js/71.19b03c26.js"><link rel="prefetch" href="/assets/js/72.53fd3611.js"><link rel="prefetch" href="/assets/js/73.e104df24.js"><link rel="prefetch" href="/assets/js/74.4dd44132.js"><link rel="prefetch" href="/assets/js/75.eeedfb9e.js"><link rel="prefetch" href="/assets/js/76.cf15a70f.js"><link rel="prefetch" href="/assets/js/77.a12067f5.js"><link rel="prefetch" href="/assets/js/78.17d28058.js"><link rel="prefetch" href="/assets/js/79.946609be.js"><link rel="prefetch" href="/assets/js/8.1e3a48c8.js"><link rel="prefetch" href="/assets/js/80.234d6ae0.js"><link rel="prefetch" href="/assets/js/81.6ea7cb09.js"><link rel="prefetch" href="/assets/js/82.ee8e1e60.js"><link rel="prefetch" href="/assets/js/83.64a858b6.js"><link rel="prefetch" href="/assets/js/84.9df2fcfc.js"><link rel="prefetch" href="/assets/js/85.dcb37f4d.js"><link rel="prefetch" href="/assets/js/86.86c2489c.js"><link rel="prefetch" href="/assets/js/87.11890b15.js"><link rel="prefetch" href="/assets/js/88.30d6f52f.js"><link rel="prefetch" href="/assets/js/89.8337236c.js"><link rel="prefetch" href="/assets/js/9.b88a8505.js"><link rel="prefetch" href="/assets/js/90.b9105132.js"><link rel="prefetch" href="/assets/js/91.daefe7d5.js"><link rel="prefetch" href="/assets/js/92.ed908d47.js"><link rel="prefetch" href="/assets/js/93.52e1a24c.js"><link rel="prefetch" href="/assets/js/94.5281bea5.js"><link rel="prefetch" href="/assets/js/95.a303c974.js"><link rel="prefetch" href="/assets/js/96.d776f06b.js"><link rel="prefetch" href="/assets/js/97.e7f5cd67.js"><link rel="prefetch" href="/assets/js/98.0fd8dccd.js"><link rel="prefetch" href="/assets/js/99.70dd4cd4.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_3_golang_test_eample.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  实践&amp;建议
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_3_restart.html" class="nav-link">
+  异常重启定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-subitem"><a href="/web/10_graceful_exit.html" class="nav-link">
+  服务优雅退出
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" class="nav-link">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_2_desgin.html" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_sort_1_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          阅读书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/books/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/books/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/vue_1_mall.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-subitem"><a href="/fontend/vue_2_props_modify.html" class="nav-link">
+  Props双向修改
+</a></li></ul></li><li class="dropdown-item"><h4>
+          ElementUI
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/element_1_table.html" class="nav-link">
+  table组件自定义
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/util_1_acrross.html" class="nav-link">
+  请求封装
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_3_golang_test_eample.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  实践&amp;建议
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_3_restart.html" class="nav-link">
+  异常重启定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-subitem"><a href="/web/10_graceful_exit.html" class="nav-link">
+  服务优雅退出
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" class="nav-link">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_2_desgin.html" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_sort_1_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          阅读书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/books/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/books/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/vue_1_mall.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-subitem"><a href="/fontend/vue_2_props_modify.html" class="nav-link">
+  Props双向修改
+</a></li></ul></li><li class="dropdown-item"><h4>
+          ElementUI
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/element_1_table.html" class="nav-link">
+  table组件自定义
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/util_1_acrross.html" class="nav-link">
+  请求封装
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Golang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/1_0_nav.html" class="sidebar-link">深入理解Golang</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础及入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/1_1_why_go.html" class="sidebar-link">为什么是Go？</a></li><li><a href="/golang/1_2_struct.html" class="sidebar-link">数据结构</a></li><li><a href="/golang/1_3_go_ptr.html" class="sidebar-link">指针</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>高并发下的工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="sidebar-link">高并发利器-协程</a></li><li><a href="/golang/2_2_high_concurrency_security_ock_mechanism.html" class="sidebar-link">高并发下的保安-锁机制</a></li><li><a href="/golang/2_3_channel.html" class="sidebar-link">通信宝藏-channel</a></li><li><a href="/golang/2_4_tcp_newwork.html" class="sidebar-link">TCP网络编程</a></li><li><a href="/golang/2_5_memory_model_and_garbage_collection.html" class="sidebar-link">内存模型与垃圾回收</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>其他高级特性</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/3_1_go_c.html" class="sidebar-link">如何实现 GO 调用 C 代码？</a></li><li><a href="/golang/3_2_go_defer.html" class="sidebar-link">defer 的底层原理是怎样的？</a></li><li><a href="/golang/3_3_go_recover.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_4_go_reflect.html" class="sidebar-link">recover 如何在panic 中拯救程序？</a></li><li><a href="/golang/3_5_go_reflect_use.html" class="sidebar-link">实战：使用反射调用方法</a></li><li><a href="/golang/3_6_go_learning.html" class="sidebar-link">其他学习资料</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>测试相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/4_1_golang_test.html" class="sidebar-link">构建测试</a></li><li><a href="/golang/4_2_golang_benchmark.html" class="sidebar-link">基准测试</a></li><li><a href="/golang/4_3_golang_test_eample.html" aria-current="page" class="active sidebar-link">实践&amp;建议</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_1-让添加测试变得容易" class="sidebar-link">1. 让添加测试变得容易</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_2-使用测试覆盖率来发现未经测试的代码" class="sidebar-link">2. 使用测试覆盖率来发现未经测试的代码</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_3-覆盖率不能提代思考" class="sidebar-link">3. 覆盖率不能提代思考</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_4-编写全面的测试" class="sidebar-link">4. 编写全面的测试</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_5-建议将测试用例与测试逻辑分开" class="sidebar-link">5. 建议将测试用例与测试逻辑分开</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_6-寻找特殊情况" class="sidebar-link">6. 寻找特殊情况</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_7-如果你没有添加测试-那就没有修复bug" class="sidebar-link">7. 如果你没有添加测试，那就没有修复bug</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_8-并非所有东西都适合放在表中" class="sidebar-link">8. 并非所有东西都适合放在表中</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_9-测试用例可以放在testdata文件" class="sidebar-link">9. 测试用例可以放在testdata文件</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_10-与其他实现进行比较" class="sidebar-link">10. 与其他实现进行比较</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_11-使测试失败易读" class="sidebar-link">11. 使测试失败易读</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_12-如果答案可能会改变-编写代码来更新他们" class="sidebar-link">12. 如果答案可能会改变，编写代码来更新他们</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_13-使用txtar进行多文件测试用例" class="sidebar-link">13. 使用txtar进行多文件测试用例</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_14-对现有格式进行注解-annotation-来创建测试迷你语言" class="sidebar-link">14. 对现有格式进行注解(annotation)来创建测试迷你语言</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_15-编写解析器和打印器来简化测试" class="sidebar-link">15. 编写解析器和打印器来简化测试</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_16-代码质量受测试质量限制" class="sidebar-link">16. 代码质量受测试质量限制</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_17-使用脚本可以编写很好的测试" class="sidebar-link">17. 使用脚本可以编写很好的测试</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_18-尝试使用rsc-io-script来创建基于脚本的测试用例" class="sidebar-link">18. 尝试使用rsc.io/script来创建基于脚本的测试用例</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_19-随着时间的推移改进你的测试" class="sidebar-link">19. 随着时间的推移改进你的测试</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#_20-追求持续部署" class="sidebar-link">20. 追求持续部署</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/golang/4_3_golang_test_eample.html#参考资料" class="sidebar-link">参考资料</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>实战</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/golang/actual_1_pprof.html" class="sidebar-link">pprof 实践</a></li><li><a href="/golang/actual_2_pro_problem.html" class="sidebar-link">问题定位</a></li><li><a href="/golang/actual_3_restart.html" class="sidebar-link">异常重启分析及定位</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-default-content content__default"><h1 id="实践及建议"><a href="#实践及建议" class="header-anchor">#</a> 实践及建议</h1> <p><img src="/4_3_golang_test_eample.assets/go_test.drawio.png" alt=""></p> <p>首先让我们来思考一下为什么我们要编写测试。一些有关编程的书中常讲到：<strong>测试是为了发现程序中的错误</strong>！比如Brian W. Kernighan和Rob Pike合著的《The Practice of Programming[5]》一书中讲到：“测试是一种坚定的、系统地尝试，旨在破坏你认为可以正确运行的程序”。</p> <p>在<strong>GopherCon Australia 2023</strong>中，<strong>Russ Cox</strong> (Go 核心开发团队的 Leader) 发表了 <strong>Go Testing By Example</strong> 的演讲，演讲是他在开发中，对测试的一些建议点，这里是这20个建议：</p> <ol><li>让添加测试变得更容易</li> <li>使用测试覆盖率来发现未经测试的代码</li> <li>覆盖率不能提代思考</li> <li>编写全面的测试</li> <li>建议将测试用例与测试逻辑分开</li> <li>寻找特殊情况</li> <li>如果你没有添加测试，那就没有修复bug</li> <li>并非所有东西都适合放在表中</li> <li>测试用例可以放在testdata文件</li> <li>与其他实现进行比较</li> <li>使测试失败易读</li> <li>如果答案可能会改变，编写代码来更新他们</li> <li>使用txtar进行多文件测试用例</li> <li>对现有格式进行注解(annotation)来创建测试迷你语言</li> <li>编写解析器和打印器来简化测试</li> <li>代码质量受测试质量限制</li> <li>使用脚本可以编写很好的测试</li> <li>尝试使用rsc.io/script来创建基于脚本的测试用例</li> <li>随着时间的推移改进你的测试</li> <li>追求持续部署</li></ol> <blockquote><p>如何编写好的测试？</p></blockquote> <p>但是**”测试是为了发现程序中的错误！“**对于今天在这里的大多数人来说，这不是我们编写测试的原因，<strong>因为我们不仅仅是程序员，我们是软件工程师</strong>。什么意思呢？我想说的是，软件工程就是当你编程时增加时间和其他程序员时所发生的事情。编程意味着让程序运行，你有一个问题需要解决，你编写一些代码，运行它，测试它，调试它，得到答案，你就完成了。这本已经相当困难了，而测试是该过程的重要组成部分。但软件工程意味着你在长期与其他人一起开发的程序中完成所有这些工作，这改变了测试的性质。</p> <blockquote><p>交互测试</p></blockquote> <p>我们来看这一样一个go开发二分查找的函数：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Find</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> target <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> compare CompareFunc<span class="token punctuation">)</span> <span class="token punctuation">(</span>index <span class="token builtin">int</span><span class="token punctuation">,</span> found <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	n <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+	left<span class="token punctuation">,</span> right <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token operator">-</span><span class="token number">1</span>
+	<span class="token keyword">for</span> left <span class="token operator">&lt;=</span> right <span class="token punctuation">{</span>
+		mid <span class="token operator">:=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+		<span class="token keyword">if</span> <span class="token function">compare</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+			right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> left<span class="token punctuation">,</span> left <span class="token operator">&lt;</span> n
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> CompareFunc <span class="token keyword">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">int</span>
+
+<span class="token keyword">func</span> <span class="token function">IntCompareFunc</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	<span class="token comment">// a &lt; b  返回 -1</span>
+	<span class="token comment">// a &gt; b  返回 1</span>
+	<span class="token comment">// a == b 返回 0</span>
+	intA<span class="token punctuation">,</span> intB <span class="token operator">:=</span> a<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span> b<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> intA <span class="token operator">&lt;</span> intB <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> intA <span class="token operator">&lt;</span> intB <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token number">1</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>下面是一个很好的二分搜索的交互测试：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">/*  交互示例，手动输入数组容量及目标值，检查是否查找正确
+	10 2
+	[0 10 20 30 40 50 60 70 80 90]
+			n=10: t=2: 10 false
+	10 30
+	[0 10 20 30 40 50 60 70 80 90]
+			n=10: t=30: 10 false
+*/</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span> <span class="token comment">// 1. 不段循环获取参数测试</span>
+		<span class="token keyword">var</span> n<span class="token punctuation">,</span> t <span class="token builtin">int</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> fmt<span class="token punctuation">.</span><span class="token function">Scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%d %d&quot;</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">,</span> <span class="token operator">&amp;</span>t<span class="token punctuation">)</span> <span class="token comment">// 2. 手动输入参数</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			<span class="token keyword">break</span>
+		<span class="token punctuation">}</span>
+		x <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token comment">// 3. 根据输入的第一个参数，决定数据大小</span>
+		<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token keyword">range</span> x <span class="token punctuation">{</span> <span class="token comment">// 4. 设置数组中每个数的值为下标的10倍</span>
+			x<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> i
+		<span class="token punctuation">}</span>
+		i<span class="token punctuation">,</span> ok <span class="token operator">:=</span> <span class="token function">Find</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> t<span class="token punctuation">,</span> IntCompareFunc<span class="token punctuation">)</span> <span class="token comment">// 5. 执行测试函数</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">// 6. 打印数组内容</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;/tn=%d: t=%d: %v %v/n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span>t<span class="token punctuation">,</span>i<span class="token punctuation">,</span>ok<span class="token punctuation">)</span> <span class="token comment">// 7. 查看被测函数是否符合预期</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>程序运行大致为以下七个步骤：</p> <ol><li>不段循环获取参数测试</li> <li>手动输入参数</li> <li>根据输入的第一个参数，决定数据大小</li> <li>设置数组中每个数的值为下标的10倍</li> <li>执行测试函数</li> <li>打印数组内容</li> <li>查看被测函数是否符合预期</li></ol> <p>这可能看起来不足为奇，但有多少人曾经通过运行这种交互式测试程序来测试生产环境用的代码(production code)？我们所有人都这样做过。当你独自编程时，像这样的交互式测试程序对于查找bug非常有用，到目前为止代码看起来可以正常工作。</p> <p>但这个交互式测试程序只适合独自编程时使用，如果你从事软件工程，意味着你要长时间保持程序的运行，并与其他人合作，那么这种类型的测试程序就不太有用了。</p> <blockquote><p>软件工程中的测试</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">var</span> findTests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span>
+	x   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>   <span class="token comment">// 需要查找的数组</span>
+	t   <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>     <span class="token comment">// 查找的目标数</span>
+	i   <span class="token builtin">int</span>             <span class="token comment">// 预期返回的index</span>
+	ok  <span class="token builtin">bool</span>            <span class="token comment">// 预期是否存在</span>
+<span class="token punctuation">}</span><span class="token punctuation">{</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">TestFind</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> e <span class="token operator">:=</span> <span class="token keyword">range</span> findTests <span class="token punctuation">{</span>
+		i<span class="token punctuation">,</span> ok <span class="token operator">:=</span> <span class="token function">Find</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>t<span class="token punctuation">,</span> IntCompareFunc<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> i <span class="token operator">!=</span> e<span class="token punctuation">.</span>i <span class="token operator">||</span> ok <span class="token operator">!=</span> e<span class="token punctuation">.</span>ok <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;Find(%v, %v) = %v, %v, want %v, %v&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>t<span class="token punctuation">,</span> i<span class="token punctuation">,</span> ok<span class="token punctuation">,</span> e<span class="token punctuation">.</span>i<span class="token punctuation">,</span> e<span class="token punctuation">.</span>ok<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>这是一个软件工程师的测试。你可以在不了解代码工作原理的情况下运行他。任何同事或任何计算机都可以使”go test“运行该测试，并可以立即知道测试是否通过。我肯定你已经见过这样的测试了。</p> <p>软件工程的理想是拥有能够捕捉到后续可能出现的所有错误的测试。如果你的测试达到了这个理想状态，那么当你的所有测试都通过时，你应该可以放心地自动将你的代码部署到生产环境中，这就是人们所称的<strong>持续部署</strong>。如果你还没有这样做，如果这个想法让你感到紧张，那么你应该问问自己为什么。要么你的测试已经足够好，要么它们还不够好。如果它们足够好，那为什么不这样做呢？而如果它们不够好，那就倾听这些疑虑，并找出它们告诉你哪些测试被遗漏了。</p> <p><img src="/4_3_golang_test_eample.assets/go_test2.drawio.png" alt=""></p> <p>这是<code>go.dev</code>也是go的官方网站，几年前使用的是手工部署，在没有测试及持续集成时，经常因为文档修改或者代码提交，导致网页崩溃。有时本地代码运行正常，但是线上代码运行异常，导致上线出现bug。</p> <p><img src="/4_3_golang_test_eample.assets/go_test3.drawio.png" alt=""></p> <p>几年前，我正在为新的Go官方网站go.dev编写代码。那时我们还在手动部署该网站，并且至少每周一次。我做的一项代码变更在我的机器上运行正常，但在部署到生产环境后便无法正常工作了，这着实令人非常烦恼和尴尬。解决办法是进行更好的测试和自动化的持续部署。现在，每当代码库中有新的提交时，我们使用一个Cloud Build程序来运行本地测试，并将代码推送到一个全新的服务器，然后运行一些只能在生产环境中运行的测试。如果一切正常，我们会将流量打到新的服务器。这样做改善了两点。首先，我不再导致令人尴尬的网站宕机。其次，每个人都不再需要考虑如何部署网站。如果他们想做变更，比如修复拼写错误或添加新的博客文章，他们只需发送更改请求，对其进行审核、测试和提交，然后自动化流程会完成其余工作。</p> <p>要确信当其他人更改代码时你的程序不会出错，要确信只要测试通过就可以随时将程序推送到生产环境，你需要一套非常好的测试。但是什么样的测试才算是好的呢？</p> <p>一般来说，使测试代码优秀的因素与使非测试代码优秀的因素是相同的：<strong>勤奋(hard work)、专注(attention)和时间(time)</strong>。对于编写优秀的测试代码，我没有什么“银弹式”的或硬性的规则，就像编写优秀的非测试代码一样。然而，我确实有一系列基于我们在Go上的良好实践的建议，我将在这次演讲中分享20个编写优秀测试代码的实用建议。</p> <h2 id="_1-让添加测试变得容易"><a href="#_1-让添加测试变得容易" class="header-anchor">#</a> 1. 让添加测试变得容易</h2> <p>如果添加一个新的测试用例很困难，你就不会去做。go中已经提供很好的测试支持。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestFoo</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> err <span class="token operator">:=</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        t<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>表格驱动测试</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">var</span> findTests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span>
+	x   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>   <span class="token comment">// 需要查找的数组</span>
+	t   <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>     <span class="token comment">// 查找的目标数</span>
+	i   <span class="token builtin">int</span>             <span class="token comment">// 预期返回的index</span>
+	ok  <span class="token builtin">bool</span>            <span class="token comment">// 预期是否存在</span>
+<span class="token punctuation">}</span><span class="token punctuation">{</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// *添加一行数据，即可新增用例* //</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">TestFind</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> e <span class="token operator">:=</span> <span class="token keyword">range</span> findTests <span class="token punctuation">{</span>
+		i<span class="token punctuation">,</span> ok <span class="token operator">:=</span> <span class="token function">Find</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>t<span class="token punctuation">,</span> IntCompareFunc<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> i <span class="token operator">!=</span> e<span class="token punctuation">.</span>i <span class="token operator">||</span> ok <span class="token operator">!=</span> e<span class="token punctuation">.</span>ok <span class="token punctuation">{</span>
+			t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">&quot;Find(%v, %v) = %v, %v, want %v, %v&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>t<span class="token punctuation">,</span> i<span class="token punctuation">,</span> ok<span class="token punctuation">,</span> e<span class="token punctuation">.</span>i<span class="token punctuation">,</span> e<span class="token punctuation">.</span>ok<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>我相信你已经了解了表驱动测试。我们鼓励使用表驱动测试，因为它们非常容易添加新的测试用例。这是我们之前看到的那个测试用例：假设我们只有这一个测试用例，然后我们想到了一个新的测试用例。我们根本不需要编写任何新的代码，只需要添加一行新的数据。如果目标是“使添加新的测试用例变得容易”，那么对于像这样的简单函数，向表中添加一行数据就足够了。不过，这也引出了一个问题：我们应该添加哪些测试用例？这将引导我们来到下一个建议。</p> <h2 id="_2-使用测试覆盖率来发现未经测试的代码"><a href="#_2-使用测试覆盖率来发现未经测试的代码" class="header-anchor">#</a> 2. 使用测试覆盖率来发现未经测试的代码</h2> <p><img src="https://raw.githubusercontent.com/muxicode/c153080686/main/Go/go_test4.drawio.png" alt=""></p> <p>Go内置了对测试覆盖率的支持。下面是它的样子：你可以运行“go test -coverprofile”来生成一个覆盖率文件，然后使用“go tool cover”在浏览器中查看它。</p> <p>通过可视化的覆盖率显示，我们可以通过添加测试用例，来提高覆盖率。以下我们继续添加两条用例来将覆盖率提高到100%。</p> <p><img src="/4_3_golang_test_eample.assets/go_test5.drawio.png" alt=""></p> <p>很棒。我们完成了吗？没有，这将引导我们到下一个实用建议。</p> <h2 id="_3-覆盖率不能提代思考"><a href="#_3-覆盖率不能提代思考" class="header-anchor">#</a> 3. 覆盖率不能提代思考</h2> <p>覆盖率对于指出你可能忽略的代码部分非常有用，但机械工具无法替代对于高难度的输入、代码中的微妙之处以及可能导致代码出错的情况进行的实际思考。即使代码拥有100%的测试覆盖率，仍然可能存在bug，而这段代码就存在bug。这个提示也适用于覆盖率驱动的模糊测试(fuzzing test)[6]。模糊测试只是尝试通过代码探索越来越多的路径，以增加覆盖率。模糊测试也非常有帮助，但模糊测试也不能替代思考。那么这里缺少了什么呢？</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">var</span> findTests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span>
+	x   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>   <span class="token comment">// 需要查找的数组</span>
+	t   <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>     <span class="token comment">// 查找的目标数</span>
+	i   <span class="token builtin">int</span>             <span class="token comment">// 预期返回的index</span>
+	ok  <span class="token builtin">bool</span>            <span class="token comment">// 预期是否存在</span>
+<span class="token punctuation">}</span><span class="token punctuation">{</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><img src="/4_3_golang_test_eample.assets/go_test6.drawio.png" alt=""></p> <p>需要注意的一点是，唯一一个无法找到目标的测试用例是一个空输入切片。我们应该检查在具值的切片中无法找到目标的情况。具体来说，我们应该检查当目标小于所有值、大于所有值和位于值的中间时会发生什么。所以让我们添加三个额外的测试用例。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">var</span> findTests <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">struct</span><span class="token punctuation">{</span>
+	x   <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>   <span class="token comment">// 需要查找的数组</span>
+	t   <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span>     <span class="token comment">// 查找的目标数</span>
+	i   <span class="token builtin">int</span>             <span class="token comment">// 预期返回的index</span>
+	ok  <span class="token builtin">bool</span>            <span class="token comment">// 预期是否存在</span>
+<span class="token punctuation">}</span><span class="token punctuation">{</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><img src="/4_3_golang_test_eample.assets/go_test7.drawio.png" alt=""></p> <p>注意添加新测试用例是多么容易。如果你想到一个你的代码可能无法正确处理的情况，添加该测试用例应该尽可能简单，否则你就会觉得麻烦而不去添加。如果太困难，你就不会添加。你还可以看到我们正在开始列举这个函数可能出错的所有重要路径。这些测试对未来的开发进行了约束，以确保二分查找至少能够正常工作。当我们运行这些测试时，它们失败了。返回的索引i是正确的，但表示target是否找到的布尔值是错误的。所以让我们来看看这个问题。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Find</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> target <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> compare CompareFunc<span class="token punctuation">)</span> <span class="token punctuation">(</span>index <span class="token builtin">int</span><span class="token punctuation">,</span> found <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	n <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+	left<span class="token punctuation">,</span> right <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token operator">-</span><span class="token number">1</span>
+	<span class="token keyword">for</span> left <span class="token operator">&lt;=</span> right <span class="token punctuation">{</span>
+		mid <span class="token operator">:=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+		<span class="token keyword">if</span> <span class="token function">compare</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+			left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// return left, left &lt; n 缺少了校验left位置的数字是否与target相等了</span>
+	<span class="token keyword">return</span> left<span class="token punctuation">,</span> left <span class="token operator">&lt;</span> n <span class="token operator">&amp;&amp;</span> <span class="token function">IntCompareFunc</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p><img src="/4_3_golang_test_eample.assets/go_test8.drawio.png" alt=""></p> <p>阅读代码，我们发现返回语句中的布尔表达式是错误的。它只检查索引是否在范围内。它还需要检查该索引处的值是否等于target值。所以我们可以进行这个更改，如图所示，然后测试通过了。现在我们对这个测试感到非常满意：覆盖率是良好的，我们也经过了深思熟虑。还能做什么呢？</p> <h2 id="_4-编写全面的测试"><a href="#_4-编写全面的测试" class="header-anchor">#</a> 4. 编写全面的测试</h2> <p>如果你能够测试函数的每一个可能输入，那就应该这样做。但现实中可能无法做到，但通常你可以在一定约束条件下测试特定数量以内的所有输入。</p> <p>假设我们写了一个插入排序的算法：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">SelectSort</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	N <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> N <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">var</span> minIndex <span class="token builtin">int</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 0 ~ N-1</span>
+		<span class="token comment">// 1 ~ N-1</span>
+		<span class="token comment">// 2 ~ N-1</span>
+		<span class="token comment">// i ~ N-1</span>
+		minIndex <span class="token operator">=</span> i <span class="token comment">// 当前只看过i位置的值</span>
+		<span class="token keyword">for</span> j<span class="token operator">:=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>N<span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>
+			<span class="token comment">// 寻找剩下的数中最小值的位置</span>
+			<span class="token keyword">if</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+				minIndex <span class="token operator">=</span> j
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">// 交换到目标位置</span>
+		<span class="token function">Swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> i<span class="token punctuation">,</span> minIndex<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Swap</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>我们怎么测才能算全面的测试了呢？，我们看看下面的测试：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestSelectSort</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	a <span class="token operator">:=</span> assert<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+	testTime <span class="token operator">:=</span> <span class="token number">50000</span>       <span class="token comment">// 测试次数</span>
+	testArrMaxLen <span class="token operator">:=</span> <span class="token number">100</span>    <span class="token comment">// 随机数组的最大长度[0, testArrMaxLen)</span>
+	testArrMaxNum <span class="token operator">:=</span> <span class="token number">1000</span>   <span class="token comment">// 随机数组中最大的数字[0, testArrMaxNum)</span>
+	randomCreator <span class="token operator">:=</span> utility<span class="token punctuation">.</span><span class="token function">GetRandomNumCreator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 初始化随机数组生成器</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>testTime<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span> <span class="token comment">// 开始测试，总共测试50万次</span>
+		<span class="token comment">// 生成一个 长度为 [0, testArrMaxLen) 数字大小为 [0, testArrMaxNum) 的随机数组</span>
+		ranArr <span class="token operator">:=</span> randomCreator<span class="token punctuation">.</span><span class="token function">GetRandomArr</span><span class="token punctuation">(</span>testArrMaxNum<span class="token punctuation">,</span> testArrMaxLen<span class="token punctuation">)</span>
+		<span class="token comment">// 拷贝数组用于进行校验</span>
+		arr1 <span class="token operator">:=</span> utility<span class="token punctuation">.</span><span class="token function">CopyArr</span><span class="token punctuation">(</span>ranArr<span class="token punctuation">)</span>
+		arr2 <span class="token operator">:=</span> utility<span class="token punctuation">.</span><span class="token function">CopyArr</span><span class="token punctuation">(</span>ranArr<span class="token punctuation">)</span>
+		<span class="token function">SelectSort</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span> <span class="token comment">// 我们自己实现的选择排序，对arr1进行排序</span>
+		sort<span class="token punctuation">.</span><span class="token function">Ints</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span>  <span class="token comment">// 系统严格正确的排序方法，对arr2进行排序</span>
+		a<span class="token punctuation">.</span><span class="token function">True</span><span class="token punctuation">(</span>utility<span class="token punctuation">.</span><span class="token function">ArrEqual</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 如果我们的排序的方式与严格正确的排序不一致，则我们的算法失败</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>这种方法是编写一个与真正实现不同的参考实现。理想情况下，参考实现应该<strong>明显是正确的</strong>，但它只需与真实实现采用不同的方法即可。通常，<strong>参考实现将是一种更简单、更慢的方法</strong>，因为如果它更简单和更快，你会将其用作真正的实现。</p> <p>非常适用于性能优化。如：</p> <ul><li>串行转并行，架构章节中的解析服务实践，如果以开始实现了一套串行的实现，并采用随机参数覆盖，那么演进过程中会更容易提前发现问题。</li> <li>老系统未有测试用例覆盖，如何演进？
+<ul><li>记录老系统的核心功能，将其现有的输入输出保存为测试用例</li> <li>尽可能添加足够的测试用例，保证系统稳定重构</li></ul></li></ul> <blockquote><p>随机数组生成器</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> utility
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;math/rand&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+
+<span class="token keyword">func</span> <span class="token function">GetRandomNumCreator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> RandomNumCreator <span class="token punctuation">{</span> <span class="token comment">// 工厂函数，获取我们的随机数生成器</span>
+	<span class="token keyword">return</span> RandomNumCreator<span class="token punctuation">{</span>
+		time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">UnixNano</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> RandomNumCreator <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Seed <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>RandomNumCreator<span class="token punctuation">)</span> <span class="token function">GetRandom</span><span class="token punctuation">(</span>maxNum <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+	rand<span class="token punctuation">.</span><span class="token function">Seed</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span>Seed<span class="token punctuation">)</span>
+	r<span class="token punctuation">.</span>Seed<span class="token operator">++</span>  <span class="token comment">// 每次生成随机数改变我们的种子</span>
+	<span class="token keyword">return</span> rand<span class="token punctuation">.</span><span class="token function">Intn</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>r <span class="token operator">*</span>RandomNumCreator<span class="token punctuation">)</span><span class="token function">GetRandomArr</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">,</span> maxLen <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
+	arrLen <span class="token operator">:=</span> r<span class="token punctuation">.</span><span class="token function">GetRandom</span><span class="token punctuation">(</span>maxLen<span class="token punctuation">)</span>
+	arr <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> arrLen<span class="token punctuation">)</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">0</span> <span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arrLen<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">GetRandom</span><span class="token punctuation">(</span>maxNum<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><blockquote><p>工具包</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> arr
+
+<span class="token keyword">func</span> <span class="token function">Swap</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">CopyArr</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
+	ans <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> arr <span class="token punctuation">{</span>
+		ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Equal</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2 <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token function">len</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token boolean">false</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> arr1 <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> v <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token boolean">false</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">IsSorted</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token boolean">true</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> i<span class="token operator">:=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token boolean">false</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h2 id="_5-建议将测试用例与测试逻辑分开"><a href="#_5-建议将测试用例与测试逻辑分开" class="header-anchor">#</a> 5. 建议将测试用例与测试逻辑分开</h2> <p>在表驱动测试中，测试用例在表中，而处理这些测试用例的循环则是测试逻辑。正如我们刚才所看到的，将它们分开可以让你在多个上下文中使用相同的测试用例。那么现在我们的二分查找函数完成了吗？事实证明没有，还有一个bug存在，这引导我们到下一个问题。</p> <h2 id="_6-寻找特殊情况"><a href="#_6-寻找特殊情况" class="header-anchor">#</a> 6. 寻找特殊情况</h2> <p>即使我们对所有小规模情况进行了全面测试，仍然可能存在潜在的bug：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Find</span><span class="token punctuation">(</span>arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> target <span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> compare CompareFunc<span class="token punctuation">)</span> <span class="token punctuation">(</span>index <span class="token builtin">int</span><span class="token punctuation">,</span> found <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	n <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+	left<span class="token punctuation">,</span> right <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token operator">-</span><span class="token number">1</span>
+	<span class="token keyword">for</span> left <span class="token operator">&lt;=</span> right <span class="token punctuation">{</span>
+		mid <span class="token operator">:=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span>
+		<span class="token keyword">if</span> <span class="token function">compare</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+			left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+			right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// return left, left &lt; n 缺少了校验left位置的数字是否与target相等了</span>
+	<span class="token keyword">return</span> left<span class="token punctuation">,</span> left <span class="token operator">&lt;</span> n <span class="token operator">&amp;&amp;</span> <span class="token function">IntCompareFunc</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>现在，这里再次展示了代码。还剩下一个bug。</p> <p>有人看出bug在哪里了吗？如果你没有看到，没关系。这是一个非常特殊的情况，人们花了几十年的时间才注意到它。Knuth告诉我们，尽管二分查找在1946年发表，但第一个正确的二分查找实现直到1964年才发表。但是这个bug直到2006年才被发现。</p> <p>bug是这样的，如果切片中的元素数量非常接近int的最大值，那么i+j会溢出，因此i+j/2就不是切片中间位置的正确计算方法了。这个bug于2006年在一个使用64位内存和32位整数的C程序中被发现，这个程序用于索引包含超过10亿个元素的数组。在Go语言中，这种特定组合基本上不会发生，因为我们要求使用64位内存时，也要使用64位整数，这正是为了避免这种bug。但是，由于我们了解到这个bug，而且你永远不知道你或其他人将来如何修改代码，所以避免这个bug是值得的。</p> <p>有两种常见的修复方法可以避免数学计算溢出。速度稍快的方法是进行无符号除法。假设我们修复了这个问题。<strong>现在我们完成了吗？不。因为我们还没有编写测试。</strong></p> <div class="language-go line-numbers-mode"><pre class="language-go"><code>m <span class="token operator">=</span><span class="token function">int</span><span class="token punctuation">(</span><span class="token function">uint</span><span class="token punctuation">(</span>i<span class="token operator">+</span>j<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_7-如果你没有添加测试-那就没有修复bug"><a href="#_7-如果你没有添加测试-那就没有修复bug" class="header-anchor">#</a> 7. 如果你没有添加测试，那就没有修复bug</h2> <p>这句话在两个不同的方面下都是正确的。</p> <p>第一个是编程方面。如果你没有进行测试，bug可能根本没有被修复。这听起来可能很愚蠢，但你有多少次遇到过这种情况？有人告诉你有一个bug，你立即知道修复方法。你进行了更改，并告诉他们问题已经修复。然后他们却回来告诉你，不，问题还存在。编写测试可以避免这种尴尬。你可以说，很抱歉我没有修复你的bug，但我确实修复了一个bug，并会再次查看这个问题。</p> <p>第二个是软件工程方面，即“时间和其他程序员”的方面。bug并不是随机出现的。在任何给定的程序中，某些错误比其他错误更有可能发生。因此，如果你犯了一次这个错误，你或其他人很可能在将来再次犯同样的错误。如果没有测试来阻止它们，bug就会重新出现。</p> <p>现在，这个特定的测试很难编写，因为输入范围非常大，但即使测试很难编写，这个建议仍然成立。实际上，在这种情况下，这个建议通常更为正确。</p> <p><img src="/4_3_golang_test_eample.assets/go_test9.drawio.png" alt=""></p> <p>为了测试这种情况，一种可能性是编写一个仅在32位系统上运行的测试，对两千兆字节的uint8进行二分查找。但这需要大量的内存，并且我们现在已经没有多少32位系统了。对于测试这种难以找到的bug，通常还有更巧妙的解决方案。我们可以创建一个空结构体的切片，无论它有多长，都不会占用内存。这个测试在一个包含MaxInt个空结构体的切片上调用Find函数，寻找一个空结构体作为目标，但是它传入了一个总是返回-1的比较函数，声称切片元素小于目标。这将使二分查找探索越来越大的切片索引，从而导致溢出问题。如果我们撤销我们的修复并运行这个测试，那么测试肯定会失败。</p> <h2 id="_8-并非所有东西都适合放在表中"><a href="#_8-并非所有东西都适合放在表中" class="header-anchor">#</a> 8. 并非所有东西都适合放在表中</h2> <p>这个特殊情况不适合放在表中，但这没关系。但是很多东西确实适合放在表中。</p> <p><img src="/4_3_golang_test_eample.assets/go_test10.drawio.png" alt=""></p> <p>这是我最喜欢的一个测试表之一。它来自fmt.Printf的测试用例。每一行都是一个printf格式、一个值和预期的字符串。真实的表太大了，无法放在幻灯片上，但这里摘录了一些表中的代码行。</p> <p><img src="/4_3_golang_test_eample.assets/go_test11.drawio.png" alt=""></p> <p>如果你仔细阅读整个表，你会看到其中一些明显是修复bug的内容。记住<strong>建议7：如果你没有添加测试，那就没有修复bug</strong>。表格使得添加这些测试变得非常简单，并且添加这些测试可以确保这些bug不会再次出现。</p> <p><img src="/4_3_golang_test_eample.assets/go_test12.drawio.png" alt=""></p> <p>表格是将测试用例与测试逻辑分离并且方便添加新的测试用例的一种方法，但有时你会有很多测试，甚至写Go语法的开销也是不必要的。例如，这里是strconv包的一个测试文件，用于测试字符串与浮点数之间的转换。你可能认为编写解析器来处理这个输入太麻烦了，但一旦你知道了如何处理，其实并不需要太多工作，而且定义测试专用的小型语言实际上非常有用。</p> <p><img src="https://github.com/muxicode/c153080686/blob/main/Go/go_test13.drawio.png?raw=true" alt=""></p> <p>因此，我将快速介绍一下解析器，以展示它并不复杂。我们读取文件，然后将其分割成行。对于每一行，我们计算错误消息的行号。切片元素0表示第1行。我们去掉行尾的任何注释。如果行为空白行，我们跳过它。到目前为止，这是相当标准的样板代码。现在是重点。我们将行分割为字段，并提取出四个字段。</p> <p><img src="/4_3_golang_test_eample.assets/go_test14.drawio.png" alt=""></p> <p>然后根据类型字段在float32或float64的数学运算中进行转换。myatof64基本上是strconv.ParseFloat64的变体，不同之处在于它处理允许我们按照从论文中复制的方式编写测试用例的十进制p格式。</p> <p><img src="/4_3_golang_test_eample.assets/go_test15.drawio.png" alt=""></p> <p>最后，如果结果不是我们想要的，我们打印错误。这非常类似于基于表格的测试。我们只是解析文件，而不是遍历表格。它无法放在一个幻灯片上，但在开发时它可以放在一个屏幕上。</p> <h2 id="_9-测试用例可以放在testdata文件"><a href="#_9-测试用例可以放在testdata文件" class="header-anchor">#</a> 9. 测试用例可以放在testdata文件</h2> <p>测试不必都要放在源代码中。</p> <p><img src="/4_3_golang_test_eample.assets/go_test16.drawio.png" alt=""></p> <p>作为另一个例子，Go正则表达式包包含了一些从AT&amp;T POSIX正则表达式库复制过来的testdata文件。我不会在这里详细介绍，但我很感激他们选择为该库使用基于文件的测试，因为这意味着我可以重用testdata文件，将其用于Go。这是另一种ad-hoc格式，但它易于解析和编辑。</p> <h2 id="_10-与其他实现进行比较"><a href="#_10-与其他实现进行比较" class="header-anchor">#</a> 10. 与其他实现进行比较</h2> <p>与AT&amp;T正则表达式的测试用例进行比较有助于确保Go的包以完全相同的方式处理各种边缘情况。我们还将Go的包与C++的RE2库进行比较。为了避免需要编译C++代码，我们以记录所有测试用例的方式运行它，并将该文件作为testdata提交到Go中。</p> <p><img src="/4_3_golang_test_eample.assets/go_test17.drawio.png" alt=""></p> <p><img src="/4_3_golang_test_eample.assets/go_test18.drawio.png" alt=""></p> <p>在文件中存储测试用例的另一种方法是使用成对的文件，一个用于输入，一个用于输出。为了实现go test -json，有一个名为test2json的程序，它读取测试输出并将其转换为JSON输出。测试数据是成对的文件：测试输出和JSON输出。</p> <p><img src="/4_3_golang_test_eample.assets/go_test19.drawio.png" alt=""></p> <p>这是最简短的文件。测试输出位于顶部，它是test2json的输入，应该生成底部的JSON输出。以下是实现，展示了从文件中读取测试数据的惯用方法。</p> <p><img src="/4_3_golang_test_eample.assets/go_test20.drawio.png" alt=""></p> <p>我们首先使用filepath.Glob查找所有的testdata。如果失败或找不到任何文件，我们会报错。否则，我们循环遍历所有文件。对于每个文件，我们通过获取基本文件名（不包括testdata/目录名和文件后缀）来创建子测试名称。然后我们用该名称运行一个子测试。如果你的测试用例足够复杂，每个文件一个子测试通常是有意义的。这样，当一个测试用例失败时，你可以使用go test -run只运行特定的文件。</p> <p><img src="/4_3_golang_test_eample.assets/go_test21.drawio.png" alt=""></p> <p>对于实际的测试用例，我们只需要读取文件，运行转换器，并检查结果是否匹配。对于检查，我最开始使用了bytes.Equal，但随着时间的推移，编写一个自定义的diffJSON函数来解析两个JSON结果并打印实际差异的详细说明变得更有价值。</p> <h2 id="_11-使测试失败易读"><a href="#_11-使测试失败易读" class="header-anchor">#</a> 11. 使测试失败易读</h2> <p>回顾一下，我们已经在二分查找中看到了这一点。</p> <p><img src="/4_3_golang_test_eample.assets/go_test22.drawio.png" alt=""></p> <p>我认为我们都同意粉色框不是一个好的失败。但是黄色框中有两个细节使得这些失败尤为出色。首先，我们在单个if语句中检查了两个返回值，然后在简洁的单行中打印了完整的输入和输出。其次，我们不会在第一个失败处停止。我们使用t.Error而不是t.Fatal，以便执行更多的测试用例。结合起来，这两个选择让我们可以看到每个失败的完整细节，并在多个失败中寻找模式。</p> <p><img src="/4_3_golang_test_eample.assets/go_test23.drawio.png" alt=""></p> <p>回到test2json，这是它的测试失败的情况。它计算出哪些事件是不同的，并清晰地标记它们。重要的是，在你编写测试时，你不必写这种复杂的代码。bytes.Equal在开始时是可以的，并且可以专注于代码。但是随着失败变得更加微妙，并且你发现自己花费太多时间只是阅读失败输出，这是一个好的信号，它告诉你是时候花一些时间使其更易读了。此外，如果确切的输出发生更改并且你需要更正所有的测试数据文件，这种类型的测试可能会有点麻烦。</p> <h2 id="_12-如果答案可能会改变-编写代码来更新他们"><a href="#_12-如果答案可能会改变-编写代码来更新他们" class="header-anchor">#</a> 12. 如果答案可能会改变，编写代码来更新他们</h2> <p>通常的做法是在测试中添加一个“-update”标志。这是test2json的更新代码示例。</p> <p><img src="/4_3_golang_test_eample.assets/go_test24.drawio-170921668592348.png" alt=""></p> <p>测试定义了一个新的“-update标志”。当标志为true时，测试将计算的答案写入答案文件，而不是调用diffJSON。现在，当我们对JSON格式进行有意的更改时，“go test -update”会更新所有答案。你还可以使用版本控制工具如“git diff”来审查更改，并在看起来不正确时撤销更改。在谈论测试文件的主题上，有时将一个测试用例分割成多个文件会很烦人。如果我今天编写这个测试，我就不会这样做。</p> <h2 id="_13-使用txtar进行多文件测试用例"><a href="#_13-使用txtar进行多文件测试用例" class="header-anchor">#</a> 13. 使用txtar进行多文件测试用例</h2> <p>Txtar是我们几年前专门为解决多文件测试用例问题而设计的一种新的存档格式。其Go解析器位于golang.org/x/tools/txtar中，我还找到了用Ruby、Rust和Swift编写的解析器。</p> <p><img src="/4_3_golang_test_eample.assets/go_test25.drawio.png" alt=""></p> <p>Txtar的设计有三个目标。首先，足够简单，可以手动创建、编辑和阅读。其次，能够存储文本文件的树形结构，因为我们在go命令中需要这个功能。第三，能够在git历史记录和代码审查中进行良好的差异比较。其他的包括成为完全通用的存档格式、存储二进制数据、存储文件模式(file mode)、存储符号链接等都不是目标，因为存档文件(archived file)格式往往变得十分复杂，而复杂性与第一个目标直接相矛盾。这些目标和非目标导致了一个非常简单的格式。下面是一个示例：txtar文件以注释开头。</p> <p><img src="/4_3_golang_test_eample.assets/go_test26.drawio.png" alt=""></p> <p>本例中为&quot;Here are some greetings.&quot;，然后通常会有零个或多个文件，每个文件由形如&quot;-- 文件名 --&quot;的行引入。这个存档包含两个单行文件，hello和g'day。就是这样，这就是整个格式。没有转义，没有引用，没有对二进制数据的支持，没有符号链接，没有可能的语法错误，没有复杂之处。下面是一个在测试数据中使用txtar文件的真实示例。</p> <p><img src="/4_3_golang_test_eample.assets/go_test27.drawio.png" alt=""></p> <p>该测试数据用于计算差异的包：在这种情况下，注释对于人们来说很有用，用于记录正在进行的测试，然后在这个测试中，每个用例由两个文件和它们的差异后面跟随的两个文件组成。</p> <p>使用txtar文件几乎和编写它们一样简单。下面是我们之前查看的diff包的测试。</p> <p><img src="/4_3_golang_test_eample.assets/go_test28.drawio.png" alt=""></p> <p>这是通常的基于文件的循环，但我们在文件上调用了txtar.ParseFile。然后我们坚持认为存档包含三个文件，第三个文件的名称为diff。然后我们对两个输入文件进行差异比较，并检查结果是否与预期的差异匹配。</p> <p><img src="/4_3_golang_test_eample.assets/go_test29.drawio.png" alt=""></p> <p>这就是整个测试。你可能已经注意到，在使用之前，文件数据会被传递给&quot;clean&quot;函数进行清理。clean函数允许我们在不使txtar格式本身复杂化的情况下添加一些特定于diff的扩展。</p> <p><img src="/4_3_golang_test_eample.assets/go_test30.drawio.png" alt=""></p> <p>第一个扩展处理以空格结尾的行，在差异中确实会出现这种情况。许多编辑器希望去除这些尾随空格，因此测试允许在txtar的数据行末尾放置 ，并且函数会删除该。在这个示例中，标记的行需要以一个空格结尾。</p> <p><img src="/4_3_golang_test_eample.assets/go_test31.drawio.png" alt=""></p> <p>此外，txtar要求文件中的每一行都以换行符结尾，但我们希望测试diff在不以换行符结尾的文件上的行为。因此，测试允许在结尾处放置一个字面意义上的“尖号D”。clean函数会删除“尖号D”和其后的换行符。在这种情况下，'new'文件最终没有最后的换行符，而diff正确报告了这一点。因此，尽管txtar非常简单，你也可以轻松地在其上添加自己的格式调整。当然，重要的是要记录这些调整，以便下一个参与测试的人能够理解它们。</p> <h2 id="_14-对现有格式进行注解-annotation-来创建测试迷你语言"><a href="#_14-对现有格式进行注解-annotation-来创建测试迷你语言" class="header-anchor">#</a> 14. 对现有格式进行注解(annotation)来创建测试迷你语言</h2> <p>对现有格式进行注释，比如在txtar中添加 $ 和尖号D，是一个强大的工具。</p> <p><img src="/4_3_golang_test_eample.assets/go_test32.drawio.png" alt=""></p> <p>这里是对现有格式进行注释的一个示例。这是Go类型检查器(type checker)的一个测试。这是一个普通的Go输入文件，但是期望的类型错误已经以/<em>ERROR</em>/注释的形式添加了进去。我们使用/*注释，这样我们就可以将它们放置在错误报告的确切位置上。测试运行类型检查器，并检查它是否在预期位置产生了预期的消息，并且没有产生任何意外的消息。下面是类型检查器的另一个示例。</p> <p><img src="/4_3_golang_test_eample.assets/go_test33.drawio.png" alt=""></p> <p>Ivy是一个交互式计算器。你输入程序，通常是简单的表达式，它会打印出答案。测试用例是看起来像这样的文件：未缩进的行是Ivy的输入，缩进的行是注释，指示Ivy应该打印出预期的输出。编写新的测试用例再也没有比这更简单的了。这些带注释的格式扩展了现有的解析器和打印器(printer)。有时编写自己的解析器和打印器是有帮助的。毕竟，大多数测试涉及创建或检查数据，当你可以使用方便的形式处理数据时，这些测试总是可以更好。</p> <h2 id="_15-编写解析器和打印器来简化测试"><a href="#_15-编写解析器和打印器来简化测试" class="header-anchor">#</a> 15. 编写解析器和打印器来简化测试</h2> <p>这些解析器和打印器不一定是用于testdata中数据文件的独立脚本。你也可以在常规的Go代码中使用它们。</p> <p><img src="/4_3_golang_test_eample.assets/go_test34.drawio.png" alt=""></p> <p>这是一个运行deps.dev代码的一个测试片段。这个测试设置了一些数据库表行。它调用了一个使用数据库并正在进行测试的函数。然后它检查数据库是否包含了预期的结果。Insert和Want调用使用了一个专门为这些测试编写的用于数据库内容的迷你语言。解析器就像它看起来的那样简单：它将输入分割成行，然后将每行分割成字段。第一行给出了列名。就是这样。这些字符串中的确切间距并不重要，但是如果它们都对齐，当然看起来更美观。</p> <p><img src="/4_3_golang_test_eample.assets/go_test35.drawio.png" alt=""></p> <p>因此，为了支持这个测试，deps.dev团队还有一个专门为这些测试编写的代码格式化程序。它使用Go标准库解析测试源代码文件。然后它遍历Go语法树，查找Insert或Want的调用。它提取字符串参数并将它们解析为表格。然后它将表格重新打印为字符串，将字符串重新插入语法树中，并重新打印语法树为Go源代码。这只是gofmt的一个扩展版本，使用了与gofmt相同的包。我这里不会展示这些代码，但代码量其实不多。</p> <p><img src="/4_3_golang_test_eample.assets/go_test36.drawio.png" alt=""></p> <p>解析器和打印器需要花费了一些时间来编写。但现在，每当有人编写一个测试时，编写测试就更容易了。每当一个测试失败或需要更新时，调试也更容易了。如果你正在进行软件工程，收益将随着程序员数量和项目生命周期的增加而扩大。对于deps.dev来说，已经花费在这个解析器和打印器上的时间已经多次节省了。或许更重要的是，因为测试更容易编写，你可能会写更多的测试，这将导致更高质量的代码。</p> <h2 id="_16-代码质量受测试质量限制"><a href="#_16-代码质量受测试质量限制" class="header-anchor">#</a> 16. 代码质量受测试质量限制</h2> <p>如果你不能编写高质量的测试，你将无法编写足够的测试，并且最终无法得到高质量的代码。</p> <p><img src="/4_3_golang_test_eample.assets/go_test37.drawio.png" alt="">现在我想向你展示一些我曾经参与的最高质量的测试，这些测试是针对go命令的测试。它们将我们到目前为止看到的许多思想汇集在一起。这是一个简单但真实的go命令测试。这是一个txtar输入，其中包含一个名为hello.go的文件。archive comment是一个逐行简单命令语言编写的脚本。在脚本中，&quot;env&quot;设置一个环境变量来关闭Go module机制。井号引入注释。而&quot;go&quot;运行go命令，它应该运行hello world。该程序应该将hello world打印到标准错误中。&quot;stderr&quot;命令检查前一个命令打印的标准错误流是否与正则表达式匹配。因此，这个测试运行&quot;go run hello.go&quot;并检查它是否将hello world打印到标准错误中。</p> <p><img src="/4_3_golang_test_eample.assets/go_test38.drawio.png" alt=""></p> <p>这里是另一个真实的测试。请注意底部的a.go是一个无效的程序，因为它导入了一个空字符串。第一行开头的感叹号是一个&quot;非&quot;操作符。NOT go list a.go意味着go list a.go应该失败。下一行的&quot;NOT stdout .&quot;表示标准输出不应该有与正则表达式&quot;.&quot;匹配的内容，也就是不应该打印任何文本。接下来，标准错误流应该有一个无效的导入路径的消息。最后，不应该发生panic。</p> <h2 id="_17-使用脚本可以编写很好的测试"><a href="#_17-使用脚本可以编写很好的测试" class="header-anchor">#</a> 17. 使用脚本可以编写很好的测试</h2> <p>这些脚本使添加新的测试用例变得非常容易。</p> <p><img src="/4_3_golang_test_eample.assets/go_test39.drawio.png" alt=""></p> <p>这是我们最小的测试用例：两行代码。最近我在破坏了unknown command的错误消息后添加了这个测试用例。总共，我们有超过700个这样的脚本测试，从两行到500多行不等。</p> <p><img src="/4_3_golang_test_eample.assets/go_test40.drawio.png" alt=""></p> <p>这些测试脚本取代了一个更传统的使用方法(method)的测试框架。这张幻灯片展示了其中一个真实的测试，前面是脚本编写的测试用例，后面是等价的Go编写的传统测试代码。细节并不重要，只需注意脚本要比传统测试方法更容易编写和理解。</p> <h2 id="_18-尝试使用rsc-io-script来创建基于脚本的测试用例"><a href="#_18-尝试使用rsc-io-script来创建基于脚本的测试用例" class="header-anchor">#</a> 18. 尝试使用rsc.io/script来创建基于脚本的测试用例</h2> <p>距离我们创建go脚本测试已经过去了大约五年时间，我们对这个特定的脚本引擎非常满意。Bryan Mills花了很多时间为它提供了一个非常好的API，早在11月份，我将其发布到了rsc.io/script以供导入使用。现在我说&quot;尝试&quot;是因为它还比较新，并且具有讽刺意味的是，它本身的测试还不够多，因为可导入的包只有几周的历史，但你仍然可能会发现它很有用。当我们对其有更多经验时，我们可能会将其放在更官方的位置上。如果你尝试了它，请告诉我结果如何。</p> <p><img src="/4_3_golang_test_eample.assets/go_test41.drawio.png" alt=""></p> <p>提取脚本引擎的动机是为了在go命令测试的不同部分中重用它。这个脚本正在准备一个包含我们想要在常规go命令脚本测试中导入的模块的Git存储库(repo)。你可以看到它设置了一些环境变量，运行了真正的git init，设置了时间，在存储库中运行了更多的git命令来添加一个hello world文件，然后检查我们得到了我们想要的存储库。再一次，测试并不是从一开始就是这样的，这引出了下一个实用建议。</p> <h2 id="_19-随着时间的推移改进你的测试"><a href="#_19-随着时间的推移改进你的测试" class="header-anchor">#</a> 19. 随着时间的推移改进你的测试</h2> <p>最初，我们没有这些存储库脚本。我们手工创建小型测试存储库，并将它们发布到GitHub、Bitbucket和其他托管服务器，具体取决于我们所需的版本控制系统。这种方法还算可以，但这意味着如果这些服务器中的任何一个宕机，测试就会失败。最终，我们花时间构建了自己的云服务器，可以为每个版本控制系统提供存储库服务。现在，我们手工创建存储库，将其压缩并复制到服务器上。这样做更好，因为现在只有一个服务器可能会使我们的测试失败，但有时也会出现网络问题。测试存储库本身也没有进行版本控制，并且与使用它们的测试不在一起，这也是一个问题。作为测试的一部分，基于脚本的版本完全可以在本地构建和提供这些存储库。而且现在很容易找到、更改和审查存储库的描述。这需要很多基础设施，但也测试了很多代码。如果你只有10行代码，你完全<strong>不需要</strong>拥有数千行的测试框架。但是如果你有十万行代码，这大约是go命令的规模，那么开发几千行代码来改进测试，甚至是一万行代码，几乎可以肯定是一个不错的投资。</p> <h2 id="_20-追求持续部署"><a href="#_20-追求持续部署" class="header-anchor">#</a> 20. 追求持续部署</h2> <p>也许出于策略原因，你无法每次都实际部署那些通过了所有测试的代码提交，但无论如何都要追求这一目标。正如我在演讲开始时提到的，对于持续部署的任何疑问都是有益的小声音，它们告诉你需要更好的测试。而更好的测试的关键当然是让添加新测试变得容易。即使你从未实际启用持续部署，追求这一目标也可以帮助你保持诚实，提高测试的质量和代码的质量。</p> <p><img src="/4_3_golang_test_eample.assets/go_test42.drawio.png" alt=""></p> <p>我之前提到过<strong>Go官方网站</strong>[7]使用了持续部署。在每次提交时，我们运行测试来决定是否可以部署最新版本的代码并将流量路由到它。此时，你不会感到惊讶，我们为这些测试编写了一个测试脚本语言。上图是它们的样子。每个测试以一个HTTP请求开始。这里我们GET主页go.dev。然后对响应进行断言。每个断言的形式为&quot;字段(field)，运算符(operator)，值(value)&quot;。这里字段(field)是body，运算符(operator是contains，值(value)是body中必须包含的字面值。这个测试检查页面是否渲染过了，因此它检查基本文本以及一个副标题。为了更容易编写测试，根本没有引号。值就是运算符后面的其余部分。接下来是另一个测试用例。出于历史原因，/about需要重定向到pkg.go.dev。</p> <p><img src="/4_3_golang_test_eample.assets/go_test43.drawio.png" alt=""></p> <p>我们还有一些无法在本地运行但在生产环境中仍值得运行的测试，因为我们将实时流量迁移到服务器之前需要进行这些测试。下面是其中两个。这些依赖于对生产环境playground后端的网络访问。这些案例除了URL不同之外都是相同的。这不是一个非常易读的测试，因为这些是我们唯一的POST测试。如果我们添加了更多这样的测试，我可能会花时间使它们看起来更好，以随着时间推移改进你的测试。但是现在它们还可以，它们起到了重要的作用。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>最后一个想法。我相信你经历过追踪错误并最终发现一个重要的代码片段是错误的情况。但不知何故，这个代码片段的错误大部分时间都无关紧要，或者错误被其他错误的代码抵消了。你可能会想：“这段代码以前是怎么工作的？”如果是你自己编写的代码，你可能会认为自己很幸运。如果是别人编写的代码，你可能会对他们的能力产生质疑，然后又认为他们很幸运。但是，大多数时候，答案并不是运气。对于这段代码为什么会工作的问题的答案几乎总是：因为它有一个测试。当然，代码是错误的，但测试检查了它足够正确，使系统的其他部分可以正常工作，这才是最重要的。也许编写这段代码的人确实是一个糟糕的程序员，但他们是一个优秀的软件工程师，因为他们编写了一个测试，这就是为什么包含该代码的整个系统能够工作的原因。</p> <p>我希望你从这次演讲中得出的结论不是任何特定测试的具体细节，尽管我希望你可以留意对小型解析器和打印机的良好使用带来的好处。任何人都可以学会编写它们，并且有效地使用它们可以成为软件工程的超能力。最终，这对这些软件包来说是好测试。对于你的软件包，好测试可能看起来会有所不同。这没关系。但要使添加新的测试用例变得容易，并确保你拥有良好、清晰、高质量的测试。请记住，代码质量受测试质量的限制，因此逐步投入改进测试。你在项目上工作的时间越长，你的测试就应该变得越好。并且要追求持续部署，至少作为一种思想实验，以了解哪些方面的测试还不够充分。</p> <p>总的来说，要像编写优秀的非测试代码一样，思考并投入同样的思想、关心和努力来编写优秀的测试代码，<strong>这绝对是值得的</strong>。</p> <h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li><a href="https://gophercon.com.au/" target="_blank" rel="noopener noreferrer">GopherCon Australia 2023<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://research.swtch.com/testing" target="_blank" rel="noopener noreferrer">“Go Testing By Example” 视频及个人网站<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://book.douban.com/subject/1459281/" target="_blank" rel="noopener noreferrer">The Practice of Programming<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2/29/2024,</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/golang/4_2_golang_benchmark.html" class="prev">
+          基准测试
+        </a></span> <span class="next"><a href="/golang/actual_1_pprof.html">
+          pprof 实践
+        </a>
+        →
+      </span></p></div> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><div class="option-box-toc-fixed"><div class="toc-container-sidebar"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:650px"><div style="font-weight:bold;text-align:center;">实践&amp;建议</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/golang/4_3_golang_test_eample.html#_1-让添加测试变得容易" class="toc-sidebar-link">1. 让添加测试变得容易</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_2-使用测试覆盖率来发现未经测试的代码" class="toc-sidebar-link">2. 使用测试覆盖率来发现未经测试的代码</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_3-覆盖率不能提代思考" class="toc-sidebar-link">3. 覆盖率不能提代思考</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_4-编写全面的测试" class="toc-sidebar-link">4. 编写全面的测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_5-建议将测试用例与测试逻辑分开" class="toc-sidebar-link">5. 建议将测试用例与测试逻辑分开</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_6-寻找特殊情况" class="toc-sidebar-link">6. 寻找特殊情况</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_7-如果你没有添加测试-那就没有修复bug" class="toc-sidebar-link">7. 如果你没有添加测试，那就没有修复bug</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_8-并非所有东西都适合放在表中" class="toc-sidebar-link">8. 并非所有东西都适合放在表中</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_9-测试用例可以放在testdata文件" class="toc-sidebar-link">9. 测试用例可以放在testdata文件</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_10-与其他实现进行比较" class="toc-sidebar-link">10. 与其他实现进行比较</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_11-使测试失败易读" class="toc-sidebar-link">11. 使测试失败易读</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_12-如果答案可能会改变-编写代码来更新他们" class="toc-sidebar-link">12. 如果答案可能会改变，编写代码来更新他们</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_13-使用txtar进行多文件测试用例" class="toc-sidebar-link">13. 使用txtar进行多文件测试用例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_14-对现有格式进行注解-annotation-来创建测试迷你语言" class="toc-sidebar-link">14. 对现有格式进行注解(annotation)来创建测试迷你语言</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_15-编写解析器和打印器来简化测试" class="toc-sidebar-link">15. 编写解析器和打印器来简化测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_16-代码质量受测试质量限制" class="toc-sidebar-link">16. 代码质量受测试质量限制</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_17-使用脚本可以编写很好的测试" class="toc-sidebar-link">17. 使用脚本可以编写很好的测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_18-尝试使用rsc-io-script来创建基于脚本的测试用例" class="toc-sidebar-link">18. 尝试使用rsc.io/script来创建基于脚本的测试用例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_19-随着时间的推移改进你的测试" class="toc-sidebar-link">19. 随着时间的推移改进你的测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_20-追求持续部署" class="toc-sidebar-link">20. 追求持续部署</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#总结" class="toc-sidebar-link">总结</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#参考资料" class="toc-sidebar-link">参考资料</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">实践&amp;建议</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/golang/4_3_golang_test_eample.html#_1-让添加测试变得容易" class="toc-sidebar-link">1. 让添加测试变得容易</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_2-使用测试覆盖率来发现未经测试的代码" class="toc-sidebar-link">2. 使用测试覆盖率来发现未经测试的代码</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_3-覆盖率不能提代思考" class="toc-sidebar-link">3. 覆盖率不能提代思考</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_4-编写全面的测试" class="toc-sidebar-link">4. 编写全面的测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_5-建议将测试用例与测试逻辑分开" class="toc-sidebar-link">5. 建议将测试用例与测试逻辑分开</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_6-寻找特殊情况" class="toc-sidebar-link">6. 寻找特殊情况</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_7-如果你没有添加测试-那就没有修复bug" class="toc-sidebar-link">7. 如果你没有添加测试，那就没有修复bug</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_8-并非所有东西都适合放在表中" class="toc-sidebar-link">8. 并非所有东西都适合放在表中</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_9-测试用例可以放在testdata文件" class="toc-sidebar-link">9. 测试用例可以放在testdata文件</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_10-与其他实现进行比较" class="toc-sidebar-link">10. 与其他实现进行比较</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_11-使测试失败易读" class="toc-sidebar-link">11. 使测试失败易读</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_12-如果答案可能会改变-编写代码来更新他们" class="toc-sidebar-link">12. 如果答案可能会改变，编写代码来更新他们</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_13-使用txtar进行多文件测试用例" class="toc-sidebar-link">13. 使用txtar进行多文件测试用例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_14-对现有格式进行注解-annotation-来创建测试迷你语言" class="toc-sidebar-link">14. 对现有格式进行注解(annotation)来创建测试迷你语言</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_15-编写解析器和打印器来简化测试" class="toc-sidebar-link">15. 编写解析器和打印器来简化测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_16-代码质量受测试质量限制" class="toc-sidebar-link">16. 代码质量受测试质量限制</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_17-使用脚本可以编写很好的测试" class="toc-sidebar-link">17. 使用脚本可以编写很好的测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_18-尝试使用rsc-io-script来创建基于脚本的测试用例" class="toc-sidebar-link">18. 尝试使用rsc.io/script来创建基于脚本的测试用例</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_19-随着时间的推移改进你的测试" class="toc-sidebar-link">19. 随着时间的推移改进你的测试</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#_20-追求持续部署" class="toc-sidebar-link">20. 追求持续部署</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#总结" class="toc-sidebar-link">总结</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/golang/4_3_golang_test_eample.html#参考资料" class="toc-sidebar-link">参考资料</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/golang/4_3_golang_test_eample.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <div title="基准测试" class="option-box" style="padding-left:2px;text-align:center;"><a href="/golang/4_2_golang_benchmark.html"><img src="/pagesidebar/pre.png" width="30px" class="nozoom"> <span class="show-txt">上一篇</span></a></div> <div title="pprof 实践" class="option-box" style="padding-left:2px;text-align:center;"><a href="/golang/actual_1_pprof.html"><img src="/pagesidebar/next.png" width="30px" class="nozoom"> <span class="show-txt">下一篇</span></a></div></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.c72ee127.js" defer></script><script src="/assets/js/3.a918bb29.js" defer></script><script src="/assets/js/4.9382fba3.js" defer></script><script src="/assets/js/114.a5ef4c3c.js" defer></script>
+  </body>
+</html>

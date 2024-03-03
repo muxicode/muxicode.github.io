@@ -148,13 +148,12 @@
 - [先序、中序、后序的递归遍历](/algorithm/g1_data_struct_binary_tree_1_recursive_traversal)
 - [先序、中序、后序的非递归遍历](/algorithm/g1_data_struct_binary_tree_2_iterative_traversal)
 - [先序与后序遍历交集问题](/algorithm/g1_data_struct_binary_tree_3_pre_pos_intersection)
-- 先序与后序遍历交集问题
 - 相同树问题
 - 相似树问题
 - 二叉树的最大深度问题
 - 根据先序和中序重建二叉树
 - 二叉树的路径和问题
-- 二叉树按层遍历
+- [二叉树按层遍历](/algorithm/g1_data_struct_binary_tree_9_level_traversak)
 - 二叉树的序列化和反序列化
 - 后继、前驱节点
 - 判断完全二叉树
