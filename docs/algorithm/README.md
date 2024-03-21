@@ -151,9 +151,10 @@
 - 相同树问题
 - 相似树问题
 - 二叉树的最大深度问题
+- [二叉树的最大宽度问题](/algorithm/g1_data_struct_binary_tree_7_max_width)
 - 根据先序和中序重建二叉树
-- 二叉树的路径和问题
 - [二叉树按层遍历](/algorithm/g1_data_struct_binary_tree_9_level_traversak)
+- 二叉树的路径和问题
 - 二叉树的序列化和反序列化
 - 后继、前驱节点
 - 判断完全二叉树
