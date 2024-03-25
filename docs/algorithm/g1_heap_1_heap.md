@@ -37,19 +37,19 @@ autoGroup-1: 🌱阶段一：初出茅庐🌱
 
 堆内部具体的排序原理，我们以下面五个元素，依次进入小根堆后，再依次出小根堆为例子，看看堆内部是如何进行排序及调整的，我们当前有五个元素，小根堆为黄色区域，目前元素并未进入小根堆，小根堆为空。
 
-<img src="/base_heap.assets/heap_step_1.drawio.png" style="zoom:67%;" />
+![](/base_heap.assets/heap_step_1.drawio.png)
 
 1. 元素`100`进入小根堆，作为堆顶元素。
 
-   <img src="/base_heap.assets/heap_step_2.drawio.png" style="zoom:67%;" />
+	 ![](/base_heap.assets/heap_step_2.drawio.png)
 
 2. 元素`25`插入堆中，作为元素`100`的左孩子，以二叉树的形式呈现。插入后，需要判断其与父亲节点的关系，如果比父亲节点小则与父亲节点交换位置。（这是小根堆的规则，如果是大根堆，则是如果比父亲节点大，才与父亲节点交换位置）
 
-   <img src="/base_heap.assets/heap_step_3.drawio.png" style="zoom:70%;" />
+	 ![](/base_heap.assets/heap_step_3.drawio.png)
 
 3. 元素`34`插入堆中，作为元素`100`的右孩子，以二叉树的形式呈现。插入后大于父节点的值，无需变更位置。
 
-   <img src="/base_heap.assets/heap_step_4.drawio.png" style="zoom:67%;" />
+	 ![](/base_heap.assets/heap_step_4.drawio.png)
 
 4. 元素`19`插入堆中，作为元素`25`的左孩子，以二叉树的形式呈现。插入后小于父节点的值，无需变更位置。（我们选择的位置始终是从二叉树每次节点的从左到右，为的是保持为满二叉树的数据结构）
 
