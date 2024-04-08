@@ -152,12 +152,13 @@
 - 相似树问题
 - 二叉树的最大深度问题
 - [二叉树的最大宽度问题](/algorithm/g1_data_struct_binary_tree_7_max_width)
-- 二叉树的序列化和反序列化
+- [二叉树的序列化和反序列化](/algorithm/g1_data_struct_binary_tree_8_serialize)
 - [二叉树按层遍历](/algorithm/g1_data_struct_binary_tree_9_level_traversak)
-- 后继、前驱节点
+- [后继节点](/algorithm/g1_data_struct_binary_tree_10_successor_node)
 - [多叉树转二叉树的编解码](/algorithm/g1_data_struct_binary_tree_11_multi_fork_tree_encode)
+- [折纸问题](/algorithm/g1_data_struct_binary_tree_12_paper_floding)
 - 二叉树的路径和问题
-- 判断完全二叉树
+- [判断完全二叉树](/algorithm/g1_data_struct_binary_tree_14_is_cbt)
 - 判断搜索二叉树
 - 判断平衡二叉树
 - 判断满二叉树
