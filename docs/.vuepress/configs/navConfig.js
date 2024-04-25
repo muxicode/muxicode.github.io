@@ -169,6 +169,12 @@ const navs = [
           { text: 'mongodb使用示例', link: '/develop/examples/1_mongo' },
           { text: 'python基础知识点', link: '/develop/examples/2_python' },
         ]
+      },
+      {
+        text: '实践总结',
+        items: [
+          { text: '玩转递归实及AI实践篇', link: '/develop/practice/1_recursion_ai' },
+        ]
       }
     ]
   },
