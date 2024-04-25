@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>玩转递归实及AI实践篇 | 慕溪code</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/waterbee.svg">
+    <meta name="description" content="打造你的知识体系，深入原理真正掌握，让知识为你所用！">
+    <meta rel="keywords" content="慕溪随笔,muxiCode,muxiCode的技术博客,前端开发,IT技术,网络技术,斜杠青年">
+    <meta name="viewport" content="width=device-width,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta async="async" name="google-site-verification" content="Lp5bo-dr1R5gCVE_3iUI6KXr8tNhN5pyUxPYYKCZkO4">
+    
+    <link rel="preload" href="/assets/css/0.styles.b5a3039c.css" as="style"><link rel="preload" href="/assets/js/app.b3dd6dc2.js" as="script"><link rel="preload" href="/assets/js/3.a918bb29.js" as="script"><link rel="preload" href="/assets/js/4.9382fba3.js" as="script"><link rel="preload" href="/assets/js/100.80343ac4.js" as="script"><link rel="prefetch" href="/assets/js/10.4fd703f4.js"><link rel="prefetch" href="/assets/js/101.a357a771.js"><link rel="prefetch" href="/assets/js/102.770dc5a9.js"><link rel="prefetch" href="/assets/js/103.8d791f6f.js"><link rel="prefetch" href="/assets/js/104.2a12b1c3.js"><link rel="prefetch" href="/assets/js/105.0791b75c.js"><link rel="prefetch" href="/assets/js/106.485f9834.js"><link rel="prefetch" href="/assets/js/107.cde3c4f5.js"><link rel="prefetch" href="/assets/js/108.3ae1f093.js"><link rel="prefetch" href="/assets/js/109.06d99537.js"><link rel="prefetch" href="/assets/js/11.f6df4a62.js"><link rel="prefetch" href="/assets/js/110.d1418c6f.js"><link rel="prefetch" href="/assets/js/111.dfe4578d.js"><link rel="prefetch" href="/assets/js/112.54fbf195.js"><link rel="prefetch" href="/assets/js/113.0d624f4b.js"><link rel="prefetch" href="/assets/js/114.2efd40ec.js"><link rel="prefetch" href="/assets/js/115.e6aec41a.js"><link rel="prefetch" href="/assets/js/116.d4f45f2e.js"><link rel="prefetch" href="/assets/js/117.d99cb8ca.js"><link rel="prefetch" href="/assets/js/118.61e30a2c.js"><link rel="prefetch" href="/assets/js/119.8a6cc526.js"><link rel="prefetch" href="/assets/js/12.266675c2.js"><link rel="prefetch" href="/assets/js/120.147afa9c.js"><link rel="prefetch" href="/assets/js/121.14dc165d.js"><link rel="prefetch" href="/assets/js/122.e57d1a94.js"><link rel="prefetch" href="/assets/js/123.26fe7af4.js"><link rel="prefetch" href="/assets/js/124.0dc398a0.js"><link rel="prefetch" href="/assets/js/125.06d5f28a.js"><link rel="prefetch" href="/assets/js/126.5be14948.js"><link rel="prefetch" href="/assets/js/127.ac0cb963.js"><link rel="prefetch" href="/assets/js/128.b02567ae.js"><link rel="prefetch" href="/assets/js/129.6c8bc2d2.js"><link rel="prefetch" href="/assets/js/13.53bbbf32.js"><link rel="prefetch" href="/assets/js/130.6236274e.js"><link rel="prefetch" href="/assets/js/131.93399fd3.js"><link rel="prefetch" href="/assets/js/132.4996676d.js"><link rel="prefetch" href="/assets/js/133.2c726409.js"><link rel="prefetch" href="/assets/js/134.1099f007.js"><link rel="prefetch" href="/assets/js/135.2d387ed9.js"><link rel="prefetch" href="/assets/js/136.6a1ee3a6.js"><link rel="prefetch" href="/assets/js/137.748aa26b.js"><link rel="prefetch" href="/assets/js/138.6b5ccc92.js"><link rel="prefetch" href="/assets/js/139.c6017af4.js"><link rel="prefetch" href="/assets/js/14.b270cb97.js"><link rel="prefetch" href="/assets/js/140.45c073b1.js"><link rel="prefetch" href="/assets/js/141.ab15bafe.js"><link rel="prefetch" href="/assets/js/142.9624a35d.js"><link rel="prefetch" href="/assets/js/143.f2e53186.js"><link rel="prefetch" href="/assets/js/144.5375bc51.js"><link rel="prefetch" href="/assets/js/145.53adc333.js"><link rel="prefetch" href="/assets/js/15.65200824.js"><link rel="prefetch" href="/assets/js/16.1a52dd92.js"><link rel="prefetch" href="/assets/js/17.786c0d71.js"><link rel="prefetch" href="/assets/js/18.589a26dd.js"><link rel="prefetch" href="/assets/js/19.8e147a65.js"><link rel="prefetch" href="/assets/js/20.c97bb6ed.js"><link rel="prefetch" href="/assets/js/21.da3c9c30.js"><link rel="prefetch" href="/assets/js/22.cfbc2042.js"><link rel="prefetch" href="/assets/js/23.3dc3e632.js"><link rel="prefetch" href="/assets/js/24.48079080.js"><link rel="prefetch" href="/assets/js/25.d1558aa5.js"><link rel="prefetch" href="/assets/js/26.44536232.js"><link rel="prefetch" href="/assets/js/27.8fafb6dc.js"><link rel="prefetch" href="/assets/js/28.1c06e817.js"><link rel="prefetch" href="/assets/js/29.68aac9a8.js"><link rel="prefetch" href="/assets/js/30.94f642b1.js"><link rel="prefetch" href="/assets/js/31.b41ee170.js"><link rel="prefetch" href="/assets/js/32.d8f9ab15.js"><link rel="prefetch" href="/assets/js/33.c19c0d82.js"><link rel="prefetch" href="/assets/js/34.f4a9ea27.js"><link rel="prefetch" href="/assets/js/35.405c904a.js"><link rel="prefetch" href="/assets/js/36.c55e0a55.js"><link rel="prefetch" href="/assets/js/37.fff59b9a.js"><link rel="prefetch" href="/assets/js/38.d1923414.js"><link rel="prefetch" href="/assets/js/39.49aee254.js"><link rel="prefetch" href="/assets/js/40.d627de3d.js"><link rel="prefetch" href="/assets/js/41.f4996af3.js"><link rel="prefetch" href="/assets/js/42.83b79a23.js"><link rel="prefetch" href="/assets/js/43.b3eee69b.js"><link rel="prefetch" href="/assets/js/44.53d9b88a.js"><link rel="prefetch" href="/assets/js/45.6c198961.js"><link rel="prefetch" href="/assets/js/46.4dd7c8e6.js"><link rel="prefetch" href="/assets/js/47.ad376579.js"><link rel="prefetch" href="/assets/js/48.2c9fbd07.js"><link rel="prefetch" href="/assets/js/49.4ba447d9.js"><link rel="prefetch" href="/assets/js/5.a4bab9fe.js"><link rel="prefetch" href="/assets/js/50.7ca7a14a.js"><link rel="prefetch" href="/assets/js/51.5a5c3dd1.js"><link rel="prefetch" href="/assets/js/52.d2d6c2cb.js"><link rel="prefetch" href="/assets/js/53.0242b222.js"><link rel="prefetch" href="/assets/js/54.ac805b5f.js"><link rel="prefetch" href="/assets/js/55.cdebb2f5.js"><link rel="prefetch" href="/assets/js/56.56b3eb65.js"><link rel="prefetch" href="/assets/js/57.b56f8539.js"><link rel="prefetch" href="/assets/js/58.27b06baa.js"><link rel="prefetch" href="/assets/js/59.dd68a2e1.js"><link rel="prefetch" href="/assets/js/6.3c15e6b3.js"><link rel="prefetch" href="/assets/js/60.e1711668.js"><link rel="prefetch" href="/assets/js/61.c0194081.js"><link rel="prefetch" href="/assets/js/62.69543b3c.js"><link rel="prefetch" href="/assets/js/63.2e8f1bcd.js"><link rel="prefetch" href="/assets/js/64.a229b5f8.js"><link rel="prefetch" href="/assets/js/65.fc8b4fcd.js"><link rel="prefetch" href="/assets/js/66.7c23ecca.js"><link rel="prefetch" href="/assets/js/67.ba06dd9f.js"><link rel="prefetch" href="/assets/js/68.2b8e3d6b.js"><link rel="prefetch" href="/assets/js/69.18e83795.js"><link rel="prefetch" href="/assets/js/7.dacd2863.js"><link rel="prefetch" href="/assets/js/70.feb32f60.js"><link rel="prefetch" href="/assets/js/71.b45b03ad.js"><link rel="prefetch" href="/assets/js/72.8fdad7ff.js"><link rel="prefetch" href="/assets/js/73.6f8049d7.js"><link rel="prefetch" href="/assets/js/74.fc2bb415.js"><link rel="prefetch" href="/assets/js/75.28a381a3.js"><link rel="prefetch" href="/assets/js/76.e03c5bbc.js"><link rel="prefetch" href="/assets/js/77.52305649.js"><link rel="prefetch" href="/assets/js/78.513976ec.js"><link rel="prefetch" href="/assets/js/79.c839ee14.js"><link rel="prefetch" href="/assets/js/8.1e3a48c8.js"><link rel="prefetch" href="/assets/js/80.a80a2f1b.js"><link rel="prefetch" href="/assets/js/81.43b15792.js"><link rel="prefetch" href="/assets/js/82.50e44bc6.js"><link rel="prefetch" href="/assets/js/83.8f851b79.js"><link rel="prefetch" href="/assets/js/84.8f97a2cd.js"><link rel="prefetch" href="/assets/js/85.55d64a20.js"><link rel="prefetch" href="/assets/js/86.917f3e39.js"><link rel="prefetch" href="/assets/js/87.7f2f4fd6.js"><link rel="prefetch" href="/assets/js/88.8c397693.js"><link rel="prefetch" href="/assets/js/89.4eac02a5.js"><link rel="prefetch" href="/assets/js/9.a6897f34.js"><link rel="prefetch" href="/assets/js/90.33155ee7.js"><link rel="prefetch" href="/assets/js/91.4df63613.js"><link rel="prefetch" href="/assets/js/92.a46a219f.js"><link rel="prefetch" href="/assets/js/93.6465276d.js"><link rel="prefetch" href="/assets/js/94.7ad4ce4d.js"><link rel="prefetch" href="/assets/js/95.3cf2c749.js"><link rel="prefetch" href="/assets/js/96.6dacd8e5.js"><link rel="prefetch" href="/assets/js/97.a1c9bb3d.js"><link rel="prefetch" href="/assets/js/98.1c191b3d.js"><link rel="prefetch" href="/assets/js/99.2566a333.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.7e068240.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b5a3039c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/waterbee.svg" alt="慕溪code" class="logo"> <span class="site-name can-hide">慕溪code</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_3_golang_test_eample.html" class="nav-link">
+  实践&amp;建议
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_3_restart.html" class="nav-link">
+  异常重启定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-subitem"><a href="/web/10_graceful_exit.html" class="nav-link">
+  服务优雅退出
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" class="nav-link">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_2_desgin.html" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_sort_1_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践总结
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/practice/1_recursion_ai.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  玩转递归实及AI实践篇
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          阅读书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/books/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/books/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/vue_1_mall.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-subitem"><a href="/fontend/vue_2_props_modify.html" class="nav-link">
+  Props双向修改
+</a></li></ul></li><li class="dropdown-item"><h4>
+          ElementUI
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/element_1_table.html" class="nav-link">
+  table组件自定义
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/util_1_acrross.html" class="nav-link">
+  请求封装
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/navigation/" class="nav-link">
+  导航
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础及进阶
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/1_0_nav.html" class="nav-link">
+  目录导读
+</a></li><li class="dropdown-subitem"><a href="/golang/1_2_struct.html" class="nav-link">
+  基础入门
+</a></li><li class="dropdown-subitem"><a href="/golang/2_1_high_concurrency_sharps_coroutines.html" class="nav-link">
+  高并发下的工具
+</a></li><li class="dropdown-subitem"><a href="/golang/3_1_go_c.html" class="nav-link">
+  其他高级特性
+</a></li></ul></li><li class="dropdown-item"><h4>
+          测试相关
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/4_1_golang_test.html" class="nav-link">
+  构建测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_2_golang_benchmark.html" class="nav-link">
+  基准测试
+</a></li><li class="dropdown-subitem"><a href="/golang/4_3_golang_test_eample.html" class="nav-link">
+  实践&amp;建议
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实战
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/golang/actual_1_pprof.html" class="nav-link">
+  pprof实战
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_2_pro_problem.html" class="nav-link">
+  问题定位
+</a></li><li class="dropdown-subitem"><a href="/golang/actual_3_restart.html" class="nav-link">
+  异常重启定位
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Web框架" class="dropdown-title"><span class="title">Web框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          web基础封装
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/1_http.html" class="nav-link">
+  熟悉http包
+</a></li><li class="dropdown-subitem"><a href="/web/2_server.html" class="nav-link">
+  server抽象
+</a></li><li class="dropdown-subitem"><a href="/web/3_context.html" class="nav-link">
+  context抽象
+</a></li><li class="dropdown-subitem"><a href="/web/4_simple_route.html" class="nav-link">
+  简单路树
+</a></li><li class="dropdown-subitem"><a href="/web/5_handler.html" class="nav-link">
+  handler抽象
+</a></li><li class="dropdown-subitem"><a href="/web/6_filter.html" class="nav-link">
+  filter实现AOP
+</a></li><li class="dropdown-subitem"><a href="/web/7_handler_tree.html" class="nav-link">
+  handler路由树
+</a></li><li class="dropdown-subitem"><a href="/web/8_context_pool.html" class="nav-link">
+  context池化
+</a></li><li class="dropdown-subitem"><a href="/web/9_gin_router.html" class="nav-link">
+  gin路由树
+</a></li><li class="dropdown-subitem"><a href="/web/10_graceful_exit.html" class="nav-link">
+  服务优雅退出
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="微服务工程实践" class="dropdown-title"><span class="title">微服务工程实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          微服务概览与治理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/microservice/overview_1_overview.html" class="nav-link">
+  微服务概览
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_2_desgin.html" class="nav-link">
+  微服务设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  grpc与服务发现
+</a></li><li class="dropdown-subitem"><a href="/microservice/overview_4_multi_tenant.html" class="nav-link">
+  多集群与多租户
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据结构与算法" class="dropdown-title"><span class="title">数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  体系学习总览
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/about_algorithm.html" class="nav-link">
+  什么是算法?
+</a></li><li class="dropdown-item"><h4>
+          阶段一：初出茅庐
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/algorithm/g1_base_1_binary_0_binary.html" class="nav-link">
+  位运算
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_sort_1_select_sort.html" class="nav-link">
+  排序
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_compare_for_ans.html" class="nav-link">
+  对数器
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_bisectiom_1_find_num.html" class="nav-link">
+  二分及其拓展
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  递归到动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  链表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  队列
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈希表的使用
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_9_heap.html" class="nav-link">
+  堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  加强堆
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  前缀树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二叉树
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_base_8_union_set_1.html" class="nav-link">
+  并查集
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g1_graph_1_base.html" class="nav-link">
+  图
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  哈夫曼树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  其他
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段二：知识的升华
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  斐波那契数列
+</a></li><li class="dropdown-subitem"><a href="/algorithm/g2_advance_1_kmp_1.html" class="nav-link">
+  KMP算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Manacher算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  无序数组寻找第 K 小的值
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  蓄水池算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Morris遍历
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  资源限制类题目的算法设计
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  打表找规律
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  根据题目的数量猜解法技巧
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  卡特兰数
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  数组三连问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  状态压缩的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  设计简化外部信息的动态规划
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  窗口内最大值和最小值的更新结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  单调栈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  线段树
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  IndexTree
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  AC自动机
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  和哈希函数有关的数据结构
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  二维数组调整
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段三：高峰之巅
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  编辑距离
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Nimi博弈
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  括号嵌套求解的递归模型
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  最长递增子序列问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  约瑟夫环问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  完美洗牌问题
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  A*算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  Bellman Ford算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  强连通分量
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  KM算法
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  扫描线算法
+</a></li></ul></li><li class="dropdown-item"><h4>
+          阶段四：登峰造极
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  有序表
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  四边形不等式
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  后缀数组DC3算法
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发" class="dropdown-title"><span class="title">开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/methodology/1_python_design_pattern.html" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/develop/methodology/2_reconstruction.html" class="nav-link">
+  重构
+</a></li></ul></li><li class="dropdown-item"><h4>
+          部署
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/deployment/1_docker_built_project.html" class="nav-link">
+  项目容器化
+</a></li></ul></li><li class="dropdown-item"><h4>
+          一些示例
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/examples/1_mongo.html" class="nav-link">
+  mongodb使用示例
+</a></li><li class="dropdown-subitem"><a href="/develop/examples/2_python.html" class="nav-link">
+  python基础知识点
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践总结
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/develop/practice/1_recursion_ai.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  玩转递归实及AI实践篇
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="架构" class="dropdown-title"><span class="title">架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          方法论
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/ddd_1_introduce.html" class="nav-link">
+  DDD
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_2_ddd.html" class="nav-link">
+  DDD工程实践
+</a></li><li class="dropdown-subitem"><a href="/architecture/ddd_3_event_strom.html" class="nav-link">
+  DDD事件风暴
+</a></li><li class="dropdown-subitem"><a href="/architecture/dci_1_dci&amp;ddd.html" class="nav-link">
+  DCI
+</a></li><li class="dropdown-subitem"><a href="/architecture/complexity_oriented_1_introduce.html" class="nav-link">
+  面向复杂度的架构设计
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/tools_1_introduce.html" class="nav-link">
+  UML
+</a></li></ul></li><li class="dropdown-item"><h4>
+          实践
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/architecture/practice_1_parse_service.html" class="nav-link">
+  解析服务实践
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          NoSQL 数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/nosql_1_redis_deploy.html" class="nav-link">
+  redis 部署方式
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人成长" class="dropdown-title"><span class="title">个人成长</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          阅读书籍
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/books/" class="nav-link">
+  简介
+</a></li><li class="dropdown-subitem"><a href="/growth/books/mind_1_the_gift.html" class="nav-link">
+  心灵
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  个人成长
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  亲子家庭
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  人文历史
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  商业财经
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  社科新知
+</a></li><li class="dropdown-subitem"><a href="/waiting/" class="nav-link">
+  健康生活
+</a></li></ul></li><li class="dropdown-item"><h4>
+          文章收藏
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/growth/article/" class="nav-link">
+  说明
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          vue
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/vue_1_mall.html" class="nav-link">
+  vue实战
+</a></li><li class="dropdown-subitem"><a href="/fontend/vue_2_props_modify.html" class="nav-link">
+  Props双向修改
+</a></li></ul></li><li class="dropdown-item"><h4>
+          ElementUI
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/element_1_table.html" class="nav-link">
+  table组件自定义
+</a></li></ul></li><li class="dropdown-item"><h4>
+          工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/fontend/util_1_acrross.html" class="nav-link">
+  请求封装
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/muxicode/muxicode.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Practice</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/develop/practice/1_recursion_ai.html" aria-current="page" class="active sidebar-link">玩转递归实及AI实践篇</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#递归的执行过程" class="sidebar-link">递归的执行过程</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#递归在二叉树上的应用" class="sidebar-link">递归在二叉树上的应用</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#递归套路模板" class="sidebar-link">递归套路模板</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#文件夹目录上的使用" class="sidebar-link">文件夹目录上的使用</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#字典格式上的使用" class="sidebar-link">字典格式上的使用</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#需求简介" class="sidebar-link" style="padding-left:3rem;">需求简介</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#gpt代码" class="sidebar-link" style="padding-left:3rem;">GPT代码</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#模板代码" class="sidebar-link" style="padding-left:3rem;">模板代码</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#没有设计怎么办" class="sidebar-link" style="padding-left:3rem;">没有设计怎么办？</a></li></ul></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#两份config找不同" class="sidebar-link">两份config找不同</a></li><li class="sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#开发小妙招" class="sidebar-link">开发小妙招</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="withouttoc page"> <div class="theme-default-content content__default"><h1 id="玩转递归实及ai实践篇"><a href="#玩转递归实及ai实践篇" class="header-anchor">#</a> 玩转递归实及AI实践篇</h1> <p><img src="/1_recursion_ai.assets/1714053829201.png" alt=""></p> <h2 id="递归的执行过程"><a href="#递归的执行过程" class="header-anchor">#</a> 递归的执行过程</h2> <p>有一颗二叉树：</p> <p><img src="/1_recursion_ai.assets/325cfuf7s9fk12utres.png" alt=""></p> <p>下面代码的执行过程是怎么样的？</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">TestF</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 建立二叉树</span>
+	root <span class="token operator">:=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">}</span>
+	root<span class="token punctuation">.</span>Left <span class="token operator">=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;b&quot;</span><span class="token punctuation">}</span>
+	root<span class="token punctuation">.</span>Right <span class="token operator">=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;c&quot;</span><span class="token punctuation">}</span>
+	root<span class="token punctuation">.</span>Left<span class="token punctuation">.</span>Left<span class="token operator">=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;e&quot;</span><span class="token punctuation">}</span>
+	root<span class="token punctuation">.</span>Left<span class="token punctuation">.</span>Right<span class="token operator">=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;f&quot;</span><span class="token punctuation">}</span>
+	root<span class="token punctuation">.</span>Right<span class="token punctuation">.</span>Left<span class="token operator">=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;g&quot;</span><span class="token punctuation">}</span>
+	root<span class="token punctuation">.</span>Right<span class="token punctuation">.</span>Right<span class="token operator">=</span> <span class="token operator">&amp;</span>TreeNode<span class="token punctuation">{</span>Value<span class="token punctuation">:</span><span class="token string">&quot;h&quot;</span><span class="token punctuation">}</span>
+    <span class="token comment">// 传入根节点</span>
+	<span class="token function">F</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">type</span> TreeNode <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Value <span class="token builtin">string</span>
+	Left  <span class="token operator">*</span>TreeNode
+	Right <span class="token operator">*</span>TreeNode
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">F</span><span class="token punctuation">(</span>root <span class="token operator">*</span>TreeNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> root <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 1. 第一次来到当前节点 root</span>
+	<span class="token function">F</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>Left<span class="token punctuation">)</span>
+	<span class="token comment">// 2. 第二次来到当前节点 root</span>
+	<span class="token function">F</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>Right<span class="token punctuation">)</span>
+	<span class="token comment">// 3. 第三次来到当前节点 root</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>可视化：</p> <p><img src="/1_recursion_ai.assets/323vclg3mps1u1zkrtw.png" alt="img"></p> <h2 id="递归在二叉树上的应用"><a href="#递归在二叉树上的应用" class="header-anchor">#</a> 递归在二叉树上的应用</h2> <p>二叉树是一种常见的数据结构，其节点最多有两个子节点：左子节点和右子节点。在对二叉树进行遍历时，我们有三种常见的方式：</p> <ol><li><strong>前序遍历（Pre-order Traversal）：</strong> 任何子树的处理顺序都是，先头节点、再左子树、然后右子树</li> <li><strong>中序遍历（In-order Traversal）：</strong> 任何子树的处理顺序都是，先左子树、再头节点、然后右子树</li> <li><strong>后序遍历（Post-order Traversal）：</strong> 任何子树的处理顺序都是，先左子树、再右子树、然后头节点</li></ol> <p><a href="https://muxicode.github.io/algorithm/g1_data_struct_binary_tree_1_recursive_traversal.html#%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86" target="_blank" rel="noopener noreferrer">参考文章链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="递归套路模板"><a href="#递归套路模板" class="header-anchor">#</a> 递归套路模板</h2> <h3 id="文件夹目录上的使用"><a href="#文件夹目录上的使用" class="header-anchor">#</a> 文件夹目录上的使用</h3> <p>文件目录树：</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">// 主函数</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">Parse</span><span class="token punctuation">(</span>localDirPath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    pathList <span class="token operator">:=</span> dir<span class="token punctuation">.</span><span class="token function">ToPathList</span><span class="token punctuation">(</span>localDirPath<span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span><span class="token function">PreProcess</span><span class="token punctuation">(</span>pathList<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> utility<span class="token punctuation">.</span><span class="token function">GetUuidByString</span><span class="token punctuation">(</span>pathList<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>pathList<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>p <span class="token operator">*</span>Parser<span class="token punctuation">)</span> <span class="token function">PreProcess</span><span class="token punctuation">(</span>
+    path <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token comment">// 建议添加，根据需要</span>
+    ids <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span>  <span class="token comment">// 业务参数</span>
+    myId <span class="token builtin">string</span><span class="token punctuation">,</span>   <span class="token comment">// 业务参数</span>
+    endLayer <span class="token builtin">int</span>   <span class="token comment">// 业务参数</span>
+<span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token operator">!</span>dir<span class="token punctuation">.</span><span class="token function">IsDir</span><span class="token punctuation">(</span>dir<span class="token punctuation">.</span><span class="token function">ToPathStr</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 递归终止条件，子节点处理</span>
+		<span class="token keyword">return</span> 返回值
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 文件夹路径</span>
+	pathStr <span class="token operator">:=</span> dir<span class="token punctuation">.</span><span class="token function">ToPathStr</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+	files <span class="token operator">:=</span> dir<span class="token punctuation">.</span><span class="token function">GetFiles</span><span class="token punctuation">(</span>pathStr<span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> v <span class="token operator">:=</span> <span class="token keyword">range</span> files <span class="token punctuation">{</span>
+        <span class="token comment">// 记录路径  ---- 非常有用，方便定位问题</span>
+		path <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> v<span class="token punctuation">)</span>
+		ids <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>ids<span class="token punctuation">,</span> myId<span class="token punctuation">)</span>
+		isHasCase <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">PreProcess</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> ids<span class="token punctuation">,</span> utility<span class="token punctuation">.</span><span class="token function">GetUuidByString</span><span class="token punctuation">(</span>myId<span class="token operator">+</span>v<span class="token punctuation">)</span><span class="token punctuation">,</span> endLayer<span class="token punctuation">)</span> <span class="token operator">||</span> isHasCase
+        <span class="token comment">// 路径回退</span>
+		path <span class="token operator">=</span> path<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+		ids <span class="token operator">=</span> ids<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>ids<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> isHasCase
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="字典格式上的使用"><a href="#字典格式上的使用" class="header-anchor">#</a> 字典格式上的使用</h3> <h4 id="需求简介"><a href="#需求简介" class="header-anchor">#</a> 需求简介</h4> <p><img src="/1_recursion_ai.assets/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E9%80%92%E5%BD%92.drawio.png" alt=""></p> <h4 id="gpt代码"><a href="#gpt代码" class="header-anchor">#</a> GPT代码</h4> <p>提示词：</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code>我有一个VUE2+TS的项目，现在有一个需求：
+
+需要识别字符串中@{xxx}的数量，举个例子：
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">&quot;asdfsadf@{xxx}adfasdf@{yyy}df@{xxx}&quot;</span>
+<span class="token punctuation">```</span></span>
+
+我需要得到的结果是一个对象：
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">{
+	@{xxx}: 2
+	@{yyy}: 1
+}</span>
+<span class="token punctuation">```</span></span>
+
+请你根据需求帮我完善代码
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">public getTextVariables(locationNodeInput: string): Record&lt;string, number&gt; {
+    // 再这里完善代码，可以拆分为多个函数
+    return {};
+}</span>
+<span class="token punctuation">```</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>获取设备所有类型的选择项示例：</p> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token function">getEnvConfigDeviceTypeKeyKeys</span><span class="token punctuation">(</span>envId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> targetType<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> targeteKey<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> curConfig <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>envConfigs<span class="token punctuation">[</span>envId<span class="token punctuation">]</span>
+        <span class="token keyword">const</span> uniqueKeys<span class="token operator">:</span> Set<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 遍历数据对象</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> curConfig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>curConfig<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历属性</span>
+                <span class="token keyword">const</span> device <span class="token operator">=</span> curConfig<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">// 找到所有设备</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>device<span class="token punctuation">.</span>type <span class="token operator">===</span> targetType<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 找到符合条件的设备</span>
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> deviceKey <span class="token keyword">in</span> device<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历符合条件的设备的属性</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>device<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>deviceKey<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> deviceKey<span class="token operator">==</span>targeteKey<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 找到目标属性</span>
+                            <span class="token keyword">const</span> targeteKeyMap <span class="token operator">=</span> device<span class="token punctuation">[</span>targeteKey<span class="token punctuation">]</span> <span class="token comment">// 获取到目标属性的map</span>
+                            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> deviceKey <span class="token keyword">in</span> targeteKeyMap<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历目标属性的map将key获取到</span>
+                                uniqueKeys<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>deviceKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 将 Set 转换为数组并返回</span>
+        <span class="token keyword">return</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>uniqueKeys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>如果是属性呢？即使是同一类设备因为有自定义属性，所以可能同一类设备的属性字段有些有有些没有，有的话还能继续嵌套属性，代码如果这么写，如何维护？</p> <h4 id="模板代码"><a href="#模板代码" class="header-anchor">#</a> 模板代码</h4> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code>    <span class="token comment">// 主函数合并有值的属性</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token function">mergeDevicesFeildsConfig</span><span class="token punctuation">(</span>envId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> devicesFeildsMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+        <span class="token keyword">const</span> curConfig <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>envConfigs<span class="token punctuation">[</span>envId<span class="token punctuation">]</span>
+        <span class="token keyword">const</span> path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 记录路径信息</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> deviceId <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>curConfig<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历所有设备</span>
+            <span class="token keyword">let</span> device <span class="token operator">=</span> curConfig<span class="token punctuation">[</span>deviceId<span class="token punctuation">]</span>
+            path<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>device<span class="token punctuation">[</span><span class="token constant">TYPE</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 路径信息为设备类型</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">mergeFeildProcess</span><span class="token punctuation">(</span>device<span class="token punctuation">[</span><span class="token string">&quot;attr&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> devicesFeildsMap<span class="token punctuation">,</span> path<span class="token punctuation">)</span> <span class="token comment">// 递归处理</span>
+            path<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>devicesMergeEnvConfigs<span class="token punctuation">[</span>envId<span class="token punctuation">]</span> <span class="token operator">=</span> devicesFeildsMap <span class="token comment">// 设置缓存，便于值查询</span>
+        <span class="token keyword">return</span> devicesFeildsMap
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token function">mergeFeildProcess</span><span class="token punctuation">(</span>deviceAttrs<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> devicesFeildsMap<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>deviceAttrs <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 异常防护，有些设备没有attr 或为null的字段，如：BizCode</span>
+            <span class="token comment">// 代码异常的时候直接打印path可以定位问题字段，而不是抓瞎</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> attr <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>deviceAttrs<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 循环遍历所有的属性</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> deviceAttrs<span class="token punctuation">[</span>attr<span class="token punctuation">]</span> <span class="token operator">!==</span> <span class="token string">'object'</span> <span class="token operator">||</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>deviceAttrs<span class="token punctuation">[</span>attr<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 如果不是对象或是列表类型，收集value并终止</span>
+                path<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>attr<span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setDevicesFeildsMapByPath</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> deviceAttrs<span class="token punctuation">[</span>attr<span class="token punctuation">]</span><span class="token punctuation">,</span> devicesFeildsMap<span class="token punctuation">)</span>
+                path<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// 还是属性，不需要处理，继续深入</span>
+                path<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>attr<span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">mergeFeildProcess</span><span class="token punctuation">(</span>deviceAttrs<span class="token punctuation">[</span>attr<span class="token punctuation">]</span><span class="token punctuation">,</span> devicesFeildsMap<span class="token punctuation">,</span> path<span class="token punctuation">)</span>
+                path<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token function">setDevicesFeildsMapByPath</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> devicesFeildsMap<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 根据path信息，将我们收集的值设置到设备字段映射中</span>
+        <span class="token keyword">let</span> strValue <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">stringifyOrReturn</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> curMap <span class="token operator">=</span> devicesFeildsMap <span class="token comment">// 从根map开始根据path，深入，填充value值</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>path<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> key <span class="token operator">=</span> path<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">===</span> path<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 最后一级的时候，填充值</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 不存在的时候</span>
+                    curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>strValue<span class="token punctuation">]</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>strValue<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>strValue<span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>  <span class="token comment">//非最后一级的时候，补充路径</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> 
+                <span class="token punctuation">}</span>
+                curMap <span class="token operator">=</span> curMap<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><h4 id="没有设计怎么办"><a href="#没有设计怎么办" class="header-anchor">#</a> 没有设计怎么办？</h4> <p>设定角色：</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code><span class="token title important"><span class="token punctuation">#</span> 角色</span>
+你是一名VUE2+TS项目开发的专家。你阅读过所有软件开发的相关书籍，如《clean code》、《领域驱动设计》、《代码重构》、《设计模式》等。你熟练掌握面向对象编程，并能根据需求场景选择使用合适的设计模式。
+
+<span class="token title important"><span class="token punctuation">##</span> 技能</span>
+<span class="token title important"><span class="token punctuation">###</span> 技能1：项目开发</span>
+<span class="token list punctuation">-</span> 根据用户的需求，进行VUE2+TS项目的开发。
+
+<span class="token title important"><span class="token punctuation">###</span> 技能2：代码优化</span>
+<span class="token list punctuation">-</span> 使用《clean code》中的原则，让你的代码整洁，易读。
+
+<span class="token title important"><span class="token punctuation">###</span> 技能3：领域驱动设计</span>
+<span class="token list punctuation">-</span> 运用《领域驱动设计》的理念，明确业务模型，以产生更具有价值的软件。
+
+<span class="token title important"><span class="token punctuation">###</span> 技能4：代码重构</span>
+<span class="token list punctuation">-</span> 根据《代码重构》的方法，不析构软件的外在行为的前提下，改变其内部结构。
+
+<span class="token title important"><span class="token punctuation">###</span> 技能5：设计模式的运用</span>
+<span class="token list punctuation">-</span> 阅读过《设计模式》，根据需求场景选择使用合适的设计模式。
+
+<span class="token title important"><span class="token punctuation">##</span> 限制</span>
+<span class="token list punctuation">-</span> 只讨论与Vue2+TS项目开发相关的问题。
+<span class="token list punctuation">-</span> 始终遵守《clean code》、《领域驱动设计》、《代码重构》、《设计模式》等书中的原则和准则。
+<span class="token list punctuation">-</span> 无法面对面与用户进行交流，所有的交流必须通过文字进行。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>再给提示词：</p> <div class="language-markdown line-numbers-mode"><pre class="language-markdown"><code>我有一个VUE2+TS的项目，现在有一个需求：
+
+需要识别字符串中@{xxx}的数量，举个例子：
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">&quot;asdfsadf@{xxx}adfasdf@{yyy}df@{xxx}&quot;</span>
+<span class="token punctuation">```</span></span>
+
+我需要得到的结果是一个对象：
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">{
+	@{xxx}: 2
+	@{yyy}: 1
+}</span>
+<span class="token punctuation">```</span></span>
+
+请你根据需求帮我完善代码
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">public getTextVariables(locationNodeInput: string): Record&lt;string, number&gt; {
+    // 再这里完善代码，可以拆分为多个函数
+    return {};
+}</span>
+<span class="token punctuation">```</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>结果：</p> <blockquote><p>先返回：</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>明白了！如果你有任何关于Vue2+TS项目开发的问题或者需要帮助，随时告诉我！
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>再返回：</p></blockquote> <p>好的，我可以帮你完成这个需求。根据你的描述，我们可以编写一个函数来实现字符串中&quot;@{name}&quot;的替换。你希望代码整洁易读，我们可以遵循《clean code》的原则，尽量拆分为多个函数，每个函数负责一个明确的任务。我们也可以考虑使用正则表达式来匹配&quot;@{name}&quot;这样的模式。以下是一个可能的实现：</p> <div class="language-typescript line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">public</span> <span class="token function">deleteCodeTextVariable</span><span class="token punctuation">(</span>locationNodeInput<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">replaceVariablesWithEmptyString</span><span class="token punctuation">(</span>locationNodeInput<span class="token punctuation">,</span> <span class="token string">&quot;@{name}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token function">replaceVariablesWithEmptyString</span><span class="token punctuation">(</span>input<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> variablePattern<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> regex <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>variablePattern<span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> input<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="两份config找不同"><a href="#两份config找不同" class="header-anchor">#</a> 两份config找不同</h2> <p>题目：网管配置文件，有两个版本，想找出两份配置不同的参数，以及对应的路径。</p> <h2 id="开发小妙招"><a href="#开发小妙招" class="header-anchor">#</a> 开发小妙招</h2> <ul><li>平时使用<code>GPT</code>时记录<code>promt</code>提示词，做好分类，遇到同样的问题，快速解决
+<ul><li><a href="https://gitee.com/add-ice-ice/knowledge-accumulation/blob/master/%E5%89%AF%E4%B8%9A/%E5%89%8D%E7%AB%AFPrompt%E5%8A%A9%E6%89%8B.md" target="_blank" rel="noopener noreferrer"> 前端Prompt助手<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li>如果可以打造一条机器人的<strong>自动化流水线</strong> <ul><li><a href="https://www.bilibili.com/video/BV1kr42137bb/?spm_id_from=333.880.my_history.page.click" target="_blank" rel="noopener noreferrer">AI提效创意释放<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.bilibili.com/video/BV1u64y1J7CX/?spm_id_from=333.880.my_history.page.click&amp;vd_source=7b691a60937c49cb5bf1441dc26e6ade" target="_blank" rel="noopener noreferrer">工作流示意图<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.bilibili.com/video/BV1qq421c7rH/?spm_id_from=333.337.search-card.all.click&amp;vd_source=7b691a60937c49cb5bf1441dc26e6ade" target="_blank" rel="noopener noreferrer">工作流创建教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">4/25/2024,</span></div></footer> <!----> </main></div> <aside class="page-sidebar"> <div class="page-side-toolbar"><!----> <div class="option-box-toc-over"><img src="/images/system/toc.png" class="nozoom"> <span class="show-txt">目录</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="max-height:550px"><div style="font-weight:bold;text-align:center;">玩转递归实及AI实践篇</div> <hr> <div class="toc-box"><ul class="toc-sidebar-links"><li><a href="/develop/practice/1_recursion_ai.html#递归的执行过程" class="toc-sidebar-link">递归的执行过程</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/practice/1_recursion_ai.html#递归在二叉树上的应用" class="toc-sidebar-link">递归在二叉树上的应用</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/practice/1_recursion_ai.html#递归套路模板" class="toc-sidebar-link">递归套路模板</a><ul class="toc-sidebar-sub-headers"><li class="toc-sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#文件夹目录上的使用" class="toc-sidebar-link">文件夹目录上的使用</a></li><li class="toc-sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#字典格式上的使用" class="toc-sidebar-link">字典格式上的使用</a></li><li class="toc-sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#需求简介" class="toc-sidebar-link">需求简介</a></li><li class="toc-sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#gpt代码" class="toc-sidebar-link">GPT代码</a></li><li class="toc-sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#模板代码" class="toc-sidebar-link">模板代码</a></li><li class="toc-sidebar-sub-header"><a href="/develop/practice/1_recursion_ai.html#没有设计怎么办" class="toc-sidebar-link">没有设计怎么办？</a></li></ul></li><li><a href="/develop/practice/1_recursion_ai.html#两份config找不同" class="toc-sidebar-link">两份config找不同</a><ul class="toc-sidebar-sub-headers"></ul></li><li><a href="/develop/practice/1_recursion_ai.html#开发小妙招" class="toc-sidebar-link">开发小妙招</a><ul class="toc-sidebar-sub-headers"></ul></li></ul></div></div></div></div></div> <div class="option-box"><img src="/pagesidebar/phone.png" class="nozoom"> <span class="show-txt">手机看</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.9rem">微信扫一扫</span> <img height="180px" src="https://api.qrserver.com/v1/create-qr-code/?data=https://muxicode.github.io/develop/practice/1_recursion_ai.html" style="margin:10px;">
+            可以<b>手机看</b>或分享至<b>朋友圈</b></div></div></div></div> <div class="option-box"><img src="/pagesidebar/sidebar.png" width="30px" class="nozoom"> <span class="show-txt">左栏</span></div> <div class="option-box"><img src="/pagesidebar/wechat.png" width="25px" class="nozoom"> <span class="show-txt">技术群</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">添加慕溪微信<span style="color:red;">(hacker_binghe)</span>进慕溪技术学习交流圈「无任何套路」</span> <img src="/pagesidebar/muxi.jpg" height="180px" style="margin:10px;">
+            PS：添加时请备注<b>读者加群</b>，谢谢！
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/baiduwangpan.png" width="25px" class="nozoom"> <span class="show-txt">下资料</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">扫描二维码，回复<span style="color:red;">“领取加群资料”</span>下载<span style="color:red;">两门优质视频资源</span></span> <img src="/pagesidebar/gongzonghao.jpg" height="180px" style="margin:10px;"> <b>公众号:</b> 慕溪code
+          </div></div></div></div> <div class="option-box"><img src="/pagesidebar/support.png" width="25px" class="nozoom"> <span class="show-txt">赞赏我</span> <div class="toc-container"><div class="pos-box"><div class="icon-arrow"></div> <div class="scroll-box" style="text-align:center"><span style="font-size:0.8rem;font-weight:bold;">鼓励/支持/赞赏我</span> <img height="180px" src="/pagesidebar/zanshang.jpg" style="margin:5px;"> <br>1. 不靠它生存但仍希望得到你的鼓励；
+            <br>2. 时刻警醒自己保持技术人的初心；
+          </div></div></div></div> <!----> <!----></div>  <!----> </aside></div><div class="global-ui"><LockArticle></LockArticle><PayArticle></PayArticle></div></div>
+    <script src="/assets/js/app.b3dd6dc2.js" defer></script><script src="/assets/js/3.a918bb29.js" defer></script><script src="/assets/js/4.9382fba3.js" defer></script><script src="/assets/js/100.80343ac4.js" defer></script>
+  </body>
+</html>
