@@ -57,6 +57,16 @@ const navs = [
     ],
   },
   {
+    text: 'AI应用实践',
+    items: [
+      {
+        text: '大模型应用', items: [
+          { text: '零代码搭建AI知识库', link: '/ai/ai_app_pratice' },
+        ]
+      },
+    ],
+  },
+  {
     text: '微服务工程实践',
     items: [
       {
