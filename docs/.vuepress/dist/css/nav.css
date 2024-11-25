@@ -112,7 +112,7 @@
   --navbar-padding-h: 1.5rem;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * .82);
-  --content-width: 740px;
+  --content-width: 90% !important;
   --homepage-width: 960px
 }
 
@@ -1624,8 +1624,8 @@ div[class*=language-].line-numbers-mode:after {
 
 .page-nav {
   max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 1rem 2.5rem 2rem;
+  margin: 0 auto !important;
+  padding: 2rem 2.5rem;
   padding-bottom: 0
 }
 
@@ -14115,7 +14115,7 @@ html.dark {
 }
 
 :root {
-  --content-width: 740px
+  --content-width: 90% !important
 }
 
 :root {

@@ -62,6 +62,7 @@ const navs = [
       {
         text: '大模型应用', items: [
           { text: '零代码搭建AI知识库', link: '/ai/ai_app_pratice' },
+          { text: 'Claude 前端开发最佳实践指', link: '/ai/ai_front_end' },
         ]
       },
     ],

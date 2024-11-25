@@ -112,7 +112,7 @@
   --navbar-padding-h: 1.5rem;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * .82);
-  --content-width: 740px;
+  --content-width: 90% !important;
   --homepage-width: 960px
 }
 
@@ -14115,7 +14115,7 @@ html.dark {
 }
 
 :root {
-  --content-width: 740px
+  --content-width: 90% !important
 }
 
 :root {

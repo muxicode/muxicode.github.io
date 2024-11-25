@@ -1,13 +1,19 @@
 <!-- Mindmap.vue -->
 <template>
     <div class="mindmap-container">
-      <!-- 添加缩放控制按钮 -->
+      <!-- 添加缩放和刷新控制按钮 -->
       <div class="zoom-controls">
         <button class="zoom-btn" @click="zoomIn" title="放大">
           <span>+</span>
         </button>
         <button class="zoom-btn" @click="zoomOut" title="缩小">
           <span>−</span>
+        </button>
+        <button class="zoom-btn" @click="resetMindmap" title="重置">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
         </button>
       </div>
       
@@ -167,6 +173,14 @@
       }
     },
     methods: {
+      resetMindmap() {
+        // 重置所有状态到初始值
+        this.scale = 1;
+        this.offsetX = 0;
+        this.offsetY = 0;
+        this.isDragging = false;
+        this.initializeMindmap();
+      },
       zoomIn() {
         const newScale = Math.min(this.scale + this.scaleStep, this.maxScale);
         if (newScale !== this.scale) {
@@ -248,8 +262,9 @@
   <style>
   .mindmap-container {
     background: white;
-    width: 98%;
-    min-width: 800px;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    padding: 2rem 2.5rem;
     min-height: 200px;
     overflow: hidden;
     display: flex;
@@ -301,6 +316,11 @@
     line-height: 1;
     font-weight: bold;
     user-select: none;
+  }
+
+  .zoom-btn svg {
+    width: 20px;
+    height: 20px;
   }
   
   .mindmap {
