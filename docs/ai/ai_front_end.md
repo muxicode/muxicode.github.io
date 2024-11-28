@@ -5,473 +5,675 @@ autoGroup-1: 大模型应用
 
 # Claude 前端开发最佳实践
 
+> 🎯 写给每一位想提升开发效率的前端工程师
+
+Hello小伙伴！我是你的AI前端开发助手Claude~ 经常被项目deadline追着跑？组件写得头大？让我们一起探索如何用AI来解放双手！✨
+
+这不是一份枯燥的技术文档，而是一份有温度的实战指南！我会用最接地气的方式，把复杂的前端开发拆解成易懂的小块，让每个知识点都能立刻上手实践。无论你是：
+
+- 🆕 正在上手新项目的小白
+- 💪 想提升开发效率的老手
+- 🤔 对AI辅助开发感兴趣的同学
+
+这份指南都能帮你少走弯路，让开发工作事半功倍！来看看我们会学到什么吧~
+
  ## 大纲导图
 
 <Mindmap :data="[
   ['root', {
     text: 'Claude前端开发实战',
-    children: ['fundamentals', 'workflow', 'practices']
+    children: ['fundamentals', 'workflow', 'practices', 'challenges', 'tech-stack']
   }],
   ['fundamentals', {
-    text: '基础认知',
-    children: ['capabilities', 'limitations']
+    text: '基础认知篇',
+    children: ['frontend-capabilities', 'limitations'] 
   }],
-  ['capabilities', {
-    text: 'Claude能力范围',
-    children: ['frontend-knowledge', 'design-skills']
+  ['frontend-capabilities', {
+    text: '前端能力全解析',
+    children: ['react-dev', 'html-css', 'javascript', 'ui-ux']
   }],
-  ['frontend-knowledge', {
-    text: '前端技术栈',
-    children: ['react', 'html-css', 'javascript']
-  }],
-  ['react', {
-    text: 'React开发',
-    children: ['components', 'hooks', 'state-management']
+  ['react-dev', {
+    text: 'React开发能力',
+    children: ['components', 'hooks', 'state']
   }],
   ['components', {
-    text: '组件开发能力',
+    text: '组件开发',
     children: []
   }],
   ['hooks', {
-    text: 'Hooks使用指南',
+    text: 'Hooks使用',
     children: []
   }],
-  ['state-management', {
-    text: '状态管理方案',
+  ['state', {
+    text: '状态管理',
     children: []
   }],
   ['html-css', {
     text: 'HTML/CSS能力',
+    children: ['styling', 'layout']
+  }],
+  ['styling', {
+    text: '样式解决方案',
+    children: []
+  }],
+  ['layout', {
+    text: '布局系统',
     children: []
   }],
   ['javascript', {
     text: 'JavaScript能力',
     children: []
   }],
-  ['design-skills', {
+  ['ui-ux', {
     text: 'UI/UX设计理解',
     children: []
   }],
   ['limitations', {
     text: '使用限制',
+    children: ['file-limits', 'gen-limits']
+  }],
+  ['file-limits', {
+    text: '文件处理限制',
+    children: []
+  }],
+  ['gen-limits', {
+    text: '生成限制',
     children: []
   }],
   ['workflow', {
-    text: '开发工作流',
-    children: ['planning', 'implementation', 'debugging']
+    text: '开发工作流程',
+    children: ['requirements', 'file-management', 'implementation', 'tech-switch', 'debugging']
   }],
-  ['planning', {
+  ['requirements', {
     text: '需求分析与规划',
+    children: []
+  }],
+  ['file-management', {
+    text: '文件管理策略',
     children: []
   }],
   ['implementation', {
     text: '代码实现流程',
-    children: ['coding-process', 'error-handling']
-  }],
-  ['coding-process', {
-    text: '编码流程',
-    children: []
+    children: ['error-handling', 'complex-business']
   }],
   ['error-handling', {
     text: '错误处理',
     children: []
   }],
+  ['complex-business', {
+    text: '复杂业务处理',
+    children: []
+  }],
+  ['tech-switch', {
+    text: '切换技术栈',
+    children: []
+  }],
   ['debugging', {
     text: '调试优化',
+    children: ['render-issues', 'perf-issues']
+  }],
+  ['render-issues', {
+    text: '渲染问题',
+    children: []
+  }],
+  ['perf-issues', {
+    text: '性能问题',
     children: []
   }],
   ['practices', {
     text: '最佳实践',
-    children: ['code-organization', 'performance', 'testing']
+    children: ['code-org', 'style-standard', 'perf-opt', 'test-strategy']
   }],
-  ['code-organization', {
+  ['code-org', {
     text: '代码组织',
     children: []
   }],
-  ['performance', {
+  ['style-standard', {
+    text: '样式规范',
+    children: []
+  }],
+  ['perf-opt', {
     text: '性能优化',
     children: []
   }],
-  ['testing', {
+  ['test-strategy', {
     text: '测试策略',
+    children: []
+  }],
+  ['challenges', {
+    text: '常见挑战与解决方案',
+    children: ['file-challenges', 'tech-challenges', 'business-challenges']
+  }],
+  ['file-challenges', {
+    text: '文件相关挑战',
+    children: []
+  }],
+  ['tech-challenges', {
+    text: '技术相关挑战',
+    children: []
+  }],
+  ['business-challenges', {
+    text: '复杂业务场景',
+    children: []
+  }],
+  ['tech-stack', {
+    text: '推荐技术栈',
+    children: ['frameworks', 'styling-solutions', 'state-management', 'dev-tools']
+  }],
+  ['frameworks', {
+    text: '框架选择',
+    children: []
+  }],
+  ['styling-solutions', {
+    text: '样式方案',
+    children: []
+  }],
+  ['state-management', {
+    text: '状态管理',
+    children: []
+  }],
+  ['dev-tools', {
+    text: '开发工具',
     children: []
   }]
 ]" />
 
-## 1. 代码组织最佳实践
+## 作品展示
 
-### 1.1 项目结构组织
+<ImageGallery :images="[  '/ai_front_end.assets/1.png',  '/ai_front_end.assets/2.png',  '/ai_front_end.assets/3.png', '/ai_front_end.assets/4.png', '/ai_front_end.assets/5.png','/ai_front_end.assets/6.png','/ai_front_end.assets/7.png','/ai_front_end.assets/8.png','/ai_front_end.assets/9.png','/ai_front_end.assets/10.png','/ai_front_end.assets/11.png','/ai_front_end.assets/12.png' ]" />
+
+## 一、基础认知篇 📚
+
+### 1. 前端能力全解析
+
+#### React开发能力
+
+- **组件开发**
+  - 组件设计模式精通
+  - 复用策略优化
+- **Hooks使用**
+  - 常用Hooks应用
+  - 自定义Hooks开发
+- **状态管理**
+  - 全局状态设计
+  - 数据流控制
+
+💡 提示词案例：
 
 ```
-src/
-  ├── components/         # 可复用组件
-  │   ├── common/        # 通用基础组件
-  │   └── business/      # 业务组件
-  ├── hooks/             # 自定义 Hooks
-  ├── utils/             # 工具函数
-  ├── services/          # API 服务 
-  ├── styles/            # 全局样式
-  └── pages/             # 页面组件
+你：我需要开发一个可复用的表单组件，包含验证逻辑。
+
+Claude：让我们系统分析一下需求：
+1. 表单包含哪些字段类型？
+2. 验证规则有哪些？
+3. 是否需要支持异步验证？
+4. 表单状态如何管理？
+
+你：主要是用户信息表单，需要支持手机号、邮箱验证，异步查重。
 ```
 
-### 1.2 组件设计原则
+#### HTML/CSS能力
 
-#### 1.2.1 使用 Claude 生成组件的最佳实践
+- **样式解决方案**
+  - 主题系统设计
+  - 响应式布局
+  - 动画效果实现
+- **布局系统**
+  - Flex/Grid应用
+  - 自适应布局
 
-```markdown
-1. 清晰描述组件需求
-   - 功能要求
-   - Props 定义
-   - 样式要求
-   - 交互行为
+🎨 样式处理案例：
 
-2. 示例提示语：
-"请帮我创建一个可复用的数据表格组件，需要支持：
-- 分页功能
-- 排序功能
-- 自定义列渲染
-- 行选择
-- 加载状态
-请使用 TypeScript，并添加必要的注释"
+```
+你：需要实现一个自适应的卡片布局，不同屏幕尺寸下显示不同列数。
+
+Claude：好的，让我们逐步设计：
+1. 首先确认几个问题：
+   - 卡片的最小/最大宽度是多少？
+   - 需要支持哪些屏幕尺寸？
+   - 卡片间距如何处理？
+
+你：最小300px，最大400px，主要支持移动端和桌面端。
+
+Claude：我建议使用Grid布局：
+1. 设置auto-fit和minmax
+2. 配合媒体查询优化
+...
 ```
 
-#### 1.2.2 组件代码示例
+#### JavaScript能力
 
-```typescript
-// DataTable.tsx
-import React from 'react';
-import { Table, Pagination } from 'antd';
-import type { ColumnsType, TableProps } from 'antd/es/table';
+- 异步处理
+- 性能优化
+- 模块化开发
 
-interface DataTableProps<T> extends Omit<TableProps<T>, 'pagination'> {
-  total: number;
-  pageSize: number;
-  currentPage: number;
-  onPageChange: (page: number, pageSize: number) => void;
-  loading?: boolean;
+#### UI/UX设计理解
+
+- 交互设计原则
+- 用户体验优化
+- 设计系统集成
+
+🎯 交互设计案例：
+
+```
+你：如何优化一个复杂表单的用户体验？
+
+Claude：让我们从用户角度思考：
+1. 表单分步展示策略？
+2. 即时反馈机制？
+3. 错误提示方式？
+4. 进度保存功能？
+
+你：用户经常中途放弃填写，主要是步骤太多。
+
+Claude：建议以下优化方案：
+1. 实现分步表单
+2. 添加进度指示
+3. 支持数据暂存
+...
+```
+
+### 2. 使用限制
+
+#### 文件处理限制
+
+- 大小限制处理，如何破解：
+  - 采用artifacts进行衔接，如：返回markdown格式，放在artifacts中，以文字的形式实现。直接返回完整的markdown文章。
+  - 请你在上面的文件的基础上拓展需求。注意衔接，内容不要乱，保证代码文件内容格式完全正确。
+  - 没有完成，请你在上面的基础上继续返回。注意衔接，内容不要乱。
+  - 注意衔接，接到文件末尾部分,保证代码文件内容格式完全正确。
+  - 没有完成，请你在上面artifacts文件的基础上继续返回。
+- 预览功能约束，如何破解
+  - 文件太大无法预览
+  - 代码格式错误，无法预览
+  - [采用第三方html预览](https://www.toolhelper.cn/Html/Preview)
+  - 直接使用内置包导致无法预览，切换原生技术栈
+
+#### 生成限制
+
+- 代码生成范围
+  - 总是省略部分
+  - 总是想偷懒
+- 优化建议
+  - 你省略了一些<Claude前端开发实战指南>目录内容，重新写，我不希望你为了完成工作，选择偷懒，写的不够优质，请你仔细写。
+  - 如果一次对话返回不了完整的内容，我会在下一次对话中，让你在源artifacts文件的基础上继续返回。
+  - 请返回完整的html，不要有任何省略。
+
+## 二、开发工作流程 🔄
+
+### 1. 需求分析与规划
+
+💭 需求分析案例：
+
+```
+附件：会议记录
+附件：用户用例场景
+附件：数据结构，接口结构
+
+需求背景和愿景：
+<xxxxxxxxxxxxx>
+
+需求点：
+1.xxx
+2.xxx
+3.xxx
+
+根据我的附件及需求。。。。，用你理解最深刻且最熟练的前端技术。。。。
+```
+
+### 2. 文件管理策略
+
+#### 大文件处理
+
+- 分文件
+- 记录提示词
+- 记录阶段文件
+
+#### 多文件协调
+
+- 职责单一
+- 注意模块内聚
+
+### 3. 代码实现流程
+
+#### 错误处理
+
+- 视图错误处理
+- 逻辑错误处理
+- 异步错误处理
+
+🐛 错误处理案例：
+
+```
+你：如何优雅处理前端各种异常？
+
+Claude：让我们分类讨论：
+1. API调用异常：
+   - 网络错误
+   - 服务端错误
+2. 运行时异常：
+   - 类型错误
+   - 未定义错误
+3. 异步操作异常：
+   - Promise异常
+   - async/await异常
+
+你：重点是API调用异常处理。
+
+Claude：建议实现统一的错误处理中间件：
+1. 设计错误码系统
+2. 实现统一处理逻辑
+...
+```
+
+#### 复杂业务处理
+
+- 业务逻辑分层
+- 状态管理优化
+- 性能优化策略
+
+### 4. 切换技术栈
+
+- ```
+  我的附件是React组件和lucide图标的代码。请你帮我转换成可以直接在浏览器中打开的HTML文件。
+  如果一次对话返回不了完整的内容，我会在下一次对话中，让你在源文件的基础上继续返回。
+  ```
+
+### 5. 调试优化
+
+#### 渲染问题
+
+- 截图反馈，截图私用画笔圈出问题点。
+- 使用文字反馈，写出前端展示出来的具体文字模块。【 严格使用页面文件内的文字】
+
+使用到的相关提示词：
+
+- ```
+  需求拓展：
+  <性能指标分析>与<错误日志分析>的上面，需要加入分析数据的卡片（是表格数据，字段都是一样的是，只是值不一样。），示例展示两个就行，主要目标是如果用户需要查看可以直接对比看数据，可以收起展开。默认收起。
+  请你在上面的文件的基础上拓展需求。注意衔接，内容不要乱，保证代码文件内容格式完全正确。
+  ```
+
+- ```
+  这是我一个UX页面，思维链分析卡片部分我需要做一些修改：
+  1. 选择关注指标、判断依据、补充说明 三个输入框放在一行
+  2. 上述的三个数据框整体作为一行数据，这个卡片可以添加多行。
+  其余部分不要有任何变化，在我的代码上修改。注意衔接，内容不要乱，保证代码文件内容格式完全正确。
+  ```
+
+#### 性能问题
+
+- 加载优化
+- 运行时优化
+
+🚀 性能优化案例：
+
+```
+你：首页加载太慢，如何优化？
+
+Claude：让我们系统分析：
+1. 先做性能评估：
+   - 首屏时间？
+   - 资源大小？
+   - 请求数量？
+2. 检查瓶颈：
+   - 资源加载？
+   - 渲染性能？
+   - 代码执行？
+
+你：首屏时间超过3秒，主要是图片资源太大。
+
+Claude：制定优化方案：
+1. 图片优化
+   - 懒加载
+   - 压缩处理
+2. 资源优化
+   - 代码分割
+   - 预加载关键资源
+...
+```
+
+
+
+## 三、最佳实践 ⭐
+
+### 1. 代码组织
+
+- 目录结构规范
+- 模块化策略
+- 组件设计原则
+
+### 2. 样式规范
+
+- CSS架构设计
+- 主题系统
+- 命名规范
+
+### 3. 性能优化
+
+- 加载性能
+- 运行时性能
+- 感知性能
+
+### 4. 测试策略
+
+- 单元测试
+- 集成测试
+- E2E测试
+
+🧪 测试策略案例：
+
+```
+你：如何为React组件写单元测试？
+
+Claude：让我们建立完整的测试方案：
+1. 测试范围：
+   - UI渲染测试？
+   - 交互行为测试？
+   - 状态变化测试？
+2. 测试工具选择：
+   - Jest？
+   - React Testing Library？
+   - Enzyme？
+
+你：主要测试用户交互功能。
+
+Claude：推荐以下测试方案：
+1. 使用React Testing Library
+2. 编写用户交互测试用例
+3. 实现测试覆盖率检查
+...
+```
+
+## 四、常见挑战与解决方案 🛠️
+
+### 1. 文件相关挑战
+
+#### 预览问题解决
+
+- 文件拆分策略
+- 增量预览方案
+
+#### 样式统一问题
+
+- 全局样式管理
+- 主题系统设计
+
+例子：
+
+```css
+<style>
+    :root {
+    /* 色系配色 */
+    --primary-color: #333;s
+    --secondary-color: #555;
+    --accent-color: #777;
+    --background-color: #FAFAFA;
+    --text-color: #333;
+    --light-text-color: #555;
+    }
+</style>
+提供模板：
+:root {
+/* 色系配色 */
+--primary-color: {{使用选择的色系配色}};
+--secondary-color: {{使用选择的色系配色}};
+--accent-color: {{使用选择的色系配色}};
+--background-color: {{使用选择的色系配色}};
+--text-color: {{使用选择的色系配色}};
+--light-text-color: {{使用选择的色系配色}};
 }
-
-const DataTable = <T extends object>({
-  total,
-  pageSize,
-  currentPage,
-  onPageChange,
-  loading = false,
-  ...tableProps
-}: DataTableProps<T>) => {
-  return (
-    <div className="data-table-wrapper">
-      <Table
-        {...tableProps}
-        loading={loading}
-        pagination={false}
-      />
-      <Pagination
-        className="mt-4"
-        total={total}
-        pageSize={pageSize}
-        current={currentPage}
-        onChange={onPageChange}
-      />
-    </div>
-  );
-};
-
-export default DataTable;
+卡片配色，在下面的色系中随机选择一个：
+"柔和粉彩系"
+"深邃宝石系"
+"清新自然系"
+"高雅灰度系"
+"复古怀旧系"
+"明亮活力系"
+"冷淡极简系"
+"海洋湖泊系"
+"秋季丰收系"
+"莫兰迪色系"
 ```
 
-### 1.3 状态管理最佳实践
+UX设计例子：
 
-#### 1.3.1 使用 Claude 优化状态管理
+```
+附件是：2份原型图代码，1个是<平台原型首页及后台概览>UX原型图代码，另一个是<数据导入>UX原型图代码，还有我系统建模及UX设计记录信息的文件。
 
-```markdown
-1. 状态分类指南：
-   - Local State: 使用 useState/useReducer
-   - Shared State: 使用 Context API
-   - Server State: 使用 React Query/SWR
-   - Global State: 使用 Redux/Zustand
+我现在需要你不要改变风格，根据我的代码，以及记录，给我新增一个<思维链分析>这个功能块原型图，返回<思维链分析>模块原型图的html代码，模版参考<数据导入>样式和风格，需要可以preveiw。
 
-2. 向 Claude 描述状态管理需求的示例：
-"请帮我实现一个购物车功能的状态管理，需要：
-- 商品的添加/删除/更新
-- 总价计算
-- 持久化存储
-- 状态共享"
+思维链分析用例规约：
+<
+数据导入后经算子切片可以多个数据指标的表。用户可以查看并对比这这些数据。
+卡片展示：
+	系统会以卡片表格的形式展示，默认展示，可以收起表格，可以移动。
+	用户需要判断数据是否正常，并且给出具体原因。主要作用是作为COT语料的原因。
+我还希望COT反馈模块：
+1. 系统可以提示用户可以快速选择具体是根据哪些字段，并且是哪些值，推出具体的结论。
+2. 可以添加额外描述
+我还希望展示，相关测试用例、故障。
+>
+
+其他要求：
+1. 技术栈不要变
+2. 页面风格与源文件保持一致
+3. 返回<思维链分析>功能页面的原型页面，其他功能可以省略
+【思考流程使用中文显示】
 ```
 
-## 2. 性能优化最佳实践
+### 2. 技术相关挑战
 
-### 2.1 代码分割
+#### 技术栈兼容性
 
-```typescript
-// 使用 React.lazy 进行代码分割
-const HomePage = React.lazy(() => import('./pages/Home'));
-const ProductPage = React.lazy(() => import('./pages/Product'));
+- 统一技术栈规范
+- 兼容性处理方案
 
-function App() {
-  return (
-    <Suspense fallback={<Loading />}>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/product" element={<ProductPage />} />
-      </Routes>
-    </Suspense>
-  );
-}
+#### 渲染问题
+
+- 样式检查
+- 布局调试
+- 兼容性测试
+
+### 3. 复杂业务场景
+
+🔄 复杂业务案例：
+
+```
+你：如何处理复杂的表单状态管理？
+
+Claude：让我们分析业务复杂度：
+1. 状态类型：
+   - 表单数据
+   - 验证状态
+   - UI状态
+2. 状态关系：
+   - 数据依赖
+   - 状态联动
+3. 性能考虑：
+   - 渲染优化
+   - 状态更新效率
+
+你：主要是表单字段之间有复杂的联动关系。
+
+Claude：建议以下方案：
+1. 使用状态机管理
+2. 实现字段依赖图
+3. 优化更新策略
+...
 ```
 
-### 2.2 性能优化清单
+## 五、推荐技术栈 ⚡
 
-1. **组件优化**
-   - 使用 React.memo() 避免不必要的重渲染
-   - 使用 useMemo 缓存计算结果
-   - 使用 useCallback 缓存事件处理函数
+### 1. 框架选择
 
-```typescript
-const MemoizedComponent = React.memo(({ data }) => {
-  const processedData = useMemo(() => {
-    return data.map(item => item.value * 2);
-  }, [data]);
+- React   ---  目前观察不添加额外要求，克劳德默认使用该技术。各方面的效果很不错。
+- Vue      ---   组件化代码，十分适合使用AI开发
+- Next.js/Nuxt.js  ---   很多主流的AI应用前端使用的框架。
 
-  const handleClick = useCallback(() => {
-    console.log('Clicked!');
-  }, []);
+### 2. 样式方案
 
-  return (
-    <div onClick={handleClick}>
-      {processedData.map(item => <span key={item}>{item}</span>)}
-    </div>
-  );
-});
+- Tailwind CSS   ---  不多说直接推荐，直接满分。也可以使用unocss
+- styled-components  ---  不太了解
+- CSS Modules  ---  不太了解
+
+### 3. 状态管理
+
+- Redux/Vuex
+- React Context
+- Recoil
+- pinia
+
+### 4. 开发工具
+
+- 代码生成工具
+- 调试工具
+- 性能分析工具
+
+## 高级提示词技巧 🎯
+
+### 1. 需求描述模板
+
+```
+功能描述：[具体功能]
+技术要求：[技术栈/框架]
+性能要求：[具体指标]
+特殊需求：[特殊处理]
 ```
 
-2. **图片优化**
-   - 使用适当的图片格式
-   - 实现懒加载
-   - 使用响应式图片
+### 2. 问题解决模板
 
-```typescript
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-
-const ImageComponent = ({ src, alt }) => (
-  <LazyLoadImage
-    src={src}
-    alt={alt}
-    effect="blur"
-    threshold={100}
-    className="w-full h-auto"
-  />
-);
+```
+问题现象：[具体表现]
+环境信息：[浏览器/设备]
+复现步骤：[详细步骤]
+期望结果：[预期表现]
 ```
 
-## 3. 测试策略最佳实践
+### 3. 代码优化模板
 
-### 3.1 使用 Claude 生成测试用例
-
-```markdown
-向 Claude 描述测试需求的示例：
-"请为以下登录组件生成单元测试用例：
-- 测试表单验证
-- 测试提交功能
-- 测试错误处理
-- 测试加载状态"
+```
+优化目标：[性能/可维护性]
+当前问题：[具体问题]
+限制条件：[资源/时间]
+期望指标：[具体数值]
 ```
 
-### 3.2 测试代码示例
+## 注意事项 ⚠️
 
-```typescript
-// LoginForm.test.tsx
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import LoginForm from './LoginForm';
+1. 技术选型要根据项目实际情况
+2. 保持技术栈的一致性
+3. 注重开发效率与维护性平衡
+4. 定期更新优化开发流程
+5. 重视代码质量和测试覆盖
 
-describe('LoginForm', () => {
-  it('should validate email format', async () => {
-    render(<LoginForm onSubmit={jest.fn()} />);
-    
-    const emailInput = screen.getByLabelText('Email');
-    await userEvent.type(emailInput, 'invalid-email');
-    
-    const submitButton = screen.getByRole('button', { name: /submit/i });
-    fireEvent.click(submitButton);
-    
-    expect(await screen.findByText('Invalid email format')).toBeInTheDocument();
-  });
+## 结语 📝
 
-  it('should handle successful login', async () => {
-    const mockOnSubmit = jest.fn();
-    render(<LoginForm onSubmit={mockOnSubmit} />);
-    
-    await userEvent.type(screen.getByLabelText('Email'), 'test@example.com');
-    await userEvent.type(screen.getByLabelText('Password'), 'password123');
-    
-    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
-    
-    await waitFor(() => {
-      expect(mockOnSubmit).toHaveBeenCalledWith({
-        email: 'test@example.com',
-        password: 'password123'
-      });
-    });
-  });
-});
-```
+希望这份详细的指南能帮助你更好地使用Claude进行前端开发！记住：
 
-### 3.3 测试覆盖率要求
+- 清晰的需求描述
+- 系统的问题分析
+- 循序渐进的解决方案
+- 持续的优化和改进
 
-1. **单元测试**
-   - 组件渲染测试
-   - Props 变化测试
-   - 事件处理测试
-   - 错误边界测试
-
-2. **集成测试**
-   - 组件交互测试
-   - 路由导航测试
-   - 状态管理测试
-   - API 调用测试
-
-3. **E2E测试**
-   - 关键业务流程测试
-   - 用户操作流程测试
-   - 性能指标测试
-
-## 4. 与 Claude 协作的技巧
-
-### 4.1 提供清晰的上下文
-
-```markdown
-好的示例：
-"我正在开发一个电商网站的商品列表页面，需要实现以下功能：
-1. 商品卡片展示（图片、标题、价格）
-2. 分页加载
-3. 筛选功能
-4. 排序功能
-请帮我设计组件结构和实现核心逻辑"
-
-不好的示例：
-"帮我写一个列表页面"
-```
-
-### 4.2 迭代优化策略
-
-1. **第一轮**：获取基础实现
-2. **第二轮**：优化代码结构
-3. **第三轮**：添加错误处理
-4. **第四轮**：优化性能
-5. **第五轮**：补充测试用例
-
-### 4.3 常见问题解决方案
-
-1. **代码质量问题**
-   - 使用 ESLint 配置
-   - 遵循代码风格指南
-   - 定期代码审查
-
-2. **性能问题**
-   - 使用性能分析工具
-   - 实施性能优化策略
-   - 监控性能指标
-
-3. **测试覆盖**
-   - 建立测试规范
-   - 自动化测试流程
-   - 持续集成/持续部署
-
-## 5. 注意事项和建议
-
-1. **代码规范**
-   - 遵循项目统一的代码风格
-   - 使用 TypeScript 增加类型安全
-   - 编写清晰的文档和注释
-
-2. **安全考虑**
-   - 输入验证
-   - XSS 防护
-   - CSRF 防护
-   - API 安全
-
-3. **可维护性**
-   - 模块化设计
-   - 清晰的命名规范
-   - 完善的错误处理
-   - 充分的注释说明
-
-4. **团队协作**
-   - 代码审查流程
-   - 版本控制规范
-   - 文档管理
-   - 知识共享
-
-## 6.常用语录
-   - 给我完整修复后的组件代码，不要有任何省略
-
-   - 没有完成，请你在上面的基础上继续返回。
-
-   - 还是没有解决这个问题。缩放后这个问题还是存在，我希望解决问题，你可以用你觉得最好的方式。给我完整修复后的组件代码，不要有任何省略
-
-   - 我有一个vuepress 1.9.8 的个人博客项目，我有一思维导图的组件，代码在附件。
-
-   - 仿照这个图片，用 html 等复刻绘制
-
-   - ```
-     使用element 2.1.x的主题配色及风格，帮我开发一个页面，我的需求是：
-     <xxx>
-     我的场景有：
-     1. xxx
-     2. xxx
-     我的数据结构有：
-     1. xxx
-     2. xxx
-     限定使用的技术栈为：
-     1. xxx
-     2. xxx
-     ```
-
-   - ```
-     <错误：xxxx>
-     
-     上面一段报错来自于我的<技术栈：1.9.8 版本的 vuepress 的个人博客项目>，<动作：我再md文件中直接将html复制进去了>，结果报错了显示异常，请你告诉我原因，并给我具体的解决方案。
-     ```
-
-   - ```
-     思维导图组件示例：
-     <Mindmap :data="[
-       ['root', {
-         text: '核心主题',
-         children: ['node1', 'node2', 'node3']
-       }],
-       ['node1', {
-         text: '主题一',
-         children: ['node1-1', 'node1-2']
-       }],
-       ['node1-1', {
-         text: '子主题1.1',
-         children: []
-       }],
-       ['node1-2', {
-         text: '子主题1.2',
-         children: []
-       }],
-       ['node2', {
-         text: '主题二',
-         children: ['node2-1', 'node2-2']
-       }],
-       ['node2-1', {
-         text: '子主题2.1',
-         children: []
-       }],
-       ['node2-2', {
-         text: '子主题2.2',
-         children: []
-       }],
-       ['node3', {
-         text: '主题三',
-         children: []
-       }]
-     ]" />
-     我有一个思维导图的组件，使用如上所示。
-     我现在要做一个<cladue前端开发最佳实践的培训>，帮我生成大纲，并严格使用<思维导图组件示例>的格式返回给我。
-     ```
-
-     
+有任何问题都可以继续问我哦~ 😊
