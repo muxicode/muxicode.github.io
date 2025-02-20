@@ -1,0 +1,555 @@
+---
+title: Cursor开发实践
+autoGroup-1: 大模型应用
+---
+
+# Cursor开发实践
+
+## 引言
+
+- 本次分享的目标：如何利用Cursor提升开发效率
+- 分享内容概览：相关功能演示，以及一些经验和实战案例
+- 适用人群：希望通过AI辅助工具提升编程效率的开发者
+
+## 大纲导图
+
+<Mindmap :data="[
+['root', {
+ text: 'Cursor开发实践指南',
+ children: ['overview', 'development-phases', 'project-practices', 'techniques', 'resources', 'challenges']
+}],
+['overview', {
+ text: '概述',
+ children: ['intro', 'benefits', 'use-cases'] 
+}],
+['intro', {
+ text: '引言与目标',
+ children: []
+}],
+['benefits', {
+ text: '主要优势',
+ children: []
+}],
+['use-cases', {
+ text: '适用场景',
+ children: []
+}],
+['development-phases', {
+ text: '大型项目开发策略',
+ children: ['planning', 'architecture', 'modular-dev', 'iteration']
+}],
+['planning', {
+ text: '第一阶段：项目规划',
+ children: ['project-intro', 'tech-stack', 'ai-evaluation']
+}],
+['project-intro', {
+ text: '详细项目介绍',
+ children: []
+}],
+['tech-stack', {
+ text: '技术栈选择',
+ children: []
+}],
+['ai-evaluation', {
+ text: 'AI方案评估',
+ children: []
+}],
+['architecture', {
+ text: '第二阶段：架构设计',
+ children: ['ddd', 'clean-architecture']
+}],
+['ddd', {
+ text: '领域驱动设计',
+ children: ['domain-entities', 'interfaces', 'business-processes', 'structure-docs']
+}],
+['domain-entities', {
+ text: '领域实体划分',
+ children: []
+}],
+['interfaces', {
+ text: '接口定义',
+ children: []
+}],
+['business-processes', {
+ text: '业务流程梳理',
+ children: []
+}],
+['structure-docs', {
+ text: '项目结构文档',
+ children: []
+}],
+['clean-architecture', {
+ text: 'Clean Architecture',
+ children: []
+}],
+['modular-dev', {
+ text: '第三阶段：模块化开发',
+ children: ['module-dev', 'tdd', 'doc-updates']
+}],
+['module-dev', {
+ text: '按模块开发',
+ children: []
+}],
+['tdd', {
+ text: '测试驱动开发',
+ children: []
+}],
+['doc-updates', {
+ text: '文档同步更新',
+ children: []
+}],
+['iteration', {
+ text: '第四阶段：迭代优化',
+ children: ['repeat-iteration', 'feature-completion']
+}],
+['repeat-iteration', {
+ text: '重复迭代',
+ children: []
+}],
+['feature-completion', {
+ text: '功能模块完善',
+ children: []
+}],
+['project-practices', {
+ text: '项目开发实践',
+ children: ['tech-architecture', 'mvp-design', 'module-docs', 'test-driven']
+}],
+['tech-architecture', {
+ text: '技术架构',
+ children: []
+}],
+['mvp-design', {
+ text: 'MVP方案设计',
+ children: []
+}],
+['module-docs', {
+ text: '分模块详细文档',
+ children: []
+}],
+['test-driven', {
+ text: '测试驱动开发',
+ children: []
+}],
+['techniques', {
+ text: '使用技巧',
+ children: ['templates', 'cursor-tips', 'code-reading', 'refactoring']
+}],
+['templates', {
+ text: '模板开发',
+ children: ['github-references', 'tech-templates']
+}],
+['github-references', {
+ text: 'GitHub参考项目',
+ children: []
+}],
+['tech-templates', {
+ text: '技术框架模板',
+ children: []
+}],
+['cursor-tips', {
+ text: '实用小技巧',
+ children: ['code-reading-assist', 'requirement-specs', 'problem-solving']
+}],
+['code-reading-assist', {
+ text: 'AI辅助代码阅读',
+ children: []
+}],
+['requirement-specs', {
+ text: '需求详细化',
+ children: []
+}],
+['problem-solving', {
+ text: '问题定位与修复',
+ children: []
+}],
+['refactoring', {
+ text: '代码重构',
+ children: []
+}],
+['resources', {
+ text: '资源推荐',
+ children: ['learning-resources', 'tools', 'learning-path']
+}],
+['learning-resources', {
+ text: '学习资源',
+ children: []
+}],
+['tools', {
+ text: '工具与插件',
+ children: []
+}],
+['learning-path', {
+ text: '后续学习路径',
+ children: []
+}],
+['challenges', {
+ text: '常见问题',
+ children: ['context-limits', 'cursor-rules', 'advanced-usage']
+}],
+['context-limits', {
+ text: '上下文长度限制',
+ children: []
+}],
+['cursor-rules', {
+ text: '自定义规则空间占用',
+ children: []
+}],
+['advanced-usage', {
+ text: '高级应用场景',
+ children: ['code-migration', 'architecture-refactoring', 'test-generation']
+}],
+['code-migration', {
+ text: '代码转换与迁移',
+ children: []
+}],
+['architecture-refactoring', {
+ text: '架构重构与优化',
+ children: []
+}],
+['test-generation', {
+ text: '自动化测试生成',
+ children: []
+}]
+]" />
+
+## 简单初体验
+
+[硅基流动](https://siliconflow.cn/zh-cn/) DeepSeek API Key 代码调用示例。
+
+```
+@SiliconFlow 我需要你帮我用python3 实现 deepseek r1的api调用，需要支持多轮对话，我会把我的多轮提示词放到一个数组，你需要写一个类接受我的提示词，完成多轮对话后把最终结果给我。并添加一些打印方便我看执行到哪里了。
+```
+
+## 大型项目开发策略
+
+![](/cursor_pratice.assets/four.png)
+
+### 第一阶段：项目规划
+
+- **详细项目介绍**：
+  - 目的：明确项目要解决的核心问题和目标用户
+  - 背景：行业现状和相关技术发展趋势
+  - 技术栈选择：根据项目需求和团队熟悉度选择合适的技术栈
+- **提供给AI做技术选项和方案**
+  - 列出可能的技术方案供AI评估
+  - 针对不同方案，让AI分析优缺点
+  - 让AI协助生成初步的技术文档
+
+### 第二阶段：架构设计
+
+**领域驱动设计（DDD）**
+
+- 划分领域实体：识别核心业务概念和实体
+- 定义接口：明确各模块间的交互方式
+- 梳理业务流程：用图表展示主要业务流程
+- 确认代码架构和功能划分：决定代码组织方式
+- 建立项目结构文档，便于统计和更新
+  - 使用树状图展示文件结构
+  - 维护模块依赖关系图
+
+**或者 Clean Architecture**
+
+- 将业务逻辑与技术实现分离
+- 定义清晰的层级：实体层、用例层、接口适配层、框架与驱动层
+- 确保依赖关系向内指向核心业务逻辑
+
+### 第三阶段：模块化开发
+
+- 按模块进行开发：将大项目拆分为可独立开发的模块
+- 同步编写测试代码和功能代码：采用TDD或BDD方法
+- 持续更新项目结构文档：记录变更和演进
+- 使用Cursor协助生成测试用例和边界条件处理
+
+### 第四阶段：迭代优化
+
+- 重复迭代：基于反馈持续优化
+- 逐步完善功能模块：优先级排序，逐步实现
+- 利用Cursor进行代码审查和优化
+- 自动化测试与持续集成
+
+## 项目开发实践
+
+![](/cursor_pratice.assets/prompt_flow.png)
+
+### 技术架构
+
+示例提示词：
+
+```
+我希望做一个浏览器录制自动化工具单记小型软件，我希望有一个好看的前端界面，现代化，科技感，最好使用python3实现，最后可以打包程一个exe文件的项目。双击打开exe文件后，我希望有录制和执行按钮，以及之前录制好的自动化的列表。可以选择一条录制好的脚本直接执行，开始自动化流程。也可以点击录制，弹出一个浏览器开始录制操作，实时记录自动化脚本步骤，当然需要考虑浏览器有延时。执行完毕动作之后，在exe页面点击完成，此时需要用户给这次自动化流程命名，方便下次执行。然后保存到自动化列表中。
+
+根据我的需求先写好技术架构文档--放在根目录下TechnicalArchitecture.txt（记录项目的功能业务目录结构,不要使用markdown格式，使用普通文本）【回复使用中文】
+```
+
+### MVP方案设计
+
+示例提示词：
+
+```
+我需要快速实现我项目的核心功能，请你写出MVP方案的详细设计以及实现步骤的文档--放在根目录下MVP.txt（不要使用markdown格式，使用普通文本）。
+
+需要有：
+方案设计
+模块划分
+模块优先级
+
+我后续会根据文档进行开发。
+```
+
+### 分模块详细文档
+
+示例提示词：
+
+```
+现在开始阶段一，请你写出阶段一详细的方案设计--放在根目录下MVP_1.txt（不要使用markdown格式，使用普通文本）。 
+
+需要有：
+文件划分
+类的接口
+类的测试文件
+
+功能如何验证。
+```
+
+### 测试驱动开发
+
+![](/cursor_pratice.assets/tdd.png)
+
+使用生成的文档进行开发设计。示例：
+
+```
+core/
+│   ├── browser.py     # 浏览器操作封装
+现在完成这个功能，以及对应的测试用例文件。
+```
+
+## 使用模板开发
+
+### 借鉴优秀开源项目
+
+- **在GitHub寻找相似项目作为参考**：
+  - 通过关键词搜索类似功能的开源项目
+  - 分析其架构设计和实现方案
+  - 借鉴代码组织和最佳实践
+  - 将发现的解决方案与AI讨论，寻求改进
+  - 总结项目实现中的关键设计决策和难点
+
+### 利用成熟框架加速开发
+
+- **使用成熟的技术框架模板**：
+  - 分层架构模板（如Clean Architecture、DDD模板）
+  - 前端模板项目（如Next.js app模板、Vue脚手架）
+  - 推荐模板：unibest（集成了现代前端最佳实践）
+  - 行业特定解决方案模板（如电商、CMS系统模板）
+  - 微服务架构模板（适用于大型分布式系统）
+
+### 模板项目推荐
+
+- [unibest](https://github.com/codercup/unibest) - 现代前端最佳实践集成
+- [DDD Starter Kit](https://github.com/Sairyss/domain-driven-hexagon) - 领域驱动设计模板
+- [FastAPI Full Stack](https://github.com/tiangolo/full-stack-fastapi-postgresql) - Python全栈应用模板
+
+通过这种方式，您可以避免从零构建结构，而是专注于业务逻辑实现，大大缩短开发周期。模板提供了经过验证的架构基础，保证了代码质量和可维护性。
+
+简单提示词即可开发功能，因为项目模块划分清晰，比如接口：
+
+- ```
+  接口url：<>
+  body：<>
+  
+  respone返回：<>
+  
+  组件内调用示例：<>
+  
+  参考<foo.ts接口文件>帮我写出接口调用代码。以及使用示例。【思考过程使用中文】
+  ```
+  
+- ```
+  参考 xxx.vue 页面的样式，风格，帮我实现新的xxx.vue页面。
+  
+  页面需要实现XX的功能。XX按钮，点击后调用什么接口。
+  
+  我的接口信息：<>
+  
+  1. 我需要你在foo.ts文件里新增接口。
+  2. 使用foo.ts新增的接口，在xxx.vue页面完成我的需求，
+  ```
+
+## 实际项目可用小技巧
+
+### 代码阅读与理解
+
+**AI辅助代码阅读**：
+
+- 使用AI总结代码功能：让AI提炼复杂代码的核心逻辑
+- 让AI生成代码注释：对遗留代码添加清晰注释
+- 格式化代码：使用AI优化代码格式，提高可读性
+- 生成代码导航图：让AI绘制模块间的调用关系图
+
+### 需求转代码技巧
+
+**把需求写清晰，具体到字段，AI是可以帮你完成需求的。**
+
+- 指定修改范围，如新增文件以xxx前缀开头
+- 指定风格版本：vue2并且风格使用vue-property-decorator的方式，技术栈使用typescript（注意：容易出现兼容错误）
+- 提供明确的数据结构和接口定义
+- 参考已有代码片段，要求保持风格一致
+- 分步骤清晰描述需求，避免一次性要求实现过多功能
+
+### 问题排查与修复
+
+**加速问题定位，提供异常现象以及字段，让大模型读取代码，看看大模型如何回复。搜索关键信息，稍微判断问题所在，让大模型直接修复。**
+
+具体步骤：
+1. 提供完整的错误信息和堆栈跟踪
+2. 上传相关代码文件供AI分析
+3. 描述预期行为与实际行为的差异
+4. 让AI生成修复方案并解释原因
+
+### 代码重构
+
+**重构代码**：
+
+- 让AI添加打印关键节点数据类型的日志代码
+- 将日志提供给AI，让其还原代码功能
+- 让AI分析代码冗余和可优化点
+- 请求AI提供重构建议，改善代码结构
+- 最后还是需要深入了解业务（了解的不够全面，还是会出问题）
+
+## 常见问题
+
+### 上下文长度限制
+
+![](/cursor_pratice.assets/length.png)
+
+- 200K上下文能处理的内容量，DeepSeek模型的64K限制，我是程序员，请你举例实际的代码文件数量的例子，让我知道上下文多大?
+
+  ```
+  这样一个完整的组件文件,包含注释、空行等,通常在200-300行,大约占用8-12KB的空间。
+  那么对于不同的上下文长度:
+  DeepSeek的64K上下文:
+  
+  可以同时加载约5-6个中等复杂度的React组件文件
+  或者一个较大的Node.js后端服务文件(约1500行)
+  或者一个完整的小型项目的所有主要代码文件
+  
+  Claude的200K上下文:
+  
+  可以同时处理一个中型React项目的所有前端组件(约15-20个组件文件)
+  或者一个完整的全栈应用后端代码(约4000-5000行Node.js代码)
+  或者一个包含前端组件、后端服务、数据库模型、测试等全部代码的小型全栈项目
+  
+  让我举一个具体的项目结构例子:
+  Copymy-fullstack-app/
+  ├── frontend/
+  │   ├── src/
+  │   │   ├── components/ (10个组件,每个约250行)
+  │   │   ├── pages/ (5个页面组件,每个约300行)
+  │   │   ├── utils/ (工具函数,约500行)
+  │   │   └── App.js (200行)
+  ├── backend/
+  │   ├── routes/ (API路由,约1000行)
+  │   ├── models/ (数据模型,约800行)
+  │   ├── controllers/ (业务逻辑,约1200行)
+  │   └── server.js (200行)
+  └── tests/ (单元测试,约1000行)
+  这个项目总计约7000行代码:
+  
+  DeepSeek 64K可以加载其中约1/3的代码
+  Claude 200K可以一次性加载整个项目的所有代码文件
+  
+  这样的上下文容量意味着:
+  
+  DeepSeek适合单文件或少量文件的代码分析和优化
+  Claude适合对整个项目进行全局分析、重构建议、架构优化等需要理解完整代码库的任务
+  
+  当然这只是一个参考,实际代码的复杂度、注释量、空行等都会影响具体能处理的代码量。你觉得这个解释对理解上下文长度的实际意义有帮助吗？
+  ```
+
+### 自定义规则空间占用
+
+- cursor rules 回占用上下文的空间吗？
+
+  ```
+  啊，我现在明白了你说的是 Cursor 编辑器中的 AI Rules 设置。让我详细解释一下这个问题：
+  
+  Cursor 中的 AI Rules 确实会占用上下文空间，因为这些规则实际上是作为提示（prompt）的一部分被发送给 AI 模型的。这些规则告诉 AI 如何思考和回应，所以它们需要被包含在上下文中。
+  
+  让我们通过一个具体的例子来理解：
+  
+  假设你在 Cursor 中设置了这样的规则：
+  ```
+  - Always add thorough documentation
+  - Follow Python PEP 8 style guide
+  - Include type hints
+  - Add error handling
+  ```
+  
+  当你有一个 1000 行的 Python 文件时，实际占用的上下文空间会是：
+  1. Rules 的文本内容：约 200-300 字符
+  2. 代码文件内容：约 40-50KB
+  3. 你的提问和 AI 的回答
+  
+  所以虽然 Rules 确实占用空间，但相比于实际的代码文件，它们占用的空间相对较小。举个例子，如果你设置了 10 条详细的规则，可能会占用约 1-2KB 的上下文空间，这在 64K 或 200K 的上下文窗口中是很小的一部分。
+  
+  为了优化上下文使用，你可以：
+  1. 保持 Rules 简洁明确，避免冗长的描述
+  2. 只包含当前任务真正需要的规则
+  3. 如果处理大型代码库，考虑分批处理，这样可以留出更多空间给实际的代码内容
+  
+  这样解释是否帮助你更好地理解了 Cursor Rules 是如何影响上下文空间的使用的？
+  ```
+
+### 资源获取
+
+- 次数太少了！怎么白嫖？[无限注册](https://github.com/yeongpin/cursor-free-vip)
+
+## 高级应用场景
+
+### 代码转换与迁移
+
+- 框架迁移：如Vue2到Vue3、AngularJS到Angular
+- 语言转换：如JavaScript到TypeScript、Python2到Python3
+
+### 架构重构与优化
+
+- 单体应用拆分为微服务
+- 前后端分离改造
+- 性能瓶颈分析与优化
+
+### 自动化测试生成
+
+- 单元测试自动生成
+- 集成测试场景设计
+- 边界条件和异常场景测试
+
+## 最佳实践总结
+
+1. **明确需求，具体到字段**：提供详细需求说明，包括数据结构、业务规则和技术约束
+2. **分模块开发**：将大项目拆分为可独立开发的模块，降低复杂度
+3. **利用模板加速**：基于成熟架构模板和行业最佳实践，避免重复造轮子
+4. **循序渐进**：先搭建MVP，再逐步迭代完善功能
+5. **结合人工审核**：AI生成的代码需要人工审核，确保质量和安全性
+6. **保持学习**：持续关注AI编程工具的新特性和最佳实践
+
+## 资源推荐
+
+### 学习资源
+- [Cursor官方文档](https://cursor.sh/docs)
+- [AI编程最佳实践](https://www.deeplearning.ai/short-courses/)
+- [大模型应用开发指南](https://github.com/openai/openai-cookbook)
+
+### 工具与插件
+- [GitHub Copilot](https://github.com/features/copilot)
+- [Tabnine](https://www.tabnine.com/)
+- [Cursor](https://cursor.sh/)
+- [Continue](https://continue.dev/)
+- Cline 有完全免费的模型
+
+## 后续学习路径
+
+1. 大模型prompt工程进阶
+2. AI辅助测试自动化
+3. LLM应用开发实践
+4. AI代码审查与安全分析
+
