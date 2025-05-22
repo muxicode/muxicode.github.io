@@ -108,13 +108,7 @@ autoGroup-1: 大模型应用
 }]
 ]" />
 
-![1]()
 
-![2](
-
-![3]()
-
-![4]()
 <ImageGallery :images="[  
   '/cursor_functions.assets/1.jpg',  
   '/cursor_functions.assets/2.jpg',  
