@@ -115,7 +115,6 @@ autoGroup-1: 大模型应用
   '/cursor_functions.assets/3.jpg', 
   '/cursor_functions.assets/4.jpg' ]" />
 
-
 ## 一、引言 🚀
 
 欢迎来到 **Cursor大型项目开发秘籍**！💡 这里是帮你驾驭AI编程浪潮的终极指南，让你在复杂项目中游刃有余，轻松应对各种挑战！
